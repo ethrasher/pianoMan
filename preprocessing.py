@@ -1,10 +1,7 @@
 #File to handle the preprocessing of the music sheet
 #Fairly limited because we are assuming we are getting an ideal scan
 
-import numpy as np
 import cv2
-import matplotlib.pyplot as plt
-
 
 def preprocess(path):
     # DESCRIPTION: turns a jpg into a binarized version of the image as a numpy 2D array

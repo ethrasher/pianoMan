@@ -1,3 +1,6 @@
+#going to find and remove all the staff lines in the image
+#will return out a new binaryImg without the staffLines or the title information
+
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
@@ -6,14 +9,16 @@ import matplotlib.pyplot as plt
 def staffLineDetectionRemoval(binaryImg):
     # DESCRIPTION: finds and removes all the staff lines in the original image
     # PARAMETERS: binaryImg: numpy array of the binarized image (255 or 0 in all places)
-    # RETURN: staffLineRows: a 1D numpy array containing the number of black pixels in each row
+    # RETURN: newBinaryImg: a numpy array similar to the incoming binaryImg but without staff lines
+    #           staffLineRows: a 1D numpy array containing the number of black pixels in each row
     print("in staffLineDetectionRemoval")
     amountRowBlack = findNumBlackPixels(binaryImg=binaryImg)
     staffLineRows = findStaffLineRows(amountRowBlack=amountRowBlack)
     plotBlackInRows(amountRowBlack=amountRowBlack)
-    newBinaryImg = removeStaffLines(binaryImg=binaryImg, staffLineIndexes=staffLineRows)
-    showBinaryImage(binaryImg=newBinaryImg)
-    return staffLineRows
+    noStaffBinaryImg = removeStaffLines(binaryImg=binaryImg, staffLineIndexes=staffLineRows)
+    noTitleStaffBinaryImg = removeTitle(binaryImg=noStaffBinaryImg, staffLineIndexes=staffLineRows)
+    showBinaryImage(binaryImg=noTitleStaffBinaryImg)
+    return noTitleStaffBinaryImg, staffLineRows
 
 def findNumBlackPixels(binaryImg):
     #DESCRIPTION: organizes the image by finding the number of black pixels per row
@@ -22,6 +27,7 @@ def findNumBlackPixels(binaryImg):
     rowNumbs = np.zeros(binaryImg.shape[0])
     amountRowBlack = np.zeros(binaryImg.shape[0])
     print("starting long loop")
+    #TODO: make this faster. There is probably a way with numpy
     for i in range(binaryImg.shape[0]):
         for j in range(binaryImg.shape[1]):
             if binaryImg[i, j] == 255:
@@ -65,6 +71,14 @@ def removeStaffLines(binaryImg, staffLineIndexes):
                     binaryImg[staffLineRow, col] = 255
     return binaryImg
 
+def removeTitle(binaryImg, staffLineIndexes):
+    firstStaffLine = staffLineIndexes[0][0]
+    threshold = .2
+    whiteAbove = int(firstStaffLine - firstStaffLine*threshold)
+    for row in range(whiteAbove):
+        for col in range(len(binaryImg[0])):
+            binaryImg[row,col] = 255
+    return binaryImg
 
 ###VISUALIZATION/DEBUGGING FUNCTIONS
 ###NOT VITAL TO PERFORMANCE

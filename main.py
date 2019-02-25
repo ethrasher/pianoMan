@@ -1,7 +1,5 @@
 #TODO: need to figure out how to convert pdf to jpg. Python is annoying here
 
-import numpy as np
-import cv2
 import os
 from preprocessing import preprocess
 from musicSymbolRecognition import musicSymbolRecognition
