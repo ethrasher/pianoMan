@@ -24,13 +24,13 @@ class ConnectedComponent(object):
 
     def drawComponent(self, windowName="componentImg"):
         cv2.imshow(windowName, self.componentImg)
-        cv2.waitKey(0)
+        #cv2.waitKey(0)
 
     def drawComponentOnCanvas(self, binaryImg, windowName='componentOnCanvas'):
         img = cv2.cvtColor(binaryImg, cv2.COLOR_GRAY2RGB)
-        img = cv2.rectangle(img, (self.x0 - 5, self.y0 - 5), (self.x1 + 5, self.y1 + 5), (0, 0, 255), 3)
+        img = cv2.rectangle(img, (self.x0 - 5, self.y0 - 5), (self.x1 + 5, self.y1 + 5), (0, 0, 255), 6)
         cv2.imshow(windowName, img)
-        cv2.waitKey(0)
+        #cv2.waitKey(0)
 
     def findNoteheads(self, distBetweenLines):
         #information on Hough circle transform from :
@@ -135,13 +135,16 @@ class ConnectedComponent(object):
         for circle in self.circles[0, :]:
             circleY = circle[1]+self.y0
             staffStart = staffLocations[0]
-            staffEnd = staffLocations[1]
+            staffEnd = staffLocations[-1]
+            print("staffLocations:", staffLocations)
+            print(staffStart, staffEnd)
             if circleY>=staffStart and circleY<=staffEnd:
                 # we can get more accurate pitches if this is the case
+                print("Inside staff")
                 closestPitchNum = None
                 closestPitchDist = None
                 for pitch in range(9):
-                    if closestPitchDist == None or abs(circleY-staffLocations[pitch]) < closestPitchNum:
+                    if closestPitchDist == None or abs(circleY-staffLocations[pitch]) < closestPitchDist:
                         closestPitchNum = pitch
                         closestPitchDist = abs(circleY-staffLocations[pitch])
                 if self.staff%2 ==1:
@@ -154,14 +157,17 @@ class ConnectedComponent(object):
                 getToPitch = 0
                 pitch = offsetPitch
                 octave = offsetOctave
+                print(closestPitchNum)
                 while getToPitch < closestPitchNum:
                     getToPitch += 1
-                    if pitch == 0:
+                    pitch -= 1
+                    if pitch < 0:
                         pitch = len(allNotes)-1
                         octave -= 1
                 self.pitches.append({"step":allNotes[pitch], "octave":octave})
             elif circleY < staffStart:
                 #The circle is above the five stafflines
+                print("above staff")
                 if self.staff%2 ==1:
                     # treble cleff
                     offsetPitch = 3
@@ -182,6 +188,7 @@ class ConnectedComponent(object):
                 self.pitches.append({"step": allNotes[pitch], "octave": octave})
             else:
                 #The circle is below the five stafflines
+                print("below staff")
                 if self.staff%2 ==1:
                     # treble cleff
                     offsetPitch = 2
@@ -218,6 +225,7 @@ def segmentationAndRecognition(binaryImg, staffLines):
         print("staff:", comp.staff)
         comp.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
         print("pitches:", comp.pitches)
+        cv2.waitKey(0)
     return connectedComponents
 
 def findConnectedComponents(binaryImg):
