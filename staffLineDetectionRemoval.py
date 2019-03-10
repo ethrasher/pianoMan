@@ -14,7 +14,7 @@ def staffLineDetectionRemoval(binaryImg):
     print("in staffLineDetectionRemoval")
     amountRowBlack = findNumBlackPixels(binaryImg=binaryImg)
     staffLineRows = findStaffLineRows(amountRowBlack=amountRowBlack)
-    plotBlackInRows(amountRowBlack=amountRowBlack)
+    #plotBlackInRows(amountRowBlack=amountRowBlack)
     noStaffBinaryImg = removeStaffLines(binaryImg=binaryImg, staffLineIndexes=staffLineRows)
     noTitleStaffBinaryImg = removeTitle(binaryImg=noStaffBinaryImg, staffLineIndexes=staffLineRows)
     showBinaryImage(binaryImg=noTitleStaffBinaryImg)

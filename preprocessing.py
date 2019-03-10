@@ -27,6 +27,8 @@ def showBinaryImage(binaryImg):
     #DESCRIPTION: opens a new window and displays the image
     #PARAMETERS: binaryImage: numpy array of the binarized image (255 or 0 in all pixels)
     #RETURN: void
+    #cv2.namedWindow('image', cv2.WINDOW_NORMAL)
+    #cv2.resizeWindow('image', 400, 600)
     cv2.imshow('image',binaryImg)
     cv2.waitKey(0)
     #cv2.destroyAllWindows()
