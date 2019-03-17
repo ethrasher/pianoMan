@@ -2,40 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component100.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component101.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component140.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component141.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component142.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component143.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component148.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component149.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component199.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component200.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component203.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component204.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component205.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component206.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component208.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component209.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component210.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component26.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component27.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component28.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component29.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component30.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component31.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component85.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component86.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component89.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component90.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component91.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component92.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quater/component99.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_quarter/stemUp/component132 copy 3.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/segmentationAndRecognition.py" afterPath="$PROJECT_DIR$/segmentationAndRecognition.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/staffLineDetectionRemoval.py" afterPath="$PROJECT_DIR$/staffLineDetectionRemoval.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -59,24 +28,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="staffLineDetectionRemoval.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="staffLineDetectionRemoval.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/staffLineDetectionRemoval.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="25" column="56" lean-forward="false" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+            <state relative-caret-position="30">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generateMusicXml.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generateMusicXML/generateMusicXml.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2340">
-              <caret line="157" column="7" lean-forward="false" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -85,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="138">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
                 <element signature="e#78#87#0" expanded="true" />
               </folding>
@@ -93,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1268">
-              <caret line="371" column="43" lean-forward="true" selection-start-line="371" selection-start-column="43" selection-end-line="371" selection-end-column="43" />
+            <state relative-caret-position="89">
+              <caret line="236" column="28" lean-forward="false" selection-start-line="236" selection-start-column="28" selection-end-line="236" selection-end-column="28" />
               <folding>
                 <element signature="e#223#241#0" expanded="true" />
               </folding>
@@ -132,6 +89,7 @@
       <find>notes</find>
       <find>saveCom</find>
       <find>save</find>
+      <find>unique</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,16 +102,16 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/musicSymbolRecognition.py" />
         <option value="$PROJECT_DIR$/preprocessing.py" />
-        <option value="$PROJECT_DIR$/staffLineDetectionRemoval.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
+        <option value="$PROJECT_DIR$/staffLineDetectionRemoval.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="111" />
+    <option name="x" value="227" />
     <option name="y" value="24" />
-    <option name="width" value="1167" />
+    <option name="width" value="1051" />
     <option name="height" value="731" />
   </component>
   <component name="ProjectView">
@@ -181,31 +139,12 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="generateMusicXML" type="cbb8eebc:String" user="generateMusicXML" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
               <item name="music_images" type="cbb8eebc:String" user="music_images" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="templates" type="cbb8eebc:String" user="templates" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="templates" type="cbb8eebc:String" user="templates" />
-              <item name="aaa_note_chord" type="cbb8eebc:String" user="aaa_note_chord" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="templates" type="cbb8eebc:String" user="templates" />
-              <item name="aaa_note_chord" type="cbb8eebc:String" user="aaa_note_chord" />
-              <item name="stemDown" type="cbb8eebc:String" user="stemDown" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="templates" type="cbb8eebc:String" user="templates" />
-              <item name="aaa_note_sixteenth" type="cbb8eebc:String" user="aaa_note_sixteenth" />
             </path>
           </expand>
           <select />
@@ -288,14 +227,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="111" y="24" width="1167" height="731" extended-state="0" />
+    <frame x="227" y="24" width="1051" height="731" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18666667" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20812686" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5039139" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.4960861" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.4960861" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24938068" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19157721" sideWeight="0.50877196" order="2" side_tool="true" content_ui="tabs" />
@@ -698,24 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generateMusicXML/generateMusicXml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="157" column="7" lean-forward="false" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staffLineDetectionRemoval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="56" lean-forward="false" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/aaa_note_chord/stemDown/component336.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -732,20 +654,38 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding>
             <element signature="e#78#87#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/generateMusicXML/generateMusicXml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="157" column="7" lean-forward="false" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1268">
-          <caret line="371" column="43" lean-forward="true" selection-start-line="371" selection-start-column="43" selection-end-line="371" selection-end-column="43" />
+        <state relative-caret-position="89">
+          <caret line="236" column="28" lean-forward="false" selection-start-line="236" selection-start-column="28" selection-end-line="236" selection-end-column="28" />
           <folding>
             <element signature="e#223#241#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staffLineDetectionRemoval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

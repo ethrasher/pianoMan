@@ -24,23 +24,12 @@ def findNumBlackPixels(binaryImg):
     #DESCRIPTION: organizes the image by finding the number of black pixels per row
     #PARAMETERS: binaryImg: numpy array of the binarized image (255 or 0 in all places)
     #RETURN: amountRowBlack: a 1D numpy array containing the number of black pixels in each row
-    rowNumbs = np.zeros(binaryImg.shape[0])
     amountRowBlack = np.zeros(binaryImg.shape[0])
-    print("starting long loop")
-    #TODO: make this faster. There is probably a way with numpy
     # i is the row, j is the col
     for i in range(binaryImg.shape[0]):
-        totalColNumber = binaryImg.shape[1]
-        centerCol = int(totalColNumber/2)
-        colsToCheck = int(totalColNumber*.5)
-        startCol = int(centerCol - colsToCheck/2)
-        endCol = int(centerCol + colsToCheck/2)
-        for j in range(startCol, endCol):
-            if binaryImg[i, j] == 255:
-                amountRowBlack[i] += 1
-        amountRowBlack[i] = binaryImg.shape[1] - amountRowBlack[i]
-        rowNumbs[i] = i
-    print("end of long loop")
+        unique, counts = np.unique(binaryImg[i], return_counts=True)
+        blackCounts = dict(zip(unique, counts)).get(0, 0)
+        amountRowBlack[i] = blackCounts
     return amountRowBlack
 
 def findStaffLineRows(amountRowBlack):

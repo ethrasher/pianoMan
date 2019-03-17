@@ -217,15 +217,21 @@ class ConnectedComponent(object):
                 self.pitches.append({"step": allNotes[pitch], "octave": octave})
 
     def templateMatch(self, compNum=0):
-        print("start templateMatch")
         allTemplatesPath = scriptPath = os.path.dirname(os.path.realpath(__file__)) + "/templates"
         bestTemplatePath = None
         bestMatch = 0.8 # need to be over 80% to be considered a match anyway
         allSubFiles = getAllSubFolders(allTemplatesPath)
+        compImgWHRatio = self.componentImg.shape[0]/self.componentImg.shape[1]
         for templatePath in allSubFiles:
             templateImg = cv2.imread(templatePath, 0)  # Load an color image in grayscale of the page of music
-            templateImg = cv2.resize(templateImg, (self.componentImg.shape[1], self.componentImg.shape[0]))
             ret, templateImg = cv2.threshold(templateImg, 230, 255, cv2.THRESH_BINARY)
+            #check if porportions ratio is roughly the same
+            templateImgWHRatio = templateImg.shape[0]/templateImg.shape[1]
+            ratioThreshold = .25
+            if (abs(1-compImgWHRatio/templateImgWHRatio) > ratioThreshold):
+                continue
+            #check pixel differences when resized
+            templateImg = cv2.resize(templateImg, (self.componentImg.shape[1], self.componentImg.shape[0]))
             # find all differences in pixel values between the two images
             # from here: https://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_xor.html
             diffImg = np.logical_xor(self.componentImg, templateImg)
@@ -240,7 +246,6 @@ class ConnectedComponent(object):
                 bestTemplatePath = templatePath
                 if round(matchValue) == 1:
                     break
-        print("end template matching")
         print("bestTemplatePath:", bestTemplatePath)
         print("bestMatchVal:", bestMatch)
         # update attributes based on which template matches
@@ -358,19 +363,25 @@ def segmentationAndRecognition(binaryImg, staffLines):
     lineDist = getAverageLineDist(staffLines=staffLines)
     compNum = 0
     print("Number of CC:", len(connectedComponents))
+    saveComponentList = []
     for comp in connectedComponents:
         comp.drawComponentOnCanvas(binaryImg=binaryImg)
         comp.drawComponent()
+        cv2.waitKey(0)
+        print("Working on comp:", compNum)
+        if compNum in saveComponentList:
+            comp.saveComponent(compNum=compNum)
         if compNum >= 1:
             comp.templateMatch(compNum=compNum)
         if comp.typeName == None or comp.typeName == "note":
             comp.findNoteheads(lineDist)
-            print("Done finding noteheads")
-            comp.getStaff(staffLines=staffLines)
-            print("staff:", comp.staff)
-            comp.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
-            print("pitches:", comp.pitches)
+            if compNum >= 1:
+                comp.getStaff(staffLines=staffLines)
+                print("staff:", comp.staff)
+                comp.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
+                print("pitches:", comp.pitches)
         cv2.waitKey(0)
+        print()
         compNum += 1
     return connectedComponents
 
