@@ -7,6 +7,7 @@ import numpy as np
 import cv2
 import math
 import os
+import time
 
 #An Object to keep track of all the connected components
 #Eventually will add more here like noteheads and pitch
@@ -24,6 +25,7 @@ class ConnectedComponent(object):
         self.pitches = []
         # typeName could be: note, rest, accent, other (for clefs and time sig and things)
         self.typeName = None
+        self.subTypeName = None
         # durationName could be: whole, half, quarter, eighth, sixteenth
         self.durationName = None
 
@@ -151,7 +153,6 @@ class ConnectedComponent(object):
             staffEnd = staffLocations[-1]
             if circleY>=staffStart and circleY<=staffEnd:
                 # we can get more accurate pitches if this is the case
-                print("Inside staff")
                 closestPitchNum = None
                 closestPitchDist = None
                 for pitch in range(9):
@@ -177,7 +178,6 @@ class ConnectedComponent(object):
                 self.pitches.append({"step":allNotes[pitch], "octave":octave})
             elif circleY < staffStart:
                 #The circle is above the five stafflines
-                print("above staff")
                 if self.staff%2 ==1:
                     # treble cleff
                     offsetPitch = 3
@@ -198,7 +198,6 @@ class ConnectedComponent(object):
                 self.pitches.append({"step": allNotes[pitch], "octave": octave})
             else:
                 #The circle is below the five stafflines
-                print("below staff")
                 if self.staff%2 ==1:
                     # treble cleff
                     offsetPitch = 2
@@ -217,10 +216,138 @@ class ConnectedComponent(object):
                         octave -= 1
                 self.pitches.append({"step": allNotes[pitch], "octave": octave})
 
-    def templateMatch(self):
+    def templateMatch(self, compNum=0):
+        print("start templateMatch")
         allTemplatesPath = scriptPath = os.path.dirname(os.path.realpath(__file__)) + "/templates"
-
-
+        bestTemplatePath = None
+        bestMatch = 0.8 # need to be over 80% to be considered a match anyway
+        allSubFiles = getAllSubFolders(allTemplatesPath)
+        for templatePath in allSubFiles:
+            templateImg = cv2.imread(templatePath, 0)  # Load an color image in grayscale of the page of music
+            templateImg = cv2.resize(templateImg, (self.componentImg.shape[1], self.componentImg.shape[0]))
+            ret, templateImg = cv2.threshold(templateImg, 230, 255, cv2.THRESH_BINARY)
+            # find all differences in pixel values between the two images
+            # from here: https://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_xor.html
+            diffImg = np.logical_xor(self.componentImg, templateImg)
+            # find counts of all True values (differences)
+            unique, counts = np.unique(diffImg, return_counts=True)
+            sameCounts = dict(zip(unique, counts)).get(False, 0)
+            totalPixels = self.componentImg.shape[0] * self.componentImg.shape[1]
+            matchValue = sameCounts/totalPixels
+            # check if this template is a better match than what we have seen previously
+            if matchValue > bestMatch:
+                bestMatch = matchValue
+                bestTemplatePath = templatePath
+                if round(matchValue) == 1:
+                    break
+        print("end template matching")
+        print("bestTemplatePath:", bestTemplatePath)
+        print("bestMatchVal:", bestMatch)
+        # update attributes based on which template matches
+        if (bestTemplatePath == None):
+            # could not find a template to match
+            self.saveComponent(compNum=compNum)
+            print("Could not match to a template")
+            return
+        templatePath = bestTemplatePath.split("templates/")[1]
+        if templatePath.find("aaa_clef_treble") >= 0:
+            # it is a treble_clef
+            self.typeName = "clef"
+            self.subTypeName = "treble"
+            self.durationName = None
+        elif templatePath.find("aaa_clef_base") >= 0:
+            # it is a base_clef
+            self.typeName = "clef"
+            self.subTypeName = "base"
+            self.durationName = None
+        elif templatePath.find("aaa_timeSignature") >= 0:
+            # it is a timeSig
+            self.typeName = "time signature"
+            self.subTypeName = templatePath.split("/")[1]
+            self.durationName = None
+        elif templatePath.find("aaa_measure_bar") >= 0:
+            # it is a measure_bar
+            self.typeName = "measure bar"
+            self.subTypeName = None
+            self.durationName = None
+        elif templatePath.find("aaa_staveSwirl") >= 0:
+            # it is a stave Swirl
+            self.typeName = "stave swirl"
+            self.subTypeName = None
+            self.durationName = None
+        elif templatePath.find("aaa_alphaNum") >= 0:
+            # it is an alpha-numeric character
+            self.typeName = "alphaNum"
+            self.subTypeName = None
+            self.durationName = None
+        elif templatePath.find("aaa_note_eighth") >= 0:
+            # it is an eighth note
+            self.typeName = "note"
+            self.subTypeName = None
+            self.durationName = "eighth"
+        elif templatePath.find("aaa_note_half") >= 0:
+            # it is a half note
+            self.typeName = "note"
+            self.subTypeName = None
+            self.durationName = "half"
+        elif templatePath.find("aaa_note_quarter") >= 0:
+            # it is a quarter note
+            self.typeName = "note"
+            self.subTypeName = None
+            self.durationName = "quarter"
+        elif templatePath.find("aaa_note_sixteenth") >= 0:
+            # it is a sixteenth note
+            self.typeName = "note"
+            self.subTypeName = None
+            self.durationName = "sixteenth"
+        elif templatePath.find("aaa_note_whole") >= 0:
+            # it is a whole note
+            self.typeName = "note"
+            self.subTypeName = None
+            self.durationName = "whole"
+        elif templatePath.find("aaa_rest_eighth") >= 0:
+            # it is an eighth rest
+            self.typeName = "rest"
+            self.subTypeName = None
+            self.durationName = "eighth"
+        elif templatePath.find("aaa_rest_half") >= 0:
+            # it is a half rest
+            self.typeName = "rest"
+            self.subTypeName = None
+            self.durationName = "half"
+        elif templatePath.find("aaa_rest_quarter") >= 0:
+            # it is a quarter rest
+            self.typeName = "rest"
+            self.subTypeName = None
+            self.durationName = "quarter"
+        elif templatePath.find("aaa_rest_sixteenth") >= 0:
+            # it is a sixteenth rest
+            self.typeName = "rest"
+            self.subTypeName = None
+            self.durationName = "sixteenth"
+        elif templatePath.find("aaa_rest_whole") >= 0:
+            # it is a whole rest
+            self.typeName = "rest"
+            self.subTypeName = None
+            self.durationName = "whole"
+        elif templatePath.find("aaa_accent") >= 0:
+            #it is an accent
+            self.typeName = "accent"
+            self.subTypeName = templatePath.split("/")[1]
+            self.durationName = None
+        elif templatePath.find("aaa_note_chord") >= 0:
+            # it is a multi-note chord
+            self.typeName = "note"
+            self.subTypeName = "chord"
+            self.durationName = (templatePath.split("/")[2]).split("_")[1]
+        elif templatePath.find("aaa_note_connected") >= 0:
+            # it is a series of connected notes
+            self.typeName = "note"
+            self.subTypeName = "connected"
+            self.durationName = None
+        print("TypeName:", self.typeName)
+        print("SubTypeName:", self.subTypeName)
+        print("DurationName:", self.durationName)
 
 
 def segmentationAndRecognition(binaryImg, staffLines):
@@ -229,21 +356,20 @@ def segmentationAndRecognition(binaryImg, staffLines):
     #first connected component
     drawConnectedComponentsAnno(binaryImg, connectedComponents)
     lineDist = getAverageLineDist(staffLines=staffLines)
-    print("Number of CC:", len(connectedComponents))
     compNum = 0
+    print("Number of CC:", len(connectedComponents))
     for comp in connectedComponents:
         comp.drawComponentOnCanvas(binaryImg=binaryImg)
         comp.drawComponent()
-        if compNum != 0:
-            comp.saveComponent(compNum = compNum)
-
-
-        comp.findNoteheads(lineDist)
-        print("Done finding noteheads")
-        comp.getStaff(staffLines=staffLines)
-        print("staff:", comp.staff)
-        comp.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
-        print("pitches:", comp.pitches)
+        if compNum >= 1:
+            comp.templateMatch(compNum=compNum)
+        if comp.typeName == None or comp.typeName == "note":
+            comp.findNoteheads(lineDist)
+            print("Done finding noteheads")
+            comp.getStaff(staffLines=staffLines)
+            print("staff:", comp.staff)
+            comp.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
+            print("pitches:", comp.pitches)
         cv2.waitKey(0)
         compNum += 1
     return connectedComponents
@@ -284,6 +410,19 @@ def getAverageLineDist(staffLines):
     for i in range(1, len(singleYLines)):
         distances.append(singleYLines[i]-singleYLines[i-1])
     return sorted(distances)[int(len(distances)/2)]
+
+def getAllSubFolders(path):
+    if os.path.isfile(path):
+        if path[0] != "." and path.endswith(".jpg"):
+            return [path]
+        else:
+            return []
+    else:
+        allPaths = []
+        for filename in os.listdir(path):
+            allPaths += getAllSubFolders(path + os.sep + filename)
+        return allPaths
+
 
 
 ###VISUALIZATION/DEBUGGING FUNCTIONS
