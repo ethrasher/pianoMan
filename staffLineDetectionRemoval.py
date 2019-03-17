@@ -28,8 +28,14 @@ def findNumBlackPixels(binaryImg):
     amountRowBlack = np.zeros(binaryImg.shape[0])
     print("starting long loop")
     #TODO: make this faster. There is probably a way with numpy
+    # i is the row, j is the col
     for i in range(binaryImg.shape[0]):
-        for j in range(binaryImg.shape[1]):
+        totalColNumber = binaryImg.shape[1]
+        centerCol = int(totalColNumber/2)
+        colsToCheck = int(totalColNumber*.5)
+        startCol = int(centerCol - colsToCheck/2)
+        endCol = int(centerCol + colsToCheck/2)
+        for j in range(startCol, endCol):
             if binaryImg[i, j] == 255:
                 amountRowBlack[i] += 1
         amountRowBlack[i] = binaryImg.shape[1] - amountRowBlack[i]

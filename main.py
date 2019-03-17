@@ -12,10 +12,12 @@ from musicSymbolRecognition import musicSymbolRecognition
 #TODO: be able to handle multiple images/multiple pages
 print("start")
 scriptPath = os.path.dirname(os.path.realpath(__file__))
-#imagePath = scriptPath+'/music_images/happyBirthday/Happy_Birthday_To_You_Piano.jpg'
-#imagePath = scriptPath+'/music_images/swansOnTheLakeEasy/Swans_on_the_lake_easy.jpg'
-pdfPath = scriptPath+'/music_images/happyBirthday/Happy_Birthday_To_You_Piano.pdf'
-#pdfPath = scriptPath+'/music_images/swansOnTheLakeEasy/Swans_on_the_lake_easy.pdf'
+# pdfPath = scriptPath+'/music_images/happyBirthday/Happy_Birthday_To_You_Piano.pdf'
+# pdfPath = scriptPath+'/music_images/swansOnTheLakeEasy/Swans_on_the_lake_easy.pdf'
+# pdfPath = scriptPath+'/music_images/youveGotAFriendInMe/Youve_Got_A_Friend_In_Me.pdf'
+# pdfPath = scriptPath+'/music_images/IKONLoveScenario/IKON_Love_Scenario.pdf'
+# pdfPath = scriptPath+'/music_images/doReMi/Do_Re_Mi.pdf'
+pdfPath = scriptPath+'/music_images/aLoveStory/A_Love_Story.pdf'
 pdfFileName = pdfPath.split(os.sep)[-1]
 jpgFileName = pdfFileName.split(".")[0]
 pdfPreFileName = pdfPath[:len(pdfPath)-len(pdfFileName)]

@@ -6,6 +6,7 @@
 import numpy as np
 import cv2
 import math
+import os
 
 #An Object to keep track of all the connected components
 #Eventually will add more here like noteheads and pitch
@@ -21,10 +22,21 @@ class ConnectedComponent(object):
         self.stem = None
         self.staff = None
         self.pitches = []
+        # typeName could be: note, rest, accent, other (for clefs and time sig and things)
+        self.typeName = None
+        # durationName could be: whole, half, quarter, eighth, sixteenth
+        self.durationName = None
 
     def drawComponent(self, windowName="componentImg"):
         cv2.imshow(windowName, self.componentImg)
         #cv2.waitKey(0)
+
+    def saveComponent(self, compNum):
+        scriptPath = os.path.dirname(os.path.realpath(__file__))
+        compPath = scriptPath + '/templates/component%d.jpg'%(compNum)
+        print(compPath)
+        cv2.imwrite(compPath, self.componentImg)
+        print("Saved component", compNum)
 
     def drawComponentOnCanvas(self, binaryImg, windowName='componentOnCanvas'):
         img = cv2.cvtColor(binaryImg, cv2.COLOR_GRAY2RGB)
@@ -68,6 +80,7 @@ class ConnectedComponent(object):
             self.stem = "down"
         else:
             self.stem = "up"
+        print("Stem direction:", self.stem)
 
     def getStaff(self, staffLines):
         #check more obvious cases with just y0 and y1
@@ -136,8 +149,6 @@ class ConnectedComponent(object):
             circleY = circle[1]+self.y0
             staffStart = staffLocations[0]
             staffEnd = staffLocations[-1]
-            print("staffLocations:", staffLocations)
-            print(staffStart, staffEnd)
             if circleY>=staffStart and circleY<=staffEnd:
                 # we can get more accurate pitches if this is the case
                 print("Inside staff")
@@ -157,7 +168,6 @@ class ConnectedComponent(object):
                 getToPitch = 0
                 pitch = offsetPitch
                 octave = offsetOctave
-                print(closestPitchNum)
                 while getToPitch < closestPitchNum:
                     getToPitch += 1
                     pitch -= 1
@@ -207,6 +217,10 @@ class ConnectedComponent(object):
                         octave -= 1
                 self.pitches.append({"step": allNotes[pitch], "octave": octave})
 
+    def templateMatch(self):
+        allTemplatesPath = scriptPath = os.path.dirname(os.path.realpath(__file__)) + "/templates"
+
+
 
 
 def segmentationAndRecognition(binaryImg, staffLines):
@@ -216,9 +230,14 @@ def segmentationAndRecognition(binaryImg, staffLines):
     drawConnectedComponentsAnno(binaryImg, connectedComponents)
     lineDist = getAverageLineDist(staffLines=staffLines)
     print("Number of CC:", len(connectedComponents))
+    compNum = 0
     for comp in connectedComponents:
         comp.drawComponentOnCanvas(binaryImg=binaryImg)
         comp.drawComponent()
+        if compNum != 0:
+            comp.saveComponent(compNum = compNum)
+
+
         comp.findNoteheads(lineDist)
         print("Done finding noteheads")
         comp.getStaff(staffLines=staffLines)
@@ -226,6 +245,7 @@ def segmentationAndRecognition(binaryImg, staffLines):
         comp.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
         print("pitches:", comp.pitches)
         cv2.waitKey(0)
+        compNum += 1
     return connectedComponents
 
 def findConnectedComponents(binaryImg):
@@ -245,7 +265,11 @@ def findConnectedComponents(binaryImg):
         y0 = stats[label, cv2.CC_STAT_TOP]
         x1 = stats[label, cv2.CC_STAT_LEFT] + stats[label, cv2.CC_STAT_WIDTH]
         y1 = stats[label, cv2.CC_STAT_TOP] + stats[label, cv2.CC_STAT_HEIGHT]
-        connectedComponents.append(ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, fullImg=binaryImg))
+        minWidth = 10
+        minHeight = 10
+        #throw out any component too small
+        if x1-x0 >= minWidth or y1-y0 >= minHeight:
+            connectedComponents.append(ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, fullImg=binaryImg))
     return connectedComponents, labels
 
 def getAverageLineDist(staffLines):
