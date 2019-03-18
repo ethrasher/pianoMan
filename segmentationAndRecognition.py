@@ -7,7 +7,6 @@ import numpy as np
 import cv2
 import math
 import os
-import time
 
 #An Object to keep track of all the connected components
 #Eventually will add more here like noteheads and pitch
@@ -223,12 +222,14 @@ class ConnectedComponent(object):
         allSubFiles = getAllSubFolders(allTemplatesPath)
         compImgWHRatio = self.componentImg.shape[0]/self.componentImg.shape[1]
         for templatePath in allSubFiles:
+            if (compNum == 26): print(templatePath)
             templateImg = cv2.imread(templatePath, 0)  # Load an color image in grayscale of the page of music
             ret, templateImg = cv2.threshold(templateImg, 230, 255, cv2.THRESH_BINARY)
             #check if porportions ratio is roughly the same
             templateImgWHRatio = templateImg.shape[0]/templateImg.shape[1]
             ratioThreshold = .25
             if (abs(1-compImgWHRatio/templateImgWHRatio) > ratioThreshold):
+                if (compNum == 26): print("fail on ratio")
                 continue
             #check pixel differences when resized
             templateImg = cv2.resize(templateImg, (self.componentImg.shape[1], self.componentImg.shape[0]))
@@ -240,11 +241,12 @@ class ConnectedComponent(object):
             sameCounts = dict(zip(unique, counts)).get(False, 0)
             totalPixels = self.componentImg.shape[0] * self.componentImg.shape[1]
             matchValue = sameCounts/totalPixels
+            if (compNum == 26): print(matchValue)
             # check if this template is a better match than what we have seen previously
             if matchValue > bestMatch:
                 bestMatch = matchValue
                 bestTemplatePath = templatePath
-                if round(matchValue) == 1:
+                if (abs(matchValue - 1) < 10**-9):
                     break
         print("bestTemplatePath:", bestTemplatePath)
         print("bestMatchVal:", bestMatch)
