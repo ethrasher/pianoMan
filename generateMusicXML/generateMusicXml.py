@@ -40,7 +40,7 @@ def outputMusicXML(tree):
     outputFile.write(xmlContent)
 
 
-# Recursively sets all the attributes which was passed in as a dictionary
+# Recursively sets all data which was passed in as a dictionary
 def addData(root, data):
     if isinstance(data, dict):
         for (key, value) in data.items():
@@ -80,6 +80,7 @@ measures = [
      "duration": "1",
      "voice": "1",
      "type": "quarter",
+     "dot": "",
      "stem": "up",
      "staff": "1"
      },
