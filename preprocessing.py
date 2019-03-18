@@ -1,10 +1,7 @@
 #File to handle the preprocessing of the music sheet
 #Fairly limited because we are assuming we are getting an ideal scan
 
-import numpy as np
 import cv2
-import matplotlib.pyplot as plt
-
 
 def preprocess(path):
     # DESCRIPTION: turns a jpg into a binarized version of the image as a numpy 2D array
@@ -30,6 +27,8 @@ def showBinaryImage(binaryImg):
     #DESCRIPTION: opens a new window and displays the image
     #PARAMETERS: binaryImage: numpy array of the binarized image (255 or 0 in all pixels)
     #RETURN: void
+    #cv2.namedWindow('image', cv2.WINDOW_NORMAL)
+    #cv2.resizeWindow('image', 400, 600)
     cv2.imshow('image',binaryImg)
     cv2.waitKey(0)
     #cv2.destroyAllWindows()
