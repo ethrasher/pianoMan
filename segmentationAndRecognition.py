@@ -7,6 +7,7 @@ import numpy as np
 import cv2
 import math
 import os
+import copy
 
 #An Object to keep track of all the connected components
 #Eventually will add more here like noteheads and pitch
@@ -50,7 +51,6 @@ class ConnectedComponent(object):
         #https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghcircles/py_houghcircles.html
         #https://docs.opencv.org/2.4/modules/imgproc/doc/feature_detection.html#houghcircles
         #https://stackoverflow.com/questions/26254287/houghcircles-circle-detection-using-opencv-and-python
-
         #param1 – The higher threshold of the two passed to the Canny() edge detector(the lower one is twice smaller).
         #param2 – The accumulator threshold for the circle centers at the detection stage.
         # The smaller it is, the more false circles may be detected.
@@ -83,31 +83,49 @@ class ConnectedComponent(object):
             self.stem = "up"
         print("Stem direction:", self.stem)
 
-    def getStaff(self, staffLines):
+    def getStaff(self, staffLines, compNum=0):
         #check more obvious cases with just y0 and y1
+        if self.y1 <= staffLines[0][0]:
+            self.staff = 1
+            return
+        elif self.y0 >= staffLines[-1][-1]:
+            self.staff = len(staffLines) // 5
+            return
         for staffNum in range(0, len(staffLines), 5):
             staffStart = staffLines[staffNum][0]
             staffEnd = staffLines[staffNum + 4][-1]
             if staffStart<=self.y0<=staffEnd:
                 self.staff = staffNum // 5 + 1
+                return
             elif staffStart<=self.y1<=staffEnd:
                 self.staff = staffNum // 5 + 1
+                return
             elif self.y0 < staffStart and self.y1 > staffEnd:
                 self.staff = staffNum // 5 + 1
-            if (self.staff != None):
                 return
-        if self.staff == None or self.circles==None:
+        if self.typeName == "accent":
+            # accent must be in the middle, just choose the closest staff
+            midY = (self.y0 + self.y1)//2
+            closestStaff = None
+            distanceToStaff = None
+            for staffNum in range(4, len(staffLines)-1, 5):
+                staffMiddleStart = staffLines[staffNum][-1]
+                staffMiddleEnd = staffLines[staffNum + 1][0]
+                distanceToStart = abs(midY-staffMiddleStart)
+                distanceToEnd = abs(midY-staffMiddleEnd)
+                if distanceToStaff == None or distanceToStart < distanceToStaff:
+                    closestStaff = (staffNum-4)//5 + 1
+                    distanceToStaff = distanceToStart
+                if distanceToEnd < distanceToStaff:
+                    closestStaff = (staffNum+1)//5 +1
+                    distanceToStaff = distanceToEnd
+            self.staff = closestStaff
+
+        if self.circles==None:
             # if the component doesn't have a circle there is nothing more I can do.
             # self.staff will remain None
             return
 
-        #checking easier cases again at top and bottom
-        if self.y1<=staffLines[0][0]:
-            self.staff = 1
-            return
-        elif self.y0>=staffLines[-1][-1]:
-            self.staff = staffNum // 5 + 1
-            return
         for staffNum in range(4, len(staffLines)-1, 5):
             # must be in between two staffs (like middle C)
             staffMiddleStart = staffLines[staffNum][-1]
@@ -363,28 +381,38 @@ def segmentationAndRecognition(binaryImg, staffLines):
     #first connected component
     drawConnectedComponentsAnno(binaryImg, connectedComponents)
     lineDist = getAverageLineDist(staffLines=staffLines)
-    compNum = 0
+    compNum = 1
     print("Number of CC:", len(connectedComponents))
     saveComponentList = []
-    for comp in connectedComponents:
-        comp.drawComponentOnCanvas(binaryImg=binaryImg)
-        comp.drawComponent()
-        cv2.waitKey(0)
+    measuresToAddToCompList = []
+    for comp in connectedComponents[1:]:
+        #comp.drawComponentOnCanvas(binaryImg=binaryImg)
+        #comp.drawComponent()
+        #cv2.waitKey(0)
         print("Working on comp:", compNum)
         if compNum in saveComponentList:
             comp.saveComponent(compNum=compNum)
-        if compNum >= 1:
-            comp.templateMatch(compNum=compNum)
-        if comp.typeName == None or comp.typeName == "note":
-            comp.findNoteheads(lineDist)
-            if compNum >= 1:
-                comp.getStaff(staffLines=staffLines)
-                print("staff:", comp.staff)
-                comp.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
-                print("pitches:", comp.pitches)
-        cv2.waitKey(0)
+        comp.templateMatch(compNum=compNum)
+        if comp.typeName == None or comp.typeName == "note" or comp.typeName == "rest" or comp.typeName == "accent":
+            if comp.typeName == "note" or comp.typeName == None:
+                comp.findNoteheads(lineDist)
+            comp.getStaff(staffLines=staffLines)
+            print("staff:", comp.staff)
+            comp.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
+            print("pitches:", comp.pitches)
+        if comp.typeName == "measure bar":
+            comp.getStaff(staffLines = staffLines)
+            newMeasureBar = copy.deepcopy(comp)
+            newMeasureBar.staff += 1
+            measuresToAddToCompList.append(newMeasureBar)
+        #cv2.waitKey(0)
         print()
         compNum += 1
+    connectedComponents = connectedComponents + measuresToAddToCompList
+    allNotesRestsAccents = reorganizeNotesByStaffLoc(connectedComponents, binaryImg)
+    for note in allNotesRestsAccents:
+        note.drawComponentOnCanvas(binaryImg=binaryImg)
+        cv2.waitKey(0)
     return connectedComponents
 
 def findConnectedComponents(binaryImg):
@@ -436,6 +464,26 @@ def getAllSubFolders(path):
             allPaths += getAllSubFolders(path + os.sep + filename)
         return allPaths
 
+
+def reorganizeNotesByStaffLoc(connectedComponents, binaryImg):
+    allNotesRestsAccents = []
+    maxStaff = None
+    for comp in connectedComponents:
+        if comp.typeName == "note" or comp.typeName == "rest" or comp.typeName == "accent" or comp.typeName == "measure bar":
+            allNotesRestsAccents.append(comp)
+            if comp.staff == None:
+                comp.drawComponentOnCanvas(binaryImg=binaryImg)
+                cv2.waitKey(0)
+            if maxStaff == None or comp.staff > maxStaff:
+                maxStaff = comp.staff
+    notesByStaff = [[] for i in range(maxStaff)]
+    for item in allNotesRestsAccents:
+        notesByStaff[item.staff-1].append(item)
+    fullList = []
+    for staff in notesByStaff:
+        staff.sort(key=lambda note: note.x0)
+        fullList += staff
+    return fullList
 
 
 ###VISUALIZATION/DEBUGGING FUNCTIONS
