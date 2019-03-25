@@ -1,5 +1,3 @@
-#TODO: need to figure out how to convert pdf to jpg. Python is annoying here
-
 import os
 import cv2
 from pdf2image import convert_from_path
@@ -10,7 +8,6 @@ from generateMusicXml import formXML
 #python alias with opencv => pythoncv
 
 #pdf2image info from https://stackoverflow.com/questions/46184239/python-extract-a-page-from-a-pdf-as-a-jpeg
-#TODO: be able to handle multiple images/multiple pages
 print("start")
 scriptPath = os.path.dirname(os.path.realpath(__file__))
 pdfPath = scriptPath+'/music_images/swansOnTheLakeEasy/Swans_on_the_lake_easy.pdf'
@@ -28,9 +25,11 @@ for pageNum in range(len(pages)):
     fullJPGFileName = pdfPreFileName+jpgFileName+"-"+str(pageNum)+".jpg"
     page.save(fullJPGFileName, 'JPEG')
 
-imagePath = fullJPGFileName = pdfPreFileName+jpgFileName+"-"+str(0)+".jpg"
-binaryImg = preprocess(path=imagePath)
-print("done with preprocess")
-allMeasures = musicSymbolRecognition(binaryImg = binaryImg)
+allMeasures = []
+for pageNum in range(len(pages)):
+    imagePath = fullJPGFileName = pdfPreFileName+jpgFileName+"-"+str(pageNum)+".jpg"
+    binaryImg = preprocess(path=imagePath)
+    print("done with preprocess")
+    allMeasures += musicSymbolRecognition(binaryImg = binaryImg)
 formXML(allMeasures)
 print("end")

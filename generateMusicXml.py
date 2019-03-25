@@ -3,10 +3,13 @@ from six import string_types
 import os
 
 
-def generateMusicXML(attributeDict, measuresList):
+def generateMusicXML(fileName, measureDuration, attributeDict, measuresList):
     # Setup root of XML
     # part-list, score-part, part-name
     root = etree.Element("score-partwise")
+    credit = etree.SubElement(root, "credit")
+    creditWords = etree.SubElement(credit, "credit-words")
+    creditWords.text = fileName
     partList = etree.SubElement(root, "part-list")
     scorePart = etree.SubElement(partList, "score-part", id="P1")
     partName = etree.SubElement(scorePart, "part-name")
@@ -24,8 +27,15 @@ def generateMusicXML(attributeDict, measuresList):
             addData(attributes, attributeDict)
 
         for note in measuresList[i]:
-            noteElement = etree.SubElement(measureElement, "note")
-            addData(noteElement, note)
+            if isinstance(note, dict):
+                noteElement = etree.SubElement(measureElement, "note")
+                addData(noteElement, note)
+            else:
+                # need to add backup
+                #Create backup dict
+                backupDict = {"duration":str(measureDuration)}
+                backupElement = etree.SubElement(measureElement, "backup")
+                addData(backupElement, backupDict)
 
     # Output the completed MusicXML file
     tree = etree.ElementTree(root)
@@ -38,8 +48,8 @@ def outputMusicXML(tree):
     tree.docinfo.system_url = 'http://www.musicxml.org/dtds/partwise.dtd'
     xmlContent = etree.tostring(tree, method='xml', pretty_print=True, xml_declaration=True, encoding='UTF-8')
     scriptPath = os.path.dirname(os.path.realpath(__file__))
-    print("writing file to: ", scriptPath + "/outputXML.xml")
-    outputFile = open(scriptPath + "/outputXML.xml", "wb")
+    print("writing file to: ", scriptPath + "/outBoundFiles/outputXML.xml")
+    outputFile = open(scriptPath + "/outBoundFiles/outputXML.xml", "wb")
     outputFile.write(xmlContent)
 
 
@@ -182,7 +192,12 @@ def formXMLDictionaryFromObjects(allMeasures, divisions):
     for measure in allMeasures:
         print("Size of this measure", len(measure))
         dictSingleMeasure = []
+        seenBaseNote = False
         for noteElem in measure:
+            #check for adding backup, check if it is the base staff
+            if seenBaseNote == False and noteElem.staff%2 == 0:
+                seenBaseNote = True
+                dictSingleMeasure.append("backup")
             if noteElem.typeName == "note":
                 noteDict = turnNoteIntoDict(noteElem, divisions)
                 dictSingleMeasure += noteDict
@@ -200,7 +215,9 @@ def turnNoteIntoDict(noteElem, divisions):
             noteElem.pitches[noteElemIndex]["alter"] = 1
         elif noteElem.alterPitches[noteElemIndex] == "flat":
             noteElem.pitches[noteElemIndex]["alter"] = -1
-        noteDict["pitch"] = str(noteElem.pitches[noteElemIndex])
+        for key in noteElem.pitches[noteElemIndex]:
+            noteElem.pitches[noteElemIndex][key] = str(noteElem.pitches[noteElemIndex][key])
+        noteDict["pitch"] = noteElem.pitches[noteElemIndex]
         if noteElem.durationName == "quarter":
             noteDict["duration"] = str(divisions)
         elif noteElem.durationName == "half":
@@ -245,6 +262,7 @@ def turnRestIntoDict(restElem, divisions):
 
 def formXML(allMeasures):
     dictMeasures = formXMLDictionaryFromObjects(allMeasures, 1)
-    generateMusicXML(attribute, dictMeasures)
+    measureDuration = attribute["time"]["beats"]
+    generateMusicXML("fileName here", measureDuration, attribute, dictMeasures)
 
 #generateMusicXML(attribute, measures)
