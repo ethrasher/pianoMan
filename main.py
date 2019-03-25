@@ -1,11 +1,27 @@
 import os
-import cv2
+import paramiko
 from pdf2image import convert_from_path
 from preprocessing import preprocess
 from musicSymbolRecognition import musicSymbolRecognition
 from generateMusicXml import formXML
 
+#From: https://github.com/ansible/ansible/issues/52598
+import warnings
+warnings.filterwarnings(action='ignore',module='.*paramiko.*')
+
+#Information about paramiko from:
+#http://docs.paramiko.org/en/2.4/api/client.html
+#https://medium.com/@keagileageek/paramiko-how-to-ssh-and-file-transfers-with-python-75766179de73
+#https://github.com/paramiko/paramiko
+#https://stackoverflow.com/questions/250283/how-to-scp-in-python
+
 #python alias with opencv => pythoncv
+def createSSHClient():
+    client = paramiko.SSHClient()
+    client.load_system_host_keys()
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.connect(hostname="172.26.197.78", port=22, username="pi", password="pianoMan2019")
+    return client
 
 #pdf2image info from https://stackoverflow.com/questions/46184239/python-extract-a-page-from-a-pdf-as-a-jpeg
 print("start")
@@ -32,4 +48,13 @@ for pageNum in range(len(pages)):
     print("done with preprocess")
     allMeasures += musicSymbolRecognition(binaryImg = binaryImg)
 formXML(allMeasures)
+print("made XML file")
+# scp Piano_Man_Piano.jpg pi@172.26.197.78:Desktop/PianoManProject/MusicXML_MuseScore/PianoMan.jpg
+ssh = createSSHClient()
+ftp_client=ssh.open_sftp()
+scriptPath = os.path.dirname(os.path.realpath(__file__))
+outGoingDest = scriptPath + "/outBoundFiles/outputXML.xml"
+inComingDest = "/home/pi/Desktop/PianoManProject/MusicXML_MuseScore/outputXML.xml"
+ftp_client.put(outGoingDest,inComingDest)
+ftp_client.close()
 print("end")
