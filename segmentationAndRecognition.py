@@ -409,11 +409,12 @@ def segmentationAndRecognition(binaryImg, staffLines):
         compNum += 1
     connectedComponents = connectedComponents + measuresToAddToCompList
     allMeasures = reorganizeNotesByMeasure(connectedComponents)
-    for measure in allMeasures:
-        for noteElem in measure:
-            noteElem.drawComponentOnCanvas(binaryImg=binaryImg)
-            cv2.waitKey(0)
-    allMeasures = putAccentsOnNotes(allMeasures)
+    #for measure in allMeasures:
+    #    for noteElem in measure:
+    #        noteElem.drawComponentOnCanvas(binaryImg=binaryImg)
+    #        cv2.waitKey(0)
+    allMeasures = putAccentsOnNotes(allMeasures, lineDist)
+    print("done putting accents on notes")
     return allMeasures
 
 def findConnectedComponents(binaryImg):
@@ -549,10 +550,10 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
         noteElem = firstMeasure[noteElemIndex]
     if noteElem.typeName == "rest":
         # a rest cannot have a sharp or flat, all previous ones must be part of keySig
-        return getFlatsSharps(keySig=keySig)
+        return getKeySigDict(keySig=keySig)
     elif lastNote == None:
         assert(keySig == 0)
-        return getFlatsSharps(keySig=keySig)
+        return getKeySigDict(keySig=keySig)
     else:
         # need to check that the last note is actually part of the keySig and not part of the first note
         # need to check each pitch in this note and the dist between them and accent
@@ -569,9 +570,9 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
                     keySig -= 1
                 elif lastNote.subTypename == "flat":
                     keySig += 1
-                return getFlatsSharps(keySig=keySig)
+                return getKeySigDict(keySig=keySig)
         # All pitches were far enough away
-        return getFlatsSharps(keySig=keySig)
+        return getKeySigDict(keySig=keySig)
 
 
 def putDotOnNote(noteElem, dotElem, accentToNoteDistThreshold):
@@ -677,7 +678,7 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
     return newMeasure
 
 
-def getFlatsSharps(keySig):
+def getKeySigDict(keySig):
     sharpsFlats = {"A":"natural", "B":"natural", "C":"natural", "D":"natural", "E":"natural", "F":"natural", "G":"natural"}
     if keySig >= 1:
         sharpsFlats["F"] = "sharp"

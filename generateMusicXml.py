@@ -1,5 +1,6 @@
 from lxml import etree
 from six import string_types
+import os
 
 
 def generateMusicXML(attributeDict, measuresList):
@@ -36,7 +37,9 @@ def outputMusicXML(tree):
     tree.docinfo.public_id = '-//Recordare//DTD MusicXML 2.0 Partwise//EN'
     tree.docinfo.system_url = 'http://www.musicxml.org/dtds/partwise.dtd'
     xmlContent = etree.tostring(tree, method='xml', pretty_print=True, xml_declaration=True, encoding='UTF-8')
-    outputFile = open("outputXML.xml", "wb")
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    print("writing file to: ", scriptPath + "/outputXML.xml")
+    outputFile = open(scriptPath + "/outputXML.xml", "wb")
     outputFile.write(xmlContent)
 
 
@@ -174,8 +177,10 @@ measures = [
 ]
 
 def formXMLDictionaryFromObjects(allMeasures, divisions):
+    print("Size all Measures", len(allMeasures))
     dictMeasures = []
     for measure in allMeasures:
+        print("Size of this measure", len(measure))
         dictSingleMeasure = []
         for noteElem in measure:
             if noteElem.typeName == "note":
@@ -185,28 +190,37 @@ def formXMLDictionaryFromObjects(allMeasures, divisions):
                 restDict = turnRestIntoDict(noteElem, divisions)
                 dictSingleMeasure += restDict
         dictMeasures.append(dictSingleMeasure)
-        return dictMeasures
+    return dictMeasures
 
 def turnNoteIntoDict(noteElem, divisions):
     notes = []
     for noteElemIndex in range(len(noteElem.pitches)):
         noteDict = dict()
-        noteDict["pitch"] = noteElem.pitches[noteElemIndex]
+        if noteElem.alterPitches[noteElemIndex] == "sharp":
+            noteElem.pitches[noteElemIndex]["alter"] = 1
+        elif noteElem.alterPitches[noteElemIndex] == "flat":
+            noteElem.pitches[noteElemIndex]["alter"] = -1
+        noteDict["pitch"] = str(noteElem.pitches[noteElemIndex])
         if noteElem.durationName == "quarter":
-            noteDict["duration"] = divisions
+            noteDict["duration"] = str(divisions)
         elif noteElem.durationName == "half":
-            noteDict["duration"] = 2*divisions
+            noteDict["duration"] = str(2*divisions)
         elif noteElem.durationName == "whole":
-            noteDict["duration"] = 4*divisions
+            noteDict["duration"] = str(4*divisions)
         elif noteElem.durationName == "eighth":
-            noteDict["duration"] = int(divisions//2)
+            noteDict["duration"] = str(int(divisions//2))
         elif noteElem.durationName == "sixteenth":
-            noteDict["duration"] = int(divisions//4)
-        noteDict["type"] = noteElem.durationName
-        noteDict["stem"] = noteElem.stem
-        noteDict["staff"] = noteElem.staff % 2
+            noteDict["duration"] = str(int(divisions//4))
+        noteDict["type"] = str(noteElem.durationName)
+        noteDict["stem"] = str(noteElem.stem)
+        prelimStaff = noteElem.staff % 2
+        if prelimStaff == 1:
+            noteDict["staff"] = "1"
+        else:
+            noteDict["staff"] = "2"
         if noteElem.dottedPitches[noteElemIndex]:
             noteDict["dot"] = None
+            noteDict["duration"] = str(int(int(noteDict["duration"])*1.5))
         if noteElemIndex > 0:
             noteDict["chord"] = None
         notes.append(noteDict)
@@ -216,21 +230,21 @@ def turnRestIntoDict(restElem, divisions):
     restDict = dict()
     restDict["rest"] = None
     if restElem.durationName == "quarter":
-        restDict["duration"] = divisions
+        restDict["duration"] = str(divisions)
     elif restElem.durationName == "half":
-        restDict["duration"] = 2 * divisions
+        restDict["duration"] = str(2 * divisions)
     elif restElem.durationName == "whole":
-        restDict["duration"] = 4 * divisions
+        restDict["duration"] = str(4 * divisions)
     elif restElem.durationName == "eighth":
-        restDict["duration"] = int(divisions // 2)
+        restDict["duration"] = str(int(divisions // 2))
     elif restElem.durationName == "sixteenth":
-        restDict["duration"] = int(divisions // 4)
-    restDict["type"] = restElem.durationName
-    restDict["staff"] = restElem.staff % 2
+        restDict["duration"] = str(int(divisions // 4))
+    restDict["type"] = str(restElem.durationName)
+    restDict["staff"] = str(restElem.staff % 2)
     return [restDict]
 
 def formXML(allMeasures):
-    dictMeasures = formXMLDictionaryFromObjects(allMeasures)
+    dictMeasures = formXMLDictionaryFromObjects(allMeasures, 1)
     generateMusicXML(attribute, dictMeasures)
 
 #generateMusicXML(attribute, measures)

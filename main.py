@@ -32,5 +32,5 @@ imagePath = fullJPGFileName = pdfPreFileName+jpgFileName+"-"+str(0)+".jpg"
 binaryImg = preprocess(path=imagePath)
 print("done with preprocess")
 allMeasures = musicSymbolRecognition(binaryImg = binaryImg)
-# formMXL(allMeasures)
+formXML(allMeasures)
 print("end")
