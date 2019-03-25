@@ -10,5 +10,5 @@ def musicSymbolRecognition(binaryImg):
     # RETURN: staffLineRows: a 1D numpy array containing the number of black pixels in each row
     print("in musicSymbolRecognition")
     newBinaryImg, staffLineRows = staffLineDetectionRemoval(binaryImg= binaryImg)
-    notes = segmentationAndRecognition(binaryImg=binaryImg, staffLines=staffLineRows)
-    return staffLineRows
+    allMeasures = segmentationAndRecognition(binaryImg=binaryImg, staffLines=staffLineRows)
+    return allMeasures

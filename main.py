@@ -5,6 +5,7 @@ import cv2
 from pdf2image import convert_from_path
 from preprocessing import preprocess
 from musicSymbolRecognition import musicSymbolRecognition
+from generateMusicXml import formXML
 
 #python alias with opencv => pythoncv
 
@@ -30,5 +31,6 @@ for pageNum in range(len(pages)):
 imagePath = fullJPGFileName = pdfPreFileName+jpgFileName+"-"+str(0)+".jpg"
 binaryImg = preprocess(path=imagePath)
 print("done with preprocess")
-staffLineRows = musicSymbolRecognition(binaryImg = binaryImg)
+allMeasures = musicSymbolRecognition(binaryImg = binaryImg)
+# formMXL(allMeasures)
 print("end")
