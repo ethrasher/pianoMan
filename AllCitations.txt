@@ -1,0 +1,13 @@
+All my citations -> hopefully will be kept up to date as I use new things
+
+Information about paramiko from:
+1. http://docs.paramiko.org/en/2.4/api/client.html
+2. https://medium.com/@keagileageek/paramiko-how-to-ssh-and-file-transfers-with-python-75766179de73
+3. https://github.com/paramiko/paramiko
+4. https://stackoverflow.com/questions/250283/how-to-scp-in-python
+
+Dealing with warnings from paramiko
+5. https://github.com/ansible/ansible/issues/52598
+
+Doing pdf2image conversion
+6. https://stackoverflow.com/questions/46184239/python-extract-a-page-from-a-pdf-as-a-jpeg

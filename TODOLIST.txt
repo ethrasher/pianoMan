@@ -1,6 +1,6 @@
 To do list:
 
-1. Documentation catch up
+1. Documentation catch up!
 2. Separate functions into better files
 3. Allow main to be a function and take in a parameter about whether to send the output file or not
 4. Make template matching faster so that all templates are the same size (with reasonable proporions) so that I only
@@ -18,3 +18,4 @@ To do list:
 9. Remove all other black pixels that are not part of the connected component, but are close enough they are in the image
 10. Update generateXML so that I can change the attributes based on what I read music wise
     - Will also need to fix what segmentationAndRecognition returns then
+11. Gui interface where client can choose to use their product
