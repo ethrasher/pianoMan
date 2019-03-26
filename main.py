@@ -50,11 +50,13 @@ for pageNum in range(len(pages)):
 formXML(allMeasures)
 print("made XML file")
 # scp Piano_Man_Piano.jpg pi@172.26.197.78:Desktop/PianoManProject/MusicXML_MuseScore/PianoMan.jpg
-ssh = createSSHClient()
-ftp_client=ssh.open_sftp()
-scriptPath = os.path.dirname(os.path.realpath(__file__))
-outGoingDest = scriptPath + "/outBoundFiles/outputXML.xml"
-inComingDest = "/home/pi/Desktop/PianoManProject/MusicXML_MuseScore/outputXML.xml"
-ftp_client.put(outGoingDest,inComingDest)
-ftp_client.close()
+if False:
+    ssh = createSSHClient()
+    ftp_client=ssh.open_sftp()
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    outGoingDest = scriptPath + "/outBoundFiles/outputXML.xml"
+    inComingDest = "/home/pi/Desktop/PianoManProject/MusicXML_MuseScore/outputXML.xml"
+    ftp_client.put(outGoingDest,inComingDest)
+    ftp_client.close()
+    print("sent file to pi")
 print("end")

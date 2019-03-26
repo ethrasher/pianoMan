@@ -4,7 +4,6 @@
     <list default="true" id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pianoMan.sh" afterPath="$PROJECT_DIR$/pianoMan.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -50,10 +49,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="TODOLIST.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TODOLIST.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="generateMusicXml.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
+            <state relative-caret-position="735">
               <caret line="51" column="72" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="51" selection-end-column="72" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
@@ -65,7 +74,7 @@
       <file leaf-file-name="outputXML.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generateMusicXML/outputXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
+            <state relative-caret-position="510">
               <caret line="34" column="26" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="34" selection-end-column="26" />
               <folding />
             </state>
@@ -136,12 +145,13 @@
         <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
         <option value="$PROJECT_DIR$/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/TODOLIST.txt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="149" />
-    <option name="y" value="39" />
+    <option name="y" value="23" />
     <option name="width" value="1131" />
     <option name="height" value="731" />
   </component>
@@ -160,6 +170,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -180,47 +191,69 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
               <item name="/" type="cbb8eebc:String" user="/" />
-              <item name="usr" type="cbb8eebc:String" user="usr" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
               <item name="/" type="cbb8eebc:String" user="/" />
-              <item name="usr" type="cbb8eebc:String" user="usr" />
-              <item name="local" type="cbb8eebc:String" user="local" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="thrasher_elizabeth" type="cbb8eebc:String" user="thrasher_elizabeth" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
               <item name="/" type="cbb8eebc:String" user="/" />
-              <item name="usr" type="cbb8eebc:String" user="usr" />
-              <item name="local" type="cbb8eebc:String" user="local" />
-              <item name="lib" type="cbb8eebc:String" user="lib" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="thrasher_elizabeth" type="cbb8eebc:String" user="thrasher_elizabeth" />
+              <item name="Library" type="cbb8eebc:String" user="Library" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
               <item name="/" type="cbb8eebc:String" user="/" />
-              <item name="usr" type="cbb8eebc:String" user="usr" />
-              <item name="local" type="cbb8eebc:String" user="local" />
-              <item name="lib" type="cbb8eebc:String" user="lib" />
-              <item name="python3.7" type="cbb8eebc:String" user="python3.7" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="thrasher_elizabeth" type="cbb8eebc:String" user="thrasher_elizabeth" />
+              <item name="Library" type="cbb8eebc:String" user="Library" />
+              <item name="Caches" type="cbb8eebc:String" user="Caches" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
               <item name="/" type="cbb8eebc:String" user="/" />
-              <item name="usr" type="cbb8eebc:String" user="usr" />
-              <item name="local" type="cbb8eebc:String" user="local" />
-              <item name="lib" type="cbb8eebc:String" user="lib" />
-              <item name="python3.7" type="cbb8eebc:String" user="python3.7" />
-              <item name="site-packages" type="cbb8eebc:String" user="site-packages" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="thrasher_elizabeth" type="cbb8eebc:String" user="thrasher_elizabeth" />
+              <item name="Library" type="cbb8eebc:String" user="Library" />
+              <item name="Caches" type="cbb8eebc:String" user="Caches" />
+              <item name="PyCharmCE2017.2" type="cbb8eebc:String" user="PyCharmCE2017.2" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="thrasher_elizabeth" type="cbb8eebc:String" user="thrasher_elizabeth" />
+              <item name="Library" type="cbb8eebc:String" user="Library" />
+              <item name="Caches" type="cbb8eebc:String" user="Caches" />
+              <item name="PyCharmCE2017.2" type="cbb8eebc:String" user="PyCharmCE2017.2" />
+              <item name="python_stubs" type="cbb8eebc:String" user="python_stubs" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="Users" type="cbb8eebc:String" user="Users" />
+              <item name="thrasher_elizabeth" type="cbb8eebc:String" user="thrasher_elizabeth" />
+              <item name="Library" type="cbb8eebc:String" user="Library" />
+              <item name="Caches" type="cbb8eebc:String" user="Caches" />
+              <item name="PyCharmCE2017.2" type="cbb8eebc:String" user="PyCharmCE2017.2" />
+              <item name="python_stubs" type="cbb8eebc:String" user="python_stubs" />
+              <item name="1297663854" type="cbb8eebc:String" user="1297663854" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -297,27 +330,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="149" y="39" width="1131" height="731" extended-state="0" />
+    <frame x="149" y="23" width="1131" height="731" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15426998" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1570248" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5039139" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.4960861" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24938068" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19157721" sideWeight="0.50877196" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39730638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29690048" sideWeight="0.4960861" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39730638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -350,13 +383,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/staffLineDetectionRemoval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -644,17 +670,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/outputXML.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/outputXML.xml" />
     <entry file="file://$PROJECT_DIR$/generateMusicXML/outputXML.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
+        <state relative-caret-position="510">
           <caret line="34" column="26" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="34" selection-end-column="26" />
           <folding />
         </state>
@@ -670,7 +689,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
+        <state relative-caret-position="735">
           <caret line="51" column="72" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="51" selection-end-column="72" />
           <folding>
             <element signature="e#0#22#0" expanded="true" />
@@ -680,11 +699,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODOLIST.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
