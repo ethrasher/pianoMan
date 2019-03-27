@@ -68,6 +68,89 @@ def addData(root, data):
         root.text = data
 
 
+def formXMLDictionaryFromObjects(allMeasures, divisions):
+    print("Size all Measures", len(allMeasures))
+    dictMeasures = []
+    for measure in allMeasures:
+        print("Size of this measure", len(measure))
+        dictSingleMeasure = []
+        seenBaseNote = False
+        for noteElem in measure:
+            #check for adding backup, check if it is the base staff
+            if seenBaseNote == False and noteElem.staff%2 == 0:
+                seenBaseNote = True
+                dictSingleMeasure.append("backup")
+            if noteElem.typeName == "note":
+                noteDict = turnNoteIntoDict(noteElem, divisions)
+                dictSingleMeasure += noteDict
+            elif noteElem.typeName == "rest":
+                restDict = turnRestIntoDict(noteElem, divisions)
+                dictSingleMeasure += restDict
+        dictMeasures.append(dictSingleMeasure)
+    return dictMeasures
+
+def turnNoteIntoDict(noteElem, divisions):
+    notes = []
+    for noteElemIndex in range(len(noteElem.pitches)):
+        noteDict = dict()
+        if noteElem.alterPitches[noteElemIndex] == "sharp":
+            noteElem.pitches[noteElemIndex]["alter"] = 1
+        elif noteElem.alterPitches[noteElemIndex] == "flat":
+            noteElem.pitches[noteElemIndex]["alter"] = -1
+        for key in noteElem.pitches[noteElemIndex]:
+            noteElem.pitches[noteElemIndex][key] = str(noteElem.pitches[noteElemIndex][key])
+        noteDict["pitch"] = noteElem.pitches[noteElemIndex]
+        if noteElem.durationName == "quarter":
+            noteDict["duration"] = str(divisions)
+        elif noteElem.durationName == "half":
+            noteDict["duration"] = str(2*divisions)
+        elif noteElem.durationName == "whole":
+            noteDict["duration"] = str(4*divisions)
+        elif noteElem.durationName == "eighth":
+            noteDict["duration"] = str(int(divisions//2))
+        elif noteElem.durationName == "sixteenth":
+            noteDict["duration"] = str(int(divisions//4))
+        noteDict["type"] = str(noteElem.durationName)
+        noteDict["stem"] = str(noteElem.stem)
+        prelimStaff = noteElem.staff % 2
+        if prelimStaff == 1:
+            noteDict["staff"] = "1"
+        else:
+            noteDict["staff"] = "2"
+        if noteElem.dottedPitches[noteElemIndex]:
+            noteDict["dot"] = None
+            noteDict["duration"] = str(int(int(noteDict["duration"])*1.5))
+        if noteElemIndex > 0:
+            noteDict["chord"] = None
+        notes.append(noteDict)
+    return notes
+
+def turnRestIntoDict(restElem, divisions):
+    restDict = dict()
+    restDict["rest"] = None
+    if restElem.durationName == "quarter":
+        restDict["duration"] = str(divisions)
+    elif restElem.durationName == "half":
+        restDict["duration"] = str(2 * divisions)
+    elif restElem.durationName == "whole":
+        restDict["duration"] = str(4 * divisions)
+    elif restElem.durationName == "eighth":
+        restDict["duration"] = str(int(divisions // 2))
+    elif restElem.durationName == "sixteenth":
+        restDict["duration"] = str(int(divisions // 4))
+    restDict["type"] = str(restElem.durationName)
+    restDict["staff"] = str(restElem.staff % 2)
+    return [restDict]
+
+def formXML(allMeasures):
+    dictMeasures = formXMLDictionaryFromObjects(allMeasures, 1)
+    measureDuration = attribute["time"]["beats"]
+    generateMusicXML("fileName here", measureDuration, attribute, dictMeasures)
+
+
+###########EXAMPLES FOR DEVELOPING BELOW
+#generateMusicXML(attribute, measures)
+
 # Example attribute dictionary
 attribute = {"divisions": "1",
              "key": {"fifths": "0",
@@ -185,84 +268,3 @@ measures = [
      "staff": "1"
      }]
 ]
-
-def formXMLDictionaryFromObjects(allMeasures, divisions):
-    print("Size all Measures", len(allMeasures))
-    dictMeasures = []
-    for measure in allMeasures:
-        print("Size of this measure", len(measure))
-        dictSingleMeasure = []
-        seenBaseNote = False
-        for noteElem in measure:
-            #check for adding backup, check if it is the base staff
-            if seenBaseNote == False and noteElem.staff%2 == 0:
-                seenBaseNote = True
-                dictSingleMeasure.append("backup")
-            if noteElem.typeName == "note":
-                noteDict = turnNoteIntoDict(noteElem, divisions)
-                dictSingleMeasure += noteDict
-            elif noteElem.typeName == "rest":
-                restDict = turnRestIntoDict(noteElem, divisions)
-                dictSingleMeasure += restDict
-        dictMeasures.append(dictSingleMeasure)
-    return dictMeasures
-
-def turnNoteIntoDict(noteElem, divisions):
-    notes = []
-    for noteElemIndex in range(len(noteElem.pitches)):
-        noteDict = dict()
-        if noteElem.alterPitches[noteElemIndex] == "sharp":
-            noteElem.pitches[noteElemIndex]["alter"] = 1
-        elif noteElem.alterPitches[noteElemIndex] == "flat":
-            noteElem.pitches[noteElemIndex]["alter"] = -1
-        for key in noteElem.pitches[noteElemIndex]:
-            noteElem.pitches[noteElemIndex][key] = str(noteElem.pitches[noteElemIndex][key])
-        noteDict["pitch"] = noteElem.pitches[noteElemIndex]
-        if noteElem.durationName == "quarter":
-            noteDict["duration"] = str(divisions)
-        elif noteElem.durationName == "half":
-            noteDict["duration"] = str(2*divisions)
-        elif noteElem.durationName == "whole":
-            noteDict["duration"] = str(4*divisions)
-        elif noteElem.durationName == "eighth":
-            noteDict["duration"] = str(int(divisions//2))
-        elif noteElem.durationName == "sixteenth":
-            noteDict["duration"] = str(int(divisions//4))
-        noteDict["type"] = str(noteElem.durationName)
-        noteDict["stem"] = str(noteElem.stem)
-        prelimStaff = noteElem.staff % 2
-        if prelimStaff == 1:
-            noteDict["staff"] = "1"
-        else:
-            noteDict["staff"] = "2"
-        if noteElem.dottedPitches[noteElemIndex]:
-            noteDict["dot"] = None
-            noteDict["duration"] = str(int(int(noteDict["duration"])*1.5))
-        if noteElemIndex > 0:
-            noteDict["chord"] = None
-        notes.append(noteDict)
-    return notes
-
-def turnRestIntoDict(restElem, divisions):
-    restDict = dict()
-    restDict["rest"] = None
-    if restElem.durationName == "quarter":
-        restDict["duration"] = str(divisions)
-    elif restElem.durationName == "half":
-        restDict["duration"] = str(2 * divisions)
-    elif restElem.durationName == "whole":
-        restDict["duration"] = str(4 * divisions)
-    elif restElem.durationName == "eighth":
-        restDict["duration"] = str(int(divisions // 2))
-    elif restElem.durationName == "sixteenth":
-        restDict["duration"] = str(int(divisions // 4))
-    restDict["type"] = str(restElem.durationName)
-    restDict["staff"] = str(restElem.staff % 2)
-    return [restDict]
-
-def formXML(allMeasures):
-    dictMeasures = formXMLDictionaryFromObjects(allMeasures, 1)
-    measureDuration = attribute["time"]["beats"]
-    generateMusicXML("fileName here", measureDuration, attribute, dictMeasures)
-
-#generateMusicXML(attribute, measures)

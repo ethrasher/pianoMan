@@ -26,7 +26,7 @@ def findNumBlackPixels(binaryImg):
     amountRowBlack = np.zeros(binaryImg.shape[0])
     # i is the row, j is the col
     for i in range(binaryImg.shape[0]):
-        unique, counts = np.unique(binaryImg[i], return_counts=True)
+        unique, counts = np.unique(binaryImg[i], return_counts=True) #Citations [13]
         blackCounts = dict(zip(unique, counts)).get(0, 0)
         amountRowBlack[i] = blackCounts
     return amountRowBlack

@@ -3,6 +3,8 @@
 
 from staffLineDetectionRemoval import staffLineDetectionRemoval
 from segmentationAndRecognition import segmentationAndRecognition
+from organizeComps import organizeComponents
+import math
 
 def musicSymbolRecognition(binaryImg):
     # DESCRIPTION: Takes the binary image and finds and recognizes all notes to be written to xml
@@ -10,5 +12,20 @@ def musicSymbolRecognition(binaryImg):
     # RETURN: allMeasures: a list of lists of ConnectedComponent objects to be written to the xml
 
     newBinaryImg, staffLineRows = staffLineDetectionRemoval(binaryImg= binaryImg)
-    allMeasures = segmentationAndRecognition(binaryImg=binaryImg, staffLines=staffLineRows)
+    lineDist = getAverageLineDist(staffLines=staffLineRows)
+    allComponents = segmentationAndRecognition(binaryImg=binaryImg, staffLines=staffLineRows, lineDist=lineDist)
+    allMeasures = organizeComponents(allComponents, lineDist)
     return allMeasures
+
+
+def getAverageLineDist(staffLines):
+    singleYLines = []
+    for line in staffLines:
+        if len(line)%2 == 1:
+            singleYLines.append(line[math.floor(len(line)/2)])
+        else:
+            singleYLines.append(sum(line)/len(line))
+    distances = []
+    for i in range(1, len(singleYLines)):
+        distances.append(singleYLines[i]-singleYLines[i-1])
+    return sorted(distances)[int(len(distances)/2)]

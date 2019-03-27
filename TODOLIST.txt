@@ -19,3 +19,4 @@ To do list:
 10. Update generateXML so that I can change the attributes based on what I read music wise
     - Will also need to fix what segmentationAndRecognition returns then
 11. Gui interface where client can choose to use their product
+12. Unit testing!
