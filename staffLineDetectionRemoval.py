@@ -1,4 +1,4 @@
-#going to find and remove all the staff lines in the image
+#File to find and remove all the staff lines in the image
 #will return out a new binaryImg without the staffLines or the title information
 
 import numpy as np
@@ -11,23 +11,22 @@ def staffLineDetectionRemoval(binaryImg):
     # PARAMETERS: binaryImg: numpy array of the binarized image (255 or 0 in all places)
     # RETURN: newBinaryImg: a numpy array similar to the incoming binaryImg but without staff lines
     #           staffLineRows: a 1D numpy array containing the number of black pixels in each row
-    print("in staffLineDetectionRemoval")
+
     amountRowBlack = findNumBlackPixels(binaryImg=binaryImg)
     staffLineRows = findStaffLineRows(amountRowBlack=amountRowBlack)
-    #plotBlackInRows(amountRowBlack=amountRowBlack)
     noStaffBinaryImg = removeStaffLines(binaryImg=binaryImg, staffLineIndexes=staffLineRows)
     noTitleStaffBinaryImg = removeTitle(binaryImg=noStaffBinaryImg, staffLineIndexes=staffLineRows)
-    showBinaryImage(binaryImg=noTitleStaffBinaryImg)
     return noTitleStaffBinaryImg, staffLineRows
 
 def findNumBlackPixels(binaryImg):
     #DESCRIPTION: organizes the image by finding the number of black pixels per row
     #PARAMETERS: binaryImg: numpy array of the binarized image (255 or 0 in all places)
     #RETURN: amountRowBlack: a 1D numpy array containing the number of black pixels in each row
+
     amountRowBlack = np.zeros(binaryImg.shape[0])
     # i is the row, j is the col
     for i in range(binaryImg.shape[0]):
-        unique, counts = np.unique(binaryImg[i], return_counts=True)
+        unique, counts = np.unique(binaryImg[i], return_counts=True) #Citations [13]
         blackCounts = dict(zip(unique, counts)).get(0, 0)
         amountRowBlack[i] = blackCounts
     return amountRowBlack
@@ -37,6 +36,7 @@ def findStaffLineRows(amountRowBlack):
     #PARAMETERS: amountRowBlack: a 1D numpy array containing the number of black pixels in each row
     #RETURN: a 2D list of row numbers in ascending order of where the staff lines are.
     #       consecutive black rows will be in a single 1D list since they are the same staff line
+
     thresholdRowsAmount = np.amax(amountRowBlack)*.8
     staffLineIndexes = []
     for row in range(amountRowBlack.shape[0]):
@@ -50,11 +50,15 @@ def findStaffLineRows(amountRowBlack):
                 else:
                     staffLineIndexes.append([row])
     assert(len(staffLineIndexes)%5 == 0)
-    print(staffLineIndexes)
-    print(len(staffLineIndexes))
     return staffLineIndexes
 
 def removeStaffLines(binaryImg, staffLineIndexes):
+    # DESCRIPTION: takes what rows the staff lines are on and removes the line appropriately
+    # PARAMETERS: binaryImg: numpy array of the binarized image (255 or 0 in all places)
+    #               staffLineIndexes: a 2D list of row numbers in ascending order of where the staff lines are.
+    #               consecutive black rows will be in a single 1D list since they are the same staff line
+    # RETURN: numpy array of the binarized image (255 or 0 in all places) (same image but without staff lines)
+
     for staffLine in staffLineIndexes:
         rowAbove = staffLine[0]-1
         rowBelow = staffLine[-1]+1
@@ -67,6 +71,12 @@ def removeStaffLines(binaryImg, staffLineIndexes):
     return binaryImg
 
 def removeTitle(binaryImg, staffLineIndexes):
+    # DESCRIPTION: takes what rows the staff lines are on and removes anything significantly above the first staff line
+    # PARAMETERS: binaryImg: numpy array of the binarized image (255 or 0 in all places)
+    #               staffLineIndexes: a 2D list of row numbers in ascending order of where the staff lines are.
+    #               consecutive black rows will be in a single 1D list since they are the same staff line
+    # RETURN: numpy array of the binarized image (255 or 0 in all places) (same image but without info at top of page)
+
     firstStaffLine = staffLineIndexes[0][0]
     threshold = .2
     whiteAbove = int(firstStaffLine - firstStaffLine*threshold)
@@ -82,6 +92,7 @@ def plotBlackInRows(amountRowBlack):
     #DESCRIPTION: plots the number of black pixels in each row of the image
     #PARAMETERS: amountRowBlack: a 1D numpy array containing the number of black pixel in each row
     #RETURN: void
+
     plt.plot(amountRowBlack)
     plt.xlabel("Row number")
     plt.ylabel("Black Pixels")
@@ -92,7 +103,6 @@ def showBinaryImage(binaryImg):
     #DESCRIPTION: opens a new window and displays the image
     #PARAMETERS: binaryImage: numpy array of the binarized image (255 or 0 in all pixels)
     #RETURN: void
+
     cv2.imshow('image',binaryImg)
     cv2.waitKey(0)
-    #cv2.destroyAllWindows()
-    print("end")

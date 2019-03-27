@@ -1,0 +1,28 @@
+All my citations -> hopefully will be kept up to date as I use new things
+
+Information about paramiko from:
+1. http://docs.paramiko.org/en/2.4/api/client.html
+2. https://medium.com/@keagileageek/paramiko-how-to-ssh-and-file-transfers-with-python-75766179de73
+3. https://github.com/paramiko/paramiko
+4. https://stackoverflow.com/questions/250283/how-to-scp-in-python
+
+Dealing with warnings from paramiko
+5. https://github.com/ansible/ansible/issues/52598
+
+Doing pdf2image conversion
+6. https://stackoverflow.com/questions/46184239/python-extract-a-page-from-a-pdf-as-a-jpeg
+
+Finding connected components
+7. https://stackoverflow.com/questions/35854197/how-to-use-opencvs-connected-components-with-stats-in-python
+8. https://www.programcreek.com/python/example/89340/cv2.connectedComponentsWithStats
+
+Doing Hough Circle Transform
+9. https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_houghcircles/py_houghcircles.html
+10. https://docs.opencv.org/2.4/modules/imgproc/doc/feature_detection.html#houghcircles
+11. https://stackoverflow.com/questions/26254287/houghcircles-circle-detection-using-opencv-and-python
+
+Using numpy properties to better find differences in pixels
+12. https://docs.scipy.org/doc/numpy/reference/generated/numpy.logical_xor.html
+
+Getting unique element counts in numpy
+13. https://stackoverflow.com/questions/28663856/how-to-count-the-occurrence-of-certain-item-in-an-ndarray-in-python
