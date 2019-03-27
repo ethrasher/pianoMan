@@ -41,6 +41,7 @@ def score2list(score):
             if (singleNote.offset == prevOffset):
                 noteList.append(singleNote)
             else:
+                noteList.sort(key=lambda x: x.quarterLength)
                 for oneNote in noteList:
                     result.append(oneNote)
                     print(oneNote, oneNote.offset, oneNote.quarterLength)
