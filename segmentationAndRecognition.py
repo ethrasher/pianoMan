@@ -7,9 +7,13 @@ import copy
 from connectedCompObj import ConnectedComponent
 
 def segmentationAndRecognition(binaryImg, staffLines, lineDist):
-    connectedComponents, labelImg = findConnectedComponents(binaryImg=binaryImg)
+    # DESCRIPTION: organizes the image into a list of connected components with some features detected
+    # PARAMETERS: binaryImg: numpy array of the binarized image (255 or 0 in all places) with no staff lines
+    #               staffLines: list of all the staff line indexes
+    #               lineDist: the median distance between staff lines
+    # RETURN: a list of all connected components with features detected
+    connectedComponents = findConnectedComponents(binaryImg=binaryImg)
     #first connected component
-    drawConnectedComponentsAnno(binaryImg, connectedComponents)
     compNum = 1
     saveComponentList = []
     measuresToAddToCompList = []
@@ -32,6 +36,9 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist):
     return connectedComponents
 
 def findConnectedComponents(binaryImg):
+    # DESCRIPTION: finds the connected components in the image
+    # PARAMETERS: binaryImg: numpy array of the binarized image (255 or 0 in all places) with no staff lines
+    # RETURN: a list of all connected components objects in the image
     connectivity = 8
     invertedImg = cv2.bitwise_not(binaryImg)
     nLabels, labels, stats, centroids = cv2.connectedComponentsWithStats(invertedImg, connectivity, cv2.CV_32S) #Citations [7,8]
@@ -48,12 +55,16 @@ def findConnectedComponents(binaryImg):
         #throw out any component too small
         if x1-x0 >= minWidth or y1-y0 >= minHeight:
             connectedComponents.append(ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, fullImg=binaryImg))
-    return connectedComponents, labels
+    return connectedComponents
 
 
 ###VISUALIZATION/DEBUGGING FUNCTIONS
 ###NOT VITAL TO PERFORMANCE
 def drawConnectedComponentsAnno(binaryImg, connectedComponents):
+    # DESCRIPTION: draws the image with the connectedComponents highlighted in green
+    # PARAMETERS: binaryImg: numpy array of the binarized image (255 or 0 in all places) with no staff lines
+    #               connectedComponents: a list of all the connected component objects
+    # RETURN: None
     img = cv2.cvtColor(binaryImg, cv2.COLOR_GRAY2RGB)
     for cc in connectedComponents:
         img = cv2.rectangle(img, (cc.x0-5, cc.y0-5), (cc.x1+5, cc.y1+5), (0, 255, 0), 3)

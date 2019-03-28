@@ -9,7 +9,7 @@ from musicSymbolRecognition import musicSymbolRecognition
 from generateMusicXml import formXML
 import warnings #Citations [5]
 warnings.filterwarnings(action='ignore',module='.*paramiko.*')
-#Note to original developer:python alias to use => pythoncv
+#Note for original developer:python alias to use => pythoncv
 
 
 def pianoMan(shouldSend):

@@ -2,7 +2,6 @@ To do list:
 
 1. Documentation catch up!
 2. Separate functions into better files
-3. Allow main to be a function and take in a parameter about whether to send the output file or not
 4. Make template matching faster so that all templates are the same size (with reasonable proporions) so that I only
  have to resize my original image once
 5. Update Hough circle transform so that it finds the right number of noteheads

@@ -27,7 +27,6 @@ class ConnectedComponent(object):
 
     def drawComponent(self, windowName="componentImg"):
         cv2.imshow(windowName, self.componentImg)
-        #cv2.waitKey(0)
 
     def saveComponent(self, compNum):
         scriptPath = os.path.dirname(os.path.realpath(__file__))
@@ -38,7 +37,6 @@ class ConnectedComponent(object):
         img = cv2.cvtColor(binaryImg, cv2.COLOR_GRAY2RGB)
         img = cv2.rectangle(img, (self.x0 - 5, self.y0 - 5), (self.x1 + 5, self.y1 + 5), (0, 0, 255), 6)
         cv2.imshow(windowName, img)
-        #cv2.waitKey(0)
 
     def findNoteheads(self, distBetweenLines):
         #param1 – The higher threshold of the two passed to the Canny() edge detector(the lower one is twice smaller).
@@ -364,3 +362,17 @@ def getAllSubFolders(path):
         for filename in os.listdir(path):
             allPaths += getAllSubFolders(path + os.sep + filename)
         return allPaths
+
+
+
+class NoteComponent(ConnectedComponent):
+    pass
+
+class RestComponent(ConnectedComponent):
+    pass
+
+class AccentComponent(ConnectedComponent):
+    pass
+
+class OtherComponent(ConnectedComponent):
+    pass
