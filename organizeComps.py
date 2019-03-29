@@ -1,6 +1,5 @@
 import copy
-from connectedCompObj import NoteComponent, RestComponent, MeasureBarComponent, AccentComponent, OtherComponent
-import cv2
+from connectedCompObj import NoteComponent, RestComponent, MeasureBarComponent, AccentComponent
 
 def organizeComponents(connectedComponents, lineDist, binaryImg):
     # DESCRIPTION: organizes the connectedComponents into a way the xml generator can use
@@ -8,8 +7,8 @@ def organizeComponents(connectedComponents, lineDist, binaryImg):
     #               lineDist: the median distance between staff lines
     # RETURN: a list of all measures of ordered notes and rests
     allMeasures = reorganizeNotesByMeasure(connectedComponents, binaryImg)
-    allMeasures = putAccentsOnNotes(allMeasures, lineDist)
-    return allMeasures
+    allMeasures, keySig = putAccentsOnNotes(allMeasures, lineDist)
+    return allMeasures, keySig
 
 def reorganizeNotesByMeasure(connectedComponents, binaryImg):
     # DESCRIPTION: organizes the components by what measure they are in, and then based on staff and x position
@@ -81,12 +80,12 @@ def putAccentsOnNotes(allMeasures, distBetweenStaffLines):
     # RETURN: a list of all measures where each staff is is a list of notes and rests altered by dots and sharps/flats/naturals/key sigs
     newAllMeasures = []
     accentToNoteDistThreshold = distBetweenStaffLines * 2
-    flatsSharps = getFlatsSharps(allMeasures[0], accentToNoteDistThreshold=accentToNoteDistThreshold)
+    flatsSharps, keySig = getFlatsSharps(allMeasures[0], accentToNoteDistThreshold=accentToNoteDistThreshold)
     for measureNum in range(len(allMeasures)):
         measure = allMeasures[measureNum]
         newMeasure = putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, copy.copy(flatsSharps))
         newAllMeasures.append(newMeasure)
-    return newAllMeasures
+    return newAllMeasures, keySig
 
 def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
     # DESCRIPTION: takes the first measure and returns a dictionary for the keysig
@@ -107,10 +106,10 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
         noteElem = firstMeasure[noteElemIndex]
     if isinstance(noteElem, RestComponent):
         # a rest cannot have a sharp or flat, all previous ones must be part of keySig
-        return getKeySigDict(keySig=keySig)
+        return getKeySigDict(keySig=keySig), keySig
     elif lastNote == None:
         assert(keySig == 0)
-        return getKeySigDict(keySig=keySig)
+        return getKeySigDict(keySig=keySig), keySig
     else:
         # need to check that the last note is actually part of the keySig and not part of the first note
         # need to check each pitch in this note and the dist between them and accent
@@ -127,9 +126,9 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
                     keySig -= 1
                 elif lastNote.subTypename == "flat":
                     keySig += 1
-                return getKeySigDict(keySig=keySig)
+                return getKeySigDict(keySig=keySig), keySig
         # All pitches were far enough away
-        return getKeySigDict(keySig=keySig)
+        return getKeySigDict(keySig=keySig), keySig
 
 
 def putDotOnNote(noteElem, dotElem, accentToNoteDistThreshold):
@@ -138,7 +137,6 @@ def putDotOnNote(noteElem, dotElem, accentToNoteDistThreshold):
     #               dotElem: the connectedComponent representing a dot accent
     #               accentToNoteDistThreshold: the furthest an accent can be away from a note and still considered part of it
     # RETURN: None
-    print("Inside: put dot on note")
     if len(noteElem.pitches) == 1:
         # easy case, only one pitch to dot
         noteElem.dottedPitches[0] = True
@@ -215,12 +213,9 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
             seenNoteRest = True
 
         if isinstance(noteElem, AccentComponent):
-            print("found an accent component")
-            print(noteElem.subTypeName)
             lastAccentBeforeNoteRest = None
             alterNextNote = None
             if noteElem.subTypeName == "dot" and len(newMeasure)>0:
-                print("subtype name == dot")
                 # look at last note in the measure
                 lastNote = newMeasure[-1]
                 if isinstance(lastNote, NoteComponent):

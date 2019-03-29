@@ -19,23 +19,28 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist):
     saveComponentList = []
     measuresToAddToTemplateList = []
     templateObjList = []
+    timeSig = None
+    smallestNoteType = None
     for comp in connectedComponents[1:]:
         if compNum in saveComponentList:
             comp.saveComponent(compNum=compNum)
-        templateObj = comp.templateMatch(staffLines=staffLines, compNum=compNum)
+        templateObj = comp.templateMatch(staffLines=staffLines, lineDist = lineDist, compNum=compNum)
         templateObjList.append(templateObj)
     for templateObj in templateObjList:
         if isinstance(templateObj, NoteComponent):
-            templateObj.findNoteheads(lineDist)
-            templateObj.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
+            smallestNoteType = getSmallerNoteType(smallestNoteType, templateObj.durationName)
         #ignore rest and accent case. They are already done
         if isinstance(templateObj, MeasureBarComponent):
             newMeasureBar = copy.deepcopy(templateObj)
             newMeasureBar.staff += 1
             measuresToAddToTemplateList.append(newMeasureBar)
+        if isinstance(templateObj, OtherComponent):
+            if templateObj.typeName == "time signature":
+                timeSig = templateObj.getTimeSignature()
         compNum += 1
     templateObjList = templateObjList + measuresToAddToTemplateList
-    return templateObjList
+    divisions = getDivisions(smallestNoteType=smallestNoteType)
+    return templateObjList, timeSig, divisions
 
 def findConnectedComponents(binaryImg):
     # DESCRIPTION: finds the connected components in the image
@@ -59,6 +64,55 @@ def findConnectedComponents(binaryImg):
             componentImg = np.copy(binaryImg[y0:y1, x0:x1])
             connectedComponents.append(ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, componentImg=componentImg))
     return connectedComponents
+
+def getSmallerNoteType(origNote, compareNote):
+    if origNote == None:
+        return compareNote
+    if origNote == "whole":
+        origDuration = 5
+    elif origNote == "half":
+        origDuration = 4
+    elif origNote == "quarter":
+        origDuration = 3
+    elif origNote == "eighth":
+        origDuration = 2
+    elif origNote == "sixteenth":
+        origDuration = 1
+    else:
+        raise Exception("OrigNote type not whole, half, quareter, eighth, sixteenth")
+
+    if compareNote == "whole":
+        compareDuration = 5
+    elif compareNote == "half":
+        compareDuration = 4
+    elif compareNote == "quarter":
+        compareDuration = 3
+    elif compareNote == "eighth":
+        compareDuration = 2
+    elif compareNote == "sixteenth":
+        compareDuration = 1
+    else:
+        raise Exception("CompareNote type not whole, half, quarter, eighth, sixteenth")
+
+    if compareDuration <= origDuration:
+        return compareNote
+    else:
+        return origNote
+
+def getDivisions(smallestNoteType):
+    if smallestNoteType == "whole":
+        return .25
+    elif smallestNoteType == "half":
+        return .5
+    elif smallestNoteType == "quarter":
+        return 1
+    elif smallestNoteType == "eighth":
+        return 2
+    elif smallestNoteType == "sixteenth":
+        return 4
+    else:
+        raise Exception("smallestNoteType not whole, half, quarter, eighth, sixteenth")
+
 
 
 ###VISUALIZATION/DEBUGGING FUNCTIONS

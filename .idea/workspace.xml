@@ -4,6 +4,8 @@
     <list default="true" id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connectedCompObj.py" afterPath="$PROJECT_DIR$/connectedCompObj.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generateMusicXml.py" afterPath="$PROJECT_DIR$/generateMusicXml.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/musicSymbolRecognition.py" afterPath="$PROJECT_DIR$/musicSymbolRecognition.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organizeComps.py" afterPath="$PROJECT_DIR$/organizeComps.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/segmentationAndRecognition.py" afterPath="$PROJECT_DIR$/segmentationAndRecognition.py" />
@@ -45,8 +47,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+            <state relative-caret-position="263">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="e#84#93#0" expanded="true" />
               </folding>
@@ -57,8 +59,8 @@
       <file leaf-file-name="generateMusicXml.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="48" column="64" lean-forward="false" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="64" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -66,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connectedCompObj.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="connectedCompObj.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="164" column="48" lean-forward="false" selection-start-line="164" selection-start-column="48" selection-end-line="164" selection-end-column="48" />
+            <state relative-caret-position="960">
+              <caret line="64" column="79" lean-forward="false" selection-start-line="64" selection-start-column="79" selection-end-line="64" selection-end-column="79" />
               <folding>
                 <element signature="e#113#123#0" expanded="true" />
               </folding>
@@ -81,8 +83,8 @@
       <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+            <state relative-caret-position="106">
+              <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
               <folding>
                 <element signature="e#222#232#0" expanded="true" />
               </folding>
@@ -90,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="organizeComps.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="organizeComps.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/organizeComps.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="218" column="39" lean-forward="false" selection-start-line="218" selection-start-column="39" selection-end-line="218" selection-end-column="39" />
+            <state relative-caret-position="15">
+              <caret line="1" column="95" lean-forward="false" selection-start-line="1" selection-start-column="95" selection-end-line="1" selection-end-column="95" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -105,8 +107,8 @@
       <file leaf-file-name="musicSymbolRecognition.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/musicSymbolRecognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="242">
+              <caret line="17" column="50" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
               <folding>
                 <element signature="e#84#147#0" expanded="true" />
               </folding>
@@ -133,13 +135,11 @@
       <find>compNum</find>
       <find>self.circles</find>
       <find>putAccentsOnNotesInMeasure</find>
-      <find>putAccentsOnNotes</find>
       <find>getFlatsSharps</find>
       <find>part</find>
       <find>restDict</find>
       <find>fullJPGFilename</find>
       <find>showBinaryIm</find>
-      <find>print</find>
       <find>getAverageLineDist</find>
       <find>writing</find>
       <find>drawConnectedC</find>
@@ -149,6 +149,13 @@
       <find>putAccentOnNote</find>
       <find>None</find>
       <find>typeName</find>
+      <find>turnNoteIntoDict</find>
+      <find>duration</find>
+      <find>print</find>
+      <find>keySig</find>
+      <find>putAccentsOnNotes</find>
+      <find>return</find>
+      <find>NoteComp</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,21 +169,21 @@
         <option value="$PROJECT_DIR$/music_images/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/templates/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/preprocessing.py" />
-        <option value="$PROJECT_DIR$/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/AllCitations.txt" />
         <option value="$PROJECT_DIR$/staffLineDetectionRemoval.py" />
         <option value="$PROJECT_DIR$/TODOLIST.txt" />
-        <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
+        <option value="$PROJECT_DIR$/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/musicSymbolRecognition.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/organizeComps.py" />
+        <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
         <option value="$PROJECT_DIR$/connectedCompObj.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="223" />
-    <option name="y" value="24" />
+    <option name="x" value="58" />
+    <option name="y" value="23" />
     <option name="width" value="1061" />
     <option name="height" value="731" />
   </component>
@@ -211,6 +218,12 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
               <item name="templates" type="cbb8eebc:String" user="templates" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="templates" type="cbb8eebc:String" user="templates" />
+              <item name="aaa_timeSignature" type="cbb8eebc:String" user="aaa_timeSignature" />
             </path>
           </expand>
           <select />
@@ -314,7 +327,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="223" y="24" width="1061" height="731" extended-state="0" />
+    <frame x="58" y="23" width="1061" height="731" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17566241" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
@@ -606,16 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AllCitations.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -642,30 +645,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
+    <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="50" lean-forward="false" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+        <state relative-caret-position="119">
+          <caret line="48" column="64" lean-forward="false" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="64" />
           <folding>
-            <element signature="e#84#93#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/musicSymbolRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="242">
+          <caret line="17" column="50" lean-forward="false" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
           <folding>
             <element signature="e#84#147#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#84#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organizeComps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="95" lean-forward="false" selection-start-line="1" selection-start-column="95" selection-end-line="1" selection-end-column="95" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+        <state relative-caret-position="106">
+          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
           <folding>
             <element signature="e#222#232#0" expanded="true" />
           </folding>
@@ -674,28 +705,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="164" column="48" lean-forward="false" selection-start-line="164" selection-start-column="48" selection-end-line="164" selection-end-column="48" />
+        <state relative-caret-position="960">
+          <caret line="64" column="79" lean-forward="false" selection-start-line="64" selection-start-column="79" selection-end-line="64" selection-end-column="79" />
           <folding>
             <element signature="e#113#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="75" column="14" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organizeComps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="218" column="39" lean-forward="false" selection-start-line="218" selection-start-column="39" selection-end-line="218" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

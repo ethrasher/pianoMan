@@ -33,13 +33,20 @@ def pianoMan(shouldSend):
 
     # perform omr on each page separately and combine into allMeasures
     allMeasures = []
+    divisions, timeSig, key = None, None, None
     for pageNum in range(len(pages)):
         imagePath = pdfPreFileName + jpgFileName + "-" + str(pageNum) + ".jpg"
         binaryImg = preprocess(path=imagePath)
-        allMeasures += musicSymbolRecognition(binaryImg=binaryImg)
+        if pageNum == 0:
+            newMeasures, timeSig, divisions, key = musicSymbolRecognition(binaryImg=binaryImg)
+            allMeasures += newMeasures
+        else:
+            #Don't want to override timeSig and divisions
+            recognitionItems = musicSymbolRecognition(binaryImg=binaryImg)
+            allMeasures += recognitionItems[0]
 
     # create the xml based on the measures found
-    formXML(allMeasures)
+    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1])
 
     # if arguments state to send the file to the raspberryPi, send it
     if shouldSend:
