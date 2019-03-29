@@ -1,21 +1,18 @@
 To do list:
 
 1. Documentation catch up!
-2. Separate functions into better files
-4. Make template matching faster so that all templates are the same size (with reasonable proporions) so that I only
+2. Make template matching faster so that all templates are the same size (with reasonable proporions) so that I only
  have to resize my original image once
-5. Update Hough circle transform so that it finds the right number of noteheads
+3. Update Hough circle transform so that it finds the right number of noteheads
        (while not right, change parameters for each image)
-6. Update barred notes so that they are split into separate components (easier to deal with)
+4. Update barred notes so that they are split into separate components (easier to deal with)
      - do vertical projection to find all stems
      - separate in the middle x position of each stem
      - Run noteheads on each component and add them in (could be chords
      - Put bar in dictionary/object attributes so they are connected on muse score
      - Find duration of each piece, by finding how many bars above each note head
-7. Make sure to throw out all notes that are impossible (no staff, no noteheads, etc.)
-8. Find more music to work with with other types of notes
-9. Remove all other black pixels that are not part of the connected component, but are close enough they are in the image
-10. Update generateXML so that I can change the attributes based on what I read music wise
-    - Will also need to fix what segmentationAndRecognition returns then
-11. Gui interface where client can choose to use their product
-12. Unit testing!
+5. Make sure to throw out all notes that are impossible (no staff, no noteheads, etc.)
+6. Find more music to work with with other types of notes
+7. Remove all other black pixels that are not part of the connected component, but are close enough they are in the image
+8. Gui interface where client can choose to use their product
+9. Unit testing!

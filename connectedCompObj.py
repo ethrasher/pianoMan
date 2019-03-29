@@ -489,4 +489,4 @@ class OtherComponent(ConnectedComponent):
 
     def getTimeSignature(self):
         assert(self.typeName == "time signature")
-        return (self.subTypeName[0], self.subTypeName[1])
+        return self.subTypeName[0], self.subTypeName[1]
