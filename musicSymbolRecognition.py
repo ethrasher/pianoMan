@@ -14,7 +14,7 @@ def musicSymbolRecognition(binaryImg):
     newBinaryImg, staffLineRows = staffLineDetectionRemoval(binaryImg= binaryImg)
     lineDist = getAverageLineDist(staffLines=staffLineRows)
     allComponents = segmentationAndRecognition(binaryImg=binaryImg, staffLines=staffLineRows, lineDist=lineDist)
-    allMeasures = organizeComponents(allComponents, lineDist)
+    allMeasures = organizeComponents(binaryImg=binaryImg, connectedComponents=allComponents, lineDist=lineDist)
     return allMeasures
 
 

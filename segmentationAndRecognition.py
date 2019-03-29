@@ -3,8 +3,9 @@
 #takes in a binary image with no staff lines, and the positions of the staff lines
 #returns a list of notes/symbols with position and type of note/symbol
 import cv2
+import numpy as np
 import copy
-from connectedCompObj import ConnectedComponent
+from connectedCompObj import ConnectedComponent, NoteComponent, RestComponent, MeasureBarComponent, AccentComponent, OtherComponent
 
 def segmentationAndRecognition(binaryImg, staffLines, lineDist):
     # DESCRIPTION: organizes the image into a list of connected components with some features detected
@@ -14,26 +15,27 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist):
     # RETURN: a list of all connected components with features detected
     connectedComponents = findConnectedComponents(binaryImg=binaryImg)
     #first connected component
-    compNum = 1
+    compNum = 0
     saveComponentList = []
-    measuresToAddToCompList = []
+    measuresToAddToTemplateList = []
+    templateObjList = []
     for comp in connectedComponents[1:]:
         if compNum in saveComponentList:
             comp.saveComponent(compNum=compNum)
-        comp.templateMatch(compNum=compNum)
-        if comp.typeName == None or comp.typeName == "note" or comp.typeName == "rest" or comp.typeName == "accent":
-            if comp.typeName == "note" or comp.typeName == None:
-                comp.findNoteheads(lineDist)
-            comp.getStaff(staffLines=staffLines)
-            comp.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
-        if comp.typeName == "measure bar":
-            comp.getStaff(staffLines = staffLines)
-            newMeasureBar = copy.deepcopy(comp)
+        templateObj = comp.templateMatch(staffLines=staffLines, compNum=compNum)
+        templateObjList.append(templateObj)
+    for templateObj in templateObjList:
+        if isinstance(templateObj, NoteComponent):
+            templateObj.findNoteheads(lineDist)
+            templateObj.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
+        #ignore rest and accent case. They are already done
+        if isinstance(templateObj, MeasureBarComponent):
+            newMeasureBar = copy.deepcopy(templateObj)
             newMeasureBar.staff += 1
-            measuresToAddToCompList.append(newMeasureBar)
+            measuresToAddToTemplateList.append(newMeasureBar)
         compNum += 1
-    connectedComponents = connectedComponents + measuresToAddToCompList
-    return connectedComponents
+    templateObjList = templateObjList + measuresToAddToTemplateList
+    return templateObjList
 
 def findConnectedComponents(binaryImg):
     # DESCRIPTION: finds the connected components in the image
@@ -54,7 +56,8 @@ def findConnectedComponents(binaryImg):
         minHeight = 10
         #throw out any component too small
         if x1-x0 >= minWidth or y1-y0 >= minHeight:
-            connectedComponents.append(ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, fullImg=binaryImg))
+            componentImg = np.copy(binaryImg[y0:y1, x0:x1])
+            connectedComponents.append(ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, componentImg=componentImg))
     return connectedComponents
 
 

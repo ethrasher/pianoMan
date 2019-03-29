@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODOLIST.txt" afterPath="$PROJECT_DIR$/TODOLIST.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connectedCompObj.py" afterPath="$PROJECT_DIR$/connectedCompObj.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/musicSymbolRecognition.py" afterPath="$PROJECT_DIR$/musicSymbolRecognition.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organizeComps.py" afterPath="$PROJECT_DIR$/organizeComps.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/segmentationAndRecognition.py" afterPath="$PROJECT_DIR$/segmentationAndRecognition.py" />
     </list>
@@ -67,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connectedCompObj.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="connectedCompObj.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="219" column="80" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="219" selection-end-column="80" />
+            <state relative-caret-position="246">
+              <caret line="164" column="48" lean-forward="false" selection-start-line="164" selection-start-column="48" selection-end-line="164" selection-end-column="48" />
               <folding>
                 <element signature="e#113#123#0" expanded="true" />
               </folding>
@@ -79,23 +78,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="organizeComps.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/organizeComps.py">
+      <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3765">
-              <caret line="251" column="26" lean-forward="true" selection-start-line="251" selection-start-column="26" selection-end-line="251" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="420">
+              <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
+              <folding>
+                <element signature="e#222#232#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
+      <file leaf-file-name="organizeComps.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/organizeComps.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-180">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="98">
+              <caret line="218" column="39" lean-forward="false" selection-start-line="218" selection-start-column="39" selection-end-line="218" selection-end-column="39" />
               <folding>
-                <element signature="e#222#232#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,8 +105,8 @@
       <file leaf-file-name="musicSymbolRecognition.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/musicSymbolRecognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="250">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="e#84#147#0" expanded="true" />
               </folding>
@@ -146,6 +147,8 @@
       <find>draw</find>
       <find>labelImg</find>
       <find>putAccentOnNote</find>
+      <find>None</find>
+      <find>typeName</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,22 +162,22 @@
         <option value="$PROJECT_DIR$/music_images/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/templates/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/preprocessing.py" />
-        <option value="$PROJECT_DIR$/musicSymbolRecognition.py" />
         <option value="$PROJECT_DIR$/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/AllCitations.txt" />
         <option value="$PROJECT_DIR$/staffLineDetectionRemoval.py" />
         <option value="$PROJECT_DIR$/TODOLIST.txt" />
-        <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
+        <option value="$PROJECT_DIR$/musicSymbolRecognition.py" />
         <option value="$PROJECT_DIR$/organizeComps.py" />
         <option value="$PROJECT_DIR$/connectedCompObj.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="17" />
-    <option name="y" value="23" />
-    <option name="width" value="1267" />
+    <option name="x" value="223" />
+    <option name="y" value="24" />
+    <option name="width" value="1061" />
     <option name="height" value="731" />
   </component>
   <component name="ProjectView">
@@ -198,6 +201,16 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="outBoundFiles" type="cbb8eebc:String" user="outBoundFiles" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="templates" type="cbb8eebc:String" user="templates" />
             </path>
           </expand>
           <select />
@@ -301,10 +314,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="17" y="23" width="1267" height="731" extended-state="0" />
+    <frame x="223" y="24" width="1061" height="731" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14612246" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17566241" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5039139" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -354,16 +367,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="e#84#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -603,16 +606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/musicSymbolRecognition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#84#147#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -659,30 +652,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/musicSymbolRecognition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#84#147#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-180">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="420">
+          <caret line="28" column="47" lean-forward="false" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
           <folding>
             <element signature="e#222#232#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organizeComps.py">
+    <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3765">
-          <caret line="251" column="26" lean-forward="true" selection-start-line="251" selection-start-column="26" selection-end-line="251" selection-end-column="26" />
+        <state relative-caret-position="246">
+          <caret line="164" column="48" lean-forward="false" selection-start-line="164" selection-start-column="48" selection-end-line="164" selection-end-column="48" />
+          <folding>
+            <element signature="e#113#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="75" column="14" lean-forward="true" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
+    <entry file="file://$PROJECT_DIR$/organizeComps.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="219" column="80" lean-forward="true" selection-start-line="40" selection-start-column="4" selection-end-line="219" selection-end-column="80" />
+        <state relative-caret-position="98">
+          <caret line="218" column="39" lean-forward="false" selection-start-line="218" selection-start-column="39" selection-end-line="218" selection-end-column="39" />
           <folding>
-            <element signature="e#113#123#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,15 +1,17 @@
 import copy
+from connectedCompObj import NoteComponent, RestComponent, MeasureBarComponent, AccentComponent, OtherComponent
+import cv2
 
-def organizeComponents(connectedComponents, lineDist):
+def organizeComponents(connectedComponents, lineDist, binaryImg):
     # DESCRIPTION: organizes the connectedComponents into a way the xml generator can use
     # PARAMETERS: connectedComponents: a list of connected components with all features detected
     #               lineDist: the median distance between staff lines
     # RETURN: a list of all measures of ordered notes and rests
-    allMeasures = reorganizeNotesByMeasure(connectedComponents)
+    allMeasures = reorganizeNotesByMeasure(connectedComponents, binaryImg)
     allMeasures = putAccentsOnNotes(allMeasures, lineDist)
     return allMeasures
 
-def reorganizeNotesByMeasure(connectedComponents):
+def reorganizeNotesByMeasure(connectedComponents, binaryImg):
     # DESCRIPTION: organizes the components by what measure they are in, and then based on staff and x position
     # PARAMETERS: connectedComponents: a 2D list of connectedComponent objects with no organization
     # RETURN: a list of all measures, each measure is a list containing all connected component objects in order of
@@ -31,11 +33,11 @@ def reorganizeNotesByMeasure(connectedComponents):
             else:
                 noteElem = staff2[staff2ElemNum]
                 staff2ElemNum += 1
-            if curStaff == 1 and curMeasureStaff1 == [] and (noteElem.typeName == "measure bar" or noteElem.typeName == "accent"):
+            if curStaff == 1 and curMeasureStaff1 == [] and (isinstance(noteElem, MeasureBarComponent) or isinstance(noteElem, AccentComponent)):
                 continue
-            if curStaff == 2 and curMeasureStaff2 == [] and (noteElem.typeName == "measure bar" or noteElem.typeName == "accent"):
+            if curStaff == 2 and curMeasureStaff2 == [] and (isinstance(noteElem, MeasureBarComponent) or isinstance(noteElem, AccentComponent)):
                 continue
-            if noteElem.typeName == "measure bar":
+            if isinstance(noteElem, MeasureBarComponent):
                 if curStaff == 1:
                     curStaff = 2
                 elif curStaff == 2:
@@ -59,7 +61,7 @@ def reorganizeNotesByStaffLoc(connectedComponents):
     allNotesRestsAccents = []
     maxStaff = None
     for comp in connectedComponents:
-        if comp.typeName == "note" or comp.typeName == "rest" or comp.typeName == "accent" or comp.typeName == "measure bar":
+        if isinstance(comp, NoteComponent) or isinstance(comp, RestComponent) or isinstance(comp, AccentComponent) or isinstance(comp, MeasureBarComponent):
             allNotesRestsAccents.append(comp)
             if maxStaff == None or comp.staff > maxStaff:
                 maxStaff = comp.staff
@@ -95,7 +97,7 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
     noteElemIndex = 0
     noteElem = firstMeasure[noteElemIndex]
     lastNote = None
-    while noteElem.typeName == "accent":
+    while isinstance(noteElem, AccentComponent):
         if noteElem.subTypeName == "sharp":
             keySig += 1
         elif noteElem.subTypeName == "flat":
@@ -103,7 +105,7 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
         lastNote = noteElem
         noteElemIndex += 1
         noteElem = firstMeasure[noteElemIndex]
-    if noteElem.typeName == "rest":
+    if isinstance(noteElem, RestComponent):
         # a rest cannot have a sharp or flat, all previous ones must be part of keySig
         return getKeySigDict(keySig=keySig)
     elif lastNote == None:
@@ -136,6 +138,7 @@ def putDotOnNote(noteElem, dotElem, accentToNoteDistThreshold):
     #               dotElem: the connectedComponent representing a dot accent
     #               accentToNoteDistThreshold: the furthest an accent can be away from a note and still considered part of it
     # RETURN: None
+    print("Inside: put dot on note")
     if len(noteElem.pitches) == 1:
         # easy case, only one pitch to dot
         noteElem.dottedPitches[0] = True
@@ -203,21 +206,24 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
     alterNextNote = False
     for noteElemNum in range(len(measure)):
         noteElem = measure[noteElemNum]
-        if seenNoteRest == False and noteElem.typeName == "accent":
+        if seenNoteRest == False and isinstance(noteElem, AccentComponent):
             lastAccentBeforeNoteRest = noteElem
             alterNextNote = True
             # we don't want to actually add the accent itself
             continue
-        elif seenNoteRest == False and (noteElem.typeName == "note" or noteElem.typeName == "flat"):
+        elif seenNoteRest == False and (isinstance(noteElem, NoteComponent) or isinstance(noteElem, RestComponent)):
             seenNoteRest = True
 
-        if noteElem.typeName == "accent":
+        if isinstance(noteElem, AccentComponent):
+            print("found an accent component")
+            print(noteElem.subTypeName)
             lastAccentBeforeNoteRest = None
             alterNextNote = None
             if noteElem.subTypeName == "dot" and len(newMeasure)>0:
+                print("subtype name == dot")
                 # look at last note in the measure
                 lastNote = newMeasure[-1]
-                if lastNote.typeName == "note":
+                if isinstance(lastNote, NoteComponent):
                     putDotOnNote(noteElem=lastNote, dotElem=noteElem, accentToNoteDistThreshold=accentToNoteDistThreshold)
             elif noteElem.subTypeName == "sharp":
                 lastAccentBeforeNoteRest = noteElem
@@ -229,13 +235,13 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
                 lastAccentBeforeNoteRest = noteElem
                 alterNextNote = True
 
-        elif noteElem.typeName == "rest":
+        elif isinstance(noteElem, RestComponent):
             # cannot do anything accent-wise to  rest, but reset any other accent information
             newMeasure.append(noteElem)
             alterNextNote = None
             lastAccentBeforeNoteRest = None
 
-        elif noteElem.typeName == "note":
+        elif isinstance(noteElem, NoteComponent):
             newMeasure.append(noteElem)
             noteElem.dottedPitches = [False]*len(noteElem.pitches)
             noteElem.alterPitches = ["natural"]*len(noteElem.pitches)
