@@ -15,19 +15,34 @@ class ConnectedComponent(object):
         self.componentImg = componentImg
 
     def drawComponent(self, windowName="componentImg"):
+        # DESCRIPTION: draws the component in a separate image
+        # PARAMETERS: windowName: string of the name for the window for openCV
+        # RETURN: None
         cv2.imshow(windowName, self.componentImg)
 
     def saveComponent(self, compNum):
+        # DESCRIPTION: saves the image of the component into the template folder so it will match the next time
+        # PARAMETERS: compNum: the number of this component
+        # RETURN: None
         scriptPath = os.path.dirname(os.path.realpath(__file__))
         compPath = scriptPath + '/templates/component%d.jpg'%(compNum)
         cv2.imwrite(compPath, self.componentImg)
 
     def drawComponentOnCanvas(self, binaryImg, windowName='componentOnCanvas'):
+        # DESCRIPTION: draws the component highlighted in a square box on the full page image
+        # PARAMETERS: binaryImg: the full image of the page
+        #               windowName: string of the name for the window for openCV
+        # RETURN: None
         img = cv2.cvtColor(binaryImg, cv2.COLOR_GRAY2RGB)
         img = cv2.rectangle(img, (self.x0 - 5, self.y0 - 5), (self.x1 + 5, self.y1 + 5), (0, 0, 255), 6)
         cv2.imshow(windowName, img)
 
     def templateMatch(self, staffLines, lineDist, compNum=0):
+        # DESCRIPTION: matches the component image to all the templates in the path to see if there is a match
+        # PARAMETERS: staffLines: 2D list of all the staff lines in the image
+        #               lineDist: the median distance between any 2 staff lines
+        #               compNum: the number of this component
+        # RETURN: a new object for which the component matched. None if it could not find a match
         allTemplatesPath = scriptPath = os.path.dirname(os.path.realpath(__file__)) + "/templates"
         bestTemplatePath = None
         bestMatch = 0.8 # need to be over 80% to be considered a match anyway
@@ -65,6 +80,12 @@ class ConnectedComponent(object):
         return self.makeTemplateObject(bestTemplatePath, staffLines, lineDist, compNum)
 
     def makeTemplateObject(self, templatePath, staffLines, lineDist, compNum):
+        # DESCRIPTION: creates the new object based on which template it matched to
+        # PARAMETERS: templatePath: string file path to the closest matched template
+        #               staffLines: 2D list representing all the staffLine locations
+        #               lineDist: median line distance between any two staff lines
+        #               compNum: the number for this component
+        # RETURN: None
         if templatePath.find("aaa_note_whole") >= 0:
             # it is a whole note
             return NoteComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
@@ -200,6 +221,9 @@ class ConnectedComponent(object):
 
     @staticmethod
     def getAllSubFolders(path):
+        # DESCRIPTION: finds all the jpg images in the template folder
+        # PARAMETERS: path: string of the path to the template folder
+        # RETURN: a list of strings of the paths to all template images
         if os.path.isfile(path):
             if path[0] != "." and path.endswith(".jpg"):
                 return [path]
@@ -214,6 +238,10 @@ class ConnectedComponent(object):
 
 class MeasureElem(ConnectedComponent):
     def getStaff(self, staffLines, compNum=0):
+        # DESCRIPTION: finds what staff number each component is part of and alters the object .staff
+        # PARAMETERS: staffLines: 2D list of all the staff lines positions
+        #               compNum: the component number
+        # RETURN: None
         #check more obvious cases with just y0 and y1
         if self.y1 <= staffLines[0][0]:
             self.staff = 1
@@ -285,6 +313,10 @@ class NoteComponent(MeasureElem):
         self.alterPitches = []
 
     def findNoteheads(self, distBetweenLines):
+        # DESCRIPTION: finds all the noteheads in the pitch component, alters self.circles
+        # PARAMETERS: distBetweenLines: the median distance between any 2 staff lines
+        # RETURN: None
+
         #param1 – The higher threshold of the two passed to the Canny() edge detector(the lower one is twice smaller).
         #param2 – The accumulator threshold for the circle centers at the detection stage.
         # The smaller it is, the more false circles may be detected.
@@ -303,6 +335,10 @@ class NoteComponent(MeasureElem):
                 cv2.circle(img, (i[0], i[1]), 2, (0, 0, 255), -1)
 
     def getPitches(self, staffLines, distBetweenLines):
+        # DESCRIPTION: gets the pitch for each found notehead in self.circles, alters self.pitches
+        # PARAMETERS: staffLines: 2D list representing the locations of all staff lines
+        #               distBetweenLines: the median distance between any two staff lines
+        # RETURN: None
         if self.staff == None or type(self.circles) !=  np.ndarray:
             return
         distanceBetweenPitches = distBetweenLines/2
@@ -397,6 +433,9 @@ class NoteComponent(MeasureElem):
                 self.pitches.append({"step": allNotes[pitch], "octave": octave})
 
     def getXMLDict(self, divisions):
+        # DESCRIPTION: gets the dictionary to actually give to the XML generator
+        # PARAMETERS: divisions: int for the number of divisions in a quarter note
+        # RETURN: dictionary with all the needed xml values and keys
         notes = []
         for noteElemIndex in range(len(self.pitches)):
             noteDict = dict()
@@ -446,6 +485,10 @@ class RestComponent(MeasureElem):
         self.getStaff(staffLines=staffLines, compNum=compNum)
 
     def getXMLDict(self, divisions):
+        # DESCRIPTION: gets the dictionary to actually give to the XML generator
+        # PARAMETERS: divisions: int for the number of divisions in a quarter note
+        # RETURN: dictionary with all the needed xml values and keys
+
         restDict = dict()
         restDict["rest"] = None
         if self.durationName == "quarter":
@@ -488,5 +531,9 @@ class OtherComponent(ConnectedComponent):
         self.subTypeName = subType
 
     def getTimeSignature(self):
+        # DESCRIPTION: gets the time signature from the piece
+        # PARAMETERS: nothing
+        # RETURN: a tuple of how many beats per measure, and the beat time ((4,4), (3,4), ...)
+
         assert(self.typeName == "time signature")
         return self.subTypeName[0], self.subTypeName[1]

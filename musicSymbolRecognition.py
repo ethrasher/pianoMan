@@ -12,13 +12,16 @@ def musicSymbolRecognition(binaryImg):
     # RETURN: allMeasures: a list of lists of ConnectedComponent objects to be written to the xml
 
     newBinaryImg, staffLineRows = staffLineDetectionRemoval(binaryImg= binaryImg)
-    lineDist = getAverageLineDist(staffLines=staffLineRows)
+    lineDist = getMedianLineDist(staffLines=staffLineRows)
     allComponents, timeSig, divisions = segmentationAndRecognition(binaryImg=binaryImg, staffLines=staffLineRows, lineDist=lineDist)
     allMeasures, keySig = organizeComponents(binaryImg=binaryImg, connectedComponents=allComponents, lineDist=lineDist)
     return allMeasures, timeSig, divisions, keySig
 
 
-def getAverageLineDist(staffLines):
+def getMedianLineDist(staffLines):
+    # DESCRIPTION: gets the median difference between an of the staff line rows
+    # PARAMETERS: staffLines: 2D List representing all the staff line locations on the page
+    # RETURN: the median distance between any two staff lines
     singleYLines = []
     for line in staffLines:
         if len(line)%2 == 1:

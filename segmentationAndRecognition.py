@@ -66,6 +66,10 @@ def findConnectedComponents(binaryImg):
     return connectedComponents
 
 def getSmallerNoteType(origNote, compareNote):
+    # DESCRIPTION: gets the smallest type of note in the page
+    # PARAMETERS: origNote: string (whole, half, ...) representing the smallest note found before in the page
+    #               compareNote: the next note in the page, which may be smaller
+    # RETURN: string representing the duration of the now smallest object in the page (whole, half, ...)
     if origNote == None:
         return compareNote
     if origNote == "whole":
@@ -100,6 +104,10 @@ def getSmallerNoteType(origNote, compareNote):
         return origNote
 
 def getDivisions(smallestNoteType):
+    # DESCRIPTION: gets the division number based on the smallest note type in the song
+    # PARAMETERS: smallestNoteType: string (whole, half, ...) representing the smallest note found before in the page
+    # RETURN: integer representing the duration value to go into the xml
+
     if smallestNoteType == "whole":
         return .25
     elif smallestNoteType == "half":

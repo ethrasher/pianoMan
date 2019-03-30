@@ -15,4 +15,7 @@ To do list:
 6. Find more music to work with with other types of notes
 7. Remove all other black pixels that are not part of the connected component, but are close enough they are in the image
 8. Gui interface where client can choose to use their product
+    -Somewhere to specify path of song they want to work on
+    -Somewhere to organize any notes it could not recognize (no template match)
+    -Some kind of waiting/spiral to show it is working on something
 9. Unit testing!
