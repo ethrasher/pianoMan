@@ -13,13 +13,19 @@ def midi2stream(filename):
     s = midi.translate.midiFileToStream(mf)
     return s
 
+def noteSort(note):
+    if type(note) == chord.Chord:
+        return (note.offset, note.quarterLength, "Z")
+    else:
+        return (note.offset, note.quarterLength, str(note.pitch.name))
+
 def score2list(score):
     # score.show('text')
     print("----------------------------------")
     parts = score.getElementsByClass(stream.Part)
     result = []
     for part in parts:
-        print(part)
+        # print(part)
         # ISSUE 1: Wrong time signature
         # print(part.timeSignature)
         # part.timeSignature = meter.TimeSignature('3/4')
@@ -31,8 +37,10 @@ def score2list(score):
         prevOffset = 0.0
         noteList = []
         for singleNote in part.flat.notes:
-            if (len(result) == 0):
+            if (len(result) == 0 and len(noteList) == 0):
+            # if (len(result) == 0):
                 if (type(singleNote) == note.Rest):
+                    # print("Rest before the first note!")
                     continue
                 # Update offset as the offset of the first note of the piece
                 elif (type(singleNote) == note.Note):
@@ -40,11 +48,12 @@ def score2list(score):
                     # print("offset updated! Current offset: ", offset)
             if (singleNote.offset == prevOffset):
                 noteList.append(singleNote)
+                # print(len(result))
             else:
                 noteList.sort(key=lambda x: x.quarterLength)
                 for oneNote in noteList:
                     result.append(oneNote)
-                    print(oneNote, oneNote.offset, oneNote.quarterLength)
+                    # print(oneNote, oneNote.offset, oneNote.quarterLength)
                 noteList = [singleNote]
                 prevOffset = singleNote.offset
             # print(singleNote, singleNote.offset, singleNote.quarterLength)
@@ -64,24 +73,30 @@ def stream2list(str):
             elif (type(singleNote) == note.Note):
                 offset = singleNote.offset
         result.append(singleNote)
-        print(singleNote, singleNote.offset, singleNote.quarterLength)
+        # print(singleNote, singleNote.offset, singleNote.quarterLength)
+    result.sort(key=noteSort)
     return (result, offset)
 
 
 
-def getScore(originalList, userList, i, j, score, originalOffset, userOffset):
+def getScore(originalList, userList, originalOffset, userOffset):
     unitScore = 100 / len(originalList)
+    i = 0
+    j = 0
+    score = 100
     while (i < len(originalList) and j < len(userList)):
         correctNote = originalList[i]
         userNote = userList[j]
-        # CASE 1: Chords
+        # TYPE 1: Chords
         if (type(correctNote) == chord.Chord or type(userNote) == chord.Chord):
             # CASE 1: Wrong note with the correct note
             if (type(correctNote) != chord.Chord and correctNote.pitch in userNote.pitches):
                 score -= unitScore / 2
+                print("CASE 1")
             # CASE 2-a: Wrong note without the correct note
             elif (type(userNote) != chord.Chord):
                 score -= unitScore
+                print("CASE 2-a")
             # both notes are chords, so compare their pitches
             else:
                 deductionUnit = max(len(correctNote.pitches), len(userNote.pitches))
@@ -89,40 +104,64 @@ def getScore(originalList, userList, i, j, score, originalOffset, userOffset):
                     # CASE 2-b: Wrong note without the correct note
                     # TODO: Chord comparison
                     if pitch in userNote.pitches:
+                        print("CASE 2-b")
                         deductionUnit -= 1
                 assert(deductionUnit >= 0)
                 score -= deductionUnit * unitScore
+            print(correctNote, userNote)
+        # TYPE 2: Notes
         else:
             # compare their relative offsets
             # if two notes have the same offset
             if (correctNote.offset - originalOffset == userNote.offset - userOffset):
                 # CASE 2-c: Wrong note without the correct note
-                if (correctNote.pitch != userNote.pitch):
+                if (correctNote.pitch.name != userNote.pitch.name):
                     score -= unitScore
+                    print("CASE 2-c")
+                    print("correct: ", correctNote.pitch.name, correctNote.offset, correctNote.quarterLength)
+                    print("user: ", userNote.pitch.name, userNote.offset, userNote.quarterLength)
+                    print("--")
                 # CASE 3-a: Shorter/longer note
                 elif (correctNote.quarterLength != userNote.quarterLength):
                     deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / (correctNote.quarterLength)
                     score -= deduction
-            # if two notes don't have the same offset
+                    print("CASE 3-a")
+                    print("correct: ", correctNote.pitch.name, correctNote.offset, correctNote.quarterLength)
+                    print("user: ", userNote.pitch.name, userNote.offset, userNote.quarterLength)
+                    print("--")
+            # if two notes have different offsets
             else:
-                if (correctNote.pitch == userNote.pitch):
+                if (correctNote.pitch.name == userNote.pitch.name):
                     # CASE 3-b: Shorter/longer note
                     if (correctNote.quarterLength != userNote.quarterLength):
                         deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / (correctNote.quarterLength)
                         score -= deduction
+                        print("CASE 3-b")
+                        print("correct: ", correctNote.pitch.name, correctNote.offset, correctNote.quarterLength)
+                        print("user: ", userNote.pitch.name, userNote.offset, userNote.quarterLength)
+                        print("--")
                     # deduct points based on offset difference
                     # print(originalOffset, userOffset)
                     # print(correctNote.offset - originalOffset, userNote.offset - userOffset)
                     # print("correct: ", correctNote, correctNote.offset, correctNote.quarterLength)
                     # print("user: ", userNote, userNote.offset, userNote.quarterLength)
-                    deduction = unitScore * abs((correctNote.offset - originalOffset) - (userNote.offset - userOffset)) / (correctNote.quarterLength)
-                    score -= deduction
+                    if (correctNote.quarterLength == 0):
+                        score -= unitScore
+                    else:
+                        deduction = unitScore * abs((correctNote.offset - originalOffset) - (userNote.offset - userOffset)) / (correctNote.quarterLength)
+                        score -= deduction
                 # CASE 4: Missing a note
                 else:
                     score -= unitScore
                     j -= 1
+                    print("CASE 4")
+                    print("correct: ", correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
+                    print("user: ", userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
+            # print("correct: ", correctNote.pitch.name, correctNote.offset, correctNote.quarterLength)
+            # print("user: ", userNote.pitch.name, userNote.offset, userNote.quarterLength)
         i += 1
         j += 1
+        # print(i, j)
     return score
 
 
@@ -143,7 +182,7 @@ def compare(originalFile, userFile):
     totalUserNotes = len(userNotesAndRests)
     # print(totalCorrectNotes, totalUserNotes)
 
-    score = getScore(originalNotesAndRests, userNotesAndRests, 0, 0, 100, originalOffset, userOffset)
+    score = getScore(originalNotesAndRests, userNotesAndRests, originalOffset, userOffset)
 
 
 
@@ -153,11 +192,11 @@ def compare(originalFile, userFile):
         score = 0
     return score
 
-# print("1. Missing one note: ", compare("midi/swan.mid", "midi/swanWithOneMissingNote.mid"))
-# print("2. Missing two consecutive notes: ", compare("midi/swan.mid", "midi/swanWithTwoConsecutiveMissingNotes.mid"))
-# print("3. One shorter note: ", compare("midi/swan.mid", "midi/swanWithOneShorterNote.mid"))
-# print("4. One wrong note (with the correct note): ", compare("midi/swan.mid", "midi/swanWithOneWrongNoteWithCorrectNote.mid"))
-# print("5. One wrong note (without the correct note): ", compare("midi/swan.mid", "midi/swanWithOneWrongNote.mid"))
-# print("6. Perfect but rest before starting: ", compare("midi/swan.mid", "midi/swanWithTwoBeatsShifted.mid"))
-print("7. Original with original: ", compare("midi/original.musicxml", "midi/myswan2.mid"))
-# print("8. Vanessa's input: ", compare("midi/vanessa.mid", "midi/swan.mid"))
+# print("1. Missing one note: ", compare("midi/original.musicxml", "midi/swanWithOneMissingNote.mid"))
+# print("2. Missing two consecutive notes: ", compare("midi/original.musicxml", "midi/swanWithTwoConsecutiveMissingNotes.mid"))
+# print("3. One shorter note: ", compare("midi/original.musicxml", "midi/swanWithOneShorterNote.mid"))
+# print("4. One wrong note (with the correct note): ", compare("midi/original.musicxml", "midi/swanWithOneWrongNoteWithCorrectNote.mid"))
+# print("5. One wrong note (without the correct note): ", compare("midi/original.musicxml", "midi/swanWithOneWrongNote.mid"))
+# print("6. Perfect but rest before starting: ", compare("midi/original.musicxml", "midi/swanWithTwoBeatsShifted.mid"))
+# print("7. Original with original: ", compare("midi/original.musicxml", "midi/myswan2.mid"))
+print("8. Vanessa's input: ", compare("midi/original.musicxml", "midi/vanessa.mid"))
