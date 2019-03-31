@@ -1,28 +1,20 @@
 import copy
+from connectedCompObj import NoteComponent, RestComponent, MeasureBarComponent, AccentComponent
 
-def organizeComponents(connectedComponents, lineDist):
-    allMeasures = reorganizeNotesByMeasure(connectedComponents)
-    allMeasures = putAccentsOnNotes(allMeasures, lineDist)
-    return allMeasures
+def organizeComponents(connectedComponents, lineDist, binaryImg):
+    # DESCRIPTION: organizes the connectedComponents into a way the xml generator can use
+    # PARAMETERS: connectedComponents: a list of connected components with all features detected
+    #               lineDist: the median distance between staff lines
+    # RETURN: a list of all measures of ordered notes and rests
+    allMeasures = reorganizeNotesByMeasure(connectedComponents, binaryImg)
+    allMeasures, keySig = putAccentsOnNotes(allMeasures, lineDist)
+    return allMeasures, keySig
 
-def reorganizeNotesByStaffLoc(connectedComponents):
-    allNotesRestsAccents = []
-    maxStaff = None
-    for comp in connectedComponents:
-        if comp.typeName == "note" or comp.typeName == "rest" or comp.typeName == "accent" or comp.typeName == "measure bar":
-            allNotesRestsAccents.append(comp)
-            if maxStaff == None or comp.staff > maxStaff:
-                maxStaff = comp.staff
-    notesByStaff = [[] for i in range(maxStaff)]
-    for item in allNotesRestsAccents:
-        notesByStaff[item.staff-1].append(item)
-    fullList = []
-    for staff in notesByStaff:
-        staff.sort(key=lambda note: note.x0)
-        fullList.append(staff)
-    return fullList
-
-def reorganizeNotesByMeasure(connectedComponents):
+def reorganizeNotesByMeasure(connectedComponents, binaryImg):
+    # DESCRIPTION: organizes the components by what measure they are in, and then based on staff and x position
+    # PARAMETERS: connectedComponents: a 2D list of connectedComponent objects with no organization
+    # RETURN: a list of all measures, each measure is a list containing all connected component objects in order of
+    #           each note on the first staff (ordered by x location) and then the second staff
     reorgByStaffLoc = reorganizeNotesByStaffLoc(connectedComponents)
     measures = []
     curMeasureStaff1 = []
@@ -40,11 +32,11 @@ def reorganizeNotesByMeasure(connectedComponents):
             else:
                 noteElem = staff2[staff2ElemNum]
                 staff2ElemNum += 1
-            if curStaff == 1 and curMeasureStaff1 == [] and (noteElem.typeName == "measure bar" or noteElem.typeName == "accent"):
+            if curStaff == 1 and curMeasureStaff1 == [] and (isinstance(noteElem, MeasureBarComponent) or isinstance(noteElem, AccentComponent)):
                 continue
-            if curStaff == 2 and curMeasureStaff2 == [] and (noteElem.typeName == "measure bar" or noteElem.typeName == "accent"):
+            if curStaff == 2 and curMeasureStaff2 == [] and (isinstance(noteElem, MeasureBarComponent) or isinstance(noteElem, AccentComponent)):
                 continue
-            if noteElem.typeName == "measure bar":
+            if isinstance(noteElem, MeasureBarComponent):
                 if curStaff == 1:
                     curStaff = 2
                 elif curStaff == 2:
@@ -61,24 +53,50 @@ def reorganizeNotesByMeasure(connectedComponents):
         measures.append(curMeasureStaff1+curMeasureStaff2)
     return measures
 
-#####REORGANIZE NOTES BY PUTTING ACCENTS ON NOTES
+def reorganizeNotesByStaffLoc(connectedComponents):
+    # DESCRIPTION: organizes the components by what staff they are on, and then based on x position
+    # PARAMETERS: connectedComponents: a list of connectedComponent objects with no organization
+    # RETURN: a list of all staffs, where each staff is is a list of connected components organized by x location
+    allNotesRestsAccents = []
+    maxStaff = None
+    for comp in connectedComponents:
+        if isinstance(comp, NoteComponent) or isinstance(comp, RestComponent) or isinstance(comp, AccentComponent) or isinstance(comp, MeasureBarComponent):
+            allNotesRestsAccents.append(comp)
+            if maxStaff == None or comp.staff > maxStaff:
+                maxStaff = comp.staff
+    notesByStaff = [[] for i in range(maxStaff)]
+    for item in allNotesRestsAccents:
+        notesByStaff[item.staff-1].append(item)
+    fullList = []
+    for staff in notesByStaff:
+        staff.sort(key=lambda note: note.x0)
+        fullList.append(staff)
+    return fullList
 
 def putAccentsOnNotes(allMeasures, distBetweenStaffLines):
+    # DESCRIPTION: alters and/or dots each note by if they have an accidental or based on key signature or if they have a dot
+    # PARAMETERS: allMeasures: a list of connectedComponent objects organized by measure
+    #                   distBetweenStaffLines: the median distance between staff lines
+    # RETURN: a list of all measures where each staff is is a list of notes and rests altered by dots and sharps/flats/naturals/key sigs
     newAllMeasures = []
     accentToNoteDistThreshold = distBetweenStaffLines * 2
-    flatsSharps = getFlatsSharps(allMeasures[0], accentToNoteDistThreshold=accentToNoteDistThreshold)
+    flatsSharps, keySig = getFlatsSharps(allMeasures[0], accentToNoteDistThreshold=accentToNoteDistThreshold)
     for measureNum in range(len(allMeasures)):
         measure = allMeasures[measureNum]
         newMeasure = putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, copy.copy(flatsSharps))
         newAllMeasures.append(newMeasure)
-    return newAllMeasures
+    return newAllMeasures, keySig
 
 def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
+    # DESCRIPTION: takes the first measure and returns a dictionary for the keysig
+    # PARAMETERS: firstMeasure: a list of connectedComponent objects in the first measure fully organized
+    #               accentToNoteDistThreshold: the furthest an accent can be away from a note and still considered part of it
+    # RETURN: a dictionary of pitch ('A', 'B', ...) to any alters for that pitch based on the found key signature
     keySig = 0
     noteElemIndex = 0
     noteElem = firstMeasure[noteElemIndex]
     lastNote = None
-    while noteElem.typeName == "accent":
+    while isinstance(noteElem, AccentComponent):
         if noteElem.subTypeName == "sharp":
             keySig += 1
         elif noteElem.subTypeName == "flat":
@@ -86,12 +104,12 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
         lastNote = noteElem
         noteElemIndex += 1
         noteElem = firstMeasure[noteElemIndex]
-    if noteElem.typeName == "rest":
+    if isinstance(noteElem, RestComponent):
         # a rest cannot have a sharp or flat, all previous ones must be part of keySig
-        return getKeySigDict(keySig=keySig)
+        return getKeySigDict(keySig=keySig), keySig
     elif lastNote == None:
         assert(keySig == 0)
-        return getKeySigDict(keySig=keySig)
+        return getKeySigDict(keySig=keySig), keySig
     else:
         # need to check that the last note is actually part of the keySig and not part of the first note
         # need to check each pitch in this note and the dist between them and accent
@@ -108,12 +126,17 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
                     keySig -= 1
                 elif lastNote.subTypename == "flat":
                     keySig += 1
-                return getKeySigDict(keySig=keySig)
+                return getKeySigDict(keySig=keySig), keySig
         # All pitches were far enough away
-        return getKeySigDict(keySig=keySig)
+        return getKeySigDict(keySig=keySig), keySig
 
 
 def putDotOnNote(noteElem, dotElem, accentToNoteDistThreshold):
+    # DESCRIPTION: attempts to place the dot on the last note found
+    # PARAMETERS: noteElem: the last note found that we might attach a dot to
+    #               dotElem: the connectedComponent representing a dot accent
+    #               accentToNoteDistThreshold: the furthest an accent can be away from a note and still considered part of it
+    # RETURN: None
     if len(noteElem.pitches) == 1:
         # easy case, only one pitch to dot
         noteElem.dottedPitches[0] = True
@@ -135,8 +158,14 @@ def putDotOnNote(noteElem, dotElem, accentToNoteDistThreshold):
         if bestPitchIndex != None:
             noteElem.dottedPitches[bestPitchIndex] = True
 
-def putAccentOnNote(noteElem, accentElem, flatsSharps, accentToNoteDistThreshold):
-    # need to alter a pitch, but which one
+def putAccidentalOnNote(noteElem, accentElem, flatsSharps, accentToNoteDistThreshold):
+    # DESCRIPTION: attempts to alter one of the pitches in the note based on accidentals
+    # PARAMETERS: noteElem: the note component where one pitch should be altered
+    #               accentElem: the connectedComponent representing an accidental
+    #               flatsSharps: the dictionary of pitches and how to alter them for this measure
+    #               accentToNoteDistThreshold: the furthest an accent can be away from a note and still considered part of it
+    # RETURN: None
+
     if len(noteElem.pitches) == 1:
         # easy case, only one pitch to change
         noteElem.alterPitches[0] = accentElem.subTypeName
@@ -164,27 +193,32 @@ def putAccentOnNote(noteElem, accentElem, flatsSharps, accentToNoteDistThreshold
 
 
 def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
+    # DESCRIPTION: attempts to alter each of the notes in the measure based on accidentals, key sig, and dots
+    # PARAMETERS: measure: the list of notes, rests, and accents in the measure ordered fully
+    #               accentToNoteDistThreshold: the furthest an accent can be away from a note and still considered part of it
+    #               flatsSharps: the dictionary of pitches and how to alter them for this measure
+    # RETURN: a new list of all the notes and rests in the measure, altered by their accents and key sig
     newMeasure = []
     lastAccentBeforeNoteRest = None
     seenNoteRest = False
     alterNextNote = False
     for noteElemNum in range(len(measure)):
         noteElem = measure[noteElemNum]
-        if seenNoteRest == False and noteElem.typeName == "accent":
+        if seenNoteRest == False and isinstance(noteElem, AccentComponent):
             lastAccentBeforeNoteRest = noteElem
             alterNextNote = True
             # we don't want to actually add the accent itself
             continue
-        elif seenNoteRest == False and (noteElem.typeName == "note" or noteElem.typeName == "flat"):
+        elif seenNoteRest == False and (isinstance(noteElem, NoteComponent) or isinstance(noteElem, RestComponent)):
             seenNoteRest = True
 
-        if noteElem.typeName == "accent":
+        if isinstance(noteElem, AccentComponent):
             lastAccentBeforeNoteRest = None
             alterNextNote = None
             if noteElem.subTypeName == "dot" and len(newMeasure)>0:
                 # look at last note in the measure
                 lastNote = newMeasure[-1]
-                if lastNote.typeName == "note":
+                if isinstance(lastNote, NoteComponent):
                     putDotOnNote(noteElem=lastNote, dotElem=noteElem, accentToNoteDistThreshold=accentToNoteDistThreshold)
             elif noteElem.subTypeName == "sharp":
                 lastAccentBeforeNoteRest = noteElem
@@ -196,18 +230,18 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
                 lastAccentBeforeNoteRest = noteElem
                 alterNextNote = True
 
-        elif noteElem.typeName == "rest":
+        elif isinstance(noteElem, RestComponent):
             # cannot do anything accent-wise to  rest, but reset any other accent information
             newMeasure.append(noteElem)
             alterNextNote = None
             lastAccentBeforeNoteRest = None
 
-        elif noteElem.typeName == "note":
+        elif isinstance(noteElem, NoteComponent):
             newMeasure.append(noteElem)
             noteElem.dottedPitches = [False]*len(noteElem.pitches)
             noteElem.alterPitches = ["natural"]*len(noteElem.pitches)
             if lastAccentBeforeNoteRest != None and alterNextNote != None:
-                putAccentOnNote(noteElem, lastAccentBeforeNoteRest, flatsSharps, accentToNoteDistThreshold)
+                putAccidentalOnNote(noteElem, lastAccentBeforeNoteRest, flatsSharps, accentToNoteDistThreshold)
             # need to check if the key or other accidentals in the measure alter each pitch
             for pitchIndex in range(len(noteElem.pitches)):
                 pitch = noteElem.pitches[pitchIndex]["step"]
@@ -217,6 +251,9 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
 
 
 def getKeySigDict(keySig):
+    # DESCRIPTION: returns the dictionary of what notes are changed from the key signature
+    # PARAMETERS: keySig: int representing how many sharps (+1) or flats(-1) for this keySignature
+    # RETURN: a dictionary of each pitch and whether it is flat, sharp or natural
     sharpsFlats = {"A":"natural", "B":"natural", "C":"natural", "D":"natural", "E":"natural", "F":"natural", "G":"natural"}
     if keySig >= 1:
         sharpsFlats["F"] = "sharp"
