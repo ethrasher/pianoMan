@@ -11,15 +11,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/performanceScoreEvaluator$performanceScoreEvaluator.coverage" NAME="performanceScoreEvaluator Coverage Results" MODIFIED="1554735431107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/performanceScoreEvaluator$performanceScoreEvaluator.coverage" NAME="performanceScoreEvaluator Coverage Results" MODIFIED="1554736665671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="performanceScoreEvaluator.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+            <state relative-caret-position="279">
+              <caret line="123" column="46" lean-forward="false" selection-start-line="123" selection-start-column="46" selection-end-line="123" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -244,12 +244,12 @@
       <option name="presentableId" value="Default" />
       <updated>1552920273755</updated>
       <workItem from="1552920277048" duration="51530000" />
-      <workItem from="1554734777951" duration="654000" />
+      <workItem from="1554734777951" duration="1884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52184000" />
+    <option name="totallyTimeSpent" value="53414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -317,13 +317,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="10165" column="42" lean-forward="false" selection-start-line="10165" selection-start-column="42" selection-end-line="10165" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        <state relative-caret-position="279">
+          <caret line="123" column="46" lean-forward="false" selection-start-line="123" selection-start-column="46" selection-end-line="123" selection-end-column="46" />
           <folding />
         </state>
       </provider>

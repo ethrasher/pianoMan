@@ -67,6 +67,15 @@ def stream2list(str):
     # str.show('text')
     result = []
     offset = 0.0
+    # print(str.parts)
+    for part in str.parts:
+        # str.remove(part)
+    #     print(part.getElementsByClass(clef.Clef))
+        for measure in part.getElementsByClass(stream.Measure):
+            if (measure.clef == clef.TrebleClef()):
+                print("trebble")
+                # str.remove(part)
+                break
     for singleNote in str.semiFlat.notes:
         if (len(result) == 0):
             if (type(singleNote) == note.Note):
@@ -112,8 +121,7 @@ def getScore(originalList, userList, originalOffset, userOffset):
                         # print("CASE 2-b")
                         deductionUnit -= 1
                 assert(deductionUnit >= 0)
-                # TODO: commented out for demo
-                # score -= deductionUnit * unitScore
+                score -= deductionUnit * unitScore
         # TYPE 2: Notes
         else:
             # compare their relative offsets
