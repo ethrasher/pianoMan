@@ -69,9 +69,7 @@ def stream2list(str):
     offset = 0.0
     for singleNote in str.semiFlat.notes:
         if (len(result) == 0):
-            if (type(singleNote) == note.Rest):
-                continue
-            elif (type(singleNote) == note.Note):
+            if (type(singleNote) == note.Note):
                 offset = singleNote.offset
         result.append(singleNote)
         # print(singleNote, singleNote.offset, singleNote.quarterLength)
@@ -99,23 +97,23 @@ def getScore(originalList, userList, originalOffset, userOffset):
             # CASE 1: Wrong note with the correct note
             if (type(correctNote) != chord.Chord and correctNote.pitch in userNote.pitches):
                 score -= unitScore / 2
-                print("CASE 1")
+                # print("CASE 1")
             # CASE 2-a: Wrong note without the correct note
             elif (type(userNote) != chord.Chord):
                 score -= unitScore
-                print("CASE 2-a")
+                # print("CASE 2-a")
             # both notes are chords, so compare their pitches
             else:
                 deductionUnit = max(len(correctNote.pitches), len(userNote.pitches))
                 for pitch in correctNote.pitches:
                     # CASE 2-b: Wrong note without the correct note
-                    # TODO: Chord comparison
+                    # TODO: Two Chords comparison
                     if pitch in userNote.pitches:
-                        print("CASE 2-b")
+                        # print("CASE 2-b")
                         deductionUnit -= 1
                 assert(deductionUnit >= 0)
-                score -= deductionUnit * unitScore
-            print(correctNote, userNote)
+                # TODO: commented out for demo
+                # score -= deductionUnit * unitScore
         # TYPE 2: Notes
         else:
             # compare their relative offsets
@@ -124,18 +122,18 @@ def getScore(originalList, userList, originalOffset, userOffset):
                 # CASE 2-c: Wrong note without the correct note
                 if (correctNote.pitch.name != userNote.pitch.name):
                     score -= unitScore
-                    print("CASE 2-c")
-                    print("correct: ", correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
-                    print("user: ", userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
-                    print("--")
+                    # print("CASE 2-c")
+                    # print("correct: ", correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
+                    # print("user: ", userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
+                    # print("--")
                 # CASE 3-a: Shorter/longer note
                 elif (correctNote.quarterLength != userNote.quarterLength):
                     deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / (correctNote.quarterLength)
                     score -= deduction
-                    print("CASE 3-a")
-                    print("correct: ", correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
-                    print("user: ", userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
-                    print("--")
+                    # print("CASE 3-a")
+                    # print("correct: ", correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
+                    # print("user: ", userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
+                    # print("--")
             # if two notes have different offsets
             else:
                 if (correctNote.pitch.name == userNote.pitch.name):
@@ -143,19 +141,16 @@ def getScore(originalList, userList, originalOffset, userOffset):
                     if (correctNote.quarterLength != userNote.quarterLength):
                         deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / (correctNote.quarterLength)
                         score -= deduction
-                        print("CASE 3-b")
-                        print("correct: ", correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
-                        print("user: ", userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
-                        print("converted: ", tempo.convertTempoByReferent(userNote.offset - userOffset, 1, 2))
-                        print("converted: ", tempo.convertTempoByReferent(userNote.quarterLength, 1, 2))
-                        print("--")
+                        # print("CASE 3-b")
+                        # print("correct: ", correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
+                        # print("user: ", userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
+                        # print("converted: ", tempo.convertTempoByReferent(userNote.offset - userOffset, 1, 2))
+                        # print("converted: ", tempo.convertTempoByReferent(userNote.quarterLength, 1, 2))
+                        # print("--")
                     # deduct points based on offset difference
-                    # print(originalOffset, userOffset)
-                    # print(correctNote.offset - originalOffset, userNote.offset - userOffset)
-                    # print("correct: ", correctNote, correctNote.offset, correctNote.quarterLength)
-                    # print("user: ", userNote, userNote.offset, userNote.quarterLength)
+                    # if correctNote's quarterLength is 0, prevent division by 0
                     if (correctNote.quarterLength == 0):
-                        print("Correct note's quarterLength is 0")
+                        # print("Correct note's quarterLength is 0")
                         score -= unitScore
                     else:
                         deduction = unitScore * abs((correctNote.offset - originalOffset) - (userNote.offset - userOffset)) / (correctNote.quarterLength)
@@ -163,18 +158,20 @@ def getScore(originalList, userList, originalOffset, userOffset):
                 # CASE 4: Missing a note
                 else:
                     score -= unitScore
-                    j -= 1
-                    print("CASE 4")
-                    print("correct: ", correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
-                    print("user: ", userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
-                    print("converted: ", tempo.convertTempoByReferent(userNote.offset - userOffset, 1, 3))
+                    if (correctNote.offset - originalOffset > userNote.offset - userOffset):
+                        i -= 1
+                    else:
+                        j -= 1
+                    # print("CASE 4")
+                    # print("correct: ", correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
+                    # print("user: ", userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
+                    # print("converted: ", tempo.convertTempoByReferent(userNote.offset - userOffset, 1, 3))
             # print("correct: ", correctNote.pitch.name, correctNote.offset, correctNote.quarterLength)
             # print("user: ", userNote.pitch.name, userNote.offset, userNote.quarterLength)
         i += 1
         j += 1
         # print(i, j)
     return score
-
 
 def compare(originalFile, userFile):
     originalStream = xml2stream(originalFile)
@@ -183,11 +180,12 @@ def compare(originalFile, userFile):
     userStream = midi2stream(userFile)
     (originalNotesAndRests, originalOffset) = stream2list(originalStream)
     # print(userStream.tempo)
-    print("original offset ", originalOffset)
+    # print("original offset ", originalOffset)
     # userStream.show('text')
+    # originalStream.show('text')
     # printNotesList(originalNotesAndRests, originalOffset)
     (userNotesAndRests, userOffset) = score2list(userStream)
-    print("user offset", userOffset)
+    # print("user offset", userOffset)
     # printNotesList(userNotesAndRests, userOffset)
 
     # print(originalNotesAndRests)
@@ -208,12 +206,13 @@ def compare(originalFile, userFile):
         score = 0
     return score
 
-# print("1. Missing one note: ", compare("midi/original.mxl", "midi/swanWithOneMissingNote.mid"))
-# print("2. Missing two consecutive notes: ", compare("midi/original.mxl", "midi/swanWithTwoConsecutiveMissingNotes.mid"))
-# print("3. One shorter note: ", compare("midi/original.mxl", "midi/swanWithOneShorterNote.mid"))
-# print("4. One wrong note (with the correct note): ", compare("midi/original.mxl", "midi/swanWithOneWrongNoteWithCorrectNote.mid"))
-# print("5. One wrong note (without the correct note): ", compare("midi/original.mxl", "midi/swanWithOneWrongNote.mid"))
-# print("6. Perfect but rest before starting: ", compare("midi/original.mxl", "midi/swanWithTwoBeatsShifted.mid"))
-# print("7. Original with original: ", compare("midi/original.mxl", "midi/myswan2.mid"))
-# print("8. Vanessa's input: ", compare("midi/original.musicxml", "midi/test5034.mid"))
-# print("9. should be 100: ", compare("midi/original.mxl", "midi/original.mxl"))
+print("1. Missing one note: ", compare("midi/outputXML.musicxml", "midi/swanWithOneMissingNote.mid"))
+print("2. Missing two consecutive notes: ", compare("midi/outputXML.musicxml", "midi/swanWithTwoConsecutiveMissingNotes.mid"))
+print("3. One shorter note: ", compare("midi/outputXML.musicxml", "midi/swanWithOneShorterNote.mid"))
+print("4. One wrong note (with the correct note): ", compare("midi/outputXML.musicxml", "midi/swanWithOneWrongNoteWithCorrectNote.mid"))
+print("5. One wrong note (without the correct note): ", compare("midi/outputXML.musicxml", "midi/swanWithOneWrongNote.mid"))
+print("6. Perfect but rest before starting: ", compare("midi/outputXML.musicxml", "midi/swanWithTwoBeatsShifted.mid"))
+print("7. Good Performance: ", compare("midi/outputXML.musicxml", "midi/User Performance.mid"))
+print("8. Bad Performance: ", compare("midi/outputXML.musicxml", "midi/BadPerformance.mid"))
+print("9. Bad Performance 2: ", compare("midi/outputXML.musicxml", "midi/BadPerformance2.mid"))
+print("10. Demo Performance: ", compare("midi/outputXML.musicxml", "midi/DemoPerformance.mid"))
