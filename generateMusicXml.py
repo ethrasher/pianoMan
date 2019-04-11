@@ -101,7 +101,7 @@ def formXML(allMeasures, divisions, key, timeBeats, timeBeatType):
     attribute = formAttributeDictionary(divisions=divisions, key=key, timeBeats=timeBeats, timeBeatType=timeBeatType)
     dictMeasures = formXMLDictionaryFromObjects(allMeasures, 1)
     measureDuration = attribute["time"]["beats"]
-    generateMusicXML("fileName here", measureDuration, attribute, dictMeasures)
+    generateMusicXML("Swans on the Lake", measureDuration, attribute, dictMeasures)
 
 
 ###########EXAMPLES FOR DEVELOPING BELOW
