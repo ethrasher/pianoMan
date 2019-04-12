@@ -86,6 +86,12 @@ class RadioButtons(object):
         for button in self.buttons:
             button.draw(canvas)
 
+    def getSelectedIndex(self):
+        for i in range(len(self.buttons)):
+            if self.buttons[i].selected:
+                return i
+        return None
+
 
 class TextBox(object):
     def __init__(self, x0, y0, x1, y1, label):
@@ -128,7 +134,7 @@ class TextBox(object):
             width = 5
         else:
             width=1
-        canvas.create_rectangle(self.x0, self.y0, self.x1-10, self.y1, fill="white", outline="dark goldenrod", width = width)
+        canvas.create_rectangle(self.x0, self.y0, self.x1, self.y1, fill="white", outline="dark goldenrod", width = width)
         canvas.create_text(self.x0+5, (self.y0+self.y1)/2, anchor="w", text = self.text, fill="black", font="Times 18")
 
 
@@ -141,10 +147,13 @@ def init(data):
     data.musicPdfPath = ''
     data.getFileButton = Button(x0=10, y0=data.height//2-70, x1=160, y1=data.height//2-20, color="black", text="Select File")
     data.fileNameTextBox = TextBox(x0=160, y0=data.height//2-20, x1=data.width//2, y1=data.height//2+30, label="Song Name")
-    data.speedButtons = RadioButtons(x0=110, y0=data.height//2+110, x1=data.width//2, y1=data.height//2+160, text = ["1", "2", "3", "4", "5"], label="Speed")
-    data.handButtons = RadioButtons(x0=110, y0=data.height/2+200, x1=data.width//2, y1=data.height/2+250, text=["base\nclef", "treble\nclef", "both"], label="Hands")
+    data.speedLabels = ["1", "2", "3", "4", "5"]
+    data.speedButtons = RadioButtons(x0=110, y0=data.height//2+110, x1=data.width//2, y1=data.height//2+160, text = data.speedLabels, label="Speed")
+    data.handLabels = ["base\nclef", "treble\nclef", "both"]
+    data.handButtons = RadioButtons(x0=110, y0=data.height/2+200, x1=data.width//2, y1=data.height/2+250, text=data.handLabels, label="Hands")
     data.submitButton = Button(x0=data.width-160, y0=data.height//2-70, x1=data.width-10, y1=data.height//2-20, color="dark goldenrod", text="Start")
     data.musicPdfPath = ''
+    data.startError = ''
 
 def mousePressed(root, event, data):
     # use event.x and event.y
@@ -159,14 +168,37 @@ def mousePressed(root, event, data):
     data.handButtons.clickedInside(event.x, event.y)
     data.fileNameTextBox.clickedInside(event.x, event.y)
     if data.submitButton.clickedInside(event.x, event.y):
-        pass
+        startValues = checkStartValues(data)
+        if type(startValues) == str:
+            #there was an error
+            data.startError = startValues
+        else:
+            data.startError = 'Processing...'
+
+
+def checkStartValues(data):
+    if data.musicPdfPath == '':
+        return "No PDF File Selected"
+    if data.fileNameTextBox.text == '':
+        return "No Song Name"
+    speedIndex = data.speedButtons.getSelectedIndex()
+    handIndex = data.handButtons.getSelectedIndex()
+    if speedIndex == None:
+        return "No Speed Level"
+    if handIndex == None:
+        return "No Hand Style"
+    return (data.musicPdfPath, data.fileNameTextBox.text, data.speedLabels[speedIndex], data.handLabels[handIndex])
+
 
 def keyPressed(event, data):
     # use event.char and event.keysym
     data.fileNameTextBox.updateText(event.keysym)
 
 def timerFired(data):
-    pass
+    if data.startError == "Processing...":
+        shouldSend = False
+        pianoMan(shouldSend, data.musicPdfPath, data.fileNameTextBox.text)
+        data.startError = ""
 
 def redrawAll(canvas, data):
     # draw in canvas
@@ -178,6 +210,8 @@ def redrawAll(canvas, data):
     data.handButtons.draw(canvas=canvas)
     data.fileNameTextBox.draw(canvas=canvas)
     data.submitButton.draw(canvas=canvas)
+    canvas.create_rectangle(data.submitButton.x0, data.submitButton.y1, data.submitButton.x1, data.submitButton.y1+50, fill="black")
+    canvas.create_text(data.submitButton.x0, data.submitButton.y1+25, anchor="w", text=data.startError, fill="white", font="Times 18")
 
 ####################################
 # use the run function as-is

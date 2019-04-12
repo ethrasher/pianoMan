@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AllCitations.txt" afterPath="$PROJECT_DIR$/AllCitations.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generateMusicXml.py" afterPath="$PROJECT_DIR$/generateMusicXml.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" afterPath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/staffLineDetectionRemoval.py" afterPath="$PROJECT_DIR$/staffLineDetectionRemoval.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,8 +35,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="20" column="60" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="60" />
+            <state relative-caret-position="349">
+              <caret line="100" column="41" lean-forward="true" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="41" />
               <folding>
                 <element signature="e#84#93#0" expanded="true" />
               </folding>
@@ -47,8 +47,8 @@
       <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="130" column="108" lean-forward="false" selection-start-line="130" selection-start-column="108" selection-end-line="130" selection-end-column="108" />
+            <state relative-caret-position="147">
+              <caret line="200" column="28" lean-forward="false" selection-start-line="200" selection-start-column="28" selection-end-line="200" selection-end-column="28" />
               <folding>
                 <element signature="e#16#46#0" expanded="true" />
               </folding>
@@ -69,8 +69,8 @@
       <file leaf-file-name="generateMusicXml.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="104">
+              <caret line="102" column="48" lean-forward="true" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="48" />
               <folding>
                 <element signature="e#0#22#0" expanded="true" />
               </folding>
@@ -147,10 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>save</find>
-      <find>unique</find>
-      <find>self.staff =</find>
-      <find>compNum</find>
       <find>self.circles</find>
       <find>putAccentsOnNotesInMeasure</find>
       <find>getFlatsSharps</find>
@@ -177,6 +173,10 @@
       <find>init</find>
       <find>print</find>
       <find>yellow</find>
+      <find>fileName</find>
+      <find>generateMusicXML</find>
+      <find>formXML</find>
+      <find>pianoMan</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -190,23 +190,23 @@
         <option value="$PROJECT_DIR$/music_images/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/templates/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/preprocessing.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/organizeComps.py" />
         <option value="$PROJECT_DIR$/musicSymbolRecognition.py" />
         <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
         <option value="$PROJECT_DIR$/connectedCompObj.py" />
         <option value="$PROJECT_DIR$/TODOLIST.txt" />
-        <option value="$PROJECT_DIR$/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/staffLineDetectionRemoval.py" />
         <option value="$PROJECT_DIR$/AllCitations.txt" />
+        <option value="$PROJECT_DIR$/generateMusicXml.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/gui.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="147" />
-    <option name="y" value="23" />
-    <option name="width" value="1061" />
+    <option name="x" value="194" />
+    <option name="y" value="29" />
+    <option name="width" value="1412" />
     <option name="height" value="731" />
   </component>
   <component name="ProjectView">
@@ -224,6 +224,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="pianoMan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pianoMan" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pianoMan" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pianoMan" type="462c0819:PsiDirectoryNode" />
+              <item name="music_images" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -241,22 +257,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="pianoMan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pianoMan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pianoMan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pianoMan" type="462c0819:PsiDirectoryNode" />
-              <item name="music_images" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -357,15 +357,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="147" y="23" width="1061" height="731" extended-state="0" />
+    <frame x="194" y="29" width="1412" height="731" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19332679" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14963503" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5039139" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29690048" sideWeight="0.4960861" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.4960861" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24938068" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19157721" sideWeight="0.50877196" order="2" side_tool="true" content_ui="tabs" />
@@ -656,16 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/musicSymbolRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -714,16 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="20" column="60" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="60" />
-          <folding>
-            <element signature="e#84#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AllCitations.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -732,10 +712,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="102" column="48" lean-forward="true" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="100" column="41" lean-forward="true" selection-start-line="100" selection-start-column="41" selection-end-line="100" selection-end-column="41" />
+          <folding>
+            <element signature="e#84#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="130" column="108" lean-forward="false" selection-start-line="130" selection-start-column="108" selection-end-line="130" selection-end-column="108" />
+        <state relative-caret-position="147">
+          <caret line="200" column="28" lean-forward="false" selection-start-line="200" selection-start-column="28" selection-end-line="200" selection-end-column="28" />
           <folding>
             <element signature="e#16#46#0" expanded="true" />
           </folding>

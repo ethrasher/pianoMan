@@ -12,14 +12,13 @@ warnings.filterwarnings(action='ignore',module='.*paramiko.*')
 #Note for original developer:python alias to use => pythoncv
 
 
-def pianoMan(shouldSend):
+def pianoMan(shouldSend, pdfPath, fileName):
     # DESCRIPTION: runs the omr on a pdf file, attempts to save xml and send to pi in some cases
     # PARAMETERS: shouldSend: boolean, if true will send the outputXML to the raspberry pi at the end, otherwise will not
     # RETURN: None
 
     # get the path for the pdf to use omr on
-    scriptPath = os.path.dirname(os.path.realpath(__file__))
-    pdfPath = scriptPath + getPDFPath(songNum=0)
+
     pdfFileName = pdfPath.split(os.sep)[-1]
     jpgFileName = pdfFileName.split(".")[0]
     pdfPreFileName = pdfPath[:len(pdfPath) - len(pdfFileName)]
@@ -46,7 +45,7 @@ def pianoMan(shouldSend):
             allMeasures += recognitionItems[0]
 
     # create the xml based on the measures found
-    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1])
+    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1], fileName=fileName)
 
     # if arguments state to send the file to the raspberryPi, send it
     if shouldSend:
@@ -94,15 +93,18 @@ def getPDFPath(songNum):
 
 if __name__ == "__main__":
     # Determine the command line arguments
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    pdfPath = scriptPath + getPDFPath(songNum=0)
+    fileName = "Swans on the Lake"
     if len(sys.argv) == 1:
         # did not specify whether to save new file or not. Will save as default
-        pianoMan(True)
+        pianoMan(True, pdfPath, fileName)
     elif len(sys.argv) == 2 and isinstance(sys.argv[1], bool):
-        pianoMan(sys.argv[1])
+        pianoMan(sys.argv[1], pdfPath, fileName)
     elif len(sys.argv) == 2 and isinstance(sys.argv[1], str) and sys.argv[1] == "True":
-        pianoMan(True)
+        pianoMan(True, pdfPath, fileName)
     elif len(sys.argv) == 2 and isinstance(sys.argv[1], str) and sys.argv[1] == "False":
-        pianoMan(False)
+        pianoMan(False, pdfPath, fileName)
     else:
         raise Exception("Wrong number of arguments specified. Should include 0 or 1 boolean arguments")
 

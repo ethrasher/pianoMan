@@ -97,11 +97,11 @@ def formAttributeDictionary(divisions, key, timeBeats, timeBeatType):
                  "clef": [{"sign": "G", "line": "2"}, {"sign": "F", "line": "4"}]}
     return attribute
 
-def formXML(allMeasures, divisions, key, timeBeats, timeBeatType):
+def formXML(allMeasures, divisions, key, timeBeats, timeBeatType, fileName):
     attribute = formAttributeDictionary(divisions=divisions, key=key, timeBeats=timeBeats, timeBeatType=timeBeatType)
     dictMeasures = formXMLDictionaryFromObjects(allMeasures, 1)
     measureDuration = attribute["time"]["beats"]
-    generateMusicXML("Swans on the Lake", measureDuration, attribute, dictMeasures)
+    generateMusicXML(fileName, measureDuration, attribute, dictMeasures)
 
 
 ###########EXAMPLES FOR DEVELOPING BELOW
