@@ -32,3 +32,6 @@ Gui starter code
 
 Opening a file dialog
 15. https://pythonspot.com/tk-file-dialogs/
+
+Writing a txt file
+16. https://www.cs.cmu.edu/~112/notes/notes-strings.html#basicFileIO

@@ -2,11 +2,12 @@
 
 import os
 import sys
-import paramiko #Citations [1,2,3,4]
+#import paramiko #Citations [1,2,3,4]
 from pdf2image import convert_from_path #Citations [6]
 from preprocessing import preprocess
 from musicSymbolRecognition import musicSymbolRecognition
 from generateMusicXml import formXML
+from sendToPi import sendFileToPi
 import warnings #Citations [5]
 warnings.filterwarnings(action='ignore',module='.*paramiko.*')
 #Note for original developer:python alias to use => pythoncv
@@ -49,7 +50,8 @@ def pianoMan(shouldSend, pdfPath, fileName):
 
     # if arguments state to send the file to the raspberryPi, send it
     if shouldSend:
-        try:
+        sendFileToPi("outputXML.xml")
+        '''try:
             ssh = createSSHClient() #Citations [1,2,3,4]
             ftp_client = ssh.open_sftp()
             scriptPath = os.path.dirname(os.path.realpath(__file__))
@@ -58,19 +60,10 @@ def pianoMan(shouldSend, pdfPath, fileName):
             ftp_client.put(outGoingDest, inComingDest)
             ftp_client.close()
         except:
-            raise Exception("Could not make connection to raspberryPi. Make sure pi is on.")
+            raise Exception("Could not make connection to raspberryPi. Make sure pi is on.")'''
 
 
-def createSSHClient():
-    # DESCRIPTION: makes the connection over SSH to the raspberryPi
-    # PARAMETERS: Nothing
-    # RETURN: client: a paramiko SSHClient object giving the SSH connection to the raspberryPi
 
-    client = paramiko.SSHClient() #Citations [1,2,3,4]
-    client.load_system_host_keys()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    client.connect(hostname="172.26.197.78", port=22, username="pi", password="pianoMan2019")
-    return client
 
 def getPDFPath(songNum):
     # DESCRIPTION: gives the end of the filePath to each of the downloaded songs

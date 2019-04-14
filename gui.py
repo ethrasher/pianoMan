@@ -4,6 +4,8 @@ from tkinter import filedialog
 from tkinter import *
 import os
 from main import pianoMan
+from sendToPi import sendFileToPi
+
 
 ####################################
 # customize these functions
@@ -138,44 +140,6 @@ class TextBox(object):
         canvas.create_text(self.x0+5, (self.y0+self.y1)/2, anchor="w", text = self.text, fill="black", font="Times 18")
 
 
-def init(data):
-    #shouldSend = False
-    #pianoMan(shouldSend)
-    scriptPath = os.path.dirname(os.path.realpath(__file__))
-    data.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
-    data.titleImage = PhotoImage(file=scriptPath + "/guiImages/title.gif")
-    data.musicPdfPath = ''
-    data.getFileButton = Button(x0=10, y0=data.height//2-70, x1=160, y1=data.height//2-20, color="black", text="Select File")
-    data.fileNameTextBox = TextBox(x0=160, y0=data.height//2-20, x1=data.width//2, y1=data.height//2+30, label="Song Name")
-    data.speedLabels = ["1", "2", "3", "4", "5"]
-    data.speedButtons = RadioButtons(x0=110, y0=data.height//2+110, x1=data.width//2, y1=data.height//2+160, text = data.speedLabels, label="Speed")
-    data.handLabels = ["base\nclef", "treble\nclef", "both"]
-    data.handButtons = RadioButtons(x0=110, y0=data.height/2+200, x1=data.width//2, y1=data.height/2+250, text=data.handLabels, label="Hands")
-    data.submitButton = Button(x0=data.width-160, y0=data.height//2-70, x1=data.width-10, y1=data.height//2-20, color="dark goldenrod", text="Start")
-    data.musicPdfPath = ''
-    data.startError = ''
-
-def mousePressed(root, event, data):
-    # use event.x and event.y
-    if data.getFileButton.clickedInside(event.x, event.y):
-        root.update()
-        scriptPath = os.path.dirname(os.path.realpath(__file__))+"/music_images/"
-        filepath = filedialog.askopenfilename(initialdir=scriptPath, title="Select file",
-                                                   filetypes=(("pdf files", "*.pdf"), ("all files", "*.*"))) #Citations: 15
-        root.update()
-        data.musicPdfPath = filepath
-    data.speedButtons.clickedInside(event.x, event.y)
-    data.handButtons.clickedInside(event.x, event.y)
-    data.fileNameTextBox.clickedInside(event.x, event.y)
-    if data.submitButton.clickedInside(event.x, event.y):
-        startValues = checkStartValues(data)
-        if type(startValues) == str:
-            #there was an error
-            data.startError = startValues
-        else:
-            data.startError = 'Processing...'
-
-
 def checkStartValues(data):
     if data.musicPdfPath == '':
         return "No PDF File Selected"
@@ -189,6 +153,64 @@ def checkStartValues(data):
         return "No Hand Style"
     return (data.musicPdfPath, data.fileNameTextBox.text, data.speedLabels[speedIndex], data.handLabels[handIndex])
 
+def writeFile(path, contents): #Citations
+    with open(path, "wt") as f:
+        f.write(contents)
+
+def init(data, sendToPi):
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    data.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
+    data.titleImage = PhotoImage(file=scriptPath + "/guiImages/title.gif")
+    data.musicPdfPath = ''
+    data.getFileButton = Button(x0=10, y0=data.height//2-70, x1=160, y1=data.height//2-20, color="black", text="Select File")
+    data.fileNameTextBox = TextBox(x0=160, y0=data.height//2-20, x1=data.width//2, y1=data.height//2+30, label="Song Name")
+    data.speedLabels = ["1", "2", "3", "4", "5"]
+    data.speedButtons = RadioButtons(x0=110, y0=data.height//2+110, x1=data.width//2, y1=data.height//2+160, text = data.speedLabels, label="Speed")
+    data.speedLabel = None
+    data.handLabels = ["base\nclef", "treble\nclef", "both"]
+    data.handButtons = RadioButtons(x0=110, y0=data.height/2+200, x1=data.width//2, y1=data.height/2+250, text=data.handLabels, label="Hands")
+    data.handLabel = None
+    data.submitButton = Button(x0=data.width-160, y0=data.height//2-70, x1=data.width-10, y1=data.height//2-20, color="dark goldenrod", text="Start")
+    data.musicPdfPath = ''
+    data.startError = ''
+    data.sendToPi = sendToPi
+    data.sendToPiButton = Button(x0=data.width//2-75, y0=data.height//2-25, x1=data.width//2+75, y1=data.height//2+25, color="dark goldenrod", text="Start Playing")
+    data.mode = "enterInformation"
+
+
+def mousePressed(root, event, data):
+    # use event.x and event.y
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    if data.mode == "enterInformation":
+        if data.getFileButton.clickedInside(event.x, event.y):
+            root.update()
+            filepath = filedialog.askopenfilename(initialdir=scriptPath + "/music_images/", title="Select file",
+                                                       filetypes=(("pdf files", "*.pdf"), ("all files", "*.*"))) #Citations: 15
+            root.update()
+            data.musicPdfPath = filepath
+        data.speedButtons.clickedInside(event.x, event.y)
+        data.handButtons.clickedInside(event.x, event.y)
+        data.fileNameTextBox.clickedInside(event.x, event.y)
+        if data.submitButton.clickedInside(event.x, event.y):
+            startValues = checkStartValues(data)
+            if type(startValues) == str:
+                #there was an error
+                data.startError = startValues
+            else:
+                songPath, songName, speedLabel, handLabel = startValues
+                data.speedLabel = speedLabel.split("\n")[0]
+                data.handLabel = handLabel.split("\n")[0]
+                data.startError = 'Processing...'
+    elif data.mode == "sendInformation":
+        if data.sendToPiButton.clickedInside(event.x, event.y):
+            bpmDict = {"5":49, "4":56, "3":62, "2":71, "1":83}
+            bpm = bpmDict[data.speedLabel]
+            contentsToWrite = "speed:" + str(data.speedLabel) + "\n" + "hand:" + str(data.handLabel) + "\n" + "bpm:" + str(bpm)
+            writeFile(scriptPath + "/outBoundFiles/start.txt", contentsToWrite)
+            if data.sendToPi:
+                # make start file to send to the pi
+                sendFileToPi("start.txt")
+            init(data, data.sendToPi)
 
 def keyPressed(event, data):
     # use event.char and event.keysym
@@ -196,28 +218,33 @@ def keyPressed(event, data):
 
 def timerFired(data):
     if data.startError == "Processing...":
-        shouldSend = False
-        pianoMan(shouldSend, data.musicPdfPath, data.fileNameTextBox.text)
+        pianoMan(False, data.musicPdfPath, data.fileNameTextBox.text)
+        if data.sendToPi:
+            sendFileToPi("outputXML.xml")
         data.startError = ""
+        data.mode = "sendInformation"
 
 def redrawAll(canvas, data):
     # draw in canvas
     canvas.create_image(0, 0, anchor=NW, image=data.backgroundImage)
-    data.getFileButton.draw(canvas=canvas)
-    canvas.create_rectangle(data.getFileButton.x1, data.getFileButton.y0, data.width//2, data.getFileButton.y1, fill="black")
-    canvas.create_text(data.getFileButton.x1+10, (data.getFileButton.y0+data.getFileButton.y1)//2, anchor="w", text=data.musicPdfPath.split("/")[-1], fill="white", font="Times 18")
-    data.speedButtons.draw(canvas=canvas)
-    data.handButtons.draw(canvas=canvas)
-    data.fileNameTextBox.draw(canvas=canvas)
-    data.submitButton.draw(canvas=canvas)
-    canvas.create_rectangle(data.submitButton.x0, data.submitButton.y1, data.submitButton.x1, data.submitButton.y1+50, fill="black")
-    canvas.create_text(data.submitButton.x0, data.submitButton.y1+25, anchor="w", text=data.startError, fill="white", font="Times 18")
+    if data.mode == "enterInformation":
+        data.getFileButton.draw(canvas=canvas)
+        canvas.create_rectangle(data.getFileButton.x1, data.getFileButton.y0, data.width//2, data.getFileButton.y1, fill="black")
+        canvas.create_text(data.getFileButton.x1+10, (data.getFileButton.y0+data.getFileButton.y1)//2, anchor="w", text=data.musicPdfPath.split("/")[-1], fill="white", font="Times 18")
+        data.speedButtons.draw(canvas=canvas)
+        data.handButtons.draw(canvas=canvas)
+        data.fileNameTextBox.draw(canvas=canvas)
+        data.submitButton.draw(canvas=canvas)
+        canvas.create_rectangle(data.submitButton.x0, data.submitButton.y1, data.submitButton.x1, data.submitButton.y1+50, fill="black")
+        canvas.create_text(data.submitButton.x0, data.submitButton.y1+25, anchor="w", text=data.startError, fill="white", font="Times 18")
+    elif data.mode == "sendInformation":
+        data.sendToPiButton.draw(canvas=canvas)
 
 ####################################
 # use the run function as-is
 ####################################
 
-def run(width=300, height=300):
+def run(width=300, height=300, sendToPi=True):
     def redrawAllWrapper(canvas, data):
         canvas.delete(ALL)
         canvas.create_rectangle(0, 0, data.width, data.height,
@@ -252,7 +279,7 @@ def run(width=300, height=300):
     canvas.configure(bd=0, highlightthickness=0)
     canvas.pack()
     # set up events
-    init(data)
+    init(data, sendToPi)
     root.bind("<Button-1>", lambda event:
                             mousePressedWrapper(root, event, canvas, data))
     root.bind("<Key>", lambda event:
@@ -262,7 +289,22 @@ def run(width=300, height=300):
 
     root.mainloop()  # blocks until window is closed
 
-run(1000, 600)
+#run(1000, 600)
 
+if __name__ == "__main__":
+    # Determine the command line arguments
+    screenWidth = 1000
+    screenHeight = 600
+    if len(sys.argv) == 1:
+        # did not specify whether to save new file or not. Will save as default
+        run(width=screenWidth, height=screenHeight, sendToPi=True)
+    elif len(sys.argv) == 2 and isinstance(sys.argv[1], bool):
+        run(width=screenWidth, height=screenHeight, sendToPi=sys.argv[1])
+    elif len(sys.argv) == 2 and isinstance(sys.argv[1], str) and sys.argv[1] == "True":
+        run(width=screenWidth, height=screenHeight, sendToPi=True)
+    elif len(sys.argv) == 2 and isinstance(sys.argv[1], str) and sys.argv[1] == "False":
+        run(width=screenWidth, height=screenHeight, sendToPi=False)
+    else:
+        raise Exception("Wrong number of arguments specified. Should include 0 or 1 boolean arguments")
 
 
