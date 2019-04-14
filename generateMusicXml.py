@@ -3,7 +3,7 @@ from six import string_types
 import os
 
 
-def generateMusicXML(fileName, measureDuration, attributeDict, measuresList):
+def generateMusicXML(fileName, outputFilePath, measureDuration, attributeDict, measuresList):
     # Setup root of XML
     # part-list, score-part, part-name
     root = etree.Element("score-partwise")
@@ -39,17 +39,16 @@ def generateMusicXML(fileName, measureDuration, attributeDict, measuresList):
 
     # Output the completed MusicXML file
     tree = etree.ElementTree(root)
-    outputMusicXML(tree)
+    outputMusicXML(tree, outputFilePath)
 
 
 # Outputs the result MusicXML file with public_id and system_url
-def outputMusicXML(tree):
+def outputMusicXML(tree, outputFilePath):
     tree.docinfo.public_id = '-//Recordare//DTD MusicXML 2.0 Partwise//EN'
     tree.docinfo.system_url = 'http://www.musicxml.org/dtds/partwise.dtd'
     xmlContent = etree.tostring(tree, method='xml', pretty_print=True, xml_declaration=True, encoding='UTF-8')
-    scriptPath = os.path.dirname(os.path.realpath(__file__))
-    print("writing file to: ", scriptPath + "/outBoundFiles/outputXML.xml")
-    outputFile = open(scriptPath + "/outBoundFiles/outputXML.xml", "wb")
+    #print("writing file to: ", scriptPath + "/outBoundFiles/outputXML.xml")
+    outputFile = open(outputFilePath, "wb")
     outputFile.write(xmlContent)
 
 
@@ -97,11 +96,11 @@ def formAttributeDictionary(divisions, key, timeBeats, timeBeatType):
                  "clef": [{"sign": "G", "line": "2"}, {"sign": "F", "line": "4"}]}
     return attribute
 
-def formXML(allMeasures, divisions, key, timeBeats, timeBeatType, fileName):
+def formXML(allMeasures, divisions, key, timeBeats, timeBeatType, fileName, outputFilePath):
     attribute = formAttributeDictionary(divisions=divisions, key=key, timeBeats=timeBeats, timeBeatType=timeBeatType)
     dictMeasures = formXMLDictionaryFromObjects(allMeasures, 1)
     measureDuration = attribute["time"]["beats"]
-    generateMusicXML(fileName, measureDuration, attribute, dictMeasures)
+    generateMusicXML(fileName, outputFilePath, measureDuration, attribute, dictMeasures)
 
 
 ###########EXAMPLES FOR DEVELOPING BELOW

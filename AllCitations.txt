@@ -35,3 +35,6 @@ Opening a file dialog
 
 Writing a txt file
 16. https://www.cs.cmu.edu/~112/notes/notes-strings.html#basicFileIO
+
+Checking if a file exists
+17. https://therenegadecoder.com/code/how-to-check-if-a-file-exists-in-python/

@@ -18,8 +18,21 @@ def pianoMan(shouldSend, pdfPath, fileName):
     # PARAMETERS: shouldSend: boolean, if true will send the outputXML to the raspberry pi at the end, otherwise will not
     # RETURN: None
 
-    # get the path for the pdf to use omr on
+    # need to check if the file is already in the processed library
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    libraryFileName = pdfPath[1:-4] + "-" + fileName
+    libraryFileName = libraryFileName.replace("/", "-")
+    libraryFilePath = scriptPath + "/library/" + libraryFileName + ".xml"
+    exists = os.path.isfile(libraryFilePath) #Citation 17
+    if exists:
+        # it was already processed before, don't need to process again
+        print("ALREADY EXISTS")
+        outputFilePath = scriptPath + "/outBoundFiles/outputXML.xml"
+        os.system('cp '+libraryFilePath + ' ' + outputFilePath)
+        print("DONE COPY")
+        return
 
+    # get the path for the pdf to use omr on
     pdfFileName = pdfPath.split(os.sep)[-1]
     jpgFileName = pdfFileName.split(".")[0]
     pdfPreFileName = pdfPath[:len(pdfPath) - len(pdfFileName)]
@@ -46,7 +59,17 @@ def pianoMan(shouldSend, pdfPath, fileName):
             allMeasures += recognitionItems[0]
 
     # create the xml based on the measures found
-    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1], fileName=fileName)
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    outputFilePath = scriptPath + "/outBoundFiles/outputXML.xml"
+    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1], fileName=fileName, outputFilePath=outputFilePath)
+
+    # create the library xml file to keep the history so don't have to process twice
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    libraryFileName = pdfPath[1:-4] + "-" + fileName
+    libraryFileName = libraryFileName.replace("/", "-")
+    libraryFilePath = scriptPath + "/library/"+libraryFileName + ".xml"
+    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1], fileName=fileName,
+            outputFilePath=libraryFilePath)
 
     # if arguments state to send the file to the raspberryPi, send it
     if shouldSend:
