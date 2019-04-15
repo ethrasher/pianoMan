@@ -2,24 +2,37 @@
 
 import os
 import sys
-import paramiko #Citations [1,2,3,4]
+#import paramiko #Citations [1,2,3,4]
 from pdf2image import convert_from_path #Citations [6]
 from preprocessing import preprocess
 from musicSymbolRecognition import musicSymbolRecognition
 from generateMusicXml import formXML
+from sendToPi import sendFileToPi
 import warnings #Citations [5]
 warnings.filterwarnings(action='ignore',module='.*paramiko.*')
 #Note for original developer:python alias to use => pythoncv
 
 
-def pianoMan(shouldSend):
+def pianoMan(shouldSend, pdfPath, fileName):
     # DESCRIPTION: runs the omr on a pdf file, attempts to save xml and send to pi in some cases
     # PARAMETERS: shouldSend: boolean, if true will send the outputXML to the raspberry pi at the end, otherwise will not
     # RETURN: None
 
-    # get the path for the pdf to use omr on
+    # need to check if the file is already in the processed library
     scriptPath = os.path.dirname(os.path.realpath(__file__))
-    pdfPath = scriptPath + getPDFPath(songNum=0)
+    libraryFileName = pdfPath[1:-4] + "-" + fileName
+    libraryFileName = libraryFileName.replace("/", "-")
+    libraryFilePath = scriptPath + "/library/" + libraryFileName + ".xml"
+    exists = os.path.isfile(libraryFilePath) #Citation 17
+    if exists:
+        # it was already processed before, don't need to process again
+        print("ALREADY EXISTS")
+        outputFilePath = scriptPath + "/outBoundFiles/outputXML.xml"
+        os.system('cp '+libraryFilePath + ' ' + outputFilePath)
+        print("DONE COPY")
+        return
+
+    # get the path for the pdf to use omr on
     pdfFileName = pdfPath.split(os.sep)[-1]
     jpgFileName = pdfFileName.split(".")[0]
     pdfPreFileName = pdfPath[:len(pdfPath) - len(pdfFileName)]
@@ -46,11 +59,22 @@ def pianoMan(shouldSend):
             allMeasures += recognitionItems[0]
 
     # create the xml based on the measures found
-    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1])
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    outputFilePath = scriptPath + "/outBoundFiles/outputXML.xml"
+    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1], fileName=fileName, outputFilePath=outputFilePath)
+
+    # create the library xml file to keep the history so don't have to process twice
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    libraryFileName = pdfPath[1:-4] + "-" + fileName
+    libraryFileName = libraryFileName.replace("/", "-")
+    libraryFilePath = scriptPath + "/library/"+libraryFileName + ".xml"
+    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1], fileName=fileName,
+            outputFilePath=libraryFilePath)
 
     # if arguments state to send the file to the raspberryPi, send it
     if shouldSend:
-        try:
+        sendFileToPi("outputXML.xml")
+        '''try:
             ssh = createSSHClient() #Citations [1,2,3,4]
             ftp_client = ssh.open_sftp()
             scriptPath = os.path.dirname(os.path.realpath(__file__))
@@ -59,19 +83,10 @@ def pianoMan(shouldSend):
             ftp_client.put(outGoingDest, inComingDest)
             ftp_client.close()
         except:
-            raise Exception("Could not make connection to raspberryPi. Make sure pi is on.")
+            raise Exception("Could not make connection to raspberryPi. Make sure pi is on.")'''
 
 
-def createSSHClient():
-    # DESCRIPTION: makes the connection over SSH to the raspberryPi
-    # PARAMETERS: Nothing
-    # RETURN: client: a paramiko SSHClient object giving the SSH connection to the raspberryPi
 
-    client = paramiko.SSHClient() #Citations [1,2,3,4]
-    client.load_system_host_keys()
-    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    client.connect(hostname="172.26.197.78", port=22, username="pi", password="pianoMan2019")
-    return client
 
 def getPDFPath(songNum):
     # DESCRIPTION: gives the end of the filePath to each of the downloaded songs
@@ -94,15 +109,18 @@ def getPDFPath(songNum):
 
 if __name__ == "__main__":
     # Determine the command line arguments
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    pdfPath = scriptPath + getPDFPath(songNum=0)
+    fileName = "Swans on the Lake"
     if len(sys.argv) == 1:
         # did not specify whether to save new file or not. Will save as default
-        pianoMan(True)
+        pianoMan(True, pdfPath, fileName)
     elif len(sys.argv) == 2 and isinstance(sys.argv[1], bool):
-        pianoMan(sys.argv[1])
+        pianoMan(sys.argv[1], pdfPath, fileName)
     elif len(sys.argv) == 2 and isinstance(sys.argv[1], str) and sys.argv[1] == "True":
-        pianoMan(True)
+        pianoMan(True, pdfPath, fileName)
     elif len(sys.argv) == 2 and isinstance(sys.argv[1], str) and sys.argv[1] == "False":
-        pianoMan(False)
+        pianoMan(False, pdfPath, fileName)
     else:
         raise Exception("Wrong number of arguments specified. Should include 0 or 1 boolean arguments")
 

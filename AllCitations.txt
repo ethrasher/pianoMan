@@ -26,3 +26,15 @@ Using numpy properties to better find differences in pixels
 
 Getting unique element counts in numpy
 13. https://stackoverflow.com/questions/28663856/how-to-count-the-occurrence-of-certain-item-in-an-ndarray-in-python
+
+Gui starter code
+14. https://www.cs.cmu.edu/~112/notes/notes-animations-part2.html#starter-code
+
+Opening a file dialog
+15. https://pythonspot.com/tk-file-dialogs/
+
+Writing a txt file
+16. https://www.cs.cmu.edu/~112/notes/notes-strings.html#basicFileIO
+
+Checking if a file exists
+17. https://therenegadecoder.com/code/how-to-check-if-a-file-exists-in-python/
