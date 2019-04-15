@@ -25,12 +25,6 @@ def score2list(score):
     parts = score.getElementsByClass(stream.Part)
     result = []
     for part in parts:
-        # print(part)
-        # ISSUE 1: Wrong time signature
-        # print(part.timeSignature)
-        # part.timeSignature = meter.TimeSignature('3/4')
-        # print(part.timeSignature)
-
         # flatten unnecessary voices in a part so that the converted notes list looks more like MusicXML structure
         # part = part.flattenUnnecessaryVoices(force=True)
         # print(part)
@@ -63,25 +57,27 @@ def score2list(score):
     return (result, offset)
 
 
-def stream2list(str):
+def stream2list(str, hand):
     # str.show('text')
     result = []
     offset = 0.0
     # print(str.parts)
-    for part in str.parts:
-        # str.remove(part)
-    #     print(part.getElementsByClass(clef.Clef))
-        for measure in part.getElementsByClass(stream.Measure):
-            if (measure.clef == clef.TrebleClef()):
-                print("trebble")
-                # str.remove(part)
-                break
+    if (hand != "both"):
+        for part in str.parts:
+            for measure in part.getElementsByClass(stream.Measure):
+                # if the performer chose to play bass clef only (left hand)
+                if (hand == "bass" and measure.clef == clef.TrebleClef()):
+                    str.remove(part)
+                    break
+                # if the performer chose to play treble clef only (right hand)
+                if (hand == "treble" and measure.clef == clef.BassClef()):
+                    str.remove(part)
+                    break
     for singleNote in str.semiFlat.notes:
         if (len(result) == 0):
             if (type(singleNote) == note.Note):
                 offset = singleNote.offset
         result.append(singleNote)
-        # print(singleNote, singleNote.offset, singleNote.quarterLength)
     result.sort(key=noteSort)
     return (result, offset)
 
@@ -115,7 +111,7 @@ def getScore(originalList, userList, originalOffset, userOffset):
             else:
                 deductionUnit = max(len(correctNote.pitches), len(userNote.pitches))
                 for pitch in correctNote.pitches:
-                    # CASE 2-b: Wrong note without the correct note
+                    # CASE 2-b: Wrong note with the correct note
                     # TODO: Two Chords comparison
                     if pitch in userNote.pitches:
                         # print("CASE 2-b")
@@ -186,7 +182,8 @@ def compare(originalFile, userFile):
     # print(originalStream)
     # originalStream = midi2stream(originalFile)
     userStream = midi2stream(userFile)
-    (originalNotesAndRests, originalOffset) = stream2list(originalStream)
+    # Pass the original stream and hand information - Bass/Treble
+    (originalNotesAndRests, originalOffset) = stream2list(originalStream, "both")
     # print(userStream.tempo)
     # print("original offset ", originalOffset)
     # userStream.show('text')
@@ -214,6 +211,7 @@ def compare(originalFile, userFile):
         score = 0
     return score
 
+
 print("1. Missing one note: ", compare("midi/outputXML.musicxml", "midi/swanWithOneMissingNote.mid"))
 print("2. Missing two consecutive notes: ", compare("midi/outputXML.musicxml", "midi/swanWithTwoConsecutiveMissingNotes.mid"))
 print("3. One shorter note: ", compare("midi/outputXML.musicxml", "midi/swanWithOneShorterNote.mid"))
@@ -224,3 +222,10 @@ print("7. Good Performance: ", compare("midi/outputXML.musicxml", "midi/User Per
 print("8. Bad Performance: ", compare("midi/outputXML.musicxml", "midi/BadPerformance.mid"))
 print("9. Bad Performance 2: ", compare("midi/outputXML.musicxml", "midi/BadPerformance2.mid"))
 print("10. Demo Performance: ", compare("midi/outputXML.musicxml", "midi/DemoPerformance.mid"))
+print("11. Ableton Performance: ", compare("midi/outputXML.musicxml", "midi/bpm49swanAbleton.mid"))
+print("12. BPM 56: ", compare("midi/outputXML.musicxml", "midi/bpm56swan.mid"))
+print("13. BPM 62: ", compare("midi/outputXML.musicxml", "midi/swan62swan2.mid"))
+print("14. BPM 71: ", compare("midi/outputXML.musicxml", "midi/bpm71swan.mid"))
+print("15. BPM 83: ", compare("midi/outputXML.musicxml", "midi/bpm83swan.mid"))
+print("16. Treble: ", compare("midi/outputXML.musicxml", "midi/swanTreble.mid"))
+print("17. Bass: ", compare("midi/outputXML.musicxml", "midi/swanBass.mid"))
