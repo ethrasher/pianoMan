@@ -26,10 +26,10 @@ def pianoMan(shouldSend, pdfPath, fileName):
     exists = os.path.isfile(libraryFilePath) #Citation 17
     if exists:
         # it was already processed before, don't need to process again
-        print("ALREADY EXISTS")
         outputFilePath = scriptPath + "/outBoundFiles/outputXML.xml"
-        os.system('cp '+libraryFilePath + ' ' + outputFilePath)
-        print("DONE COPY")
+        os.system('cp '+libraryFilePath + ' ' + outputFilePath) #Citation 18
+        if shouldSend:
+            sendFileToPi("outputXML.xml")
         return
 
     # get the path for the pdf to use omr on

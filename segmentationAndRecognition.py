@@ -25,9 +25,15 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist):
         if compNum in saveComponentList:
             comp.saveComponent(compNum=compNum)
         templateObj = comp.templateMatch(staffLines=staffLines, lineDist = lineDist, compNum=compNum)
-        templateObjList.append(templateObj)
+        if type(templateObj) == tuple or type(templateObj) == list:
+            for obj in templateObj:
+                templateObjList.append(obj)
+        else:
+            templateObjList.append(templateObj)
     for templateObj in templateObjList:
         if isinstance(templateObj, NoteComponent):
+            print("Note Type:", templateObj)
+            print("Dict:", templateObj.__dict__)
             smallestNoteType = getSmallerNoteType(smallestNoteType, templateObj.durationName)
         #ignore rest and accent case. They are already done
         if isinstance(templateObj, MeasureBarComponent):
@@ -96,6 +102,9 @@ def getSmallerNoteType(origNote, compareNote):
     elif compareNote == "sixteenth":
         compareDuration = 1
     else:
+        print("Compare Note:", compareNote)
+        #print("Note Type:", type(compareNote))
+        #print(compareNote.__dict__)
         raise Exception("CompareNote type not whole, half, quarter, eighth, sixteenth")
 
     if compareDuration <= origDuration:

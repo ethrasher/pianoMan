@@ -167,7 +167,7 @@ def init(data, sendToPi):
     data.speedLabels = ["1", "2", "3", "4", "5"]
     data.speedButtons = RadioButtons(x0=110, y0=data.height//2+110, x1=data.width//2, y1=data.height//2+160, text = data.speedLabels, label="Speed")
     data.speedLabel = None
-    data.handLabels = ["base\nclef", "treble\nclef", "both"]
+    data.handLabels = ["bass\nclef", "treble\nclef", "both"]
     data.handButtons = RadioButtons(x0=110, y0=data.height/2+200, x1=data.width//2, y1=data.height/2+250, text=data.handLabels, label="Hands")
     data.handLabel = None
     data.submitButton = Button(x0=data.width-160, y0=data.height//2-70, x1=data.width-10, y1=data.height//2-20, color="dark goldenrod", text="Start")

@@ -136,18 +136,73 @@ class ConnectedComponent(object):
                                  componentImg=self.componentImg, duration="sixteenth", stem=stem, numPitches=1,
                                  staffLines=staffLines, lineDist=lineDist, compNum=compNum)
         elif templatePath.find("aaa_note_chord") >= 0:
+            print("finding chord")
             # it is a multi-note chord
-            typeName = "note"
-            subTypeName = "chord"
-            durationName = (templatePath.split("/")[2]).split("_")[1]
-            #TODO: DEAL WITH THIS CASE
+            durationName = (templatePath.split("/")[-3]).split("_")[1]
+            numberOfPitches = int(templatePath.split("/")[-2])
+            stemDirString = templatePath.split("/")[-4]
+            if stemDirString == "stemUp":
+                stem = "up"
+            elif stemDirString == "stemDown":
+                stem = "down"
+            else:
+                raise Exception("Could not get stem for half note, compNum:" + str(compNum))
+            return NoteComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
+                                 componentImg=self.componentImg, duration=durationName, stem=stem, numPitches=numberOfPitches,
+                                 staffLines=staffLines, lineDist=lineDist, compNum=compNum)
+            #TODO: CHECK/TEST THIS CASE
+
         elif templatePath.find("aaa_note_connected") >= 0:
+            print("finding connected note")
             # it is a series of connected notes
             typeName = "note"
             subTypeName = "connected"
-            durationName = None
-            #TODO: DEAL WITH THIS CASE
+            stemDirString = templatePath.split("/")[-3]
+            if stemDirString == "stemUp":
+                stem = "up"
+            elif stemDirString == "stemDown":
+                stem = "down"
+            else:
+                raise Exception("Could not get stem for half note, compNum:" + str(compNum))
+            numberOfStems = len(templatePath.split("/")[-2])
+            numberOfPitches = [int(templatePath.split("/")[-2][i]) for i in range(numberOfStems)]
+            print(numberOfPitches)
 
+            # need the new image components for each stem, duration for each stem, numPitches on each stem
+            durationName = None
+            midpointsBetweenStems = ConnectedComponent.getLocationOfMidPoints(self.componentImg, numberOfStems)
+            allNotes = []
+            for i in range(numberOfStems):
+                print(i)
+                if i == 0:
+                    x0 = 0
+                    fullImgX0 = self.x0
+                else:
+                    x0 = midpointsBetweenStems[i-1]
+                    fullImgX0 = midpointsBetweenStems[i-1] + self.x0
+                if i == (numberOfStems-1):
+                    x1 = self.componentImg.shape[1]
+                    fullImgX1 = self.x1
+                else:
+                    x1 = midpointsBetweenStems[i]
+                    fullImgX1 = midpointsBetweenStems[i] + self.x0
+                fullImgY0 = self.y0
+                fullImgY1 = self.y1
+                componentImg = np.copy(self.componentImg[:, x0:x1])
+                durationName = "eighth"
+                if i == 0:
+                    beam = "start"
+                elif i == numberOfStems-1:
+                    beam = "end"
+                else:
+                    beam = "continue"
+
+                #TODO: NEED TO FIND DURATION PROPERLY
+                newNote = NoteComponent(x0=fullImgX0, y0=fullImgY0, x1=fullImgX1, y1=fullImgY1, label=self.label,
+                                 componentImg=componentImg, duration=durationName, stem=stem, numPitches=numberOfPitches[i],
+                                 staffLines=staffLines, lineDist=lineDist, compNum=compNum+(1/numberOfStems), beam=beam)
+                allNotes.append(newNote)
+            return allNotes
 
         elif templatePath.find("aaa_rest_whole") >= 0:
             # it is a whole rest
@@ -217,6 +272,44 @@ class ConnectedComponent(object):
             subType = None
             return OtherComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
                                   componentImg=self.componentImg, type=type, subType=subType, compNum=compNum)
+
+    @staticmethod
+    def getLocationOfMidPoints(image, numOfStems):
+        transposedImage = np.transpose(image)
+        amountColBlack = np.zeros(transposedImage.shape[0])
+        # i is the row, j is the col
+        for i in range(transposedImage.shape[0]):
+            unique, counts = np.unique(transposedImage[i], return_counts=True)  # Citations [13]
+            blackCounts = dict(zip(unique, counts)).get(0, 0)
+            amountColBlack[i] += blackCounts
+            if i > 0:
+                amountColBlack[i - 1] += blackCounts
+            if i < transposedImage.shape[0]-1:
+                amountColBlack[i + 1] += blackCounts
+        colBlackIndexSort = np.argsort(amountColBlack)[::-1]
+        stemLocations = []
+        colIndexCheck = 0
+        stemDistThreshold = transposedImage.shape[0]//(numOfStems+2)
+        while len(stemLocations) < numOfStems:
+            # take the cols with the most black that are far enough away from each other
+            indexToAdd = colBlackIndexSort[colIndexCheck]
+            appendIndex = True
+            for prevIndex in stemLocations:
+                if abs(prevIndex-indexToAdd) < stemDistThreshold:
+                    appendIndex = False
+                    break
+            if appendIndex:
+                stemLocations.append(indexToAdd)
+            colIndexCheck += 1
+        stemLocations.sort()
+        stemMidPoints = []
+        for i in range(numOfStems-1):
+            stemMidPoints.append(int((stemLocations[i]+stemLocations[i+1])//2))
+        return stemMidPoints
+
+
+
+
 
 
     @staticmethod
@@ -295,12 +388,13 @@ class MeasureElem(ConnectedComponent):
 
 
 class NoteComponent(MeasureElem):
-    def __init__(self, x0, y0, x1, y1, label, componentImg, duration, stem, numPitches, staffLines, lineDist, compNum):
+    def __init__(self, x0, y0, x1, y1, label, componentImg, duration, stem, numPitches, staffLines, lineDist, compNum, beam=None):
         super().__init__(x0, y0, x1, y1, label, componentImg)
         self.compNum = compNum
         # typeName could be: note, rest, measure bar, accent, clef, time signature, stave swirl, or alphaNum
         self.typeName = "note"
         # durationName could be: whole, half, quarter, eighth, sixteenth
+        assert(duration in ["whole", "half", "quarter", "eighth", "sixteenth"])
         self.durationName = duration
         self.numPitches = numPitches
         self.stem = stem
@@ -311,6 +405,9 @@ class NoteComponent(MeasureElem):
         self.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
         self.dottedPitches = []
         self.alterPitches = []
+        #beam should be start, continue or end, or None if it is not part of a connected note
+        #example: <beam number="1">end</beam>
+        self.beam = beam
 
     def findNoteheads(self, distBetweenLines):
         # DESCRIPTION: finds all the noteheads in the pitch component, alters self.circles
@@ -323,9 +420,82 @@ class NoteComponent(MeasureElem):
         # Circles, corresponding to the larger accumulator values, will be returned first.
         idealRadius = distBetweenLines/2
         #TODO: Might be able to optimize these parameters more if they are coming out wrong
+        par1 = 10
+        par2 = 10
+        prevDir = None
         #Citations: [9,10,11]
         circles = cv2.HoughCircles(image=self.componentImg, method=cv2.HOUGH_GRADIENT, dp=2.0, minDist=idealRadius+.05*idealRadius,
-                                   param1=10, param2=10, minRadius=round(idealRadius-.05*idealRadius), maxRadius=round(idealRadius+.05*idealRadius))
+                                   param1=par1, param2=par2, minRadius=round(idealRadius-.05*idealRadius), maxRadius=round(idealRadius+.05*idealRadius))
+        if (type(circles) !=  np.ndarray):
+            circles = np.empty([1,0])
+        while(circles.shape[1] != self.numPitches and par1>=2 and par2>=2 and par1<=24 and par2<=24):
+            #try again with new parameters
+            if circles.shape[1] < self.numPitches:
+                # not enough circles, need to make more leinent
+                par1 -= 1
+                par2 -= 1
+                dir = -1
+            else:
+                # too many circles found, need to make more strict
+                par1 += 1
+                par2 += 1
+                dir = 1
+            if prevDir != None and dir!=prevDir:
+                # don't want to oscillate (want to find 1 circle and jumping between 0 and 2
+                # find all 4 options
+                circles1 = cv2.HoughCircles(image=self.componentImg, method=cv2.HOUGH_GRADIENT, dp=2.0,
+                                           minDist=idealRadius + .05 * idealRadius,
+                                           param1=par1, param2=par2, minRadius=round(idealRadius - .05 * idealRadius),
+                                           maxRadius=round(idealRadius + .05 * idealRadius))
+                circles2 = cv2.HoughCircles(image=self.componentImg, method=cv2.HOUGH_GRADIENT, dp=2.0,
+                                            minDist=idealRadius + .05 * idealRadius,
+                                            param1=par1-dir, param2=par2-dir, minRadius=round(idealRadius - .05 * idealRadius),
+                                            maxRadius=round(idealRadius + .05 * idealRadius))
+                circles3 = cv2.HoughCircles(image=self.componentImg, method=cv2.HOUGH_GRADIENT, dp=2.0,
+                                            minDist=idealRadius + .05 * idealRadius,
+                                            param1=par1, param2=par2 - dir,
+                                            minRadius=round(idealRadius - .05 * idealRadius),
+                                            maxRadius=round(idealRadius + .05 * idealRadius))
+                circles4 = cv2.HoughCircles(image=self.componentImg, method=cv2.HOUGH_GRADIENT, dp=2.0,
+                                            minDist=idealRadius + .05 * idealRadius,
+                                            param1=par1 - dir, param2=par2,
+                                            minRadius=round(idealRadius - .05 * idealRadius),
+                                            maxRadius=round(idealRadius + .05 * idealRadius))
+                if (type(circles1) != np.ndarray):
+                    circles1 = np.empty([1, 0])
+                if (type(circles2) != np.ndarray):
+                    circles2 = np.empty([1, 0])
+                if (type(circles3) != np.ndarray):
+                    circles3 = np.empty([1, 0])
+                if (type(circles4) != np.ndarray):
+                    circles4 = np.empty([1, 0])
+                #find the closest to the correct number, if tie, choose the lower
+                circ1Dist = abs(circles1.shape[1] - self.numPitches)
+                circ2Dist = abs(circles2.shape[1] - self.numPitches)
+                circ3Dist = abs(circles3.shape[1] - self.numPitches)
+                circ4Dist = abs(circles4.shape[1] - self.numPitches)
+                minDist = min(circ1Dist, circ2Dist, circ3Dist, circ4Dist)
+                circles = None
+                if circ1Dist == minDist and (type(circles) != np.ndarray or circ1Dist<circles.shape[1]):
+                    circles = circles1
+                if circ2Dist == minDist and (type(circles) != np.ndarray or circ2Dist<circles.shape[1]):
+                    circles = circles2
+                if circ3Dist == minDist and (type(circles) != np.ndarray or circ3Dist<circles.shape[1]):
+                    circles = circles3
+                if circ4Dist == minDist and (type(circles) != np.ndarray or circ4Dist<circles.shape[1]):
+                    circles = circles4
+                break
+
+
+            prevDir = dir
+            circles = cv2.HoughCircles(image=self.componentImg, method=cv2.HOUGH_GRADIENT, dp=2.0,
+                                       minDist=idealRadius + .05 * idealRadius,
+                                       param1=par1, param2=par2, minRadius=round(idealRadius - .05 * idealRadius),
+                                       maxRadius=round(idealRadius + .05 * idealRadius))
+            if (type(circles) != np.ndarray):
+                circles = np.empty([1, 0])
+
+        # found the correct (or at least closest) circles possible
         if (type(circles) ==  np.ndarray):
             circles = np.uint16(np.around(circles))
             self.circles = circles
@@ -458,6 +628,8 @@ class NoteComponent(MeasureElem):
                 noteDict["duration"] = str(int(divisions // 2))
             elif self.durationName == "sixteenth":
                 noteDict["duration"] = str(int(divisions // 4))
+            else:
+                raise Exception("Duration not whole, half, quarter, eighth, or sixteenth")
             noteDict["type"] = str(self.durationName)
             noteDict["stem"] = str(self.stem)
             prelimStaff = self.staff % 2
@@ -470,6 +642,8 @@ class NoteComponent(MeasureElem):
                 noteDict["duration"] = str(int(int(noteDict["duration"]) * 1.5))
             if noteElemIndex > 0:
                 noteDict["chord"] = None
+            if self.beam != None:
+                noteDict["beam"] = self.beam
             notes.append(noteDict)
         return notes
 
@@ -501,6 +675,8 @@ class RestComponent(MeasureElem):
             restDict["duration"] = str(int(divisions // 2))
         elif self.durationName == "sixteenth":
             restDict["duration"] = str(int(divisions // 4))
+        else:
+            raise Exception("CompareNote type not whole, half, quarter, eighth, sixteenth")
         restDict["type"] = str(self.durationName)
         restDict["staff"] = str(self.staff % 2)
         return [restDict]

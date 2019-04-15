@@ -2,11 +2,136 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_half/component147.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_half/component205 copy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_half/component207.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_half/component269.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_half/component275.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_half/component282.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_half/component283.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_half/component334.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_half/component343.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component100.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component101.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component140.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component141.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component142.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component143.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component148.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component149.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component199.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component200.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component203.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component204.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component205.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component206.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component208.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component209.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component210.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component26.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component27.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component28.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component29.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component30.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component31.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component85.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component86.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component89.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component90.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component91.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component92.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemDown/note_quarter/component99.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_chord/stemUp/note_half/component336.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component119.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component126.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component15.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component173 copy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component173.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component174 copy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component188.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component199.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component204.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component265.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component266.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component267.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component268.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component269.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component270.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component307.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component320.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component335.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component51.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component52.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component53.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component55.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component58.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component72.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component73.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/component95.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component101.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component102.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component103.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component107.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component112.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component117.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component118.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component123.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component170.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component171.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component172.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component174.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component176.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component177.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component178.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component183.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component184.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component186.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component23.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component238.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component239.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component245.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component248.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component249.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component250.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component251.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component252.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component254.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component26.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component303.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component313.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component314.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component315.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component316.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component317.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component32.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component321.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component322.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component329.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component33.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component43.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component45.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component48.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component59.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component6 copy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component62.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component64.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component77.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component94.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/component97.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/component115.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AllCitations.txt" afterPath="$PROJECT_DIR$/AllCitations.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generateMusicXml.py" afterPath="$PROJECT_DIR$/generateMusicXml.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connectedCompObj.py" afterPath="$PROJECT_DIR$/connectedCompObj.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans.xml" afterPath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/start.txt" afterPath="$PROJECT_DIR$/outBoundFiles/start.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organizeComps.py" afterPath="$PROJECT_DIR$/organizeComps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" afterPath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/segmentationAndRecognition.py" afterPath="$PROJECT_DIR$/segmentationAndRecognition.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,11 +145,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="staffLineDetectionRemoval.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/staffLineDetectionRemoval.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+            <state relative-caret-position="258">
+              <caret line="29" column="76" lean-forward="true" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
               <folding>
                 <element signature="e#84#93#0" expanded="true" />
               </folding>
@@ -32,17 +167,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="outputXML.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="start.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="start.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/outBoundFiles/start.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -52,11 +177,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="connectedCompObj.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="647" column="20" lean-forward="true" selection-start-line="647" selection-start-column="20" selection-end-line="647" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="224" column="28" lean-forward="false" selection-start-line="224" selection-start-column="27" selection-end-line="224" selection-end-column="28" />
+            <state relative-caret-position="139">
+              <caret line="163" column="24" lean-forward="true" selection-start-line="163" selection-start-column="24" selection-end-line="163" selection-end-column="24" />
               <folding>
                 <element signature="e#16#46#0" expanded="true" />
               </folding>
@@ -67,21 +202,41 @@
       <file leaf-file-name="AllCitations.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AllCitations.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="39" column="78" lean-forward="false" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
+            <state relative-caret-position="498">
+              <caret line="42" column="59" lean-forward="false" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="generateMusicXml.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
+      <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="96" column="20" lean-forward="false" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+            <state relative-caret-position="193">
+              <caret line="106" column="9" lean-forward="false" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="organizeComps.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/organizeComps.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="212" column="32" lean-forward="true" selection-start-line="212" selection-start-column="32" selection-end-line="212" selection-end-column="32" />
               <folding>
-                <element signature="e#0#22#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans3.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans3.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2572">
+              <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,14 +252,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getFlatsSharps</find>
-      <find>part</find>
-      <find>restDict</find>
-      <find>fullJPGFilename</find>
-      <find>showBinaryIm</find>
-      <find>getAverageLineDist</find>
-      <find>writing</find>
-      <find>drawConnectedC</find>
       <find>#</find>
       <find>draw</find>
       <find>labelImg</find>
@@ -127,6 +274,14 @@
       <find>pianoMan</find>
       <find>credit</find>
       <find>scriptPath</find>
+      <find>templateMatch</find>
+      <find>chord</find>
+      <find>template</find>
+      <find>durationName</find>
+      <find>getSmallerNoteType</find>
+      <find>putDotOnNote</find>
+      <find>findNumBlackPixels</find>
+      <find>self.durationName</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,24 +295,25 @@
         <option value="$PROJECT_DIR$/music_images/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/templates/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/preprocessing.py" />
-        <option value="$PROJECT_DIR$/organizeComps.py" />
         <option value="$PROJECT_DIR$/musicSymbolRecognition.py" />
-        <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
-        <option value="$PROJECT_DIR$/connectedCompObj.py" />
         <option value="$PROJECT_DIR$/TODOLIST.txt" />
-        <option value="$PROJECT_DIR$/staffLineDetectionRemoval.py" />
         <option value="$PROJECT_DIR$/sendToPi.py" />
-        <option value="$PROJECT_DIR$/gui.py" />
         <option value="$PROJECT_DIR$/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/AllCitations.txt" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
+        <option value="$PROJECT_DIR$/gui.py" />
+        <option value="$PROJECT_DIR$/organizeComps.py" />
+        <option value="$PROJECT_DIR$/outBoundFiles/outputXML.xml" />
+        <option value="$PROJECT_DIR$/staffLineDetectionRemoval.py" />
+        <option value="$PROJECT_DIR$/connectedCompObj.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="274" />
+    <option name="x" value="142" />
     <option name="y" value="23" />
-    <option name="width" value="1006" />
+    <option name="width" value="1138" />
     <option name="height" value="731" />
   </component>
   <component name="ProjectView">
@@ -176,27 +332,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="library" type="cbb8eebc:String" user="library" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="outBoundFiles" type="cbb8eebc:String" user="outBoundFiles" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -213,12 +348,29 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="outBoundFiles" type="cbb8eebc:String" user="outBoundFiles" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="last_opened_file_path" value="/usr/local/Cellar/python/3.7.2_2/bin/python3" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python" />
+    <property name="SearchEverywhereHistoryKey" value="http&#9;null&#9;null" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -311,6 +463,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="" />
@@ -331,17 +486,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="274" y="23" width="1006" height="731" extended-state="0" />
+    <frame x="142" y="23" width="1138" height="731" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19502075" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17518248" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32828283" sideWeight="0.5039139" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29690048" sideWeight="0.4960861" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.4960861" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24938068" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19157721" sideWeight="0.50877196" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39730638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -350,6 +505,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -383,20 +539,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="65" lean-forward="false" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staffLineDetectionRemoval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/musicSymbolRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -560,30 +702,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/musicSymbolRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#84#147#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/organizeComps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -591,27 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#222#232#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staffLineDetectionRemoval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <element signature="e#140#158#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -627,46 +728,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="224" column="28" lean-forward="false" selection-start-line="224" selection-start-column="27" selection-end-line="224" selection-end-column="28" />
-          <folding>
-            <element signature="e#16#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy.pdf-S.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library-Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy.pdf-Swans">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libraryUsers-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy.pdf-S.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy.pdf-S.xml" />
+    <entry file="file://$PROJECT_DIR$/library-Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy.pdf-Swans" />
+    <entry file="file://$PROJECT_DIR$/libraryUsers-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy.pdf-S.xml" />
     <entry file="file://$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -677,36 +744,62 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AllCitations.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="39" column="78" lean-forward="false" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
+        <state relative-caret-position="498">
+          <caret line="42" column="59" lean-forward="false" selection-start-line="42" selection-start-column="59" selection-end-line="42" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="96" column="20" lean-forward="false" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
+        <state relative-caret-position="408">
+          <caret line="92" column="50" lean-forward="true" selection-start-line="92" selection-start-column="50" selection-end-line="92" selection-end-column="50" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="30" column="63" lean-forward="true" selection-start-line="30" selection-start-column="63" selection-end-line="30" selection-end-column="63" />
+        <state relative-caret-position="258">
+          <caret line="29" column="76" lean-forward="true" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
           <folding>
             <element signature="e#84#93#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
+    <entry file="file://$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans3.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="13" lean-forward="true" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="-2572">
+          <caret line="37" column="16" lean-forward="true" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="163" column="24" lean-forward="true" selection-start-line="163" selection-start-column="24" selection-end-line="163" selection-end-column="24" />
+          <folding>
+            <element signature="e#16#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="106" column="9" lean-forward="false" selection-start-line="106" selection-start-column="9" selection-end-line="106" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -715,6 +808,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organizeComps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="212" column="32" lean-forward="true" selection-start-line="212" selection-start-column="32" selection-end-line="212" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="647" column="20" lean-forward="true" selection-start-line="647" selection-start-column="20" selection-end-line="647" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-908">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/staffLineDetectionRemoval.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="41" column="46" lean-forward="true" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
           <folding />
         </state>
       </provider>

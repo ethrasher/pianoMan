@@ -16,41 +16,44 @@ def reorganizeNotesByMeasure(connectedComponents, binaryImg):
     # RETURN: a list of all measures, each measure is a list containing all connected component objects in order of
     #           each note on the first staff (ordered by x location) and then the second staff
     reorgByStaffLoc = reorganizeNotesByStaffLoc(connectedComponents)
+    for staff in reorgByStaffLoc:
+        print("[", end="")
+        for note in staff:
+            print(type(note), end=", ")
+        print("]")
+
     measures = []
-    curMeasureStaff1 = []
-    curMeasureStaff2 = []
     for staffNum in range(0, len(reorgByStaffLoc), 2):
         staff1 = reorgByStaffLoc[staffNum]
         staff2 = reorgByStaffLoc[staffNum+1]
-        staff1ElemNum = 0
-        staff2ElemNum = 0
-        curStaff = 1
-        while (staff2ElemNum < len(staff2)):
-            if curStaff == 1:
-                noteElem = staff1[staff1ElemNum]
-                staff1ElemNum += 1
+        staff1Measures = []
+        curStaff1Measure = []
+        staff2Measures = []
+        curStaff2Measure = []
+        print(staffNum)
+        for i in range(len(staff1)):
+            curElem = staff1[i]
+            if isinstance(curElem, MeasureBarComponent):
+                staff1Measures.append(curStaff1Measure)
+                curStaff1Measure = []
             else:
-                noteElem = staff2[staff2ElemNum]
-                staff2ElemNum += 1
-            if curStaff == 1 and curMeasureStaff1 == [] and (isinstance(noteElem, MeasureBarComponent) or isinstance(noteElem, AccentComponent)):
-                continue
-            if curStaff == 2 and curMeasureStaff2 == [] and (isinstance(noteElem, MeasureBarComponent) or isinstance(noteElem, AccentComponent)):
-                continue
-            if isinstance(noteElem, MeasureBarComponent):
-                if curStaff == 1:
-                    curStaff = 2
-                elif curStaff == 2:
-                    measures.append(curMeasureStaff1+curMeasureStaff2)
-                    curMeasureStaff1 = []
-                    curMeasureStaff2 = []
-                    curStaff = 1
+                curStaff1Measure.append(curElem)
+        if curStaff1Measure != []:
+            staff1Measures.append(curStaff1Measure)
+        for i in range(len(staff2)):
+            curElem = staff2[i]
+            if isinstance(curElem, MeasureBarComponent):
+                staff2Measures.append(curStaff2Measure)
+                curStaff2Measure = []
             else:
-                if curStaff == 1:
-                    curMeasureStaff1.append(noteElem)
-                else:
-                    curMeasureStaff2.append(noteElem)
-    if curMeasureStaff1 != [] or curMeasureStaff2 != []:
-        measures.append(curMeasureStaff1+curMeasureStaff2)
+                curStaff2Measure.append(curElem)
+        if curStaff2Measure != []:
+            staff2Measures.append(curStaff2Measure)
+        assert(len(staff1Measures) == len(staff2Measures))
+        for i in range(len(staff1Measures)):
+            if staff1Measures[i] != [] or staff2Measures[i]!=[]:
+                print(staff1Measures[i]+staff2Measures[i])
+                measures.append(staff1Measures[i]+staff2Measures[i])
     return measures
 
 def reorganizeNotesByStaffLoc(connectedComponents):
@@ -84,7 +87,8 @@ def putAccentsOnNotes(allMeasures, distBetweenStaffLines):
     for measureNum in range(len(allMeasures)):
         measure = allMeasures[measureNum]
         newMeasure = putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, copy.copy(flatsSharps))
-        newAllMeasures.append(newMeasure)
+        if newMeasure != []:
+            newAllMeasures.append(newMeasure)
     return newAllMeasures, keySig
 
 def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
@@ -218,7 +222,7 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
             if noteElem.subTypeName == "dot" and len(newMeasure)>0:
                 # look at last note in the measure
                 lastNote = newMeasure[-1]
-                if isinstance(lastNote, NoteComponent):
+                if isinstance(lastNote, NoteComponent) and lastNote.staff == noteElem.staff:
                     putDotOnNote(noteElem=lastNote, dotElem=noteElem, accentToNoteDistThreshold=accentToNoteDistThreshold)
             elif noteElem.subTypeName == "sharp":
                 lastAccentBeforeNoteRest = noteElem

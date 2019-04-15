@@ -38,3 +38,6 @@ Writing a txt file
 
 Checking if a file exists
 17. https://therenegadecoder.com/code/how-to-check-if-a-file-exists-in-python/
+
+Copying a file to a new os location
+18. https://www.techbeamers.com/python-copy-file/#os-system
