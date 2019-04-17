@@ -2,7 +2,7 @@
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 2.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise>
   <credit>
-    <credit-words>HB5</credit-words>
+    <credit-words>HB</credit-words>
   </credit>
   <part-list>
     <score-part id="P1">
@@ -31,7 +31,7 @@
           <line>4</line>
         </clef>
       </attributes>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -40,9 +40,9 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -161,7 +161,7 @@
         <stem>down</stem>
         <staff>1</staff>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -170,9 +170,9 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -337,7 +337,7 @@
         <stem>down</stem>
         <staff>1</staff>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -346,9 +346,9 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -447,7 +447,7 @@
         <stem>down</stem>
         <staff>1</staff>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -456,9 +456,9 @@
         <type>eighth</type>
         <stem>down</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -546,7 +546,7 @@
         <stem>up</stem>
         <staff>1</staff>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>F</step>
           <octave>5</octave>
@@ -555,9 +555,9 @@
         <type>eighth</type>
         <stem>down</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>F</step>
           <octave>5</octave>
@@ -722,7 +722,7 @@
         <stem>down</stem>
         <staff>1</staff>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -731,9 +731,9 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -744,7 +744,7 @@
         <staff>1</staff>
         <beam>continue</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -755,7 +755,7 @@
         <staff>1</staff>
         <beam>continue</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>5</octave>
@@ -884,7 +884,7 @@
         <stem>down</stem>
         <staff>1</staff>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -893,9 +893,9 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -906,7 +906,7 @@
         <staff>1</staff>
         <beam>continue</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1071,7 +1071,7 @@
         <stem>down</stem>
         <staff>1</staff>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1080,9 +1080,9 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1181,7 +1181,7 @@
         <stem>down</stem>
         <staff>1</staff>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1190,9 +1190,9 @@
         <type>eighth</type>
         <stem>down</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1280,7 +1280,7 @@
         <stem>up</stem>
         <staff>1</staff>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>F</step>
           <octave>5</octave>
@@ -1289,9 +1289,9 @@
         <type>eighth</type>
         <stem>down</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
-      <note>
+      <note number="1">
         <pitch>
           <step>F</step>
           <octave>5</octave>

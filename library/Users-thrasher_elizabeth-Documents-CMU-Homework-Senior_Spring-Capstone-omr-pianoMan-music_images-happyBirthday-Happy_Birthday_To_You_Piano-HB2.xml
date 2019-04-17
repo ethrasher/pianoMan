@@ -2,7 +2,7 @@
 <!DOCTYPE score-partwise PUBLIC "-//Recordare//DTD MusicXML 2.0 Partwise//EN" "http://www.musicxml.org/dtds/partwise.dtd">
 <score-partwise>
   <credit>
-    <credit-words>HB5</credit-words>
+    <credit-words>HB2</credit-words>
   </credit>
   <part-list>
     <score-part id="P1">
@@ -40,7 +40,7 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
       <note>
         <pitch>
@@ -170,7 +170,7 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
       <note>
         <pitch>
@@ -346,7 +346,7 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
       <note>
         <pitch>
@@ -456,7 +456,7 @@
         <type>eighth</type>
         <stem>down</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
       <note>
         <pitch>
@@ -555,7 +555,7 @@
         <type>eighth</type>
         <stem>down</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
       <note>
         <pitch>
@@ -731,7 +731,7 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
       <note>
         <pitch>
@@ -893,7 +893,7 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
       <note>
         <pitch>
@@ -1080,7 +1080,7 @@
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
       <note>
         <pitch>
@@ -1190,7 +1190,7 @@
         <type>eighth</type>
         <stem>down</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
       <note>
         <pitch>
@@ -1289,7 +1289,7 @@
         <type>eighth</type>
         <stem>down</stem>
         <staff>1</staff>
-        <beam>begin</beam>
+        <beam>start</beam>
       </note>
       <note>
         <pitch>

@@ -1,3 +1,4 @@
-speed:5
+fileName:Swans
+speed:1
 hand:both
-bpm:49
+bpm:83

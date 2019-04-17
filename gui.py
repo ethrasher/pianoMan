@@ -205,7 +205,7 @@ def mousePressed(root, event, data):
         if data.sendToPiButton.clickedInside(event.x, event.y):
             bpmDict = {"5":49, "4":56, "3":62, "2":71, "1":83}
             bpm = bpmDict[data.speedLabel]
-            contentsToWrite = "speed:" + str(data.speedLabel) + "\n" + "hand:" + str(data.handLabel) + "\n" + "bpm:" + str(bpm)
+            contentsToWrite = "fileName:"+data.fileNameTextBox.text+"\n"+"speed:" + str(data.speedLabel) + "\n" + "hand:" + str(data.handLabel) + "\n" + "bpm:" + str(bpm)
             writeFile(scriptPath + "/outBoundFiles/start.txt", contentsToWrite)
             if data.sendToPi:
                 # make start file to send to the pi

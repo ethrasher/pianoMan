@@ -191,7 +191,7 @@ class ConnectedComponent(object):
                 componentImg = np.copy(self.componentImg[:, x0:x1])
                 durationName = "eighth"
                 if i == 0:
-                    beam = "start"
+                    beam = "begin"
                 elif i == numberOfStems-1:
                     beam = "end"
                 else:
@@ -372,7 +372,7 @@ class MeasureElem(ConnectedComponent):
                     distanceToStaff = distanceToEnd
             self.staff = closestStaff
 
-        elif isinstance(self, NoteComponent) and self.circles!=None:
+        elif isinstance(self, NoteComponent) and type(self.circles) ==  np.ndarray:
             for staffNum in range(4, len(staffLines)-1, 5):
                 # must be in between two staffs (like middle C)
                 staffMiddleStart = staffLines[staffNum][-1]
@@ -384,6 +384,9 @@ class MeasureElem(ConnectedComponent):
                         elif self.stem == "down":
                             self.staff = (staffNum+1) // 5 + 1
                         return
+        else:
+            # nothing more to do
+            self.staff = None
         return
 
 
@@ -398,16 +401,18 @@ class NoteComponent(MeasureElem):
         self.durationName = duration
         self.numPitches = numPitches
         self.stem = stem
-        self.getStaff(staffLines=staffLines, compNum=compNum)
+        self.staff = None
         self.circles = None
         self.pitches = []
-        self.findNoteheads(lineDist)
-        self.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
         self.dottedPitches = []
         self.alterPitches = []
-        #beam should be start, continue or end, or None if it is not part of a connected note
-        #example: <beam number="1">end</beam>
+        # beam should be start, continue or end, or None if it is not part of a connected note
+        # example: <beam number="1">end</beam>
         self.beam = beam
+        self.findNoteheads(lineDist)
+        self.getStaff(staffLines=staffLines, compNum=compNum)
+        self.getPitches(staffLines=staffLines, distBetweenLines=lineDist)
+
 
     def findNoteheads(self, distBetweenLines):
         # DESCRIPTION: finds all the noteheads in the pitch component, alters self.circles

@@ -28,6 +28,14 @@ def generateMusicXML(fileName, outputFilePath, measureDuration, attributeDict, m
 
         for note in measuresList[i]:
             if isinstance(note, dict):
+                '''if "beam" in note:
+                    if note["type"] == "eighth":
+                        noteElement = etree.SubElement(measureElement, "note", attrib={"number":"1"})
+                    elif note["type"] == "sixteenth":
+                        noteElement = etree.SubElement(measureElement, "note", attrib={"number": "2"})
+                    else:
+                        raise Exception("Could not turn beamed note into xml dictionary")
+                else:'''
                 noteElement = etree.SubElement(measureElement, "note")
                 addData(noteElement, note)
             else:
@@ -61,10 +69,15 @@ def addData(root, data):
                     element = etree.SubElement(root, key, number=str(i + 1))
                     addData(element, value[i])
             else:
+                #if key == "beam":
+                #    element = etree.SubElement(root, key, attrib={"number":"1"})
+                #else:
                 element = etree.SubElement(root, key)
                 addData(element, value)
     elif isinstance(data, string_types):
         root.text = data
+
+
 
 
 def formXMLDictionaryFromObjects(allMeasures, divisions):

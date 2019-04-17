@@ -32,8 +32,6 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist):
             templateObjList.append(templateObj)
     for templateObj in templateObjList:
         if isinstance(templateObj, NoteComponent):
-            print("Note Type:", templateObj)
-            print("Dict:", templateObj.__dict__)
             smallestNoteType = getSmallerNoteType(smallestNoteType, templateObj.durationName)
         #ignore rest and accent case. They are already done
         if isinstance(templateObj, MeasureBarComponent):
