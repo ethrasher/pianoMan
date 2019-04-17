@@ -41,3 +41,6 @@ Checking if a file exists
 
 Copying a file to a new os location
 18. https://www.techbeamers.com/python-copy-file/#os-system
+
+Convert a nested python data structure to XML
+19. http://code.activestate.com/recipes/577882-convert-a-nested-python-data-structure-to-xml/
