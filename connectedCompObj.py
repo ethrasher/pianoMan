@@ -640,13 +640,23 @@ class NoteComponent(MeasureElem):
         notes = []
         for noteElemIndex in range(len(self.pitches)):
             noteDict = dict()
+
+            #Get pitch right
             if self.alterPitches[noteElemIndex] == "sharp":
                 self.pitches[noteElemIndex]["alter"] = 1
             elif self.alterPitches[noteElemIndex] == "flat":
                 self.pitches[noteElemIndex]["alter"] = -1
+            # should go in order: step, alter (if there is one), octave
             for key in self.pitches[noteElemIndex]:
                 self.pitches[noteElemIndex][key] = str(self.pitches[noteElemIndex][key])
-            noteDict["pitch"] = self.pitches[noteElemIndex]
+            #noteDict["pitch"] = self.pitches[noteElemIndex]
+            noteDict["pitch"] = dict()
+            noteDict["pitch"]["step"] = self.pitches[noteElemIndex]["step"]
+            if "alter" in self.pitches[noteElemIndex]:
+                noteDict["pitch"]["alter"] = self.pitches[noteElemIndex]["alter"]
+            noteDict["pitch"]["octave"] = self.pitches[noteElemIndex]["octave"]
+
+            #Get duration right
             if type(divisions) != int:
                 divisions = round(divisions)
             if self.durationName == "quarter":
