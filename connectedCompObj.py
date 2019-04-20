@@ -6,13 +6,14 @@ import os
 import numpy as np
 
 class ConnectedComponent(object):
-    def __init__(self, x0, y0, x1, y1, label, componentImg):
+    def __init__(self, x0, y0, x1, y1, label, componentImg, binaryImg):
         self.x0 = x0
         self.y0 = y0
         self.x1 = x1
         self.y1 = y1
         self.label = label
         self.componentImg = componentImg
+        self.fullBinaryImg = binaryImg
 
     def drawComponent(self, windowName="componentImg"):
         # DESCRIPTION: draws the component in a separate image
@@ -28,12 +29,12 @@ class ConnectedComponent(object):
         compPath = scriptPath + '/templates/component%d.jpg'%(compNum)
         cv2.imwrite(compPath, self.componentImg)
 
-    def drawComponentOnCanvas(self, binaryImg, windowName='componentOnCanvas'):
+    def drawComponentOnCanvas(self, windowName='componentOnCanvas'):
         # DESCRIPTION: draws the component highlighted in a square box on the full page image
         # PARAMETERS: binaryImg: the full image of the page
         #               windowName: string of the name for the window for openCV
         # RETURN: None
-        img = cv2.cvtColor(binaryImg, cv2.COLOR_GRAY2RGB)
+        img = cv2.cvtColor(self.fullBinaryImg, cv2.COLOR_GRAY2RGB)
         img = cv2.rectangle(img, (self.x0 - 5, self.y0 - 5), (self.x1 + 5, self.y1 + 5), (0, 0, 255), 6)
         cv2.imshow(windowName, img)
 
@@ -89,7 +90,7 @@ class ConnectedComponent(object):
         if templatePath.find("aaa_note_whole") >= 0:
             # it is a whole note
             return NoteComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration="whole", stem=None, numPitches=1,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="whole", stem=None, numPitches=1,
                                  staffLines=staffLines, lineDist=lineDist, compNum=compNum)
         elif templatePath.find("aaa_note_half") >= 0:
             # it is a half note
@@ -98,7 +99,7 @@ class ConnectedComponent(object):
             elif stemDirString == "stemDown": stem = "down"
             else: raise Exception("Could not get stem for half note, compNum:" + str(compNum))
             return NoteComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration="half", stem=stem, numPitches=1,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="half", stem=stem, numPitches=1,
                                  staffLines=staffLines, lineDist=lineDist, compNum=compNum)
         elif templatePath.find("aaa_note_quarter") >= 0:
             # it is a quarter note
@@ -110,7 +111,7 @@ class ConnectedComponent(object):
             else:
                 raise Exception("Could not get stem for quarter note, compNum:" + str(compNum))
             return NoteComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration="quarter", stem=stem, numPitches=1,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="quarter", stem=stem, numPitches=1,
                                  staffLines=staffLines, lineDist=lineDist, compNum=compNum)
         elif templatePath.find("aaa_note_eighth") >= 0:
             # it is an eighth note
@@ -122,7 +123,7 @@ class ConnectedComponent(object):
             else:
                 raise Exception("Could not get stem for half note, compNum:" + str(compNum))
             return NoteComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration="eighth", stem=stem, numPitches=1,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="eighth", stem=stem, numPitches=1,
                                  staffLines=staffLines, lineDist=lineDist, compNum=compNum)
         elif templatePath.find("aaa_note_sixteenth") >= 0:
             stemDirString = templatePath.split("/")[-2]
@@ -133,10 +134,9 @@ class ConnectedComponent(object):
             else:
                 raise Exception("Could not get stem for half note, compNum:" + str(compNum))
             return NoteComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration="sixteenth", stem=stem, numPitches=1,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="sixteenth", stem=stem, numPitches=1,
                                  staffLines=staffLines, lineDist=lineDist, compNum=compNum)
         elif templatePath.find("aaa_note_chord") >= 0:
-            print("finding chord")
             # it is a multi-note chord
             durationName = (templatePath.split("/")[-3]).split("_")[1]
             numberOfPitches = int(templatePath.split("/")[-2])
@@ -148,12 +148,11 @@ class ConnectedComponent(object):
             else:
                 raise Exception("Could not get stem for half note, compNum:" + str(compNum))
             return NoteComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration=durationName, stem=stem, numPitches=numberOfPitches,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration=durationName, stem=stem, numPitches=numberOfPitches,
                                  staffLines=staffLines, lineDist=lineDist, compNum=compNum)
             #TODO: CHECK/TEST THIS CASE
 
         elif templatePath.find("aaa_note_connected") >= 0:
-            print("finding connected note")
             # it is a series of connected notes
             typeName = "note"
             subTypeName = "connected"
@@ -166,14 +165,12 @@ class ConnectedComponent(object):
                 raise Exception("Could not get stem for half note, compNum:" + str(compNum))
             numberOfStems = len(templatePath.split("/")[-2])
             numberOfPitches = [int(templatePath.split("/")[-2][i]) for i in range(numberOfStems)]
-            print(numberOfPitches)
 
             # need the new image components for each stem, duration for each stem, numPitches on each stem
             durationName = None
             midpointsBetweenStems = ConnectedComponent.getLocationOfMidPoints(self.componentImg, numberOfStems)
             allNotes = []
             for i in range(numberOfStems):
-                print(i)
                 if i == 0:
                     x0 = 0
                     fullImgX0 = self.x0
@@ -199,7 +196,7 @@ class ConnectedComponent(object):
 
                 #TODO: NEED TO FIND DURATION PROPERLY
                 newNote = NoteComponent(x0=fullImgX0, y0=fullImgY0, x1=fullImgX1, y1=fullImgY1, label=self.label,
-                                 componentImg=componentImg, duration=durationName, stem=stem, numPitches=numberOfPitches[i],
+                                 componentImg=componentImg, binaryImg=self.fullBinaryImg, duration=durationName, stem=stem, numPitches=numberOfPitches[i],
                                  staffLines=staffLines, lineDist=lineDist, compNum=compNum+(1/numberOfStems), beam=beam)
                 allNotes.append(newNote)
             return allNotes
@@ -207,39 +204,39 @@ class ConnectedComponent(object):
         elif templatePath.find("aaa_rest_whole") >= 0:
             # it is a whole rest
             return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration="whole", staffLines=staffLines,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="whole", staffLines=staffLines,
                                  compNum=compNum)
         elif templatePath.find("aaa_rest_half") >= 0:
             # it is a half rest
             return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration="half", staffLines=staffLines,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="half", staffLines=staffLines,
                                  compNum=compNum)
         elif templatePath.find("aaa_rest_quarter") >= 0:
             # it is a quarter rest
             return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration="quarter", staffLines=staffLines,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="quarter", staffLines=staffLines,
                                  compNum=compNum)
         elif templatePath.find("aaa_rest_eighth") >= 0:
             # it is an eighth rest
             return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration="eighth", staffLines=staffLines,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="eighth", staffLines=staffLines,
                                  compNum=compNum)
         elif templatePath.find("aaa_rest_sixteenth") >= 0:
             # it is a sixteenth rest
             return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, duration="sixteenth", staffLines=staffLines,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="sixteenth", staffLines=staffLines,
                                  compNum=compNum)
 
 
         elif templatePath.find("aaa_measure_bar") >= 0:
             # it is a measure_barx0, y0, x1, y1, label, componentImg, staffLines, compNum
-            return MeasureBarComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label, componentImg=self.componentImg, staffLines=staffLines, compNum=compNum)
+            return MeasureBarComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label, componentImg=self.componentImg, binaryImg=self.fullBinaryImg, staffLines=staffLines, compNum=compNum)
 
 
         elif templatePath.find("aaa_accent") >= 0:
             #it is an accent
             subType = templatePath.split("/")[-2]
-            return AccentComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label, componentImg=self.componentImg, subType=subType, staffLines=staffLines, compNum=compNum)
+            return AccentComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label, componentImg=self.componentImg, binaryImg=self.fullBinaryImg, subType=subType, staffLines=staffLines, compNum=compNum)
 
 
         elif templatePath.find("aaa_clef_treble") >= 0:
@@ -247,31 +244,31 @@ class ConnectedComponent(object):
             type = "clef"
             subType = "treble"
             return OtherComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                  componentImg=self.componentImg, type=type, subType=subType, compNum=compNum)
+                                  componentImg=self.componentImg, binaryImg=self.fullBinaryImg, type=type, subType=subType, compNum=compNum)
         elif templatePath.find("aaa_clef_base") >= 0:
             # it is a base_clef
             type = "clef"
             subType = "base"
             return OtherComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                  componentImg=self.componentImg, type=type, subType=subType, compNum=compNum)
+                                  componentImg=self.componentImg, binaryImg=self.fullBinaryImg, type=type, subType=subType, compNum=compNum)
         elif templatePath.find("aaa_timeSignature") >= 0:
             # it is a timeSig
             type = "time signature"
             subType = templatePath.split("/")[-2]
             return OtherComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                  componentImg=self.componentImg, type=type, subType=subType, compNum=compNum)
+                                  componentImg=self.componentImg, binaryImg=self.fullBinaryImg, type=type, subType=subType, compNum=compNum)
         elif templatePath.find("aaa_staveSwirl") >= 0:
             # it is a stave Swirl
             type = "stave swirl"
             subType = None
             return OtherComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                  componentImg=self.componentImg, type=type, subType=subType, compNum=compNum)
+                                  componentImg=self.componentImg, binaryImg=self.fullBinaryImg, type=type, subType=subType, compNum=compNum)
         elif templatePath.find("aaa_alphaNum") >= 0:
             # it is an alpha-numeric character
             type = "alphaNum"
             subType = None
             return OtherComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                  componentImg=self.componentImg, type=type, subType=subType, compNum=compNum)
+                                  componentImg=self.componentImg, binaryImg=self.fullBinaryImg, type=type, subType=subType, compNum=compNum)
 
     @staticmethod
     def getLocationOfMidPoints(image, numOfStems):
@@ -371,6 +368,7 @@ class MeasureElem(ConnectedComponent):
                     closestStaff = (staffNum+1)//5 +1
                     distanceToStaff = distanceToEnd
             self.staff = closestStaff
+            return
 
         elif isinstance(self, NoteComponent) and type(self.circles) ==  np.ndarray:
             for staffNum in range(4, len(staffLines)-1, 5):
@@ -384,6 +382,33 @@ class MeasureElem(ConnectedComponent):
                         elif self.stem == "down":
                             self.staff = (staffNum+1) // 5 + 1
                         return
+
+        #print("Got down here")
+        #print("staffLines:", staffLines)
+        #print(self.y0, self.y1)
+        if isinstance(self, NoteComponent) or isinstance(self, AccentComponent):
+            # just find which staff middle is closest
+            selfMiddle = (self.y0+self.y1)/2
+            #if self.compNum == 0: print("selfMiddle", selfMiddle)
+            closestStaffNum = None
+            closestStaffDist = None
+            for staffNum  in range(0, len(staffLines), 5):
+                staffTop = staffLines[staffNum][0]
+                staffBottom = staffLines[staffNum+4][-1]
+                staffMiddle = (staffTop+staffBottom)/2
+                #if self.compNum == 0: print("staffTop", staffTop, "staffBottom", staffBottom)
+                #if self.compNum == 0: print("staffMiddle", staffMiddle)
+                dist = abs(staffMiddle-selfMiddle)
+                #if self.compNum == 0: print("dist", dist)
+                if closestStaffDist == None or dist<closestStaffDist:
+                    closestStaffDist = dist
+                    closestStaffNum = (staffNum) // 5 + 1
+            #if self.compNum == 0: print("closestStaff", closestStaffNum)
+            #self.drawComponentOnCanvas()
+            #cv2.waitKey(0)
+            self.staff = closestStaffNum
+
+
         else:
             # nothing more to do
             self.staff = None
@@ -391,8 +416,8 @@ class MeasureElem(ConnectedComponent):
 
 
 class NoteComponent(MeasureElem):
-    def __init__(self, x0, y0, x1, y1, label, componentImg, duration, stem, numPitches, staffLines, lineDist, compNum, beam=None):
-        super().__init__(x0, y0, x1, y1, label, componentImg)
+    def __init__(self, x0, y0, x1, y1, label, componentImg, binaryImg, duration, stem, numPitches, staffLines, lineDist, compNum, beam=None):
+        super().__init__(x0, y0, x1, y1, label, componentImg, binaryImg)
         self.compNum = compNum
         # typeName could be: note, rest, measure bar, accent, clef, time signature, stave swirl, or alphaNum
         self.typeName = "note"
@@ -611,6 +636,7 @@ class NoteComponent(MeasureElem):
         # DESCRIPTION: gets the dictionary to actually give to the XML generator
         # PARAMETERS: divisions: int for the number of divisions in a quarter note
         # RETURN: dictionary with all the needed xml values and keys
+        #print("Divisions when making XMLDict", divisions)
         notes = []
         for noteElemIndex in range(len(self.pitches)):
             noteDict = dict()
@@ -636,7 +662,8 @@ class NoteComponent(MeasureElem):
             else:
                 raise Exception("Duration not whole, half, quarter, eighth, or sixteenth")
             noteDict["type"] = str(self.durationName)
-            noteDict["stem"] = str(self.stem)
+            if self.durationName != "whole":
+                noteDict["stem"] = str(self.stem)
             prelimStaff = self.staff % 2
             if prelimStaff == 1:
                 noteDict["staff"] = "1"
@@ -654,8 +681,8 @@ class NoteComponent(MeasureElem):
 
 
 class RestComponent(MeasureElem):
-    def __init__(self, x0, y0, x1, y1, label, componentImg, duration, staffLines, compNum):
-        super().__init__(x0, y0, x1, y1, label, componentImg)
+    def __init__(self, x0, y0, x1, y1, label, componentImg, binaryImg, duration, staffLines, compNum):
+        super().__init__(x0, y0, x1, y1, label, componentImg, binaryImg)
         self.compNum = compNum
         # typeName could be: note, rest, measure bar, accent, clef, time signature, stave swirl, or alphaNum
         self.typeName = "rest"
@@ -687,16 +714,16 @@ class RestComponent(MeasureElem):
         return [restDict]
 
 class MeasureBarComponent(MeasureElem):
-    def __init__(self, x0, y0, x1, y1, label, componentImg, staffLines, compNum):
-        super().__init__(x0, y0, x1, y1, label, componentImg)
+    def __init__(self, x0, y0, x1, y1, label, componentImg, binaryImg, staffLines, compNum):
+        super().__init__(x0, y0, x1, y1, label, componentImg, binaryImg)
         self.compNum = compNum
         # typeName could be: note, rest, measure bar, accent, clef, time signature, stave swirl, or alphaNum
         self.typeName = "measure bar"
         self.getStaff(staffLines=staffLines, compNum=compNum)
 
 class AccentComponent(MeasureElem):
-    def __init__(self, x0, y0, x1, y1, label, componentImg, subType, staffLines, compNum):
-        super().__init__(x0, y0, x1, y1, label, componentImg)
+    def __init__(self, x0, y0, x1, y1, label, componentImg, binaryImg, subType, staffLines, compNum):
+        super().__init__(x0, y0, x1, y1, label, componentImg, binaryImg)
         self.compNum = compNum
         # typeName could be: note, rest, measure bar, accent, clef, time signature, stave swirl, or alphaNum
         self.typeName = None
@@ -704,8 +731,8 @@ class AccentComponent(MeasureElem):
         self.getStaff(staffLines=staffLines, compNum=compNum)
 
 class OtherComponent(ConnectedComponent):
-    def __init__(self, x0, y0, x1, y1, label, componentImg, type, subType, compNum):
-        super().__init__(x0, y0, x1, y1, label, componentImg)
+    def __init__(self, x0, y0, x1, y1, label, componentImg, binaryImg, type, subType, compNum):
+        super().__init__(x0, y0, x1, y1, label, componentImg, binaryImg)
         self.compNum = compNum
         # typeName could be: note, rest, measure bar, accent, clef, time signature, stave swirl, or alphaNum
         self.typeName = type

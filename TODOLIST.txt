@@ -23,9 +23,7 @@ To do list:
 
 Things to still do:
 1. Documentation catch up!
-2. Get barred notes to actually end up barred on soundslice
 3. Find correct duration of barred notes (currently just putting eighth) using vertical projection
-4. Make sure that it is finding those barred notes correctly (seemed to be splitting a few too many times for some of the notes in HB
 5. Remove all other black pixels that are not part of the connected component, but are close enough they are in the bounding box
 6. Gui interface where a user can fix notes that were unidentifiable
 7. Make template matching faster

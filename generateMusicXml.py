@@ -5,7 +5,7 @@ import os
 
 def generateMusicXML(fileName, outputFilePath, measureDuration, attributeDict, measuresList):
     # Setup root of XML
-    # part-list, score-part, part-name
+    # part-list, score-part, part-game
     root = etree.Element("score-partwise")
     credit = etree.SubElement(root, "credit")
     creditWords = etree.SubElement(credit, "credit-words")
@@ -111,8 +111,8 @@ def formAttributeDictionary(divisions, key, timeBeats, timeBeatType):
 
 def formXML(allMeasures, divisions, key, timeBeats, timeBeatType, fileName, outputFilePath):
     attribute = formAttributeDictionary(divisions=divisions, key=key, timeBeats=timeBeats, timeBeatType=timeBeatType)
-    dictMeasures = formXMLDictionaryFromObjects(allMeasures, 1)
-    measureDuration = attribute["time"]["beats"]
+    dictMeasures = formXMLDictionaryFromObjects(allMeasures=allMeasures, divisions=divisions)
+    measureDuration = str(int(attribute["time"]["beats"])*int(attribute["divisions"]))
     generateMusicXML(fileName, outputFilePath, measureDuration, attribute, dictMeasures)
 
 

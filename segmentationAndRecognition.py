@@ -7,7 +7,7 @@ import numpy as np
 import copy
 from connectedCompObj import ConnectedComponent, NoteComponent, RestComponent, MeasureBarComponent, AccentComponent, OtherComponent
 
-def segmentationAndRecognition(binaryImg, staffLines, lineDist):
+def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
     # DESCRIPTION: organizes the image into a list of connected components with some features detected
     # PARAMETERS: binaryImg: numpy array of the binarized image (255 or 0 in all places) with no staff lines
     #               staffLines: list of all the staff line indexes
@@ -43,7 +43,7 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist):
                 timeSig = templateObj.getTimeSignature()
         compNum += 1
     templateObjList = templateObjList + measuresToAddToTemplateList
-    divisions = getDivisions(smallestNoteType=smallestNoteType)
+    divisions = getDivisions(smallestNoteType=smallestNoteType, divisions=divisions)
     return templateObjList, timeSig, divisions
 
 def findConnectedComponents(binaryImg):
@@ -66,7 +66,7 @@ def findConnectedComponents(binaryImg):
         #throw out any component too small
         if x1-x0 >= minWidth or y1-y0 >= minHeight:
             componentImg = np.copy(binaryImg[y0:y1, x0:x1])
-            connectedComponents.append(ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, componentImg=componentImg))
+            connectedComponents.append(ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, componentImg=componentImg, binaryImg=np.copy(binaryImg)))
     return connectedComponents
 
 def getSmallerNoteType(origNote, compareNote):
@@ -100,9 +100,6 @@ def getSmallerNoteType(origNote, compareNote):
     elif compareNote == "sixteenth":
         compareDuration = 1
     else:
-        print("Compare Note:", compareNote)
-        #print("Note Type:", type(compareNote))
-        #print(compareNote.__dict__)
         raise Exception("CompareNote type not whole, half, quarter, eighth, sixteenth")
 
     if compareDuration <= origDuration:
@@ -110,23 +107,37 @@ def getSmallerNoteType(origNote, compareNote):
     else:
         return origNote
 
-def getDivisions(smallestNoteType):
+def getDivisions(smallestNoteType, divisions):
     # DESCRIPTION: gets the division number based on the smallest note type in the song
     # PARAMETERS: smallestNoteType: string (whole, half, ...) representing the smallest note found before in the page
     # RETURN: integer representing the duration value to go into the xml
-
-    if smallestNoteType == "whole":
-        return .25
-    elif smallestNoteType == "half":
-        return .5
-    elif smallestNoteType == "quarter":
-        return 1
-    elif smallestNoteType == "eighth":
-        return 2
-    elif smallestNoteType == "sixteenth":
-        return 4
+    print("Smallest note type", smallestNoteType)
+    if divisions == None:
+        if smallestNoteType == "whole":
+            return .25
+        elif smallestNoteType == "half":
+            return .5
+        elif smallestNoteType == "quarter":
+            return 1
+        elif smallestNoteType == "eighth":
+            return 2
+        elif smallestNoteType == "sixteenth":
+            return 4
+        else:
+            raise Exception("smallestNoteType not whole, half, quarter, eighth, sixteenth")
     else:
-        raise Exception("smallestNoteType not whole, half, quarter, eighth, sixteenth")
+        if smallestNoteType == "whole":
+            return max(divisions, .25)
+        elif smallestNoteType == "half":
+            return max(divisions, .5)
+        elif smallestNoteType == "quarter":
+            return max(divisions, 1)
+        elif smallestNoteType == "eighth":
+            return max(divisions, 2)
+        elif smallestNoteType == "sixteenth":
+            return max(divisions, 4)
+        else:
+            raise Exception("smallestNoteType not whole, half, quarter, eighth, sixteenth")
 
 
 

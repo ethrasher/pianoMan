@@ -53,12 +53,11 @@ class RadioButton(Button):
 
 class RadioButtons(object):
     def __init__(self, x0, y0, x1, y1, text, label):
-        margin = 5
         self.buttons = []
-        width = (x1-x0)/len(text) - margin*(len(text)-1)
+        width = (x1-x0)/len(text)
         for i in range(len(text)):
-            startX = x0+width*i+margin*i
-            endX = x0+width*(i+1)+margin*i
+            startX = x0+width*i
+            endX = x0+width*(i+1)
             self.buttons.append(RadioButton(x0=startX, y0=y0, x1=endX, y1=y1, color="white", text=text[i]))
         self.x0 = x0
         self.y0=y0
@@ -164,11 +163,11 @@ def init(data, sendToPi):
     data.musicPdfPath = ''
     data.getFileButton = Button(x0=10, y0=data.height//2-70, x1=160, y1=data.height//2-20, color="black", text="Select File")
     data.fileNameTextBox = TextBox(x0=160, y0=data.height//2-20, x1=data.width//2, y1=data.height//2+30, label="Song Name")
-    data.speedLabels = ["1", "2", "3", "4", "5"]
-    data.speedButtons = RadioButtons(x0=110, y0=data.height//2+110, x1=data.width//2, y1=data.height//2+160, text = data.speedLabels, label="Speed")
+    data.speedLabels = ["normal", "normal-\nmedium", "medium", "medium-\nslow", "slow"]
+    data.speedButtons = RadioButtons(x0=110, y0=data.height//2+110, x1=data.width//2 +50, y1=data.height//2+160, text = data.speedLabels, label="Speed")
     data.speedLabel = None
     data.handLabels = ["bass\nclef", "treble\nclef", "both"]
-    data.handButtons = RadioButtons(x0=110, y0=data.height/2+200, x1=data.width//2, y1=data.height/2+250, text=data.handLabels, label="Hands")
+    data.handButtons = RadioButtons(x0=110, y0=data.height/2+200, x1=data.width//2 +50, y1=data.height/2+250, text=data.handLabels, label="Hands")
     data.handLabel = None
     data.submitButton = Button(x0=data.width-160, y0=data.height//2-70, x1=data.width-10, y1=data.height//2-20, color="dark goldenrod", text="Start")
     data.musicPdfPath = ''
@@ -198,7 +197,7 @@ def mousePressed(root, event, data):
                 data.startError = startValues
             else:
                 songPath, songName, speedLabel, handLabel = startValues
-                data.speedLabel = speedLabel.split("\n")[0]
+                data.speedLabel = str(data.speedLabels.index(speedLabel) + 1)
                 data.handLabel = handLabel.split("\n")[0]
                 data.startError = 'Processing...'
     elif data.mode == "sendInformation":
