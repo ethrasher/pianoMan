@@ -19,7 +19,7 @@ def generateMusicXML(fileName, outputFilePath, measureDuration, attributeDict, m
     part = etree.SubElement(root, "part", id="P1")
 
     # Add notes to the page
-    for i in range(len(measuresList)):
+    for i in range(len(measuresList)): # Citation[19]
         measureElement = etree.SubElement(part, "measure", number=str(i + 1))
 
         if (i == 0):
@@ -61,7 +61,7 @@ def outputMusicXML(tree, outputFilePath):
 
 
 # Recursively sets all data which was passed in as a dictionary
-def addData(root, data):
+def addData(root, data): # Citation[19]
     if isinstance(data, dict):
         for (key, value) in data.items():
             if isinstance(value, list):
