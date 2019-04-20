@@ -78,13 +78,12 @@ def addData(root, data): # Citation[19]
         root.text = data
 
 
-
-
 def formXMLDictionaryFromObjects(allMeasures, divisions):
     dictMeasures = []
     for measure in allMeasures:
         dictSingleMeasure = []
         seenBaseNote = False
+        print(type(measure))
         for noteElem in measure:
             #check for adding backup, check if it is the base staff
             if seenBaseNote == False and noteElem.staff%2 == 0:

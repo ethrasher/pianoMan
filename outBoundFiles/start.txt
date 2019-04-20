@@ -1,4 +1,4 @@
-fileName:yg10
+fileName:swans1
 speed:1
-hand:both
+hand:bass
 bpm:83
