@@ -21,7 +21,7 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
     templateObjList = []
     timeSig = None
     smallestNoteType = None
-    for comp in connectedComponents[1:]:
+    for comp in connectedComponents:
         if compNum in saveComponentList:
             comp.saveComponent(compNum=compNum)
         templateObj = comp.templateMatch(staffLines=staffLines, lineDist = lineDist, compNum=compNum)
@@ -56,7 +56,8 @@ def findConnectedComponents(binaryImg):
     # nLabels is the number of connected components
     # stats is a matrix of the size of nLabels (one label for each component) with 5 items, left, top, width, height, area
     connectedComponents = []
-    for label in range(nLabels):
+    for label in range(1, nLabels):
+        #Ignore first CC since that is the whole image
         x0 = stats[label, cv2.CC_STAT_LEFT]
         y0 = stats[label, cv2.CC_STAT_TOP]
         x1 = stats[label, cv2.CC_STAT_LEFT] + stats[label, cv2.CC_STAT_WIDTH]
@@ -65,8 +66,12 @@ def findConnectedComponents(binaryImg):
         minHeight = 10
         #throw out any component too small
         if x1-x0 >= minWidth or y1-y0 >= minHeight:
-            componentImg = np.copy(binaryImg[y0:y1, x0:x1])
-            connectedComponents.append(ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, componentImg=componentImg, binaryImg=np.copy(binaryImg)))
+            #origComponentImg = np.copy(binaryImg[y0:y1, x0:x1])
+            componentImg = np.copy(labels[y0:y1, x0:x1])
+            filterer = lambda x: np.uint8(0) if (x==label) else np.uint8(255)
+            componentImg = np.vectorize(filterer)(componentImg)
+            cc = ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, componentImg=componentImg, binaryImg=np.copy(binaryImg))
+            connectedComponents.append(cc)
     return connectedComponents
 
 def getSmallerNoteType(origNote, compareNote):

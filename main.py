@@ -57,7 +57,6 @@ def pianoMan(shouldSend, pdfPath, fileName):
             #Don't want to override timeSig and divisions
             newMeasures,_,divisions,_ = musicSymbolRecognition(binaryImg=binaryImg, divisions=divisions)
             allMeasures += newMeasures
-    print("Divisions:", divisions)
 
     # create the xml based on the measures found
     scriptPath = os.path.dirname(os.path.realpath(__file__))
