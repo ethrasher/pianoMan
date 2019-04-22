@@ -1,0 +1,7 @@
+score:22
+hit:-6
+miss:30
+wrong:5
+duration:69
+early:0
+late:0

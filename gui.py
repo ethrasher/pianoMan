@@ -5,7 +5,7 @@ from tkinter import *
 import os
 from main import pianoMan
 from sendToPi import sendFileToPi
-
+from performanceScoreEvaluator.main import main
 
 ####################################
 # customize these functions
@@ -209,6 +209,8 @@ def mousePressed(root, event, data):
             if data.sendToPi:
                 # make start file to send to the pi
                 sendFileToPi("start.txt")
+            # start the performance evaluator
+            main()
             init(data, data.sendToPi)
 
 def keyPressed(event, data):

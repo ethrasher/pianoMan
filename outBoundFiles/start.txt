@@ -1,4 +1,4 @@
-fileName:hedwig
-speed:1
-hand:bass
-bpm:83
+fileName:drm
+speed:3
+hand:both
+bpm:62
