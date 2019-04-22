@@ -4,15 +4,18 @@ from performanceScoreEvaluator import compare
 from sendToPi import sendFileToPi
 
 def main():
-    start_file_path = "/outBoundFiles/start.txt"
-    end_file_path = "/outBoundFiles/end.txt"
-    xml_path = "/outBoundFiles/outputXML.musicxml"
+    start_file_path = "../outBoundFiles/start.txt"
+    end_file_path = "../outBoundFiles/end.txt"
+    xml_path = "../outBoundFiles/outputXML.xml"
     performance_path = "midi/performance.mid"
     script_path = os.path.dirname(os.path.realpath(__file__))
 
     # Citation[7]
     # Wait until start.txt, musicxml, user performance MIDI file exist
     while not os.path.exists(performance_path) or not os.path.exists(start_file_path) or not os.path.exists(xml_path):
+        print("performance: ", os.path.exists(script_path))
+        print("start: ", os.path.exists(start_file_path))
+        print("xml: ", os.path.exists(xml_path))
         time.sleep(1)
 
     if os.path.isfile(start_file_path) and os.path.isfile(xml_path) and os.path.isfile(performance_path):
