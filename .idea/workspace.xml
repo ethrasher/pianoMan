@@ -2,22 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_accent/timbre/component241.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_accent/timbre/component300.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/11/component173 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/11/component307.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemDown/11/component95.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/111/component245.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/1111/component74.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_connected/stemUp/1111/component77.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-doReMi-Do_Re_Mi-drm.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-gameOfThronesTheme-Game_of_Thrones_Easy_piano-got.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-hedwigsTheme-Hedwigs_Theme_EASY-hedwig.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-hedwigsTheme-Hedwigs_Theme_EASY-hedwig2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-youveGotAFriendInMe-Youve_Got_A_Friend_In_Me-yg4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/outBoundFiles/tester.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/performanceScoreEvaluator/midi/performance.mid" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TODOLIST.txt" afterPath="$PROJECT_DIR$/TODOLIST.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connectedCompObj.py" afterPath="$PROJECT_DIR$/connectedCompObj.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organizeComps.py" afterPath="$PROJECT_DIR$/organizeComps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" afterPath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/start.txt" afterPath="$PROJECT_DIR$/outBoundFiles/start.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/segmentationAndRecognition.py" afterPath="$PROJECT_DIR$/segmentationAndRecognition.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/performanceScoreEvaluator/main.py" afterPath="$PROJECT_DIR$/performanceScoreEvaluator/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py" afterPath="$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,33 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="organizeComps.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/organizeComps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="63" column="46" lean-forward="false" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tester.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outBoundFiles/tester.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3060">
-              <caret line="204" column="24" lean-forward="false" selection-start-line="194" selection-start-column="6" selection-end-line="204" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="50" column="45" lean-forward="false" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
+            <state relative-caret-position="1650">
+              <caret line="110" column="26" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="26" />
               <folding>
                 <element signature="e#84#93#0" expanded="true" />
               </folding>
@@ -65,51 +40,79 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gui.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+              <folding>
+                <element signature="e#16#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sendToPi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="50" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sendToPi.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sendToPi.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="performanceScoreEvaluator.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/performanceScoreEvaluator.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="performanceScoreEvaluator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/performanceScoreEvaluator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="outputXML.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="35" column="24" lean-forward="true" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+            <state relative-caret-position="525">
+              <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
               <folding>
-                <marker date="1555907780602" expanded="true" signature="15690:15742" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="15690:15866" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="15690:16183" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="15690:19576" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="15881:15928" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="15941:16168" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="15957:16028" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="16209:17029" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="16222:16462" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="16238:16337" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="16475:16686" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="16491:16562" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="16701:16748" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="16761:17014" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="16777:16876" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="17055:18168" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="17068:17321" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="17084:17155" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="17334:17575" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="17350:17421" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="17588:17824" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="17604:17675" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="17839:17886" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="17899:18153" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="17915:18013" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="18194:18983" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="18207:18444" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="18223:18321" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="18457:18668" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="18473:18544" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="18683:18730" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="18743:18968" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="18759:18830" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="19009:19566" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="19022:19249" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="19038:19109" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="19264:19311" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="19324:19551" ph="..." />
-                <marker date="1555907780602" expanded="true" signature="19340:19411" ph="..." />
+                <marker date="1555948267647" expanded="true" signature="15633:15647" ph="..." />
               </folding>
             </state>
           </provider>
@@ -118,28 +121,18 @@
       <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-428">
+            <state relative-caret-position="345">
               <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TODOLIST.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TODOLIST.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connectedCompObj.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="connectedCompObj.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="311" column="25" lean-forward="true" selection-start-line="311" selection-start-column="25" selection-end-line="311" selection-end-column="25" />
+            <state relative-caret-position="4605">
+              <caret line="310" column="24" lean-forward="false" selection-start-line="310" selection-start-column="24" selection-end-line="310" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -156,9 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>init</find>
-      <find>yellow</find>
-      <find>fileName</find>
       <find>generateMusicXML</find>
       <find>formXML</find>
       <find>pianoMan</find>
@@ -186,6 +176,9 @@
       <find>measuresToAddToTemplateList</find>
       <find>compNum</find>
       <find>hough</find>
+      <find>script_path</find>
+      <find>write</find>
+      <find>sendToPi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -202,7 +195,6 @@
         <option value="$PROJECT_DIR$/sendToPi.py" />
         <option value="$PROJECT_DIR$/AllCitations.txt" />
         <option value="$PROJECT_DIR$/staffLineDetectionRemoval.py" />
-        <option value="$PROJECT_DIR$/gui.py" />
         <option value="$PROJECT_DIR$/outBoundFiles/start.txt" />
         <option value="$PROJECT_DIR$/outBoundFiles/outputXML.xml" />
         <option value="$PROJECT_DIR$/musicSymbolRecognition.py" />
@@ -212,13 +204,16 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/TODOLIST.txt" />
         <option value="$PROJECT_DIR$/connectedCompObj.py" />
+        <option value="$PROJECT_DIR$/gui.py" />
+        <option value="$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py" />
+        <option value="$PROJECT_DIR$/performanceScoreEvaluator/main.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="544" />
+    <option name="x" value="83" />
     <option name="y" value="23" />
-    <option name="width" value="731" />
+    <option name="width" value="1192" />
     <option name="height" value="731" />
   </component>
   <component name="ProjectView">
@@ -236,27 +231,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="music_images" type="cbb8eebc:String" user="music_images" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="outBoundFiles" type="cbb8eebc:String" user="outBoundFiles" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -268,6 +242,27 @@
               <item name="pianoMan" type="b2602c69:ProjectViewProjectNode" />
               <item name="pianoMan" type="462c0819:PsiDirectoryNode" />
               <item name="music_images" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="outBoundFiles" type="cbb8eebc:String" user="outBoundFiles" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="performanceScoreEvaluator" type="cbb8eebc:String" user="performanceScoreEvaluator" />
             </path>
           </expand>
           <select />
@@ -363,11 +358,29 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="4">
+    <configuration name="performanceScore" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/local/Cellar/python/3.7.2_2/bin/python3" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pianoMan" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/performanceScoreEvaluator/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.main-send" />
       <item index="1" class="java.lang.String" itemvalue="Python.gui-send" />
-      <item index="2" class="java.lang.String" itemvalue="Python.gui-noSend" />
-      <item index="3" class="java.lang.String" itemvalue="Python.main-noSend" />
+      <item index="2" class="java.lang.String" itemvalue="Python.performanceScore" />
+      <item index="3" class="java.lang.String" itemvalue="Python.gui-noSend" />
+      <item index="4" class="java.lang.String" itemvalue="Python.main-noSend" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -396,15 +409,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="544" y="23" width="731" height="731" extended-state="0" />
+    <frame x="83" y="23" width="1192" height="731" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280116" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.2264151" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952693" sideWeight="0.5034783" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.7735849" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952693" sideWeight="0.49652174" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.77652174" order="2" side_tool="false" content_ui="tabs" x="132" y="520" width="893" height="182" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24938068" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19157721" sideWeight="0.50877196" order="2" side_tool="true" content_ui="tabs" />
@@ -449,32 +462,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/music_images/happyBirthday/Happy_Birthday_To_You_Piano.jpg" />
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
-          <folding>
-            <element signature="e#84#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/preprocessing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="65" lean-forward="false" selection-start-line="11" selection-start-column="65" selection-end-line="11" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/staffLineDetectionRemoval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="42" lean-forward="true" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/music_images/happyBirthday/Happy_Birthday_To_You_Piano.jpg" />
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -639,21 +626,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sendToPi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outBoundFiles/tester.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
-          <caret line="204" column="24" lean-forward="false" selection-start-line="194" selection-start-column="6" selection-end-line="204" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/outBoundFiles/tester.xml" />
     <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -672,9 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="63" column="46" lean-forward="false" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -682,89 +652,103 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="23" column="39" lean-forward="false" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="50" column="45" lean-forward="false" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="45" />
-          <folding>
-            <element signature="e#84#93#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="35" column="24" lean-forward="true" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        <state relative-caret-position="525">
+          <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
           <folding>
-            <marker date="1555907780602" expanded="true" signature="15690:15742" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="15690:15866" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="15690:16183" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="15690:19576" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="15881:15928" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="15941:16168" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="15957:16028" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="16209:17029" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="16222:16462" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="16238:16337" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="16475:16686" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="16491:16562" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="16701:16748" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="16761:17014" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="16777:16876" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="17055:18168" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="17068:17321" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="17084:17155" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="17334:17575" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="17350:17421" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="17588:17824" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="17604:17675" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="17839:17886" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="17899:18153" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="17915:18013" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="18194:18983" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="18207:18444" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="18223:18321" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="18457:18668" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="18473:18544" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="18683:18730" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="18743:18968" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="18759:18830" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="19009:19566" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="19022:19249" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="19038:19109" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="19264:19311" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="19324:19551" ph="..." />
-            <marker date="1555907780602" expanded="true" signature="19340:19411" ph="..." />
+            <marker date="1555948267647" expanded="true" signature="15633:15647" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-428">
+        <state relative-caret-position="345">
           <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="277" column="17" lean-forward="true" selection-start-line="277" selection-start-column="17" selection-end-line="277" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="311" column="25" lean-forward="true" selection-start-line="311" selection-start-column="25" selection-end-line="311" selection-end-column="25" />
+        <state relative-caret-position="4605">
+          <caret line="310" column="24" lean-forward="false" selection-start-line="310" selection-start-column="24" selection-end-line="310" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/performanceScoreEvaluator.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/performanceScoreEvaluator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="110" column="26" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="26" />
+          <folding>
+            <element signature="e#84#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outBoundFiles/end.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sendToPi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="50" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="e#16#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
