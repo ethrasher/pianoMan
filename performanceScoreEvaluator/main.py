@@ -4,9 +4,9 @@ from performanceScoreEvaluator import compare
 from sendToPi import sendFileToPi
 
 def main():
-    start_file_path = "start.txt"
-    end_file_path = "end.txt"
-    xml_path = "xml/outputXML.musicxml"
+    start_file_path = "/outBoundFiles/start.txt"
+    end_file_path = "/outBoundFiles/end.txt"
+    xml_path = "/outBoundFiles/outputXML.musicxml"
     performance_path = "midi/performance.mid"
     script_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -31,15 +31,14 @@ def main():
         content = ""
         for key in gradebook:
             content += key + ":" + str(round(gradebook[key])) + "\n"
-        writeFile(script_path + "/" + end_file_path, content.strip())
+        write_file(script_path + "/" + end_file_path, content.strip())
         sendFileToPi(end_file_path)
 
         # Delete start.txt, end.txt, outputxml, and user performance MIDI file
         try:
-            pass
-            # os.remove(start_file_path)
-            # os.remove(end_file_path)
-            # os.remove(xml_path)
+            os.remove(start_file_path)
+            os.remove(end_file_path)
+            os.remove(xml_path)
             # os.remove(performance_path)
         except OSError:
             print("Error while deleting files.")
@@ -48,7 +47,7 @@ def main():
         raise ValueError("%s isn't a file!" % start_file_path)
 
 
-def writeFile(path, contents): # Citation[6]
+def write_file(path, contents): # Citation[6]
     with open(path, "wt") as f:
         f.write(contents)
 

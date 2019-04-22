@@ -18,7 +18,7 @@ def midi2score(filename):
 
 # Note comparison function: lower offset - higher offset
 #                           shorter quarterLength - longer quarterLength
-def noteSort(note):
+def note_sort(note):
     if type(note) == chord.Chord:
         return (note.offset, note.quarterLength, "Z")
     else:
@@ -78,13 +78,13 @@ def stream2list(str, hand):
             if (type(singleNote) == note.Note):
                 offset = singleNote.offset
         result.append(singleNote)
-    result.sort(key=noteSort)
+    result.sort(key=note_sort)
 
     return (result, offset)
 
 
 # Prints a notes list; displays pitch, offset, and quarterLength of each note object
-def printNotesList(lst, offset):
+def print_notes_list(lst, offset):
     for singleNote in lst:
         if (type(singleNote) != chord.Chord):
             print(singleNote.pitch.name, singleNote.offset - offset, singleNote.quarterLength)
@@ -93,7 +93,7 @@ def printNotesList(lst, offset):
 
 
 # Calculates the score by comparing the original list of notes and user's list of notes
-def getScore(originalList, userList, originalOffset, userOffset):
+def get_score(originalList, userList, originalOffset, userOffset):
     # Default gradebook
     gradebook = {'score': 100, 'hit': 0, 'miss': 0, 'wrong': 0,'duration': 0, 'early': 0, 'late': 0}
     gradebook['hit'] = len(originalList)
@@ -215,7 +215,7 @@ def compare(originalFile, userFile, hand):
     (originalNotesAndRests, originalOffset) = stream2list(originalStream, hand)
     (userNotesAndRests, userOffset) = score2list(userScore)
 
-    gradebook = getScore(originalNotesAndRests, userNotesAndRests, originalOffset, userOffset)
+    gradebook = get_score(originalNotesAndRests, userNotesAndRests, originalOffset, userOffset)
     return gradebook
 
 

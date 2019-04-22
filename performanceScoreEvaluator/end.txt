@@ -1,7 +1,0 @@
-score:99
-hit:115
-miss:0
-wrong:0
-duration:7
-early:0
-late:0
