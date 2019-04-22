@@ -1,4 +1,4 @@
-fileName:Swans
+fileName:hedwig
 speed:1
-hand:both
+hand:bass
 bpm:83

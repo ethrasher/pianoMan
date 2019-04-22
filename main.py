@@ -48,15 +48,16 @@ def pianoMan(shouldSend, pdfPath, fileName):
     allMeasures = []
     divisions, timeSig, key = None, None, None
     for pageNum in range(len(pages)):
+        print("Working on page %d"%(pageNum))
         imagePath = pdfPreFileName + jpgFileName + "-" + str(pageNum) + ".jpg"
         binaryImg = preprocess(path=imagePath)
         if pageNum == 0:
-            newMeasures, timeSig, divisions, key = musicSymbolRecognition(binaryImg=binaryImg)
+            newMeasures, timeSig, divisions, key = musicSymbolRecognition(binaryImg=binaryImg, divisions=divisions)
             allMeasures += newMeasures
         else:
             #Don't want to override timeSig and divisions
-            recognitionItems = musicSymbolRecognition(binaryImg=binaryImg)
-            allMeasures += recognitionItems[0]
+            newMeasures,_,divisions,_ = musicSymbolRecognition(binaryImg=binaryImg, divisions=divisions)
+            allMeasures += newMeasures
 
     # create the xml based on the measures found
     scriptPath = os.path.dirname(os.path.realpath(__file__))

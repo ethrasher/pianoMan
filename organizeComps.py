@@ -1,5 +1,6 @@
 import copy
 from connectedCompObj import NoteComponent, RestComponent, MeasureBarComponent, AccentComponent
+import cv2
 
 def organizeComponents(connectedComponents, lineDist, binaryImg):
     # DESCRIPTION: organizes the connectedComponents into a way the xml generator can use
@@ -16,11 +17,6 @@ def reorganizeNotesByMeasure(connectedComponents, binaryImg):
     # RETURN: a list of all measures, each measure is a list containing all connected component objects in order of
     #           each note on the first staff (ordered by x location) and then the second staff
     reorgByStaffLoc = reorganizeNotesByStaffLoc(connectedComponents)
-    for staff in reorgByStaffLoc:
-        print("[", end="")
-        for note in staff:
-            print(type(note), end=", ")
-        print("]")
 
     measures = []
     for staffNum in range(0, len(reorgByStaffLoc), 2):
@@ -30,7 +26,6 @@ def reorganizeNotesByMeasure(connectedComponents, binaryImg):
         curStaff1Measure = []
         staff2Measures = []
         curStaff2Measure = []
-        print(staffNum)
         for i in range(len(staff1)):
             curElem = staff1[i]
             if isinstance(curElem, MeasureBarComponent):
@@ -52,7 +47,6 @@ def reorganizeNotesByMeasure(connectedComponents, binaryImg):
         assert(len(staff1Measures) == len(staff2Measures))
         for i in range(len(staff1Measures)):
             if staff1Measures[i] != [] or staff2Measures[i]!=[]:
-                print(staff1Measures[i]+staff2Measures[i])
                 measures.append(staff1Measures[i]+staff2Measures[i])
     return measures
 
@@ -86,7 +80,7 @@ def putAccentsOnNotes(allMeasures, distBetweenStaffLines):
     flatsSharps, keySig = getFlatsSharps(allMeasures[0], accentToNoteDistThreshold=accentToNoteDistThreshold)
     for measureNum in range(len(allMeasures)):
         measure = allMeasures[measureNum]
-        newMeasure = putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, copy.copy(flatsSharps))
+        newMeasure = putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, copy.copy(flatsSharps), measureNum)
         if newMeasure != []:
             newAllMeasures.append(newMeasure)
     return newAllMeasures, keySig
@@ -162,14 +156,13 @@ def putDotOnNote(noteElem, dotElem, accentToNoteDistThreshold):
         if bestPitchIndex != None:
             noteElem.dottedPitches[bestPitchIndex] = True
 
-def putAccidentalOnNote(noteElem, accentElem, flatsSharps, accentToNoteDistThreshold):
+def putAccidentalOnNote(noteElem, accentElem, flatsSharps, accentToNoteDistThreshold, measureNum):
     # DESCRIPTION: attempts to alter one of the pitches in the note based on accidentals
     # PARAMETERS: noteElem: the note component where one pitch should be altered
     #               accentElem: the connectedComponent representing an accidental
     #               flatsSharps: the dictionary of pitches and how to alter them for this measure
     #               accentToNoteDistThreshold: the furthest an accent can be away from a note and still considered part of it
     # RETURN: None
-
     if len(noteElem.pitches) == 1:
         # easy case, only one pitch to change
         noteElem.alterPitches[0] = accentElem.subTypeName
@@ -196,7 +189,7 @@ def putAccidentalOnNote(noteElem, accentElem, flatsSharps, accentToNoteDistThres
             flatsSharps[alteredPitchStep] = accentElem.subTypeName
 
 
-def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
+def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps, measureNum):
     # DESCRIPTION: attempts to alter each of the notes in the measure based on accidentals, key sig, and dots
     # PARAMETERS: measure: the list of notes, rests, and accents in the measure ordered fully
     #               accentToNoteDistThreshold: the furthest an accent can be away from a note and still considered part of it
@@ -233,6 +226,11 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
             elif noteElem.subTypeName == "natural":
                 lastAccentBeforeNoteRest = noteElem
                 alterNextNote = True
+            elif noteElem.subTypeName == "tie" or noteElem.subTypeName == "other":
+                #ignore this case, not doing anything with these accents for now
+                pass
+            else:
+                raise Exception("Unknown Accent type: "+noteElem.subTypeName)
 
         elif isinstance(noteElem, RestComponent):
             # cannot do anything accent-wise to  rest, but reset any other accent information
@@ -245,11 +243,13 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps):
             noteElem.dottedPitches = [False]*len(noteElem.pitches)
             noteElem.alterPitches = ["natural"]*len(noteElem.pitches)
             if lastAccentBeforeNoteRest != None and alterNextNote != None:
-                putAccidentalOnNote(noteElem, lastAccentBeforeNoteRest, flatsSharps, accentToNoteDistThreshold)
+                putAccidentalOnNote(noteElem, lastAccentBeforeNoteRest, flatsSharps, accentToNoteDistThreshold, measureNum)
             # need to check if the key or other accidentals in the measure alter each pitch
             for pitchIndex in range(len(noteElem.pitches)):
                 pitch = noteElem.pitches[pitchIndex]["step"]
                 noteElem.alterPitches[pitchIndex] = flatsSharps[pitch]
+            lastAccentBeforeNoteRest = None
+            alterNextNote = None
 
     return newMeasure
 
