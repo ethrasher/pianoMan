@@ -48,6 +48,7 @@ def pianoMan(shouldSend, pdfPath, fileName):
     allMeasures = []
     divisions, timeSig, key = None, None, None
     for pageNum in range(len(pages)):
+        print("Working on page %d"%(pageNum))
         imagePath = pdfPreFileName + jpgFileName + "-" + str(pageNum) + ".jpg"
         binaryImg = preprocess(path=imagePath)
         if pageNum == 0:

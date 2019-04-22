@@ -59,15 +59,8 @@ def reorganizeNotesByStaffLoc(connectedComponents):
     for comp in connectedComponents:
         if isinstance(comp, NoteComponent) or isinstance(comp, RestComponent) or isinstance(comp, AccentComponent) or isinstance(comp, MeasureBarComponent):
             allNotesRestsAccents.append(comp)
-            try:
-                if maxStaff == None or comp.staff > maxStaff:
-                    maxStaff = comp.staff
-            except:
-                print("staff", comp.staff)
-                print("compNumber", comp.compNum)
-                print("circles", comp.circles)
-                comp.drawComponent()
-                cv2.waitKey(0)
+            if maxStaff == None or comp.staff > maxStaff:
+                maxStaff = comp.staff
     notesByStaff = [[] for i in range(maxStaff)]
     for item in allNotesRestsAccents:
         notesByStaff[item.staff-1].append(item)
@@ -233,6 +226,9 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps, 
             elif noteElem.subTypeName == "natural":
                 lastAccentBeforeNoteRest = noteElem
                 alterNextNote = True
+            elif noteElem.subTypeName == "tie" or noteElem.subTypeName == "other":
+                #ignore this case, not doing anything with these accents for now
+                pass
             else:
                 raise Exception("Unknown Accent type: "+noteElem.subTypeName)
 
@@ -249,9 +245,6 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps, 
             if lastAccentBeforeNoteRest != None and alterNextNote != None:
                 putAccidentalOnNote(noteElem, lastAccentBeforeNoteRest, flatsSharps, accentToNoteDistThreshold, measureNum)
             # need to check if the key or other accidentals in the measure alter each pitch
-            if (measureNum == 9):
-                print(noteElem.durationName, noteElem.pitches[0]["step"])
-                print(flatsSharps)
             for pitchIndex in range(len(noteElem.pitches)):
                 pitch = noteElem.pitches[pitchIndex]["step"]
                 noteElem.alterPitches[pitchIndex] = flatsSharps[pitch]

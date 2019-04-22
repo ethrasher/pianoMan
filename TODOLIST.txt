@@ -21,9 +21,9 @@ To do list:
 9. Unit testing!
 
 
-Things to still do:
+Things to still do for/after final demo:
 1. Documentation catch up!
-3. Find correct duration of barred notes (currently just putting eighth) using vertical projection
-5. Remove all other black pixels that are not part of the connected component, but are close enough they are in the bounding box
-6. Gui interface where a user can fix notes that were unidentifiable
-7. Make template matching faster
+2. Find correct duration of barred notes (currently just putting eighth) using vertical projection
+3. Gui interface where a user can fix notes that were unidentifiable
+4. Make template matching faster
+5. Get Game of Thrones to work (lots of problems)

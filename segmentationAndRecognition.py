@@ -14,22 +14,27 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
     #               lineDist: the median distance between staff lines
     # RETURN: a list of all connected components with features detected
     connectedComponents = findConnectedComponents(binaryImg=binaryImg)
-    #first connected component
-    compNum = 0
     saveComponentList = []
-    measuresToAddToTemplateList = []
+    showComponentList = []
     templateObjList = []
-    timeSig = None
-    smallestNoteType = None
     for comp in connectedComponents:
+        compNum = comp.compNum
         if compNum in saveComponentList:
-            comp.saveComponent(compNum=compNum)
-        templateObj = comp.templateMatch(staffLines=staffLines, lineDist = lineDist, compNum=compNum)
+            comp.saveComponent()
+        if compNum in showComponentList:
+            comp.drawComponent()
+            comp.drawComponentOnCanvas()
+            cv2.waitKey(0)
+        templateObj = comp.templateMatch(staffLines=staffLines, lineDist = lineDist)
         if type(templateObj) == tuple or type(templateObj) == list:
             for obj in templateObj:
                 templateObjList.append(obj)
         else:
             templateObjList.append(templateObj)
+
+    timeSig = None
+    smallestNoteType = None
+    measuresToAddToTemplateList = []
     for templateObj in templateObjList:
         if isinstance(templateObj, NoteComponent):
             smallestNoteType = getSmallerNoteType(smallestNoteType, templateObj.durationName)
@@ -41,7 +46,6 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
         if isinstance(templateObj, OtherComponent):
             if templateObj.typeName == "time signature":
                 timeSig = templateObj.getTimeSignature()
-        compNum += 1
     templateObjList = templateObjList + measuresToAddToTemplateList
     divisions = getDivisions(smallestNoteType=smallestNoteType, divisions=divisions)
     return templateObjList, timeSig, divisions
@@ -70,7 +74,7 @@ def findConnectedComponents(binaryImg):
             componentImg = np.copy(labels[y0:y1, x0:x1])
             filterer = lambda x: np.uint8(0) if (x==label) else np.uint8(255)
             componentImg = np.vectorize(filterer)(componentImg)
-            cc = ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, componentImg=componentImg, binaryImg=np.copy(binaryImg))
+            cc = ConnectedComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=label, componentImg=componentImg, binaryImg=np.copy(binaryImg), compNum=label)
             connectedComponents.append(cc)
     return connectedComponents
 
