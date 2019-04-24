@@ -1,4 +1,4 @@
-fileName:drm
-speed:3
-hand:both
-bpm:62
+fileName:Do Re Mi
+speed:1
+hand:bass
+bpm:83

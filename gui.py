@@ -6,9 +6,10 @@ import os
 from main import pianoMan
 from sendToPi import sendFileToPi
 from performanceScoreEvaluator.main import main
+from guiModeTemplate import ModeGUI
 
 ####################################
-# customize these functions
+# GUI strucutre elements
 ####################################
 
 class Button(object):
@@ -155,7 +156,196 @@ def checkStartValues(data):
 def writeFile(path, contents): #Citations
     with open(path, "wt") as f:
         f.write(contents)
+'''
 
+####################################
+# GUI modes objects
+####################################
+class ModeDispatcherGUI(ModeGUI):
+    def __init__(self, width, height, timerDelay, sendToPi):
+        super().__init__(width, height, timerDelay, sendToPi)
+        scriptPath = os.path.dirname(os.path.realpath(__file__))
+        #self.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
+        self.mode = "enterInformation"
+        self.enterInfoMode = EnterInformationGUI(self.width, self.height, self.timerDelay, self.sendToPi)
+        self.sendInfoMode = None
+
+    def mousePressed(self, root, event):
+        changeMode = None
+        if self.mode == "enterInformation":
+            changeMode = self.enterInfoMode.mousePressed(root, event)
+            print(changeMode)
+            if changeMode == "sendInformation":
+                print("in here, making new object")
+                speedLabel = self.enterInfoMode.speedLabel
+                handLabel = self.enterInfoMode.handLabel
+                fileNameLabel = self.enterInfoMode.fileNameLabel
+                self.sendInfoMode = SendInformationGUI(self.width, self.height, self.timerDelay, self.sendToPi, speedLabel, handLabel, fileNameLabel)
+        elif self.mode == "sendInformation":
+            changeMode = self.sendInfoMode.mousePressed(root, event)
+        if changeMode == "restart":
+            self.__init__(self.width, self.height, self.timerDelay, self.sendToPi)
+        elif changeMode != None:
+            self.mode = changeMode
+
+    def keyPressed(self, event):
+        changeMode = None
+        if self.mode == "enterInformation":
+            changeMode = self.enterInfoMode.keyPressed(event)
+        elif self.mode == "sendInformation":
+            changeMode = self.sendInfoMode.keyPressed(event)
+        if changeMode != None:
+            self.mode = changeMode
+
+    def timerFired(self):
+        changeMode = None
+        if self.mode == "enterInformation":
+            changeMode = self.enterInfoMode.timerFired()
+        elif self.mode == "sendInformation":
+            changeMode = self.sendInfoMode.timerFired()
+        if changeMode != None:
+            self.mode = changeMode
+
+
+    def redrawAll(self, canvas):
+        if self.mode == "enterInformation":
+            self.enterInfoMode.redrawAll(canvas)
+        elif self.mode == "sendInformation":
+            self.sendInfoMode.redrawAll(canvas)
+
+
+class EnterInformationGUI(ModeGUI):
+    def __init__(self, width, height, timerDelay, sendToPi):
+        super().__init__(width, height, timerDelay, sendToPi)
+        scriptPath = os.path.dirname(os.path.realpath(__file__))
+        self.musicPdfPath = ''
+        self.backgroundImage = None
+        self.speedLabels = ["normal", "normal-\nmedium", "medium", "medium-\nslow", "slow"]
+        self.handLabels = ["bass\nclef", "treble\nclef", "both"]
+        self.getFileButton = Button(x0=10, y0=self.height // 2 - 70, x1=160, y1=self.height // 2 - 20, color="black",
+                                    text="Select File")
+        self.speedButtons = RadioButtons(x0=110, y0=self.height // 2 + 110, x1=self.width // 2 + 50,
+                                         y1=self.height // 2 + 160, text=self.speedLabels, label="Speed")
+
+        self.handButtons = RadioButtons(x0=110, y0=self.height / 2 + 200, x1=self.width // 2 + 50,
+                                        y1=self.height / 2 + 250, text=self.handLabels, label="Hands")
+        self.fileNameTextBox = TextBox(x0=160, y0=self.height // 2 - 20, x1=self.width // 2, y1=self.height // 2 + 30,
+                                       label="Song Name")
+        self.fileNameLabel = self.fileNameTextBox.text
+        self.submitButton = Button(x0=self.width - 160, y0=self.height // 2 - 70, x1=self.width - 10,
+                                   y1=self.height // 2 - 20, color="dark goldenrod", text="Start")
+        self.startError = ''
+
+    def mousePressed(self, root, event):
+        scriptPath = os.path.dirname(os.path.realpath(__file__))
+        if self.getFileButton.clickedInside(event.x, event.y):
+            root.update()
+            filepath = filedialog.askopenfilename(initialdir=scriptPath + "/music_images/", title="Select file",
+                                                  filetypes=(
+                                                  ("pdf files", "*.pdf"), ("all files", "*.*")))  # Citations: 15
+            root.update()
+            self.musicPdfPath = filepath
+        self.speedButtons.clickedInside(event.x, event.y)
+        self.handButtons.clickedInside(event.x, event.y)
+        self.fileNameTextBox.clickedInside(event.x, event.y)
+        if self.submitButton.clickedInside(event.x, event.y):
+            startValues = self.checkStartValues()
+            if type(startValues) == str:
+                # there was an error
+                self.startError = startValues
+            else:
+                songPath, songName, speedLabel, handLabel = startValues
+                self.speedLabel = str(self.speedLabels.index(speedLabel) + 1)
+                self.handLabel = handLabel.split("\n")[0]
+                self.startError = 'Processing...'
+                return "sendInformation"
+
+
+    def checkStartValues(self):
+        if self.musicPdfPath == '':
+            return "No PDF File Selected"
+        if self.fileNameTextBox.text == '':
+            return "No Song Name"
+        speedIndex = self.speedButtons.getSelectedIndex()
+        handIndex = self.handButtons.getSelectedIndex()
+        if speedIndex == None:
+            return "No Speed Level"
+        if handIndex == None:
+            return "No Hand Style"
+        return (self.musicPdfPath, self.fileNameTextBox.text, self.speedLabels[speedIndex], self.handLabels[handIndex])
+
+    def keyPressed(self, event):
+        self.fileNameTextBox.updateText(event.keysym)
+        self.fileNameLabel = self.fileNameTextBox.text
+
+    def timerFired(self):
+        if self.backgroundImage == None:
+            scriptPath = os.path.dirname(os.path.realpath(__file__))
+            self.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
+        if self.startError == "Processing...":
+            pianoMan(False, self.musicPdfPath, self.fileNameTextBox.text)
+            if self.sendToPi:
+                sendFileToPi("outputXML.xml")
+            self.startError = ""
+            return "sendInformation"
+
+    def redrawAll(self, canvas):
+        canvas.create_image(0, 0, anchor=NW, image=self.backgroundImage)
+        self.getFileButton.draw(canvas=canvas)
+        canvas.create_rectangle(self.getFileButton.x1, self.getFileButton.y0, self.width // 2,
+                                self.getFileButton.y1, fill="black")
+        canvas.create_text(self.getFileButton.x1 + 10, (self.getFileButton.y0 + self.getFileButton.y1) // 2,
+                           anchor="w", text=self.musicPdfPath.split("/")[-1], fill="white", font="Times 18")
+        self.speedButtons.draw(canvas=canvas)
+        self.handButtons.draw(canvas=canvas)
+        self.fileNameTextBox.draw(canvas=canvas)
+        self.submitButton.draw(canvas=canvas)
+        canvas.create_rectangle(self.submitButton.x0, self.submitButton.y1, self.submitButton.x1,
+                                self.submitButton.y1 + 50, fill="black")
+        canvas.create_text(self.submitButton.x0, self.submitButton.y1 + 25, anchor="w", text=self.startError,
+                               fill="white", font="Times 18")
+
+
+class SendInformationGUI(ModeGUI):
+    def __init__(self, width, height, timerDelay, sendToPi, speedLabel, handLabel, fileNameLabel):
+        super().__init__(width, height, timerDelay, sendToPi)
+        self.backgroundImage = None
+        self.speedLabel = speedLabel
+        self.handLabel = handLabel
+        self.fileNameLabel = fileNameLabel
+        self.sendToPiButton = Button(x0=self.width // 2 - 75, y0=self.height // 2 - 25, x1=self.width // 2 + 75,
+                                     y1=self.height // 2 + 25, color="dark goldenrod", text="Start Playing")
+
+    def mousePressed(self, root, event):
+        scriptPath = os.path.dirname(os.path.realpath(__file__))
+        if self.sendToPiButton.clickedInside(event.x, event.y):
+            bpmDict = {"5":49, "4":56, "3":62, "2":71, "1":83}
+            bpm = bpmDict[self.speedLabel]
+            contentsToWrite = "fileName:"+self.fileNameLabel+"\n"+"speed:" + str(self.speedLabel) + "\n" + "hand:" + str(self.handLabel) + "\n" + "bpm:" + str(bpm)
+            self.writeFile(scriptPath + "/outBoundFiles/start.txt", contentsToWrite)
+            if self.sendToPi:
+                # make start file to send to the pi
+                sendFileToPi("start.txt")
+            # start the performance evaluator
+            main()
+            return "restart"
+        else:
+            return "sendInformation"
+
+    def timerFired(self):
+        if self.backgroundImage == None:
+            scriptPath = os.path.dirname(os.path.realpath(__file__))
+            self.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
+
+    def redrawAll(self, canvas):
+        canvas.create_image(0, 0, anchor=NW, image=self.backgroundImage)
+        self.sendToPiButton.draw(canvas=canvas)
+
+
+    def writeFile(self, path, contents):  # Citations
+        with open(path, "wt") as f:
+            f.write(contents)
+'''
 def init(data, sendToPi):
     scriptPath = os.path.dirname(os.path.realpath(__file__))
     data.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
@@ -210,7 +400,7 @@ def mousePressed(root, event, data):
                 # make start file to send to the pi
                 sendFileToPi("start.txt")
             # start the performance evaluator
-            main()
+            main(data.sendToPi)
             init(data, data.sendToPi)
 
 def keyPressed(event, data):
@@ -292,6 +482,9 @@ def run(width=300, height=300, sendToPi=True):
 
 #run(1000, 600)
 
+
+
+
 if __name__ == "__main__":
     # Determine the command line arguments
     screenWidth = 1000
@@ -307,5 +500,24 @@ if __name__ == "__main__":
         run(width=screenWidth, height=screenHeight, sendToPi=False)
     else:
         raise Exception("Wrong number of arguments specified. Should include 0 or 1 boolean arguments")
+'''
 
-
+if __name__ == "__main__":
+    # Determine the command line arguments
+    screenWidth = 1000
+    screenHeight = 600
+    if len(sys.argv) == 1:
+        # did not specify whether to save new file or not. Will save as default
+        ModeDispatcherGUI(width=screenWidth, height=screenHeight, timerDelay=100, sendToPi=True).run()
+    elif len(sys.argv) == 2 and isinstance(sys.argv[1], bool):
+        #run(width=screenWidth, height=screenHeight, sendToPi=sys.argv[1])
+        ModeDispatcherGUI(width=screenWidth, height=screenHeight, timerDelay=100, sendToPi=sys.argv[1]).run()
+    elif len(sys.argv) == 2 and isinstance(sys.argv[1], str) and sys.argv[1] == "True":
+        #run(width=screenWidth, height=screenHeight, sendToPi=True)
+        ModeDispatcherGUI(width=screenWidth, height=screenHeight, timerDelay=100, sendToPi=True).run()
+    elif len(sys.argv) == 2 and isinstance(sys.argv[1], str) and sys.argv[1] == "False":
+        #run(width=screenWidth, height=screenHeight, sendToPi=False)
+        ModeDispatcherGUI(width=screenWidth, height=screenHeight, timerDelay=100, sendToPi=False).run()
+    else:
+        raise Exception("Wrong number of arguments specified. Should include 0 or 1 boolean arguments")
+'''

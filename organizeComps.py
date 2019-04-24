@@ -94,6 +94,10 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
     noteElemIndex = 0
     noteElem = firstMeasure[noteElemIndex]
     lastNote = None
+    #print(firstMeasure[0].subTypeName)
+    #firstMeasure[0].drawComponentOnCanvas()
+    #cv2.waitKey(0)
+
     while isinstance(noteElem, AccentComponent):
         if noteElem.subTypeName == "sharp":
             keySig += 1
@@ -101,6 +105,7 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
             keySig -= 1
         lastNote = noteElem
         noteElemIndex += 1
+        #print(noteElemIndex)
         noteElem = firstMeasure[noteElemIndex]
     if isinstance(noteElem, RestComponent):
         # a rest cannot have a sharp or flat, all previous ones must be part of keySig

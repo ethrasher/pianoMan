@@ -2,19 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-doReMi-Do_Re_Mi-drm.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-gameOfThronesTheme-Game_of_Thrones_Easy_piano-got.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-hedwigsTheme-Hedwigs_Theme_EASY-hedwig.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-hedwigsTheme-Hedwigs_Theme_EASY-hedwig2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-youveGotAFriendInMe-Youve_Got_A_Friend_In_Me-yg4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/outBoundFiles/tester.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/performanceScoreEvaluator/midi/performance.mid" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organizeComps.py" afterPath="$PROJECT_DIR$/organizeComps.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/end.txt" afterPath="$PROJECT_DIR$/outBoundFiles/end.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" afterPath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/start.txt" afterPath="$PROJECT_DIR$/outBoundFiles/start.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/performanceScoreEvaluator/main.py" afterPath="$PROJECT_DIR$/performanceScoreEvaluator/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py" afterPath="$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,7 +25,7 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
+            <state relative-caret-position="1530">
               <caret line="110" column="26" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="26" />
               <folding>
                 <element signature="e#84#93#0" expanded="true" />
@@ -40,11 +34,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+            <state relative-caret-position="237">
+              <caret line="402" column="30" lean-forward="false" selection-start-line="402" selection-start-column="30" selection-end-line="402" selection-end-column="30" />
               <folding>
                 <element signature="e#16#46#0" expanded="true" />
               </folding>
@@ -52,77 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/main.py">
+      <file leaf-file-name="guiModeTemplate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/guiModeTemplate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+            <state relative-caret-position="795">
+              <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sendToPi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py">
+      <file leaf-file-name="organizeComps.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/organizeComps.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="50" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sendToPi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sendToPi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="performanceScoreEvaluator.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/performanceScoreEvaluator.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="performanceScoreEvaluator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/performanceScoreEvaluator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="outputXML.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
-              <folding>
-                <marker date="1555948267647" expanded="true" signature="15633:15647" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+            <state relative-caret-position="119">
+              <caret line="97" column="25" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -131,7 +69,7 @@
       <file leaf-file-name="connectedCompObj.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4605">
+            <state relative-caret-position="4350">
               <caret line="310" column="24" lean-forward="false" selection-start-line="310" selection-start-column="24" selection-end-line="310" selection-end-column="24" />
               <folding />
             </state>
@@ -149,10 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>generateMusicXML</find>
-      <find>formXML</find>
-      <find>pianoMan</find>
-      <find>credit</find>
       <find>templateMatch</find>
       <find>chord</find>
       <find>template</find>
@@ -179,6 +113,10 @@
       <find>script_path</find>
       <find>write</find>
       <find>sendToPi</find>
+      <find>mode</find>
+      <find>data.mode</find>
+      <find>main</find>
+      <find>draw</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -200,13 +138,14 @@
         <option value="$PROJECT_DIR$/musicSymbolRecognition.py" />
         <option value="$PROJECT_DIR$/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
-        <option value="$PROJECT_DIR$/organizeComps.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/TODOLIST.txt" />
         <option value="$PROJECT_DIR$/connectedCompObj.py" />
-        <option value="$PROJECT_DIR$/gui.py" />
         <option value="$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py" />
+        <option value="$PROJECT_DIR$/guiModeTemplate.py" />
+        <option value="$PROJECT_DIR$/gui.py" />
         <option value="$PROJECT_DIR$/performanceScoreEvaluator/main.py" />
+        <option value="$PROJECT_DIR$/organizeComps.py" />
       </list>
     </option>
   </component>
@@ -231,6 +170,38 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="library" type="cbb8eebc:String" user="library" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="music_images" type="cbb8eebc:String" user="music_images" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="outBoundFiles" type="cbb8eebc:String" user="outBoundFiles" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="performanceScoreEvaluator" type="cbb8eebc:String" user="performanceScoreEvaluator" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,28 +218,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="outBoundFiles" type="cbb8eebc:String" user="outBoundFiles" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="performanceScoreEvaluator" type="cbb8eebc:String" user="performanceScoreEvaluator" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,21 +361,21 @@
     <frame x="83" y="23" width="1192" height="731" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20347826" sideWeight="0.48994976" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952693" sideWeight="0.5034783" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.22869565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32996634" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32952693" sideWeight="0.49652174" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.77652174" order="2" side_tool="false" content_ui="tabs" x="132" y="520" width="893" height="182" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29690048" sideWeight="0.49304348" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29690048" sideWeight="0.77130437" order="5" side_tool="false" content_ui="tabs" x="246" y="498" width="893" height="182" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24938068" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19157721" sideWeight="0.50877196" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39730638" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39730638" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -462,7 +411,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/music_images/happyBirthday/Happy_Birthday_To_You_Piano.jpg" />
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="915">
@@ -581,7 +529,7 @@
     <entry file="file://$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy.pdf-S.xml" />
     <entry file="file://$PROJECT_DIR$/library-Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy.pdf-Swans" />
     <entry file="file://$PROJECT_DIR$/libraryUsers-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy.pdf-S.xml" />
-    <entry file="file://$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans.xml" />
+    <entry file="file://$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-swans.xml" />
     <entry file="file:///usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -641,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/organizeComps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="63" column="46" lean-forward="false" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TODOLIST.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -660,7 +601,7 @@
         <state relative-caret-position="525">
           <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
           <folding>
-            <marker date="1555948267647" expanded="true" signature="15633:15647" ph="..." />
+            <marker date="1556116866907" expanded="true" signature="25200:25214" ph="..." />
           </folding>
         </state>
       </provider>
@@ -669,14 +610,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4605">
-          <caret line="310" column="24" lean-forward="false" selection-start-line="310" selection-start-column="24" selection-end-line="310" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -699,7 +632,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
+        <state relative-caret-position="1530">
           <caret line="110" column="26" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="26" />
           <folding>
             <element signature="e#84#93#0" expanded="true" />
@@ -719,36 +652,60 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="180">
           <caret line="14" column="50" lean-forward="false" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/main.py">
+    <entry file="file://$PROJECT_DIR$/guiModeTemplate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+        <state relative-caret-position="795">
+          <caret line="53" column="9" lean-forward="false" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        <state relative-caret-position="237">
+          <caret line="402" column="30" lean-forward="false" selection-start-line="402" selection-start-column="30" selection-end-line="402" selection-end-column="30" />
           <folding>
             <element signature="e#16#46#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="66" lean-forward="false" selection-start-line="17" selection-start-column="66" selection-end-line="17" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4350">
+          <caret line="310" column="24" lean-forward="false" selection-start-line="310" selection-start-column="24" selection-end-line="310" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/organizeComps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="97" column="25" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

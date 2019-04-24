@@ -9,7 +9,7 @@ else:
     from performanceScoreEvaluator.performanceScoreEvaluator import compare
     from performanceScoreEvaluator.sendToPi import sendFileToPi
 
-def main(performanceScoreOnly = False):
+def main(sendToPi, performanceScoreOnly = False):
     if performanceScoreOnly:
         script_path = os.path.dirname(os.path.realpath(__file__))
         performance_path = script_path + "/midi/performance.mid"
@@ -58,7 +58,8 @@ def main(performanceScoreOnly = False):
         for key in gradebook:
             content += key + ":" + str(round(gradebook[key])) + "\n"
         write_file(end_file_path, content.strip())
-        sendFileToPi(end_file_path)
+        if sendToPi:
+            sendFileToPi(end_file_path)
 
         # Delete start.txt, end.txt, outputxml, and user performance MIDI file
         '''try:
@@ -78,4 +79,4 @@ def write_file(path, contents): # Citation[6]
         f.write(contents)
 
 if __name__ == "__main__":
-    main(True)
+    main(False, True)
