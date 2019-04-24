@@ -143,7 +143,7 @@ def get_score(originalList, userList, originalOffset, userOffset):
             # If two notes have the same offset (correct start timing)
             if (correctNote.offset - originalOffset == userNote.offset - userOffset):
                 # CASE 2-c: Wrong note without the correct note
-                if (correctNote.pitch.name != userNote.pitch.name):
+                if (correctNote.pitch.name[0] != userNote.pitch.name[0]):
                     gradebook['wrong'] += 1
                     gradebook['hit'] -= 1
                     gradebook['score'] -= unitScore
@@ -160,8 +160,11 @@ def get_score(originalList, userList, originalOffset, userOffset):
             # If two notes have different offsets
             else:
                 # Same pitch (correct notes but wrong start timing)
-                if (correctNote.pitch.name == userNote.pitch.name):
-                    gradebook['duration'] += 1
+                if (correctNote.pitch.name[0] == userNote.pitch.name[0]):
+                    if (correctNote.offset - originalOffset > userNote.offset - userOffset):
+                        gradebook['early'] += 1
+                    else:
+                        gradebook['late'] += 1
                     gradebook['hit'] -= 1
 
                     # CASE 3-b: Shorter/longer note
