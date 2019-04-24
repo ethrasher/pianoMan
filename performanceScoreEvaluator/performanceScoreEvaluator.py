@@ -143,7 +143,7 @@ def get_score(originalList, userList, originalOffset, userOffset):
             # If two notes have the same offset (correct start timing)
             if (correctNote.offset - originalOffset == userNote.offset - userOffset):
                 # CASE 2-c: Wrong note without the correct note
-                if (correctNote.pitch.name != userNote.pitch.name):
+                if (correctNote.pitch.name[0] != userNote.pitch.name[0]):
                     gradebook['wrong'] += 1
                     gradebook['hit'] -= 1
                     gradebook['score'] -= unitScore
@@ -153,30 +153,33 @@ def get_score(originalList, userList, originalOffset, userOffset):
                 elif (correctNote.quarterLength != userNote.quarterLength):
                     gradebook['duration'] += 1
                     gradebook['hit'] -= 1
-                    deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / (correctNote.quarterLength)
+                    deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / (2 * (correctNote.quarterLength))
                     gradebook['score'] -= deduction
                     # print("CASE 3-a")
 
             # If two notes have different offsets
             else:
                 # Same pitch (correct notes but wrong start timing)
-                if (correctNote.pitch.name == userNote.pitch.name):
-                    gradebook['duration'] += 1
+                if (correctNote.pitch.name[0] == userNote.pitch.name[0]):
+                    if (correctNote.offset - originalOffset > userNote.offset - userOffset):
+                        gradebook['early'] += 1
+                    else:
+                        gradebook['late'] += 1
                     gradebook['hit'] -= 1
 
                     # CASE 3-b: Shorter/longer note
                     if (correctNote.quarterLength != userNote.quarterLength):
-                        deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / (correctNote.quarterLength)
-                        gradebook['score'] -= deduction
-                        # print("CASE 3-b")
+                        deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / correctNote.quarterLength
+                        gradebook['score'] -= deduction / 10
+                        # print("CASE 3-b", deduction /10)
 
                     # Deduct points based on their offset difference
                     # If correctNote's quarterLength is 0, prevent division by 0
                     if (correctNote.quarterLength == 0):
                         gradebook['score'] -= unitScore
                     else:
-                        deduction = unitScore * abs((correctNote.offset - originalOffset) - (userNote.offset - userOffset)) / (correctNote.quarterLength)
-                        gradebook['score'] -= deduction
+                        deduction = unitScore * abs((correctNote.offset - originalOffset) - (userNote.offset - userOffset)) / (2 * (correctNote.quarterLength))
+                        # gradebook['score'] -= deduction
 
                 # CASE 4: Missing a note
                 else:
@@ -189,7 +192,9 @@ def get_score(originalList, userList, originalOffset, userOffset):
                         gradebook['hit'] += 1
                     else:
                         j -= 1
-                    # print("CASE 4")
+                    print("CASE 4", unitScore)
+                    print(correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
+                    print(userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
         i += 1
         j += 1
 
@@ -216,6 +221,9 @@ def compare(originalFile, userFile, hand):
     # Pass the original stream and hand information - Both/Bass/Treble
     (originalNotesAndRests, originalOffset) = stream2list(originalStream, hand)
     (userNotesAndRests, userOffset) = score2list(userScore)
+    # print_notes_list(originalNotesAndRests, originalOffset)
+    # print("---------------------------------------------------")
+    # print_notes_list(userNotesAndRests, userOffset)
 
     gradebook = get_score(originalNotesAndRests, userNotesAndRests, originalOffset, userOffset)
     return gradebook
@@ -242,3 +250,5 @@ def test():
     print("17. Bass: ", compare("xml/outputXML.musicxml", "midi/swanBass.mid", "bass"))
 
 # test()
+
+print(compare("xml/outputXML.xml", "midi/performance.mid", "both"))
