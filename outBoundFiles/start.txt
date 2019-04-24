@@ -1,4 +1,4 @@
 fileName:Do Re Mi
 speed:1
-hand:bass
+hand:both
 bpm:83

@@ -185,6 +185,8 @@ def get_score(originalList, userList, originalOffset, userOffset):
                     gradebook['score'] -= unitScore
                     if (correctNote.offset - originalOffset > userNote.offset - userOffset):
                         i -= 1
+                        gradebook['miss'] -= 1
+                        gradebook['hit'] += 1
                     else:
                         j -= 1
                     # print("CASE 4")
