@@ -40,18 +40,29 @@ def score2list(score):
                 if (type(singleNote) == note.Rest):
                     continue
                 # Update offset as the offset of the first note of the piece
-                elif (type(singleNote) == note.Note):
+                elif (type(singleNote) == note.Note or type(singleNote) == chord.Chord):
                     offset = singleNote.offset
             if (singleNote.offset == prevOffset):
-                noteList.append(singleNote)
+                if (type(singleNote) == chord.Chord):
+                    for chordNote in singleNote:
+                        noteList.append(chordNote)
+                else:
+                    noteList.append(singleNote)
             else:
                 # Before adding notes to the result list, sort the notes with same offset by quarterLength
                 noteList.sort(key=lambda x: x.quarterLength)
                 for oneNote in noteList:
                     result.append(oneNote)
-                noteList = [singleNote]
+                noteList = []
+                if (type(singleNote) == chord.Chord):
+                    for chordNote in singleNote:
+                        chordNote.offset = singleNote.offset
+                        # print(chordNote, chordNote.offset)
+                        noteList.append(chordNote)
+                else:
+                    noteList = [singleNote]
                 prevOffset = singleNote.offset
-
+    result.sort(key=note_sort)
     return (result, offset)
 
 
@@ -77,7 +88,12 @@ def stream2list(str, hand):
         if (len(result) == 0):
             if (type(singleNote) == note.Note):
                 offset = singleNote.offset
-        result.append(singleNote)
+        if (type(singleNote) == chord.Chord):
+            for chordNote in singleNote:
+                chordNote.offset = singleNote.offset
+                result.append(chordNote)
+        else:
+            result.append(singleNote)
     result.sort(key=note_sort)
 
     return (result, offset)
@@ -97,13 +113,15 @@ def get_score(originalList, userList, originalOffset, userOffset):
     # Default gradebook
     gradebook = {'score': 100, 'hit': 0, 'miss': 0, 'wrong': 0,'duration': 0, 'early': 0, 'late': 0}
     gradebook['hit'] = len(originalList)
-    unitScore = 100 / len(originalList)
+    unitScore = 33 / len(originalList)
     i = 0
     j = 0
+    bestOffsetDiff = [0, 0, 0]
 
     while (i < len(originalList) and j < len(userList)):
         correctNote = originalList[i]
         userNote = userList[j]
+
 
         # TYPE 1: Chords
         if (type(correctNote) == chord.Chord or type(userNote) == chord.Chord):
@@ -112,14 +130,14 @@ def get_score(originalList, userList, originalOffset, userOffset):
                 gradebook['wrong'] += 1
                 gradebook['hit'] -= 1
                 gradebook['score'] -= unitScore / 2
-                # print("CASE 1")
+                # print("CASE 1: wrong note with the correct note")
 
             # CASE 2-a: Wrong note without the correct note
             elif (type(userNote) != chord.Chord):
                 gradebook['wrong'] += 1
                 gradebook['hit'] -= 1
-                gradebook['score'] -= unitScore
-                # print("CASE 2-a")
+                gradebook['score'] -= unitScore / 2
+                # print("CASE 2-a: Wrong note without the correct note")
 
             # Both notes are chords, so compare their pitches
             else:
@@ -130,15 +148,17 @@ def get_score(originalList, userList, originalOffset, userOffset):
                         gradebook['wrong'] += 1
                         gradebook['hit'] -= 1
                         deductionUnit -= 1
-                        # print("CASE 2-b")
+                        # print("CASE 2-b: Wrong note with the correct note")
 
                 # Deduction unit (number of wrong notes) cannot be a negative value
                 assert(deductionUnit >= 0)
 
-                gradebook['score'] -= deductionUnit * unitScore
-
         # TYPE 2: Notes
         else:
+            # print("Score: ", gradebook['score'])
+            # print("COMPARING")
+            # print("1.", correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
+            # print("2.", userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
             # Compare their relative offsets
             # If two notes have the same offset (correct start timing)
             if (correctNote.offset - originalOffset == userNote.offset - userOffset):
@@ -147,39 +167,46 @@ def get_score(originalList, userList, originalOffset, userOffset):
                     gradebook['wrong'] += 1
                     gradebook['hit'] -= 1
                     gradebook['score'] -= unitScore
-                    # print("CASE 2-c")
+                    # print("CASE 2-c: Correct offset, Wrong note without the correct note")
 
                 # CASE 3-a: Shorter/longer notes
                 elif (correctNote.quarterLength != userNote.quarterLength):
                     gradebook['duration'] += 1
                     gradebook['hit'] -= 1
-                    deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / (2 * (correctNote.quarterLength))
+                    deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / (correctNote.quarterLength)
+                    # gradebook['score'] -= deduction / 10
                     gradebook['score'] -= deduction
-                    # print("CASE 3-a")
+                    # print("CASE 3-a: Correct offset, shorter/longer notes")
 
             # If two notes have different offsets
             else:
                 # Same pitch (correct notes but wrong start timing)
                 if (correctNote.pitch.name[0] == userNote.pitch.name[0]):
-                    if (correctNote.offset - originalOffset > userNote.offset - userOffset):
-                        gradebook['early'] += 1
-                    else:
-                        gradebook['late'] += 1
-                    gradebook['hit'] -= 1
 
                     # CASE 3-b: Shorter/longer note
                     if (correctNote.quarterLength != userNote.quarterLength):
-                        deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / correctNote.quarterLength
-                        gradebook['score'] -= deduction / 10
-                        # print("CASE 3-b", deduction /10)
+                        if (abs(correctNote.quarterLength - userNote.quarterLength) > 0.1):
+                            deduction = unitScore * abs(correctNote.quarterLength - userNote.quarterLength) / correctNote.quarterLength
+                            # gradebook['score'] -= deduction / 10
+                            gradebook['score'] -= deduction
+                            # print("CASE 3-b: Diff offset, shorter/longer notes")
 
                     # Deduct points based on their offset difference
                     # If correctNote's quarterLength is 0, prevent division by 0
                     if (correctNote.quarterLength == 0):
+                        # gradebook['score'] -= unitScore / 10
                         gradebook['score'] -= unitScore
-                    else:
-                        deduction = unitScore * abs((correctNote.offset - originalOffset) - (userNote.offset - userOffset)) / (2 * (correctNote.quarterLength))
-                        # gradebook['score'] -= deduction
+                    elif (abs((correctNote.offset - originalOffset) - (userNote.offset - userOffset)) > min(bestOffsetDiff)):
+                        bestOffsetDiff[bestOffsetDiff.index(min(bestOffsetDiff))] = abs((correctNote.offset - originalOffset) - (userNote.offset - userOffset))
+                        deduction = unitScore * abs((correctNote.offset - originalOffset) - (userNote.offset - userOffset)) / (correctNote.quarterLength)
+                        # gradebook['score'] -= deduction / 10
+                        gradebook['score'] -= deduction
+                        if (correctNote.offset - originalOffset > userNote.offset - userOffset):
+                            gradebook['early'] += 1
+                        else:
+                            gradebook['late'] += 1
+                        gradebook['hit'] -= 1
+                        # print("CASE 3: Offset diff")
 
                 # CASE 4: Missing a note
                 else:
@@ -190,11 +217,16 @@ def get_score(originalList, userList, originalOffset, userOffset):
                         i -= 1
                         gradebook['miss'] -= 1
                         gradebook['hit'] += 1
+                    elif (correctNote.offset - originalOffset == userNote.offset - userOffset):
+                        if (correctNote.quarterLength > userNote.quarterLength):
+                            i -= 1
+                        else:
+                            j -= 1
                     else:
                         j -= 1
-                    print("CASE 4", unitScore)
-                    print(correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
-                    print(userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
+                    # print("CASE 4: Missing a note")
+                    # print(correctNote.pitch.name, correctNote.offset - originalOffset, correctNote.quarterLength)
+                    # print(userNote.pitch.name, userNote.offset - userOffset, userNote.quarterLength)
         i += 1
         j += 1
 
@@ -229,26 +261,47 @@ def compare(originalFile, userFile, hand):
     return gradebook
 
 
-# Test function
-def test():
-    print("1. Missing one note: ", compare("xml/outputXML.musicxml", "midi/swanWithOneMissingNote.mid", "both"))
-    print("2. Missing two consecutive notes: ", compare("xml/outputXML.musicxml", "midi/swanWithTwoConsecutiveMissingNotes.mid", "both"))
-    print("3. One shorter note: ", compare("xml/outputXML.musicxml", "midi/swanWithOneShorterNote.mid", "both"))
-    print("4. One wrong note (with the correct note): ", compare("xml/outputXML.musicxml", "midi/swanWithOneWrongNoteWithCorrectNote.mid", "both"))
-    print("5. One wrong note (without the correct note): ", compare("xml/outputXML.musicxml", "midi/swanWithOneWrongNote.mid", "both"))
-    print("6. Perfect but rest before starting: ", compare("xml/outputXML.musicxml", "midi/swanWithTwoBeatsShifted.mid", "both"))
-    print("7. Good Performance: ", compare("xml/outputXML.musicxml", "midi/User Performance.mid", "both"))
-    print("8. Bad Performance: ", compare("xml/outputXML.musicxml", "midi/BadPerformance.mid", "both"))
-    print("9. Bad Performance 2: ", compare("xml/outputXML.musicxml", "midi/BadPerformance2.mid", "both"))
-    print("10. Demo Performance: ", compare("xml/outputXML.musicxml", "midi/DemoPerformance.mid", "both"))
-    print("11. Ableton Performance: ", compare("xml/outputXML.musicxml", "midi/bpm49swanAbleton.mid", "both"))
-    print("12. BPM 56: ", compare("xml/outputXML.musicxml", "midi/bpm56swan.mid", "both"))
-    print("13. BPM 62: ", compare("xml/outputXML.musicxml", "midi/swan62swan2.mid", "both"))
-    print("14. BPM 71: ", compare("xml/outputXML.musicxml", "midi/bpm71swan.mid", "both"))
-    print("15. BPM 83: ", compare("xml/outputXML.musicxml", "midi/bpm83swan.mid", "both"))
-    print("16. Treble: ", compare("xml/outputXML.musicxml", "midi/swanTreble.mid", "treble"))
-    print("17. Bass: ", compare("xml/outputXML.musicxml", "midi/swanBass.mid", "bass"))
+# Test functions
+def testAll():
+    testSwan()
+    testDoReMi()
+    testYGAFIM()
 
-# test()
+def testSwan():
+    print("Testing Swans on the Lake MIDI files....")
+    print("1. Missing one note: ", compare("xml/swans.xml", "midi/swanWithOneMissingNote.mid", "both"))
+    print("2. Missing two consecutive notes: ", compare("xml/swans.xml", "midi/swanWithTwoConsecutiveMissingNotes.mid", "both"))
+    print("3. One shorter note: ", compare("xml/swans.xml", "midi/swanWithOneShorterNote.mid", "both"))
+    print("4. One wrong note (with the correct note): ", compare("xml/swans.xml", "midi/swanWithOneWrongNoteWithCorrectNote.mid", "both"))
+    print("5. One wrong note (without the correct note): ", compare("xml/swans.xml", "midi/swanWithOneWrongNote.mid", "both"))
+    print("6. Perfect but rest before starting: ", compare("xml/swans.xml", "midi/swanWithTwoBeatsShifted.mid", "both"))
+    print("7. Good Performance: ", compare("xml/swans.xml", "midi/User Performance.mid", "both"))
+    print("8. Bad Performance: ", compare("xml/swans.xml", "midi/BadPerformance.mid", "both"))
+    print("9. Bad Performance 2: ", compare("xml/swans.xml", "midi/BadPerformance2.mid", "both"))
+    print("10. Demo Performance: ", compare("xml/swans.xml", "midi/DemoPerformance.mid", "both"))
+    print("11. Ableton Performance: ", compare("xml/swans.xml", "midi/bpm49swanAbleton.mid", "both"))
+    print("12. BPM 56: ", compare("xml/swans.xml", "midi/bpm56swan.mid", "both"))
+    print("13. BPM 62: ", compare("xml/swans.xml", "midi/swan62swan2.mid", "both"))
+    print("14. BPM 71: ", compare("xml/swans.xml", "midi/bpm71swan.mid", "both"))
+    print("15. BPM 83: ", compare("xml/swans.xml", "midi/bpm83swan.mid", "both"))
+    print("16. Treble: ", compare("xml/swans.xml", "midi/swanTreble.mid", "treble"))
+    print("17. Bass: ", compare("xml/swans.xml", "midi/swanBass.mid", "bass"))
+    print("\n")
 
-print(compare("xml/outputXML.xml", "midi/performance.mid", "both"))
+def testDoReMi():
+    print("Testing Do Re Mi MIDI files....")
+    print(compare("xml/outputXML.xml", "midi/perf1.mid", "both"))
+    print(compare("xml/outputXML.xml", "midi/perf2.mid", "both"))
+    print(compare("xml/outputXML.xml", "midi/perf3bass.mid", "bass"))
+    print(compare("xml/outputXML.xml", "midi/perf4.mid", "both"))
+    print(compare("xml/outputXML.xml", "midi/oldp.mid", "both"))
+    print("\n")
+
+def testYGAFIM():
+    print("Testing You've Got a Friend in Me....")
+    print(compare("xml/outputXML.xml", "midi/friend1.mid", "both"))
+    print(compare("xml/outputXML.xml", "midi/friend2.mid", "both"))
+    print(compare("xml/outputXML.xml", "midi/friend3bass.mid", "bass"))
+    print("\n")
+
+# testAll()
