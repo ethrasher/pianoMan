@@ -1,7 +1,7 @@
-score:62
-hit:6
-miss:3
-wrong:1
-duration:3
-early:15
-late:0
+score:0
+hit:0
+miss:28
+wrong:3
+duration:2
+early:3
+late:62
