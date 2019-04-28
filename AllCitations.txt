@@ -44,3 +44,6 @@ Copying a file to a new os location
 
 Convert a nested python data structure to XML
 19. http://code.activestate.com/recipes/577882-convert-a-nested-python-data-structure-to-xml/
+
+Resizing an image with PhotoImage
+20. https://www.daniweb.com/programming/software-development/threads/369823/resizing-image

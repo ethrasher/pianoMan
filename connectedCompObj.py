@@ -77,7 +77,8 @@ class ConnectedComponent(object):
         if (bestTemplatePath == None):
             # could not find a template to match
             self.saveComponent()
-            return
+            unknownComp = UnknownComponent(self.x0, self.y0, self.x1, self.y1, self.label, self.componentImg, self.fullBinaryImg, self.compNum)
+            return unknownComp
         templatePath = bestTemplatePath.split("templates/")[1]
         return self.makeTemplateObject(bestTemplatePath, staffLines, lineDist)
 
@@ -806,3 +807,6 @@ class OtherComponent(ConnectedComponent):
 
         assert(self.typeName == "time signature")
         return self.subTypeName[0], self.subTypeName[1]
+
+class UnknownComponent(ConnectedComponent):
+    pass
