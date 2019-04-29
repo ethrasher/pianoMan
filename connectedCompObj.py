@@ -22,13 +22,21 @@ class ConnectedComponent(object):
         # RETURN: None
         cv2.imshow(windowName, self.componentImg)
 
-    def saveComponent(self):
+    def saveComponent(self, saveCanvas=False):
         # DESCRIPTION: saves the image of the component into the template folder so it will match the next time
         # PARAMETERS: compNum: the number of this component
         # RETURN: None
         scriptPath = os.path.dirname(os.path.realpath(__file__))
-        compPath = scriptPath + '/templates/component%d.jpg'%(self.compNum)
+        compPath = scriptPath + '/templates/aaa_unknownCompImages/component%d.jpg'%(self.compNum)
         cv2.imwrite(compPath, self.componentImg)
+        if saveCanvas:
+            canvasPath = scriptPath + '/templates/aaa_unknownCompImages/canvas%d.jpg'%(self.compNum)
+            img = cv2.cvtColor(self.fullBinaryImg, cv2.COLOR_GRAY2RGB)
+            img = cv2.rectangle(img, (self.x0 - 5, self.y0 - 5), (self.x1 + 5, self.y1 + 5), (0, 0, 255), 6)
+            cv2.imwrite(canvasPath, img)
+            return compPath, canvasPath
+        return compPath
+
 
     def drawComponentOnCanvas(self, windowName='componentOnCanvas'):
         # DESCRIPTION: draws the component highlighted in a square box on the full page image
@@ -74,13 +82,28 @@ class ConnectedComponent(object):
                 if (abs(matchValue - 1) < 10**-9):
                     break
         # update attributes based on which template matches
+
         if (bestTemplatePath == None):
             # could not find a template to match
-            self.saveComponent()
-            unknownComp = UnknownComponent(self.x0, self.y0, self.x1, self.y1, self.label, self.componentImg, self.fullBinaryImg, self.compNum)
+            templatePath, canvasPath = self.saveComponent(True)
+            unknownComp = UnknownComponent(self.x0, self.y0, self.x1, self.y1, self.label, self.componentImg, self.fullBinaryImg, self.compNum, templatePath, canvasPath)
             return unknownComp
-        templatePath = bestTemplatePath.split("templates/")[1]
-        return self.makeTemplateObject(bestTemplatePath, staffLines, lineDist)
+        lastFolder = bestTemplatePath.split("/")[-2]
+        if (lastFolder == "aaa_unknownCompImages"):
+            # don't need to save it again
+            # get the canvas path
+            canvasName = bestTemplatePath.split("/")[-1]
+            canvasName = "canvas"+canvasName[9:]
+            canvasPath = (bestTemplatePath.split("/")[:-1])
+            canvasPath.append(canvasName)
+            canvasPath = "/".join(canvasPath)
+
+            unknownComp = UnknownComponent(self.x0, self.y0, self.x1, self.y1, self.label, self.componentImg,
+                                           self.fullBinaryImg, self.compNum, bestTemplatePath, canvasPath)
+            return unknownComp
+        else:
+            templatePath = bestTemplatePath.split("templates/")[1]
+            return self.makeTemplateObject(bestTemplatePath, staffLines, lineDist)
 
     def makeTemplateObject(self, templatePath, staffLines, lineDist):
         # DESCRIPTION: creates the new object based on which template it matched to
@@ -809,4 +832,7 @@ class OtherComponent(ConnectedComponent):
         return self.subTypeName[0], self.subTypeName[1]
 
 class UnknownComponent(ConnectedComponent):
-    pass
+    def __init__(self, x0, y0, x1, y1, label, componentImg, binaryImg, compNum, templatePath, canvasPath):
+        super().__init__(x0, y0, x1, y1, label, componentImg, binaryImg, compNum)
+        self.templatePath = templatePath
+        self.canvasPath = canvasPath

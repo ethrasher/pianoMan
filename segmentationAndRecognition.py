@@ -18,6 +18,7 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
     showComponentList = []
     templateObjList = []
     for comp in connectedComponents:
+        #comp.saveComponent(False)
         compNum = comp.compNum
         if compNum in saveComponentList:
             comp.saveComponent()
@@ -35,8 +36,11 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
     timeSig = None
     smallestNoteType = None
     measuresToAddToTemplateList = []
+    print("len tempObjLst: ", len(templateObjList))
     for templateObj in templateObjList:
+        print(type(templateObj))
         if isinstance(templateObj, NoteComponent):
+            print("Inside note component thing")
             smallestNoteType = getSmallerNoteType(smallestNoteType, templateObj.durationName)
         #ignore rest and accent case. They are already done
         if isinstance(templateObj, MeasureBarComponent):

@@ -67,6 +67,12 @@ def reorganizeNotesByStaffLoc(connectedComponents):
     fullList = []
     for staff in notesByStaff:
         staff.sort(key=lambda note: note.x0)
+        # remove anything before the first measure bar location
+        itemNum = 0
+        while(not isinstance(staff[itemNum], MeasureBarComponent)):
+            itemNum += 1
+        staff = staff[itemNum:]
+
         fullList.append(staff)
     return fullList
 

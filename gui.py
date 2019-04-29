@@ -3,7 +3,8 @@
 from tkinter import filedialog
 from tkinter import *
 import os
-from main import pianoMan
+from main import pianoManGetAllComponents, pianoManOrganizeAndMakeXML
+from connectedCompObj import UnknownComponent
 from sendToPi import sendFileToPi
 from performanceScoreEvaluator.main import main
 from PIL import ImageTk,Image
@@ -210,6 +211,43 @@ def getAbletonInstructionImages(data):
         currentInstruction = ImageTk.PhotoImage(pillowImage)
         data.abletonInstructionEnd.append(currentInstruction)
 
+def getUnknownComponentLocations(allPageComponents):
+    locations = []
+    for pageNum in range(len(allPageComponents)):
+        allComponents = allPageComponents[pageNum][1]
+        for compNum in range(len(allComponents)):
+            curComponent = allComponents[compNum]
+            if isinstance(curComponent, UnknownComponent):
+                locations.append((pageNum, compNum))
+    return locations
+
+def getUnknownComponentImages(data):
+    for location in data.unknownCompLocations:
+        unknownComp = data.allPageComponents[location[0]][1][location[1]]
+        fullJPGCompPath = unknownComp.templatePath
+        pillowPageImage = Image.open(fullJPGCompPath)
+        # want it to be no bigger than 150 by 150
+        scaleWidth = 150 / pillowPageImage.size[0]
+        scaleHeight = 150 / pillowPageImage.size[1]
+        scale = min(scaleWidth, scaleHeight)
+        pillowPageImage = pillowPageImage.resize(
+            (int(pillowPageImage.size[0] * scale), int(pillowPageImage.size[1] * scale)),
+            Image.ANTIALIAS)  # Citation 20
+        currentUnknownCompImage = ImageTk.PhotoImage(pillowPageImage)
+        #data.unknownCompImages.append(currentUnknownCompImage)
+
+        #get the canvas image
+        fullJPGCanvasPath = unknownComp.canvasPath
+        pillowPageImage = Image.open(fullJPGCanvasPath)
+        # want it to be no bigger than 150 by 150
+        scaleHeight = 450 / pillowPageImage.size[1]
+        scale = min(scaleWidth, scaleHeight)
+        pillowPageImage = pillowPageImage.resize(
+            (int(pillowPageImage.size[0] * scale), int(pillowPageImage.size[1] * scale)),
+            Image.ANTIALIAS)  # Citation 20
+        currentUnknownCanvasImage = ImageTk.PhotoImage(pillowPageImage)
+        data.unknownImages.append((currentUnknownCompImage, currentUnknownCanvasImage))
+
 def init(data, sendToPi):
     scriptPath = os.path.dirname(os.path.realpath(__file__))
     data.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
@@ -248,6 +286,14 @@ def init(data, sendToPi):
     data.donePerformanceButton = Button(x0=data.width//2 - 25, y0=data.height - 60, x1=data.width//2 + 50, y1=data.height - 10,
                                  color="dark goldenrod", text="Done")
     data.explainPerformanceDimensions = (20, data.height//3 + 10, data.width-20, data.height-70)
+    #from pianoMan
+    data.allPageComponents = None
+    data.divisions = None
+    data.timeSig = None
+    data.unknownCompLocations = None
+    data.unknownImages = []
+    data.currentUnknownCompNumber = 0
+    #mode switcher
     data.mode = "enterInformation"
 
 
@@ -323,8 +369,35 @@ def keyPressed(event, data):
     data.fileNameTextBox.updateText(event.keysym)
 
 def timerFired(data):
+    '''if data.startError == "Processing...":
+        #pianoMan(False, data.musicPdfPath, data.fileNameTextBox.text)
+        pianoOutComps = pianoManGetAllComponents(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text)
+        if pianoOutComps != None:
+            data.allPageComponents, data.divisions, data.timeSig = pianoOutComps
+            data.unknownCompLocations = getUnknownComponentLocations(data.allPageComponents)
+            print("Unknown comp locations: ", data.unknownCompLocations)
+        if len(data.unknownCompLocations) == 0:
+            #all components are already known
+            pianoManOrganizeAndMakeXML(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text, allPageComponents=data.allPageComponents, divisions=data.divisions, timeSig = data.timeSig)
+            if data.sendToPi:
+                sendFileToPi("outputXML.xml")
+            pdfPath = data.musicPdfPath
+            data.maxPageNumber = getMaxPageNumber(pdfPath)
+            data.startError = ""
+            data.mode = "abletonInstructionBegin"
+        else:
+            pdfPath = data.musicPdfPath
+            data.maxPageNumber = getMaxPageNumber(pdfPath)
+            data.startError = ""
+            getUnknownComponentImages(data)
+            data.mode = "findUnknownComponents"'''
     if data.startError == "Processing...":
-        pianoMan(False, data.musicPdfPath, data.fileNameTextBox.text)
+        #pianoMan(False, data.musicPdfPath, data.fileNameTextBox.text)
+        pianoOutComps = pianoManGetAllComponents(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text)
+        if pianoOutComps != None:
+            data.allPageComponents, data.divisions, data.timeSig = pianoOutComps
+            data.unknownCompLocations = getUnknownComponentLocations(data.allPageComponents)
+            pianoManOrganizeAndMakeXML(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text, allPageComponents=data.allPageComponents, divisions=data.divisions, timeSig = data.timeSig)
         if data.sendToPi:
             sendFileToPi("outputXML.xml")
         pdfPath = data.musicPdfPath
@@ -400,6 +473,13 @@ def redrawAll(canvas, data):
             canvas.create_text(data.width // 2 - 10,
                            data.explainPerformanceDimensions[1] + 10 + titleHeight + itemHeight * i, anchor="nw",
                            text=itemDescription, font="Times 18", fill="white")
+
+    elif data.mode == "findUnknownComponents":
+        currentCompImage = data.unknownImages[data.currentUnknownCompNumber][0]
+        currentCanvasImage = data.unknownImages[data.currentUnknownCompNumber][1]
+        canvas.create_image(0, 0 , anchor="nw", image = currentCanvasImage)
+        canvas.create_image(75, data.height-75, image=currentCompImage)
+
 
 
 ####################################
