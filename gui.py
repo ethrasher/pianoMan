@@ -3,13 +3,15 @@
 from tkinter import filedialog
 from tkinter import *
 import os
-from main import pianoMan
+from main import pianoManGetAllComponents, pianoManOrganizeAndMakeXML
+from connectedCompObj import UnknownComponent
 from sendToPi import sendFileToPi
 from performanceScoreEvaluator.main import main
-from guiModeTemplate import ModeGUI
+from PIL import ImageTk,Image
+
 
 ####################################
-# GUI strucutre elements
+# GUI structure elements
 ####################################
 
 class Button(object):
@@ -156,196 +158,96 @@ def checkStartValues(data):
 def writeFile(path, contents): #Citations
     with open(path, "wt") as f:
         f.write(contents)
-'''
 
-####################################
-# GUI modes objects
-####################################
-class ModeDispatcherGUI(ModeGUI):
-    def __init__(self, width, height, timerDelay, sendToPi):
-        super().__init__(width, height, timerDelay, sendToPi)
-        scriptPath = os.path.dirname(os.path.realpath(__file__))
-        #self.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
-        self.mode = "enterInformation"
-        self.enterInfoMode = EnterInformationGUI(self.width, self.height, self.timerDelay, self.sendToPi)
-        self.sendInfoMode = None
+def getMaxPageNumber(pdfPath):
+    pdfFileName = pdfPath.split(os.sep)[-1]
+    jpgFileName = pdfFileName.split(".")[0]
+    pdfPreFileName = pdfPath[:len(pdfPath) - len(pdfFileName)]
+    maxPageNum = 0
+    fullJPGFileName = pdfPreFileName + jpgFileName + "-" + str(maxPageNum) + ".jpg"
+    exists = os.path.isfile(fullJPGFileName)
+    while exists:
+        maxPageNum += 1
+        fullJPGFileName = pdfPreFileName + jpgFileName + "-" + str(maxPageNum) + ".jpg"
+        exists = os.path.isfile(fullJPGFileName)
+    if maxPageNum == 0:
+        raise Exception("No jpgs of the pages exist")
+    return maxPageNum-1
 
-    def mousePressed(self, root, event):
-        changeMode = None
-        if self.mode == "enterInformation":
-            changeMode = self.enterInfoMode.mousePressed(root, event)
-            print(changeMode)
-            if changeMode == "sendInformation":
-                print("in here, making new object")
-                speedLabel = self.enterInfoMode.speedLabel
-                handLabel = self.enterInfoMode.handLabel
-                fileNameLabel = self.enterInfoMode.fileNameLabel
-                self.sendInfoMode = SendInformationGUI(self.width, self.height, self.timerDelay, self.sendToPi, speedLabel, handLabel, fileNameLabel)
-        elif self.mode == "sendInformation":
-            changeMode = self.sendInfoMode.mousePressed(root, event)
-        if changeMode == "restart":
-            self.__init__(self.width, self.height, self.timerDelay, self.sendToPi)
-        elif changeMode != None:
-            self.mode = changeMode
+def getJPGImages(data):
+    pdfPath = data.musicPdfPath
+    maxPageNumber = getMaxPageNumber(pdfPath)
+    pdfFileName = pdfPath.split(os.sep)[-1]
+    jpgFileName = pdfFileName.split(".")[0]
+    pdfPreFileName = pdfPath[:len(pdfPath) - len(pdfFileName)]
+    for pageNum in range(maxPageNumber+1):
+        fullJPGFileName = pdfPreFileName + jpgFileName + "-" + str(pageNum) + ".jpg"
+        pillowPageImage = Image.open(fullJPGFileName)
+        scale = 1/11
+        pillowPageImage = pillowPageImage.resize((int(pillowPageImage.size[0]*scale), int(pillowPageImage.size[1]*scale)), Image.ANTIALIAS) #Citation 20
+        currentMusicPage = ImageTk.PhotoImage(pillowPageImage)
+        data.musicPageImages.append(currentMusicPage)
 
-    def keyPressed(self, event):
-        changeMode = None
-        if self.mode == "enterInformation":
-            changeMode = self.enterInfoMode.keyPressed(event)
-        elif self.mode == "sendInformation":
-            changeMode = self.sendInfoMode.keyPressed(event)
-        if changeMode != None:
-            self.mode = changeMode
+def getAbletonInstructionImages(data):
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    instructionPath = scriptPath + "/AbletonInstructions/"
+    data.abletonInstructionBegin = []
+    data.abletonInstructionEnd = []
+    newHeight = 450
+    for i in range(6):
+        fullFileName = instructionPath + "instruction" + str(i) + ".png"
+        pillowImage = Image.open(fullFileName)
+        # need height to be 500
+        scale = newHeight / pillowImage.size[1]
+        pillowImage = pillowImage.resize((int(pillowImage.size[0]*scale), newHeight), Image.ANTIALIAS)  # Citation 20
+        currentInstruction = ImageTk.PhotoImage(pillowImage)
+        data.abletonInstructionBegin.append(currentInstruction)
+    for i in range(6,9):
+        fullFileName = instructionPath + "instruction" + str(i) + ".png"
+        pillowImage = Image.open(fullFileName)
+        # need height to be 500
+        scale = newHeight / pillowImage.size[1]
+        pillowImage = pillowImage.resize((int(pillowImage.size[0]*scale), newHeight), Image.ANTIALIAS)  # Citation 20
+        currentInstruction = ImageTk.PhotoImage(pillowImage)
+        data.abletonInstructionEnd.append(currentInstruction)
 
-    def timerFired(self):
-        changeMode = None
-        if self.mode == "enterInformation":
-            changeMode = self.enterInfoMode.timerFired()
-        elif self.mode == "sendInformation":
-            changeMode = self.sendInfoMode.timerFired()
-        if changeMode != None:
-            self.mode = changeMode
+def getUnknownComponentLocations(allPageComponents):
+    locations = []
+    for pageNum in range(len(allPageComponents)):
+        allComponents = allPageComponents[pageNum][1]
+        for compNum in range(len(allComponents)):
+            curComponent = allComponents[compNum]
+            if isinstance(curComponent, UnknownComponent):
+                locations.append((pageNum, compNum))
+    return locations
 
+def getUnknownComponentImages(data):
+    for location in data.unknownCompLocations:
+        unknownComp = data.allPageComponents[location[0]][1][location[1]]
+        fullJPGCompPath = unknownComp.templatePath
+        pillowPageImage = Image.open(fullJPGCompPath)
+        # want it to be no bigger than 150 by 150
+        scaleWidth = 150 / pillowPageImage.size[0]
+        scaleHeight = 150 / pillowPageImage.size[1]
+        scale = min(scaleWidth, scaleHeight)
+        pillowPageImage = pillowPageImage.resize(
+            (int(pillowPageImage.size[0] * scale), int(pillowPageImage.size[1] * scale)),
+            Image.ANTIALIAS)  # Citation 20
+        currentUnknownCompImage = ImageTk.PhotoImage(pillowPageImage)
+        #data.unknownCompImages.append(currentUnknownCompImage)
 
-    def redrawAll(self, canvas):
-        if self.mode == "enterInformation":
-            self.enterInfoMode.redrawAll(canvas)
-        elif self.mode == "sendInformation":
-            self.sendInfoMode.redrawAll(canvas)
+        #get the canvas image
+        fullJPGCanvasPath = unknownComp.canvasPath
+        pillowPageImage = Image.open(fullJPGCanvasPath)
+        # want it to be no bigger than 150 by 150
+        scaleHeight = 450 / pillowPageImage.size[1]
+        scale = min(scaleWidth, scaleHeight)
+        pillowPageImage = pillowPageImage.resize(
+            (int(pillowPageImage.size[0] * scale), int(pillowPageImage.size[1] * scale)),
+            Image.ANTIALIAS)  # Citation 20
+        currentUnknownCanvasImage = ImageTk.PhotoImage(pillowPageImage)
+        data.unknownImages.append((currentUnknownCompImage, currentUnknownCanvasImage))
 
-
-class EnterInformationGUI(ModeGUI):
-    def __init__(self, width, height, timerDelay, sendToPi):
-        super().__init__(width, height, timerDelay, sendToPi)
-        scriptPath = os.path.dirname(os.path.realpath(__file__))
-        self.musicPdfPath = ''
-        self.backgroundImage = None
-        self.speedLabels = ["normal", "normal-\nmedium", "medium", "medium-\nslow", "slow"]
-        self.handLabels = ["bass\nclef", "treble\nclef", "both"]
-        self.getFileButton = Button(x0=10, y0=self.height // 2 - 70, x1=160, y1=self.height // 2 - 20, color="black",
-                                    text="Select File")
-        self.speedButtons = RadioButtons(x0=110, y0=self.height // 2 + 110, x1=self.width // 2 + 50,
-                                         y1=self.height // 2 + 160, text=self.speedLabels, label="Speed")
-
-        self.handButtons = RadioButtons(x0=110, y0=self.height / 2 + 200, x1=self.width // 2 + 50,
-                                        y1=self.height / 2 + 250, text=self.handLabels, label="Hands")
-        self.fileNameTextBox = TextBox(x0=160, y0=self.height // 2 - 20, x1=self.width // 2, y1=self.height // 2 + 30,
-                                       label="Song Name")
-        self.fileNameLabel = self.fileNameTextBox.text
-        self.submitButton = Button(x0=self.width - 160, y0=self.height // 2 - 70, x1=self.width - 10,
-                                   y1=self.height // 2 - 20, color="dark goldenrod", text="Start")
-        self.startError = ''
-
-    def mousePressed(self, root, event):
-        scriptPath = os.path.dirname(os.path.realpath(__file__))
-        if self.getFileButton.clickedInside(event.x, event.y):
-            root.update()
-            filepath = filedialog.askopenfilename(initialdir=scriptPath + "/music_images/", title="Select file",
-                                                  filetypes=(
-                                                  ("pdf files", "*.pdf"), ("all files", "*.*")))  # Citations: 15
-            root.update()
-            self.musicPdfPath = filepath
-        self.speedButtons.clickedInside(event.x, event.y)
-        self.handButtons.clickedInside(event.x, event.y)
-        self.fileNameTextBox.clickedInside(event.x, event.y)
-        if self.submitButton.clickedInside(event.x, event.y):
-            startValues = self.checkStartValues()
-            if type(startValues) == str:
-                # there was an error
-                self.startError = startValues
-            else:
-                songPath, songName, speedLabel, handLabel = startValues
-                self.speedLabel = str(self.speedLabels.index(speedLabel) + 1)
-                self.handLabel = handLabel.split("\n")[0]
-                self.startError = 'Processing...'
-                return "sendInformation"
-
-
-    def checkStartValues(self):
-        if self.musicPdfPath == '':
-            return "No PDF File Selected"
-        if self.fileNameTextBox.text == '':
-            return "No Song Name"
-        speedIndex = self.speedButtons.getSelectedIndex()
-        handIndex = self.handButtons.getSelectedIndex()
-        if speedIndex == None:
-            return "No Speed Level"
-        if handIndex == None:
-            return "No Hand Style"
-        return (self.musicPdfPath, self.fileNameTextBox.text, self.speedLabels[speedIndex], self.handLabels[handIndex])
-
-    def keyPressed(self, event):
-        self.fileNameTextBox.updateText(event.keysym)
-        self.fileNameLabel = self.fileNameTextBox.text
-
-    def timerFired(self):
-        if self.backgroundImage == None:
-            scriptPath = os.path.dirname(os.path.realpath(__file__))
-            self.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
-        if self.startError == "Processing...":
-            pianoMan(False, self.musicPdfPath, self.fileNameTextBox.text)
-            if self.sendToPi:
-                sendFileToPi("outputXML.xml")
-            self.startError = ""
-            return "sendInformation"
-
-    def redrawAll(self, canvas):
-        canvas.create_image(0, 0, anchor=NW, image=self.backgroundImage)
-        self.getFileButton.draw(canvas=canvas)
-        canvas.create_rectangle(self.getFileButton.x1, self.getFileButton.y0, self.width // 2,
-                                self.getFileButton.y1, fill="black")
-        canvas.create_text(self.getFileButton.x1 + 10, (self.getFileButton.y0 + self.getFileButton.y1) // 2,
-                           anchor="w", text=self.musicPdfPath.split("/")[-1], fill="white", font="Times 18")
-        self.speedButtons.draw(canvas=canvas)
-        self.handButtons.draw(canvas=canvas)
-        self.fileNameTextBox.draw(canvas=canvas)
-        self.submitButton.draw(canvas=canvas)
-        canvas.create_rectangle(self.submitButton.x0, self.submitButton.y1, self.submitButton.x1,
-                                self.submitButton.y1 + 50, fill="black")
-        canvas.create_text(self.submitButton.x0, self.submitButton.y1 + 25, anchor="w", text=self.startError,
-                               fill="white", font="Times 18")
-
-
-class SendInformationGUI(ModeGUI):
-    def __init__(self, width, height, timerDelay, sendToPi, speedLabel, handLabel, fileNameLabel):
-        super().__init__(width, height, timerDelay, sendToPi)
-        self.backgroundImage = None
-        self.speedLabel = speedLabel
-        self.handLabel = handLabel
-        self.fileNameLabel = fileNameLabel
-        self.sendToPiButton = Button(x0=self.width // 2 - 75, y0=self.height // 2 - 25, x1=self.width // 2 + 75,
-                                     y1=self.height // 2 + 25, color="dark goldenrod", text="Start Playing")
-
-    def mousePressed(self, root, event):
-        scriptPath = os.path.dirname(os.path.realpath(__file__))
-        if self.sendToPiButton.clickedInside(event.x, event.y):
-            bpmDict = {"5":49, "4":56, "3":62, "2":71, "1":83}
-            bpm = bpmDict[self.speedLabel]
-            contentsToWrite = "fileName:"+self.fileNameLabel+"\n"+"speed:" + str(self.speedLabel) + "\n" + "hand:" + str(self.handLabel) + "\n" + "bpm:" + str(bpm)
-            self.writeFile(scriptPath + "/outBoundFiles/start.txt", contentsToWrite)
-            if self.sendToPi:
-                # make start file to send to the pi
-                sendFileToPi("start.txt")
-            # start the performance evaluator
-            main()
-            return "restart"
-        else:
-            return "sendInformation"
-
-    def timerFired(self):
-        if self.backgroundImage == None:
-            scriptPath = os.path.dirname(os.path.realpath(__file__))
-            self.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
-
-    def redrawAll(self, canvas):
-        canvas.create_image(0, 0, anchor=NW, image=self.backgroundImage)
-        self.sendToPiButton.draw(canvas=canvas)
-
-
-    def writeFile(self, path, contents):  # Citations
-        with open(path, "wt") as f:
-            f.write(contents)
-'''
 def init(data, sendToPi):
     scriptPath = os.path.dirname(os.path.realpath(__file__))
     data.backgroundImage = PhotoImage(file=scriptPath + "/guiImages/background3.gif")
@@ -364,6 +266,34 @@ def init(data, sendToPi):
     data.startError = ''
     data.sendToPi = sendToPi
     data.sendToPiButton = Button(x0=data.width//2-75, y0=data.height//2-25, x1=data.width//2+75, y1=data.height//2+25, color="dark goldenrod", text="Start Playing")
+    # music sheet image stuff
+    data.nextPageButton = Button(x0=data.width//2+10, y0=data.height-60, x1=data.width//2+110, y1 = data.height-10, color = "black", text = "Next")
+    data.prevPageButton = Button(x0=data.width//2-110, y0=data.height-60, x1=data.width//2-10, y1 = data.height-10, color = "black", text = "Prev")
+    data.donePageButton = Button(x0=data.width-110, y0=data.height-60, x1=data.width-10, y1 = data.height-10, color = "dark goldenrod", text = "Done")
+    data.currentPageNumber = 0
+    data.maxPageNumber = 0
+    data.musicPageImages = []
+    # ableton instruction stuff
+    data.nextInstructionButton = Button(x0=data.width // 2 + 10, y0=data.height - 60, x1=data.width // 2 + 110,
+                                 y1=data.height - 10, color="black", text="Next")
+    data.prevInstructionButton = Button(x0=data.width // 2 - 110, y0=data.height - 60, x1=data.width // 2 - 10,
+                                 y1=data.height - 10, color="black", text="Prev")
+    data.skipInstructionButton = Button(x0=data.width - 110, y0=data.height - 60, x1=data.width - 10, y1=data.height - 10,
+                                 color="dark goldenrod", text="Skip")
+    data.currentInstructionNumber = 0
+    getAbletonInstructionImages(data)
+    # explaining performance stuff
+    data.donePerformanceButton = Button(x0=data.width//2 - 25, y0=data.height - 60, x1=data.width//2 + 50, y1=data.height - 10,
+                                 color="dark goldenrod", text="Done")
+    data.explainPerformanceDimensions = (20, data.height//3 + 10, data.width-20, data.height-70)
+    #from pianoMan
+    data.allPageComponents = None
+    data.divisions = None
+    data.timeSig = None
+    data.unknownCompLocations = None
+    data.unknownImages = []
+    data.currentUnknownCompNumber = 0
+    #mode switcher
     data.mode = "enterInformation"
 
 
@@ -390,6 +320,17 @@ def mousePressed(root, event, data):
                 data.speedLabel = str(data.speedLabels.index(speedLabel) + 1)
                 data.handLabel = handLabel.split("\n")[0]
                 data.startError = 'Processing...'
+    elif data.mode == "abletonInstructionBegin":
+        if data.skipInstructionButton.clickedInside(event.x, event.y):
+            data.mode = "sendInformation"
+            data.currentInstructionNumber = 0
+        elif data.nextInstructionButton.clickedInside(event.x, event.y):
+            if data.currentInstructionNumber == len(data.abletonInstructionBegin)-1:
+                data.mode = "sendInformation"
+                data.currentInstructionNumber = 0
+            data.currentInstructionNumber = min(len(data.abletonInstructionBegin)-1, data.currentInstructionNumber+1)
+        elif data.prevInstructionButton.clickedInside(event.x, event.y):
+            data.currentInstructionNumber = max(0, data.currentInstructionNumber - 1)
     elif data.mode == "sendInformation":
         if data.sendToPiButton.clickedInside(event.x, event.y):
             bpmDict = {"5":49, "4":56, "3":62, "2":71, "1":83}
@@ -400,20 +341,72 @@ def mousePressed(root, event, data):
                 # make start file to send to the pi
                 sendFileToPi("start.txt")
             # start the performance evaluator
-            main(data.sendToPi)
+            getJPGImages(data)
+            data.mode = "showMusicImages"
+    elif data.mode == "showMusicImages":
+        if data.donePageButton.clickedInside(event.x, event.y):
+            data.mode = "abletonInstructionEnd"
+        elif data.nextPageButton.clickedInside(event.x, event.y):
+            data.currentPageNumber = min(data.maxPageNumber, data.currentPageNumber+1)
+        elif data.prevPageButton.clickedInside(event.x, event.y):
+            data.currentPageNumber = max(0, data.currentPageNumber - 1)
+    elif data.mode == "abletonInstructionEnd":
+        if data.skipInstructionButton.clickedInside(event.x, event.y):
+            data.mode = "checkPerformanceScore"
+        elif data.nextInstructionButton.clickedInside(event.x, event.y):
+            if data.currentInstructionNumber == len(data.abletonInstructionEnd)-1:
+                data.mode = "checkPerformanceScore"
+            data.currentInstructionNumber = min(len(data.abletonInstructionEnd)-1, data.currentInstructionNumber+1)
+        elif data.prevInstructionButton.clickedInside(event.x, event.y):
+            data.currentInstructionNumber = max(0, data.currentInstructionNumber - 1)
+    elif data.mode == "explainPerformanceScore":
+        if data.donePerformanceButton.clickedInside(event.x, event.y):
             init(data, data.sendToPi)
+
 
 def keyPressed(event, data):
     # use event.char and event.keysym
     data.fileNameTextBox.updateText(event.keysym)
 
 def timerFired(data):
+    '''if data.startError == "Processing...":
+        #pianoMan(False, data.musicPdfPath, data.fileNameTextBox.text)
+        pianoOutComps = pianoManGetAllComponents(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text)
+        if pianoOutComps != None:
+            data.allPageComponents, data.divisions, data.timeSig = pianoOutComps
+            data.unknownCompLocations = getUnknownComponentLocations(data.allPageComponents)
+            print("Unknown comp locations: ", data.unknownCompLocations)
+        if len(data.unknownCompLocations) == 0:
+            #all components are already known
+            pianoManOrganizeAndMakeXML(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text, allPageComponents=data.allPageComponents, divisions=data.divisions, timeSig = data.timeSig)
+            if data.sendToPi:
+                sendFileToPi("outputXML.xml")
+            pdfPath = data.musicPdfPath
+            data.maxPageNumber = getMaxPageNumber(pdfPath)
+            data.startError = ""
+            data.mode = "abletonInstructionBegin"
+        else:
+            pdfPath = data.musicPdfPath
+            data.maxPageNumber = getMaxPageNumber(pdfPath)
+            data.startError = ""
+            getUnknownComponentImages(data)
+            data.mode = "findUnknownComponents"'''
     if data.startError == "Processing...":
-        pianoMan(False, data.musicPdfPath, data.fileNameTextBox.text)
+        #pianoMan(False, data.musicPdfPath, data.fileNameTextBox.text)
+        pianoOutComps = pianoManGetAllComponents(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text)
+        if pianoOutComps != None:
+            data.allPageComponents, data.divisions, data.timeSig = pianoOutComps
+            data.unknownCompLocations = getUnknownComponentLocations(data.allPageComponents)
+            pianoManOrganizeAndMakeXML(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text, allPageComponents=data.allPageComponents, divisions=data.divisions, timeSig = data.timeSig)
         if data.sendToPi:
             sendFileToPi("outputXML.xml")
+        pdfPath = data.musicPdfPath
+        data.maxPageNumber = getMaxPageNumber(pdfPath)
         data.startError = ""
-        data.mode = "sendInformation"
+        data.mode = "abletonInstructionBegin"
+    elif data.mode == "checkPerformanceScore":
+        main(data.sendToPi)
+        data.mode = "explainPerformanceScore"
 
 def redrawAll(canvas, data):
     # draw in canvas
@@ -428,8 +421,66 @@ def redrawAll(canvas, data):
         data.submitButton.draw(canvas=canvas)
         canvas.create_rectangle(data.submitButton.x0, data.submitButton.y1, data.submitButton.x1, data.submitButton.y1+50, fill="black")
         canvas.create_text(data.submitButton.x0, data.submitButton.y1+25, anchor="w", text=data.startError, fill="white", font="Times 18")
+    elif data.mode == "abletonInstructionBegin":
+        currentInstruction = data.abletonInstructionBegin[data.currentInstructionNumber]
+        canvas.create_image(data.width//2, data.height//2, image=currentInstruction)
+        data.nextInstructionButton.draw(canvas=canvas)
+        data.prevInstructionButton.draw(canvas=canvas)
+        data.skipInstructionButton.draw(canvas=canvas)
+        labelX0 = data.width//2 - 150
+        labelX1 = data.width//2 + 150
+        canvas.create_rectangle(labelX0, 0, labelX1, 60, fill = "black")
+        canvas.create_text(data.width//2, 30, text = "Instructions", font = "Times 40", fill = "white")
     elif data.mode == "sendInformation":
         data.sendToPiButton.draw(canvas=canvas)
+    elif data.mode == "showMusicImages":
+        # show the sheet music image for the correct page
+        currentMusicPage = data.musicPageImages[data.currentPageNumber]
+        canvas.create_image(data.width//2, 0, anchor=N, image=currentMusicPage)
+        data.nextPageButton.draw(canvas=canvas)
+        data.prevPageButton.draw(canvas=canvas)
+        data.donePageButton.draw(canvas=canvas)
+    elif data.mode == "abletonInstructionEnd":
+        currentInstruction = data.abletonInstructionEnd[data.currentInstructionNumber]
+        canvas.create_image(data.width//2, data.height//2, image=currentInstruction)
+        data.nextInstructionButton.draw(canvas=canvas)
+        data.prevInstructionButton.draw(canvas=canvas)
+        data.skipInstructionButton.draw(canvas=canvas)
+        labelX0 = data.width // 2 - 150
+        labelX1 = data.width // 2 + 150
+        canvas.create_rectangle(labelX0, 0, labelX1, 60, fill="black")
+        canvas.create_text(data.width // 2, 30, text="Instructions", font="Times 40", fill="white")
+    elif data.mode == "checkPerformanceScore":
+        canvas.create_rectangle(data.width//2-150, data.height//2-35, data.width//2+150, data.height//2+35, fill="dark goldenrod", width=0)
+        canvas.create_text(data.width//2, data.height//2, text="Evaluating Performance...", fill="white", font="Times 25")
+    elif data.mode == "explainPerformanceScore":
+        data.donePerformanceButton.draw(canvas=canvas)
+        canvas.create_rectangle(data.explainPerformanceDimensions[0], data.explainPerformanceDimensions[1],
+                            data.explainPerformanceDimensions[2], data.explainPerformanceDimensions[3], fill="black")
+        items = ["Hits: correctly played", "Miss: missed the note entirely", "Wrong: wrong note is played",
+                 "Span: played the correct note for the wrong duration", "Early: played the note too early",
+                 "Late: played the note too late"]
+        numOfScores = len(items)+1.5
+        itemHeight = (data.explainPerformanceDimensions[3]-data.explainPerformanceDimensions[1])//numOfScores
+        titleHeight = itemHeight*1.5
+        # draw the title
+        canvas.create_text(data.width//2, data.explainPerformanceDimensions[1]+10, anchor="n", text="Performance Measure Explainations", font="Times 30", fill="white")
+        # draw each item
+        for i in range(len(items)):
+            itemTitle = items[i].split(": ")[0]
+            itemDescription = items[i].split(": ")[1]
+            canvas.create_text(data.width//2 - 100, data.explainPerformanceDimensions[1]+10+titleHeight+itemHeight*i, anchor="nw", text=itemTitle, font="Times 18", fill="white")
+            canvas.create_text(data.width // 2 - 10,
+                           data.explainPerformanceDimensions[1] + 10 + titleHeight + itemHeight * i, anchor="nw",
+                           text=itemDescription, font="Times 18", fill="white")
+
+    elif data.mode == "findUnknownComponents":
+        currentCompImage = data.unknownImages[data.currentUnknownCompNumber][0]
+        currentCanvasImage = data.unknownImages[data.currentUnknownCompNumber][1]
+        canvas.create_image(0, 0 , anchor="nw", image = currentCanvasImage)
+        canvas.create_image(75, data.height-75, image=currentCompImage)
+
+
 
 ####################################
 # use the run function as-is
@@ -464,7 +515,7 @@ def run(width=300, height=300, sendToPi=True):
     data.timerDelay = 100 # milliseconds
     root = Tk()
     root.resizable(width=False, height=False) # prevents resizing window
-
+    root.title("PianoMan")
     # create the root and the canvas
     canvas = Canvas(root, width=data.width, height=data.height)
     canvas.configure(bd=0, highlightthickness=0)
@@ -500,24 +551,3 @@ if __name__ == "__main__":
         run(width=screenWidth, height=screenHeight, sendToPi=False)
     else:
         raise Exception("Wrong number of arguments specified. Should include 0 or 1 boolean arguments")
-'''
-
-if __name__ == "__main__":
-    # Determine the command line arguments
-    screenWidth = 1000
-    screenHeight = 600
-    if len(sys.argv) == 1:
-        # did not specify whether to save new file or not. Will save as default
-        ModeDispatcherGUI(width=screenWidth, height=screenHeight, timerDelay=100, sendToPi=True).run()
-    elif len(sys.argv) == 2 and isinstance(sys.argv[1], bool):
-        #run(width=screenWidth, height=screenHeight, sendToPi=sys.argv[1])
-        ModeDispatcherGUI(width=screenWidth, height=screenHeight, timerDelay=100, sendToPi=sys.argv[1]).run()
-    elif len(sys.argv) == 2 and isinstance(sys.argv[1], str) and sys.argv[1] == "True":
-        #run(width=screenWidth, height=screenHeight, sendToPi=True)
-        ModeDispatcherGUI(width=screenWidth, height=screenHeight, timerDelay=100, sendToPi=True).run()
-    elif len(sys.argv) == 2 and isinstance(sys.argv[1], str) and sys.argv[1] == "False":
-        #run(width=screenWidth, height=screenHeight, sendToPi=False)
-        ModeDispatcherGUI(width=screenWidth, height=screenHeight, timerDelay=100, sendToPi=False).run()
-    else:
-        raise Exception("Wrong number of arguments specified. Should include 0 or 1 boolean arguments")
-'''

@@ -22,13 +22,21 @@ class ConnectedComponent(object):
         # RETURN: None
         cv2.imshow(windowName, self.componentImg)
 
-    def saveComponent(self):
+    def saveComponent(self, saveCanvas=False):
         # DESCRIPTION: saves the image of the component into the template folder so it will match the next time
         # PARAMETERS: compNum: the number of this component
         # RETURN: None
         scriptPath = os.path.dirname(os.path.realpath(__file__))
-        compPath = scriptPath + '/templates/component%d.jpg'%(self.compNum)
+        compPath = scriptPath + '/templates/aaa_unknownCompImages/component%d.jpg'%(self.compNum)
         cv2.imwrite(compPath, self.componentImg)
+        if saveCanvas:
+            canvasPath = scriptPath + '/templates/aaa_unknownCompImages/canvas%d.jpg'%(self.compNum)
+            img = cv2.cvtColor(self.fullBinaryImg, cv2.COLOR_GRAY2RGB)
+            img = cv2.rectangle(img, (self.x0 - 5, self.y0 - 5), (self.x1 + 5, self.y1 + 5), (0, 0, 255), 6)
+            cv2.imwrite(canvasPath, img)
+            return compPath, canvasPath
+        return compPath
+
 
     def drawComponentOnCanvas(self, windowName='componentOnCanvas'):
         # DESCRIPTION: draws the component highlighted in a square box on the full page image
@@ -74,12 +82,28 @@ class ConnectedComponent(object):
                 if (abs(matchValue - 1) < 10**-9):
                     break
         # update attributes based on which template matches
+
         if (bestTemplatePath == None):
             # could not find a template to match
-            self.saveComponent()
-            return
-        templatePath = bestTemplatePath.split("templates/")[1]
-        return self.makeTemplateObject(bestTemplatePath, staffLines, lineDist)
+            templatePath, canvasPath = self.saveComponent(True)
+            unknownComp = UnknownComponent(self.x0, self.y0, self.x1, self.y1, self.label, self.componentImg, self.fullBinaryImg, self.compNum, templatePath, canvasPath)
+            return unknownComp
+        lastFolder = bestTemplatePath.split("/")[-2]
+        if (lastFolder == "aaa_unknownCompImages"):
+            # don't need to save it again
+            # get the canvas path
+            canvasName = bestTemplatePath.split("/")[-1]
+            canvasName = "canvas"+canvasName[9:]
+            canvasPath = (bestTemplatePath.split("/")[:-1])
+            canvasPath.append(canvasName)
+            canvasPath = "/".join(canvasPath)
+
+            unknownComp = UnknownComponent(self.x0, self.y0, self.x1, self.y1, self.label, self.componentImg,
+                                           self.fullBinaryImg, self.compNum, bestTemplatePath, canvasPath)
+            return unknownComp
+        else:
+            templatePath = bestTemplatePath.split("templates/")[1]
+            return self.makeTemplateObject(bestTemplatePath, staffLines, lineDist)
 
     def makeTemplateObject(self, templatePath, staffLines, lineDist):
         # DESCRIPTION: creates the new object based on which template it matched to
@@ -168,7 +192,8 @@ class ConnectedComponent(object):
 
             # need the new image components for each stem, duration for each stem, numPitches on each stem
             durationName = None
-            midpointsBetweenStems = ConnectedComponent.getLocationOfMidPoints(self.componentImg, numberOfStems)
+            stemLocations = ConnectedComponent.getLocationOfStems(self.componentImg, numberOfStems)
+            midpointsBetweenStems = ConnectedComponent.getLocationOfMidPoints(stemLocations, numberOfStems)
             allNotes = []
             for i in range(numberOfStems):
                 if i == 0:
@@ -196,9 +221,12 @@ class ConnectedComponent(object):
                     beam = "continue"
 
                 #TODO: NEED TO FIND DURATION PROPERLY
-                newNote = NoteComponent(x0=fullImgX0, y0=fullImgY0, x1=fullImgX1, y1=fullImgY1, label=self.label,
-                                 componentImg=componentImg, binaryImg=self.fullBinaryImg, duration=durationName, stem=stem, numPitches=numberOfPitches[i],
+                newNote = self.findConnectedNoteAttributes(x0=fullImgX0, y0=fullImgY0, x1=fullImgX1, y1=fullImgY1,
+                                 componentImg=componentImg, stem=stem, numPitches=numberOfPitches[i],
                                  staffLines=staffLines, lineDist=lineDist, compNum=self.compNum+(1/numberOfStems), beam=beam)
+                #newNote = NoteComponent(x0=fullImgX0, y0=fullImgY0, x1=fullImgX1, y1=fullImgY1, label=self.label,
+                #                 componentImg=componentImg, binaryImg=self.fullBinaryImg, duration=durationName, stem=stem, numPitches=numberOfPitches[i],
+                #                 staffLines=staffLines, lineDist=lineDist, compNum=self.compNum+(1/numberOfStems), beam=beam)
                 allNotes.append(newNote)
             return allNotes
 
@@ -272,7 +300,7 @@ class ConnectedComponent(object):
                                   componentImg=self.componentImg, binaryImg=self.fullBinaryImg, type=type, subType=subType, compNum=self.compNum)
 
     @staticmethod
-    def getLocationOfMidPoints(image, numOfStems):
+    def getLocationOfStems(image, numOfStems):
         transposedImage = np.transpose(image)
         amountColBlack = np.zeros(transposedImage.shape[0])
         # i is the row, j is the col
@@ -282,38 +310,117 @@ class ConnectedComponent(object):
             amountColBlack[i] += blackCounts
             if i > 0:
                 amountColBlack[i - 1] += blackCounts
-            if i < transposedImage.shape[0]-1:
+            if i < transposedImage.shape[0] - 1:
                 amountColBlack[i + 1] += blackCounts
         colBlackIndexSort = np.argsort(amountColBlack)[::-1]
         stemLocations = []
         colIndexCheck = 0
-        stemDistThreshold = transposedImage.shape[0]//(numOfStems+2)
+        stemDistThreshold = transposedImage.shape[0] // (numOfStems + 2)
         while len(stemLocations) < numOfStems:
             # take the cols with the most black that are far enough away from each other
             indexToAdd = colBlackIndexSort[colIndexCheck]
             appendIndex = True
             for prevIndex in stemLocations:
-                if abs(prevIndex-indexToAdd) < stemDistThreshold:
+                if abs(prevIndex - indexToAdd) < stemDistThreshold:
                     appendIndex = False
                     break
             if appendIndex:
                 stemLocations.append(indexToAdd)
             colIndexCheck += 1
         stemLocations.sort()
+        return stemLocations
+
+    @staticmethod
+    def getLocationOfMidPoints(stemLocations, numOfStems):
         stemMidPoints = []
         for i in range(numOfStems-1):
             stemMidPoints.append(int((stemLocations[i]+stemLocations[i+1])//2))
         return stemMidPoints
 
+    def findConnectedNoteAttributes(self, x0, y0, x1, y1, componentImg, stem, numPitches, staffLines, lineDist, compNum, beam):
+        # step 1: find midpoints between notes -> already done
+        # step 2: get separate components -> already done
+        # step 3: find stem in image (start and stop)
+        stemLocation = ConnectedComponent.getLocationOfStems(componentImg, 1)[0]
+
+        stemTop = None
+        stemBottom = None
+        for row in range(componentImg.shape[0]):
+            if componentImg[row][stemLocation] == 0 and stemTop == None:
+                stemTop = row
+            elif componentImg[row][stemLocation] == 255 and stemTop != None and stemBottom == None:
+                stemBottom = row-1
+                break
+        if stemBottom == None:
+            # the stem reaches the bottom of the image
+            stemBottom = componentImg.shape[0]
+        # step 4: include thershold pixels above and below it to make sure to include everything
+        includeThresholdPixels = 15
+        topRow = max(0, stemTop-includeThresholdPixels)
+        bottomRow = min(componentImg.shape[0], stemBottom+includeThresholdPixels)
+        componentImg = np.copy(componentImg[topRow:bottomRow, 0:componentImg.shape[1]])
+        y0 += topRow
+        y1 = y1 - componentImg.shape[0]-bottomRow
+        # step 5: using stem direction look at top or bottom half of image (half with noteheads)
+        if stem == "up":
+            # want bottom half
+            noteheadHalfImage = np.copy(componentImg[componentImg.shape[0]//2:, 0:componentImg.shape[1]])
+        elif stem == "down":
+            noteheadHalfImage = np.copy(componentImg[:componentImg.shape[0]//2, 0:componentImg.shape[1]])
+        else:
+            raise Exception("stem not up or down")
+        # step 6: find first left and right black pixel
+        transposedNoteheadImage = np.transpose(noteheadHalfImage)
+        leftBlackCol = None
+        rightBlackCol = None
+        for i in range(transposedNoteheadImage.shape[0]):
+            unique, counts = np.unique(transposedNoteheadImage[i], return_counts=True)  # Citations [13]
+            blackCounts = dict(zip(unique, counts)).get(0, 0)
+            if blackCounts > 0 and leftBlackCol == None:
+                leftBlackCol = i
+            elif blackCounts == 0 and rightBlackCol == None and leftBlackCol != None:
+                rightBlackCol = i-1
+        if rightBlackCol == None:
+            rightBlackCol = transposedNoteheadImage.shape[0]-1
+        # step 7: cut down image using new left and right bounding box
+        leftRightPixelThreshold = 8
+        leftBlackCol = max(0, leftBlackCol-leftRightPixelThreshold)
+        rightBlackCol = min(componentImg.shape[1], rightBlackCol+leftRightPixelThreshold)
+        componentImg = np.copy(componentImg[:, leftBlackCol:rightBlackCol+1])
+        x0 += leftBlackCol
+        x1 = x1 - componentImg.shape[1] - rightBlackCol+1
+        # step 8: using top half of image use 5 pixels left and 5 pixels right to find duration
+        if stem == "up":
+            # want top half
+            beamHalfImage = np.copy(componentImg[:componentImg.shape[0]//2, :])
+        elif stem == "down":
+            beamHalfImage = np.copy(componentImg[componentImg.shape[0]//2:, :])
+        else:
+            raise Exception("stem not up or down")
+        if beam == "begin":
+            duration = ConnectedComponent.getDurationOfConnectedNote(beamHalfImage, 0, 2)
+        elif beam == "end":
+            duration = ConnectedComponent.getDurationOfConnectedNote(beamHalfImage, 1, 2)
+        elif beam == "continue":
+            duration = ConnectedComponent.getDurationOfConnectedNote(beamHalfImage, 1, 3)
+        else:
+            raise Exception("beam is not begin end or continue")
+        print("duration: ", duration)
+        newNote = NoteComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=self.label,
+                        componentImg=componentImg, binaryImg=self.fullBinaryImg, duration=duration, stem=stem, numPitches=numPitches,
+                        staffLines=staffLines, lineDist=lineDist, compNum=compNum, beam=beam)
+        return newNote
+
     @staticmethod
-    def getDurationOfConnectedNote(image, noteNum, totalNum, stem, stemLocation):
+    def getDurationOfConnectedNote(image, noteNum, totalNum):
         transposedImage = np.transpose(image)
-        rightEdge = transposedImage[0]
-        leftEdge = transposedImage[transposedImage.shape[0]-1]
+        rightEdge = transposedImage[transposedImage.shape[0]-1]
+        leftEdge = transposedImage[0]
         leftEdgeNumBars = 0
         rightEdgeNumBars = 0
         lastSeenColor = 255
         if noteNum > 0:
+            print("not first note")
             # not the first note in connected notes
             # need to find left edge bars
             for i in range(leftEdge.shape[0]):
@@ -325,12 +432,14 @@ class ConnectedComponent(object):
         if noteNum < totalNum-1:
             # not the last note in the connected notes
             # need to find the right edge bars
+            print("not last note")
             for i in range(rightEdge.shape[0]):
                 curColor = rightEdge[i]
                 if lastSeenColor == 255 and curColor == 0:
                     # transitions from white to black
                     rightEdgeNumBars += 1
                 lastSeenColor = curColor
+        print(leftEdgeNumBars, rightEdgeNumBars)
         bars = max(leftEdgeNumBars, rightEdgeNumBars)
         if bars == 1:
             # only one bar found so eighth note
@@ -339,7 +448,7 @@ class ConnectedComponent(object):
             # two bars found so sixteenth note
             return "sixteenth"
         else:
-            raise Exception("Could not calculate duration for connected note")
+            raise Exception("Could not calculate duration for connected note, bars=%d"%bars)
 
 
 
@@ -806,3 +915,9 @@ class OtherComponent(ConnectedComponent):
 
         assert(self.typeName == "time signature")
         return self.subTypeName[0], self.subTypeName[1]
+
+class UnknownComponent(ConnectedComponent):
+    def __init__(self, x0, y0, x1, y1, label, componentImg, binaryImg, compNum, templatePath, canvasPath):
+        super().__init__(x0, y0, x1, y1, label, componentImg, binaryImg, compNum)
+        self.templatePath = templatePath
+        self.canvasPath = canvasPath

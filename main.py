@@ -2,10 +2,13 @@
 
 import os
 import sys
+import math
 #import paramiko #Citations [1,2,3,4]
 from pdf2image import convert_from_path #Citations [6]
 from preprocessing import preprocess
 from musicSymbolRecognition import musicSymbolRecognition
+from staffLineDetectionRemoval import staffLineDetectionRemoval
+from organizeComps import organizeComponents
 from generateMusicXml import formXML
 from sendToPi import sendFileToPi
 import warnings #Citations [5]
@@ -18,16 +21,27 @@ def pianoMan(shouldSend, pdfPath, fileName):
     # PARAMETERS: shouldSend: boolean, if true will send the outputXML to the raspberry pi at the end, otherwise will not
     # RETURN: None
 
+    allPageComponents, divisions, timeSig = pianoManGetAllComponents(shouldSend=shouldSend, pdfPath=pdfPath, fileName=fileName)
+    #got all the components, now need to reorganize by measures
+    pianoManOrganizeAndMakeXML(shouldSend, pdfPath, fileName, allPageComponents, divisions, timeSig)
+
+
+
+def pianoManGetAllComponents(shouldSend, pdfPath, fileName):
+    # DESCRIPTION: runs the omr on a pdf file, attempts to save xml and send to pi in some cases
+    # PARAMETERS: shouldSend: boolean, if true will send the outputXML to the raspberry pi at the end, otherwise will not
+    # RETURN: None
+
     # need to check if the file is already in the processed library
     scriptPath = os.path.dirname(os.path.realpath(__file__))
     libraryFileName = pdfPath[1:-4] + "-" + fileName
     libraryFileName = libraryFileName.replace("/", "-")
     libraryFilePath = scriptPath + "/library/" + libraryFileName + ".xml"
-    exists = os.path.isfile(libraryFilePath) #Citation 17
+    exists = os.path.isfile(libraryFilePath)  # Citation 17
     if exists:
         # it was already processed before, don't need to process again
         outputFilePath = scriptPath + "/outBoundFiles/outputXML.xml"
-        os.system('cp '+libraryFilePath + ' ' + outputFilePath) #Citation 18
+        os.system('cp ' + libraryFilePath + ' ' + outputFilePath)  # Citation 18
         if shouldSend:
             sendFileToPi("outputXML.xml")
         return
@@ -36,7 +50,7 @@ def pianoMan(shouldSend, pdfPath, fileName):
     pdfFileName = pdfPath.split(os.sep)[-1]
     jpgFileName = pdfFileName.split(".")[0]
     pdfPreFileName = pdfPath[:len(pdfPath) - len(pdfFileName)]
-    pages = convert_from_path(pdfPath, 500) #Citations [6]
+    pages = convert_from_path(pdfPath, 500)  # Citations [6]
 
     # save each page as a jpg image in the same directory
     for pageNum in range(len(pages)):
@@ -44,48 +58,77 @@ def pianoMan(shouldSend, pdfPath, fileName):
         fullJPGFileName = pdfPreFileName + jpgFileName + "-" + str(pageNum) + ".jpg"
         page.save(fullJPGFileName, 'JPEG')
 
-    # perform omr on each page separately and combine into allMeasures
-    allMeasures = []
+    # find all components on each page separately
+    allPageComponents = []
     divisions, timeSig, key = None, None, None
     for pageNum in range(len(pages)):
-        print("Working on page %d"%(pageNum))
+        print("Finding components for page %d" % (pageNum))
         imagePath = pdfPreFileName + jpgFileName + "-" + str(pageNum) + ".jpg"
         binaryImg = preprocess(path=imagePath)
+        newBinaryImg, staffLineRows = staffLineDetectionRemoval(binaryImg=binaryImg)
+        lineDist = getMedianLineDist(staffLines=staffLineRows)
         if pageNum == 0:
-            newMeasures, timeSig, divisions, key = musicSymbolRecognition(binaryImg=binaryImg, divisions=divisions)
+            # newMeasures, timeSig, divisions, key = musicSymbolRecognition(binaryImg=binaryImg, divisions=divisions, staffLineRows=staffLineRows, lineDist=lineDist)
+            # allMeasures += newMeasures
+            allComponents, timeSig, divisions = musicSymbolRecognition(binaryImg=binaryImg, divisions=divisions,
+                                                                       staffLineRows=staffLineRows, lineDist=lineDist)
+            allPageComponents.append((binaryImg, allComponents, lineDist))
+        else:
+            # Don't want to override timeSig and divisions
+            # newMeasures,_,divisions,_ = musicSymbolRecognition(binaryImg=binaryImg, divisions=divisions, staffLineRows=staffLineRows, lineDist=lineDist)
+            # allMeasures += newMeasures
+            allComponents, _, divisions = musicSymbolRecognition(binaryImg=binaryImg, divisions=divisions,
+                                                                 staffLineRows=staffLineRows, lineDist=lineDist)
+            allPageComponents.append((binaryImg, allComponents, lineDist))
+    return allPageComponents, divisions, timeSig
+
+def pianoManOrganizeAndMakeXML(shouldSend, pdfPath, fileName, allPageComponents, divisions, timeSig):
+    allMeasures = []
+    for pageNum in range(len(allPageComponents)):
+        print("Reorganizing components for page %d" % (pageNum))
+        binaryImg, pageComponents, lineDist = allPageComponents[pageNum]
+        if pageNum == 0:
+            newMeasures, key = organizeComponents(binaryImg=binaryImg, connectedComponents=pageComponents,
+                                                  lineDist=lineDist)
             allMeasures += newMeasures
         else:
-            #Don't want to override timeSig and divisions
-            newMeasures,_,divisions,_ = musicSymbolRecognition(binaryImg=binaryImg, divisions=divisions)
+            newMeasures, _ = organizeComponents(binaryImg=binaryImg, connectedComponents=pageComponents,
+                                                lineDist=lineDist)
             allMeasures += newMeasures
 
     # create the xml based on the measures found
     scriptPath = os.path.dirname(os.path.realpath(__file__))
     outputFilePath = scriptPath + "/outBoundFiles/outputXML.xml"
-    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1], fileName=fileName, outputFilePath=outputFilePath)
+    formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1], fileName=fileName,
+            outputFilePath=outputFilePath)
 
     # create the library xml file to keep the history so don't have to process twice
     scriptPath = os.path.dirname(os.path.realpath(__file__))
     libraryFileName = pdfPath[1:-4] + "-" + fileName
     libraryFileName = libraryFileName.replace("/", "-")
-    libraryFilePath = scriptPath + "/library/"+libraryFileName + ".xml"
+    libraryFilePath = scriptPath + "/library/" + libraryFileName + ".xml"
     formXML(allMeasures, divisions=divisions, key=key, timeBeats=timeSig[0], timeBeatType=timeSig[1], fileName=fileName,
             outputFilePath=libraryFilePath)
 
     # if arguments state to send the file to the raspberryPi, send it
     if shouldSend:
         sendFileToPi("outputXML.xml")
-        '''try:
-            ssh = createSSHClient() #Citations [1,2,3,4]
-            ftp_client = ssh.open_sftp()
-            scriptPath = os.path.dirname(os.path.realpath(__file__))
-            outGoingDest = scriptPath + "/outBoundFiles/outputXML.xml"
-            inComingDest = "/home/pi/Desktop/PianoManProject/MusicXML_MuseScore/outputXML.xml"
-            ftp_client.put(outGoingDest, inComingDest)
-            ftp_client.close()
-        except:
-            raise Exception("Could not make connection to raspberryPi. Make sure pi is on.")'''
 
+
+def getMedianLineDist(staffLines):
+    # DESCRIPTION: gets the median difference between an of the staff line rows
+    # PARAMETERS: staffLines: 2D List representing all the staff line locations on the page
+    # RETURN: the median distance between any two staff lines
+    singleYLines = []
+    for line in staffLines:
+        if len(line)%2 == 1:
+            singleYLines.append(line[math.floor(len(line)/2)])
+        else:
+            singleYLines.append(sum(line)/len(line))
+    distances = []
+    for i in range(1, len(singleYLines)):
+        distances.append(singleYLines[i]-singleYLines[i-1])
+    return sorted(distances)[int(len(distances)/2)]
 
 
 

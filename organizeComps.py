@@ -67,6 +67,12 @@ def reorganizeNotesByStaffLoc(connectedComponents):
     fullList = []
     for staff in notesByStaff:
         staff.sort(key=lambda note: note.x0)
+        # remove anything before the first measure bar location
+        itemNum = 0
+        while(not isinstance(staff[itemNum], MeasureBarComponent)):
+            itemNum += 1
+        staff = staff[itemNum:]
+
         fullList.append(staff)
     return fullList
 
@@ -247,7 +253,7 @@ def putAccentsOnNotesInMeasure(measure, accentToNoteDistThreshold, flatsSharps, 
             newMeasure.append(noteElem)
             noteElem.dottedPitches = [False]*len(noteElem.pitches)
             noteElem.alterPitches = ["natural"]*len(noteElem.pitches)
-            if lastAccentBeforeNoteRest != None and alterNextNote != None:
+            if lastAccentBeforeNoteRest != None and alterNextNote != None and noteElem.staff==lastAccentBeforeNoteRest.staff:
                 putAccidentalOnNote(noteElem, lastAccentBeforeNoteRest, flatsSharps, accentToNoteDistThreshold, measureNum)
             # need to check if the key or other accidentals in the measure alter each pitch
             for pitchIndex in range(len(noteElem.pitches)):
