@@ -197,7 +197,7 @@ def getAbletonInstructionImages(data):
     data.abletonInstructionBegin = []
     data.abletonInstructionEnd = []
     newHeight = 450
-    for i in range(7):
+    for i in range(8):
         fullFileName = instructionPath + "instruction" + str(i) + ".png"
         pillowImage = Image.open(fullFileName)
         # need height to be 500
@@ -205,7 +205,7 @@ def getAbletonInstructionImages(data):
         pillowImage = pillowImage.resize((int(pillowImage.size[0]*scale), newHeight), Image.ANTIALIAS)  # Citation 20
         currentInstruction = ImageTk.PhotoImage(pillowImage)
         data.abletonInstructionBegin.append(currentInstruction)
-    for i in range(7,11):
+    for i in range(8,12):
         fullFileName = instructionPath + "instruction" + str(i) + ".png"
         pillowImage = Image.open(fullFileName)
         # need height to be 500
