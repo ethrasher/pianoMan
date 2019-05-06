@@ -2,1359 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/guiImages/~$llBackground.docx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-doReMi-Do_Re_Mi-Do Re Mi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-doReMi-Do_Re_Mi-DoReMi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-happyBirthday-easy-Happy_Birthday_To_You_C_Major-hb.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-happyBirthday-easy-Happy_Birthday_To_You_C_Major-hb3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-hedwigsTheme-Hedwigs_Theme_EASY-hedwig.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-hedwigsTheme-Hedwigs_Theme_EASY-hedwigs2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-hedwigsTheme-Hedwigs_Theme_EASY-hedwigs3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans4.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-youveGotAFriendInMe-Youve_Got_A_Friend_In_Me-yg.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-youveGotAFriendInMe-Youve_Got_A_Friend_In_Me-yg2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-youveGotAFriendInMe-Youve_Got_A_Friend_In_Me-yg3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Havana/Havana___Camila_Cabello.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/IKONLoveScenario/IKON_Love_Scenario-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/IKONLoveScenario/IKON_Love_Scenario-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/IKONLoveScenario/IKON_Love_Scenario.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/aLoveStory/A_Love_Story-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/aLoveStory/A_Love_Story-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/aLoveStory/A_Love_Story.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/doReMi/Do_Re_Mi-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/doReMi/Do_Re_Mi.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/gameOfThronesTheme/Game_of_Thrones_Easy_piano-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/gameOfThronesTheme/Game_of_Thrones_Easy_piano-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/gameOfThronesTheme/Game_of_Thrones_Easy_piano-2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/gameOfThronesTheme/Game_of_Thrones_Easy_piano.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/happyBirthday-easy/Happy_Birthday_To_You_C_Major-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/happyBirthday-easy/Happy_Birthday_To_You_C_Major.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/happyBirthday/Happy_Birthday_To_You_Piano-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/happyBirthday/Happy_Birthday_To_You_Piano.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/hedwigsTheme/Hedwigs_Theme_EASY-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/hedwigsTheme/Hedwigs_Theme_EASY.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/swansOnTheLakeEasy/Swans_on_the_lake_easy-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/swansOnTheLakeEasy/Swans_on_the_lake_easy-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/swansOnTheLakeEasy/Swans_on_the_lake_easy.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/youveGotAFriendInMe/Youve_Got_A_Friend_In_Me-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/youveGotAFriendInMe/Youve_Got_A_Friend_In_Me.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component100.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component104.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component105.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component108.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component109 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component109.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component110.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component111.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component122 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component125.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component128.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component129.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component133.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component134 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component134.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component141.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component144.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component145.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component146 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component146.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component147 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component147.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component148.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component149.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component150 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component150.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component151.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component154.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component158 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component158.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component159.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component160 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component160.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component161.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component162.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component163.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component196.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component197 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component197.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component198.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component199.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component200.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component205.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component212.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component213.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component214.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component217 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component217.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component218.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component219.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component220 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component220.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component223.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component225.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component226 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component226.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component227.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component228.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component229.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component230.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component231.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component235.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component236.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component237.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component238.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component239.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component24 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component240.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component246.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component247.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component248.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component26.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component261.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component269.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component27 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component27.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component271.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component28.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component281.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component282 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component282.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component283.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component285.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component287.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component288.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component289 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component289.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component29.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component290.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component291.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component296.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component297.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component298.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component299.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component332.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component333.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component344.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component348.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component35.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component353.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component354.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component355.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component356 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component356.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component357.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component364.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component365.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component38.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component39 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component39.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component43 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component43.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component45.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component48.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component56 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component56.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component57.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component59.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component61.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component62.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component66.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component665.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component666.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component667.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component69.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component70 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component70.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component71.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component72.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component74.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component76.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component77.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component78 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component78.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component79.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component80 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component80.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component82.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component84.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component85.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component86 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component86.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component87 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component87 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component88.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component89.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component90.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component91.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component92.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/dot/component94.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component114.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component121.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component125 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component143.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component159 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component164.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component182.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component200 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component204.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component215.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component225 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component233.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component253.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component278.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component288 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component29 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component293.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component297 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component317.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component337.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component341.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component355 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component361.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component38 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component668.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component670.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component73.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component86 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component87.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/flat/component97 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/natural/component148 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/natural/component229 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/natural/component292.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/natural/component77 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/other/component241.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/other/component300.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/other/component387.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/other/component497.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component133 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component141 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component169.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component213 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component247 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component276.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component312.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component342.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component45 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component52.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component64.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component71 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component80 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component93.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component97.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component98.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/sharp/component99.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component124.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component155.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component175.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component237.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component246.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component303.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component306.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component328.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component334.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component358.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component359.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component364.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component39.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_accent/tie/component459.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component10 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component111 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component123.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component124.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component154.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component161.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component162.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component164 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component164.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component165 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component165.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component166.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component167.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component193.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component194.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component195.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component2 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component2 copy 3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component2 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component226.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component227.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component229.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component230.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component231.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component240.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component242.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component243.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component244.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component25.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component255.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component256.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component257.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component28.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component294.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component295.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component3 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component3 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component301.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component302 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component302.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component304.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component305.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component316.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component362.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component363.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component364.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component365.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component366.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component367.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component368.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component369.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component370.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component371.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component372.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component373.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component374.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component375.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component376.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component377.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component378.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component379.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component380.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component425.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component429.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component431.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component432.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component44.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component446.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component447.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component46.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component47.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component48 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component48.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component49 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component49.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component5 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component50 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component50.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component51 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component51.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component52 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component52.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component54.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component569.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component575.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component58.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component585.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component60.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component61.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component62.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component63.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component642.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component643.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component65.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component72.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component74.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component8 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component84.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component88.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component89.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component9 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component90.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component91 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component91.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component92.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component93.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_alphaNum/component95.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component102 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component102.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component130.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component131.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component140.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component145.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component153.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component209.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component216 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component216.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component217.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component266.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component279.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component281.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component32.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component342.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component347.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component39.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component54.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component65.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component67.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component68.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component74.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_base/component83.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component1 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component1 copy 3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component1 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component113 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component113.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component153.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component163.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component168 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component168.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component225.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component232.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component246.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component29.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component296.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component308.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component42.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component53.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component61.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component73.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component83.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component92.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_clef_treble/component96.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component10 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component102.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component104.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component105.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component106.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component107.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component108.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component109.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component11 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component11 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component11.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component110 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component110.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component111 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component111.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component113.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component114.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component115.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component116 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component116.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component117.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component118.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component119.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component120.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component121.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component123.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component124.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component125.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component13 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component14 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component158.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component160.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component162.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component164.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component165.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component171.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component173.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component174.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component175.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component176.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component177 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component177.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component178 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component178.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component180 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component180.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component181.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component182.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component183.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component184.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component185.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component186.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component189.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component191.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component193.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component194.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component195.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component229.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component230.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component231.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component232.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component233.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component243.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component244.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component245.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component246.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component248.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component25.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component250.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component251.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component259.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component26.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component260.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component261.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component262.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component263.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component27.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component29.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component304.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component305.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component306.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component307.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component308.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component309.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component31.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component310.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component312.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component315.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component32.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component328.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component329.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component33.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component330.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component331.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component332.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component333.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component35.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component36 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component36.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component37 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component38.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component39.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component40.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component50.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component51.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component52.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component53.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component54.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component55.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component6 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component63.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component64.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component65 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component65.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component66 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component66.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component67 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component67.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component68.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component69.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component70.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component80.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component81.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component82.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component83.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component84.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component85.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component88.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component89.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component9 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component90.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component91.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_measure_bar/component92.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_half/2/component147.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_half/2/component205 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_half/2/component207.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_half/2/component269.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_half/2/component275.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_half/2/component282.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_half/2/component283.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_half/2/component334.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_half/2/component343.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_half/3/component63.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component100.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component101.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component140.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component141.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component142.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component143.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component148.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component149.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component199.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component200.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component203.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component204.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component205.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component206.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component208.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component209.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component210.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component26.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component27.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component28.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component29.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component30.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component31.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component85.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component86.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component89.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component90.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component91.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component92.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemDown/note_quarter/2/component99.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemUp/note_half/2/component336.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemUp/note_half/2/component396.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemUp/note_half/2/component86.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_chord/stemUp/note_quarter/2/component335.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component119.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component126.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component173.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component174 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component187.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component188.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component199.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component204.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component266.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component320.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component51.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component52.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component53.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component55.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component58.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/11/component73.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/111/component187.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/111/component265.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/111/component267.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/111/component268.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/111/component269.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/111/component270.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/111/component335.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemDown/111/component72.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component102.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component103.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component107.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component117.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component118.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component171.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component174.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component176.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component177.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component178.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component183.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component184.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component186.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component238.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component239.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component248.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component250.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component252.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component254.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component283.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component303.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component32.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component329.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component33.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component45.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component59.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component6 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component6.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component64.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/11/component94.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/111/component170.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/111/component172.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/111/component249.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/111/component251.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/111/component313.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/111/component314.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/111/component315.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/111/component317.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/111/component321.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component101.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component112.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component123.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component26.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component316.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component322.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component43.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component48.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component62.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/1111/component97.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/21/component412.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/22/component267.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_connected/stemUp/22/component93.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component118.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component123 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component127.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component190.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component191.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component192.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component261.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component262.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component284.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component286.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component293.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component295.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component309.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component310.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component318.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component319 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component319.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component336.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component350.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component352.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component359.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component361.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component50.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemDown/component54.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component104.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component106.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component16 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component166.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component170 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component18 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component180.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component181.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component183.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component19 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component210.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component212.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component22 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component22.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component236.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component237.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component258.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component27.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component273.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component275.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component278.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component280.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component30.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component302.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component324.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component325 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component325.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component344.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component346.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component47.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component58 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component88.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component89.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component95 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_eighth/stemUp/component96.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component104.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component106.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component107.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component108.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component110.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component111.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component115.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component116.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component118.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component119.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component120.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component126.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component128 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component128.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component129 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component129.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component130 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component130.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component134.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component139.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component141.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component142.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component146.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component169.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component182.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component187.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component188.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component190.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component194.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component208.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component210 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component210.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component211.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component217.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component272.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component274.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component279.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component28.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component280 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component280.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component29.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component31.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component311.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component32.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component33.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component34.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component36.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component362.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component363.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component37.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component38.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component39.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component40.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component41.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component57.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component58.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component59.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component65.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component66.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component67.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component70 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component70.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component74.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemDown/component90.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component100 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component100.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component103.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component15 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component195.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component205.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component206.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component235.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component238.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component239.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component241 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component241.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component255.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component26.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component260.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component27.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component299.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component30.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component323.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component340.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component341.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component35.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component44.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component46.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component48.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component63 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component63.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component64 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component64.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component97.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component98 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_half/stemUp/component98.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component101 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component103.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component105.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component107.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component108.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component109.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component124 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component124.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component125 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component125.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component126.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component127 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component127.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component129.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component131 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component132 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component132 copy 3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component132.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component133 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component133.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component136 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component136.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component137 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component137.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component138 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component138.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component140.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component142.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component143.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component144.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component147.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component152 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component152.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component153.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component154.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component155 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component156 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component157 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component158.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component159.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component16 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component16.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component169.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component176.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component179.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component186.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component187.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component188.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component189.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component191.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component192.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component198.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component201.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component202 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component202.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component203 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component203.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component207 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component211 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component212.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component215.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component219 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component219.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component220.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component221 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component221 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component221.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component222 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component222.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component223 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component223.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component224 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component224.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component227.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component228 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component232.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component233.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component234.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component254.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component257.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component263.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component267.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component268.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component271 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component271.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component272.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component273.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component274.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component283.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component285.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component286.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component287.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component290.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component291.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component292.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component294.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component300.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component313.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component314.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component318.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component324.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component327 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component327.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component335.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component339.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component345 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component346.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component348.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component349.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component351.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component352.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component354.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component357.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component358 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component358.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component360.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component40.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component41 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component41.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component42 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component46.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component460.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component461.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component462.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component463.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component465.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component466.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component467.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component47.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component476.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component479.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component482.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component483.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component484.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component49.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component50.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component51.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component52.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component53.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component54 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component54.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component55.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component551.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component552.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component553.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component555.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component556.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component557.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component56.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component61.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component62.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component64.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component68.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component69.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component71.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component73.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component74.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component75 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component75.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component76.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component80.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component81.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component82.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component83.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component84.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component85.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component94 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component96.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemDown/component99 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component10.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component100.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component101.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component105 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component114 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component114.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component115 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component115.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component119.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component120.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component122.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component127 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component128.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component13 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component130.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component131.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component132 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component134.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component135 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component136 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component137 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component138 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component139.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component14 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component142 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component151.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component155.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component156.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component157.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component159 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component161.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component163.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component165.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component167.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component168 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component168.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component169 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component17 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component170.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component171.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component172.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component174.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component176 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component179 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component184.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component185.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component187 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component189 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component19 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component19 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component190.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component193.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component2 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component2 copy 3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component2 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component20 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component20 copy 3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component20 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component206.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component207.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component208.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component209 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component209.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component211.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component213.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component214 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component214.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component215 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component216.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component218.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component228.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component234 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component236.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component24.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component240.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component242 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component242.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component25 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component25.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component255.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component256 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component256.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component258.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component259.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component264.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component272 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component273 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component274 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component276.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component277 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component277.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component279.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component28 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component28.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component281.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component284.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component298.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component3 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component3 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component301.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component31.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component311.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component320.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component321.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component322.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component326 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component326.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component328.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component330.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component331.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component338.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component34.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component340.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component343.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component345.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component347.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component349 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component35.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component350.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component351 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component353.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component359.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component360 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component38.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component4 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component4 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component4.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component42.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component43.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component44.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component45.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component49 copy 2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component49 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component5 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component57 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component57.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component58.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component59.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component60.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component61 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component62 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component63 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component63.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component65.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component66.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component67.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component72.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component75 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component76 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component78.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component79 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component79.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component87.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component94.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component98.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_quarter/stemUp/component99.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_sixteenth/stemUp/component253.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_sixteenth/stemUp/component257.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_sixteenth/stemUp/component323.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component101.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component103.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component117.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component123.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component124.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component131.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component135.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component17.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component20.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component21.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component25 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component25.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component26.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component40.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component41.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component53.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component55.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component57.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component58.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component59.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component60.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component68.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component71.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component72.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component81.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component82.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component85.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component87.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component88.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_note_whole/component93.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component120.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component121.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component200.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component201.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component337.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component338.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component339.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component42.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component43.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component44.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component45.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component46.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component47.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component48 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component48.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component49.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_eighth/component77.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_quarter/component157.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_quarter/component45.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_quarter/component71.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_rest_quarter/component72.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component113.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component117 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component12.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component121.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component126.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component13.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component14.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component15.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component166.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component181.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component185.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component196.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component234.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component252.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component264.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component28.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component316.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component334.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component37.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component41.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component56.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component68.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component71.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component86.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_staveSwirl/component93.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/34/component112.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/34/component149.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/34/component172.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/34/component219.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/34/component40.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/34/component68.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/34/component7.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/34/component9.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/38/component19.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/44/component18.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/44/component23.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/44/component30.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/44/component34.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/44/component5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/44/component69.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/44/component75.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates copy/aaa_timeSignature/44/component8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_alphaNum/component316.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_alphaNum/component72.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_half/stemDown/component129.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_half/stemDown/component169.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_half/stemDown/component182.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_half/stemDown/component188.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_half/stemDown/component194.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_sixteenth/stemUp/component253.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_sixteenth/stemUp/component257.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_note_sixteenth/stemUp/component323.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component113.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component117 copy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component121.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component126.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component166.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component181.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component185.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component196.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component234.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component252.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component264.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component316.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component334.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component41.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component56.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component68.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component71.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component86.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/templates/aaa_staveSwirl/component93.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Ableton instructions/0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-FurElise-Fur_Elise_Easy_Piano-Fur Elise.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-JingleBells-Jingell_Bells_Easy_Piano-Jingle Bells.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-doReMi-Do_Re_Mi-Do Re Mi.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-happyBirthday-Happy_Birthday_To_You_Piano-Happy Birthday 2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-happyBirthday-easy-Happy_Birthday_To_You_C_Major-Happy Birthday 1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-hedwigsTheme-Hedwigs_Theme_EASY-Hedwigs Theme.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans on the lake.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-twinkleTwinkle-Twinkle_Twinkle_Little_Star_Easy-Twinkle Twinkle.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-youveGotAFriendInMe-Youve_Got_A_Friend_In_Me-Youve Got A Friend In Me.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/FurElise/Fur_Elise_Easy_Piano-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/FurElise/Fur_Elise_Easy_Piano.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/IKONLoveScenario/IKON_Love_Scenario-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/IKONLoveScenario/IKON_Love_Scenario-1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/IKONLoveScenario/IKON_Love_Scenario.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/JingleBells/Jingell_Bells_Easy_Piano-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/JingleBells/Jingell_Bells_Easy_Piano.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/doReMi/Do_Re_Mi-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/doReMi/Do_Re_Mi.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/happyBirthday-easy/Happy_Birthday_To_You_C_Major-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/happyBirthday-easy/Happy_Birthday_To_You_C_Major.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/happyBirthday/Happy_Birthday_To_You_Piano-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/happyBirthday/Happy_Birthday_To_You_Piano.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/hedwigsTheme/Hedwigs_Theme_EASY-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/hedwigsTheme/Hedwigs_Theme_EASY.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/swansOnTheLakeEasy/Swans_on_the_lake_easy-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/swansOnTheLakeEasy/Swans_on_the_lake_easy-1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/swansOnTheLakeEasy/Swans_on_the_lake_easy.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/twinkleTwinkle/Twinkle_Twinkle_Little_Star_Easy-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/twinkleTwinkle/Twinkle_Twinkle_Little_Star_Easy.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/youveGotAFriendInMe/Youve_Got_A_Friend_In_Me-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/youveGotAFriendInMe/Youve_Got_A_Friend_In_Me.pdf" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction0.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction1.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction2.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction3.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction4.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction5.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction5.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction6.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/performanceScoreEvaluator/midi/performance.mid" afterPath="$PROJECT_DIR$/performanceScoreEvaluator/midi/performance.mid" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction7.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction8.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction9.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction9.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connectedCompObj.py" afterPath="$PROJECT_DIR$/connectedCompObj.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generateMusicXml.py" afterPath="$PROJECT_DIR$/generateMusicXml.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/organizeComps.py" afterPath="$PROJECT_DIR$/organizeComps.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/end.txt" afterPath="$PROJECT_DIR$/outBoundFiles/end.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" afterPath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/start.txt" afterPath="$PROJECT_DIR$/outBoundFiles/start.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py" afterPath="$PROJECT_DIR$/performanceScoreEvaluator/sendToPi.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/segmentationAndRecognition.py" afterPath="$PROJECT_DIR$/segmentationAndRecognition.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1368,11 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="455" column="111" lean-forward="false" selection-start-line="455" selection-start-column="111" selection-end-line="455" selection-end-column="111" />
+            <state relative-caret-position="14">
+              <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
               <folding>
                 <element signature="e#16#46#0" expanded="true" />
               </folding>
@@ -1383,8 +77,8 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-325">
-              <caret line="64" column="22" lean-forward="false" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="22" />
+            <state relative-caret-position="15">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
                 <element signature="e#84#93#0" expanded="true" />
               </folding>
@@ -1404,69 +98,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="56" column="23" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="23" />
               <folding>
                 <element signature="e#222#232#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="connectedCompObj.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/connectedCompObj.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="928" column="18" lean-forward="false" selection-start-line="928" selection-start-column="8" selection-end-line="928" selection-end-column="18" />
-              <folding>
-                <element signature="e#113#123#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="generateMusicXml.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="outputXML.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="organizeComps.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/organizeComps.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="135" column="38" lean-forward="false" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1483,10 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getDurationOfConnectedNote</find>
-      <find>cv2</find>
-      <find>fileName</find>
-      <find>copy</find>
       <find>findConnec</find>
       <find>sixteenth</find>
       <find>main</find>
@@ -1508,11 +142,15 @@
       <find>&quot;normal</find>
       <find>data.speedLabels</find>
       <find>pianoManOrg</find>
-      <find>generateMusic</find>
-      <find>divisions</find>
       <find>data.timeSig</find>
       <find>timeSig</find>
+      <find>Organize</find>
+      <find>Ableton</find>
+      <find>library</find>
+      <find>divisions</find>
+      <find>generateMusic</find>
       <find>getTimeSig</find>
+      <find>&quot;space</find>
     </findStrings>
     <replaceStrings>
       <replace>16th</replace>
@@ -1540,11 +178,11 @@
         <option value="$PROJECT_DIR$/performanceScoreEvaluator/performanceScoreEvaluator.py" />
         <option value="$PROJECT_DIR$/AllCitations.txt" />
         <option value="$PROJECT_DIR$/musicSymbolRecognition.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/generateMusicXml.py" />
         <option value="$PROJECT_DIR$/organizeComps.py" />
         <option value="$PROJECT_DIR$/connectedCompObj.py" />
         <option value="$PROJECT_DIR$/segmentationAndRecognition.py" />
+        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/gui.py" />
       </list>
     </option>
@@ -1597,12 +235,22 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
-              <item name="AbletonInstructions" type="cbb8eebc:String" user="AbletonInstructions" />
+              <item name="library" type="cbb8eebc:String" user="library" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="music_images" type="cbb8eebc:String" user="music_images" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
               <item name="outBoundFiles" type="cbb8eebc:String" user="outBoundFiles" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="performanceScoreEvaluator" type="cbb8eebc:String" user="performanceScoreEvaluator" />
             </path>
           </expand>
           <select />
@@ -1801,13 +449,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/staffLineDetectionRemoval.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="63" column="36" lean-forward="false" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/musicSymbolRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1996,14 +637,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/musicSymbolRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2037,22 +670,27 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Ableton instructions/0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-325">
-          <caret line="64" column="22" lean-forward="false" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="22" />
+        <state relative-caret-position="15">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
             <element signature="e#84#93#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
+    <entry file="file://$PROJECT_DIR$/gui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        <state relative-caret-position="14">
+          <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#16#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2065,12 +703,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
+    <entry file="file://$PROJECT_DIR$/generateMusicXml.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="56" column="23" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="23" />
+        <state relative-caret-position="195">
+          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
           <folding>
-            <element signature="e#222#232#0" expanded="true" />
+            <element signature="e#0#22#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2085,12 +723,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui.py">
+    <entry file="file://$PROJECT_DIR$/performanceScoreEvaluator/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="455" column="111" lean-forward="false" selection-start-line="455" selection-start-column="111" selection-end-line="455" selection-end-column="111" />
+        <state relative-caret-position="166">
+          <caret line="14" column="8" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="56" column="23" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="23" />
           <folding>
-            <element signature="e#16#46#0" expanded="true" />
+            <element signature="e#222#232#0" expanded="true" />
           </folding>
         </state>
       </provider>

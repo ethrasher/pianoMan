@@ -43,7 +43,11 @@ def pianoManGetAllComponents(shouldSend, pdfPath, fileName):
     if exists:
         # it was already processed before, don't need to process again
         outputFilePath = scriptPath + "/outBoundFiles/outputXML.xml"
+        print("Working on copying")
+        print("libraryFilePath", libraryFilePath)
+        print("outputFilePath", outputFilePath)
         os.system('cp ' + libraryFilePath + ' ' + outputFilePath)  # Citation 18
+        print("Done copy")
         if shouldSend:
             sendFileToPi("outputXML.xml")
         return

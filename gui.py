@@ -126,8 +126,6 @@ class TextBox(object):
                 self.text += "-"
             elif key == "underscore":
                 self.text += "_"
-            elif key == "space":
-                self.text += " "
             else:
                 pass
 
@@ -195,7 +193,7 @@ def getAbletonInstructionImages(data):
     data.abletonInstructionBegin = []
     data.abletonInstructionEnd = []
     newHeight = 450
-    for i in range(6):
+    for i in range(7):
         fullFileName = instructionPath + "instruction" + str(i) + ".png"
         pillowImage = Image.open(fullFileName)
         # need height to be 500
@@ -203,7 +201,7 @@ def getAbletonInstructionImages(data):
         pillowImage = pillowImage.resize((int(pillowImage.size[0]*scale), newHeight), Image.ANTIALIAS)  # Citation 20
         currentInstruction = ImageTk.PhotoImage(pillowImage)
         data.abletonInstructionBegin.append(currentInstruction)
-    for i in range(6,10):
+    for i in range(7,11):
         fullFileName = instructionPath + "instruction" + str(i) + ".png"
         pillowImage = Image.open(fullFileName)
         # need height to be 500
@@ -434,7 +432,7 @@ def redrawAll(canvas, data):
     elif data.mode == "abletonInstructionBegin":
         currentInstruction = data.abletonInstructionBegin[data.currentInstructionNumber]
         canvas.create_image(data.width//2, data.height//2, image=currentInstruction)
-        if data.currentInstructionNumber == 3:
+        if data.currentInstructionNumber == 4:
             # on the bpm page
             canvas.create_rectangle(data.width//2 - 200, data.height//2+100, data.width//2 + 200, data.height//2 + 200, fill="black", width=3, outline="white")
             canvas.create_text(data.width//2, data.height//2 + 120, text = "BPM to use:", fill="white", font = "Times 30 bold")
@@ -451,7 +449,7 @@ def redrawAll(canvas, data):
             else:
                 raise Exception("not possible speed label: %s"%str(data.speedLabel))
             canvas.create_text(data.width//2, data.height//2 + 160, text = speed, fill="white", font="Times 25 bold")
-        elif data.currentInstructionNumber == 4:
+        elif data.currentInstructionNumber == 5:
             # on the time sig page
             canvas.create_rectangle(data.width//2 - 200, data.height//2+100, data.width//2 + 200, data.height//2 + 200, fill="black", width=3, outline="white")
             canvas.create_text(data.width//2, data.height//2 + 120, text = "Time Signature to use:", fill="white", font = "Times 30 bold")
