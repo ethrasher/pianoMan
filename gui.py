@@ -8,6 +8,7 @@ from connectedCompObj import UnknownComponent
 from sendToPi import sendFileToPi
 from performanceScoreEvaluator.main import main
 from PIL import ImageTk,Image
+import xml.etree.ElementTree as ET
 
 
 ####################################
@@ -128,7 +129,7 @@ class TextBox(object):
             elif key == "space":
                 self.text += " "
             else:
-                print(key)
+                pass
 
     def draw(self, canvas):
         canvas.create_rectangle(self.x0-150, self.y0, self.x0, self.y1, fill="black")
@@ -202,7 +203,7 @@ def getAbletonInstructionImages(data):
         pillowImage = pillowImage.resize((int(pillowImage.size[0]*scale), newHeight), Image.ANTIALIAS)  # Citation 20
         currentInstruction = ImageTk.PhotoImage(pillowImage)
         data.abletonInstructionBegin.append(currentInstruction)
-    for i in range(6,9):
+    for i in range(6,10):
         fullFileName = instructionPath + "instruction" + str(i) + ".png"
         pillowImage = Image.open(fullFileName)
         # need height to be 500
@@ -247,6 +248,21 @@ def getUnknownComponentImages(data):
             Image.ANTIALIAS)  # Citation 20
         currentUnknownCanvasImage = ImageTk.PhotoImage(pillowPageImage)
         data.unknownImages.append((currentUnknownCompImage, currentUnknownCanvasImage))
+
+def getXMLTimeSig():
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    path = scriptPath + "/outBoundFiles/outputXML.xml"
+    tree = ET.parse(path) # From https://docs.python.org/2/library/xml.etree.elementtree.html
+    root = tree.getroot()
+    # 2 gets to part
+    # 0 gets to first measure
+    # 0 gets to attributes
+    # 2 gets to time
+    time = root[2][0][0][2]
+    timeSigTop = time.find('beats').text
+    timeSigBottom = time.find('beat-type').text
+    return (timeSigTop, timeSigBottom)
+
 
 def init(data, sendToPi):
     scriptPath = os.path.dirname(os.path.realpath(__file__))
@@ -361,6 +377,18 @@ def mousePressed(root, event, data):
             data.currentInstructionNumber = max(0, data.currentInstructionNumber - 1)
     elif data.mode == "explainPerformanceScore":
         if data.donePerformanceButton.clickedInside(event.x, event.y):
+            performance_path = ''
+            end_path = ''
+            try:
+                scriptPath = os.path.dirname(os.path.realpath(__file__))
+                performance_path = scriptPath + "/performanceScoreEvaluator/midi/performance.mid"
+                os.remove(performance_path)
+                end_path = scriptPath + "/outBoundFiles/end.txt"
+                os.remove(end_path)
+            except OSError:
+                print("performance path: ", performance_path)
+                print("end path: ", end_path)
+                print("Error while deleting files.")
             init(data, data.sendToPi)
 
 
@@ -369,28 +397,6 @@ def keyPressed(event, data):
     data.fileNameTextBox.updateText(event.keysym)
 
 def timerFired(data):
-    '''if data.startError == "Processing...":
-        #pianoMan(False, data.musicPdfPath, data.fileNameTextBox.text)
-        pianoOutComps = pianoManGetAllComponents(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text)
-        if pianoOutComps != None:
-            data.allPageComponents, data.divisions, data.timeSig = pianoOutComps
-            data.unknownCompLocations = getUnknownComponentLocations(data.allPageComponents)
-            print("Unknown comp locations: ", data.unknownCompLocations)
-        if len(data.unknownCompLocations) == 0:
-            #all components are already known
-            pianoManOrganizeAndMakeXML(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text, allPageComponents=data.allPageComponents, divisions=data.divisions, timeSig = data.timeSig)
-            if data.sendToPi:
-                sendFileToPi("outputXML.xml")
-            pdfPath = data.musicPdfPath
-            data.maxPageNumber = getMaxPageNumber(pdfPath)
-            data.startError = ""
-            data.mode = "abletonInstructionBegin"
-        else:
-            pdfPath = data.musicPdfPath
-            data.maxPageNumber = getMaxPageNumber(pdfPath)
-            data.startError = ""
-            getUnknownComponentImages(data)
-            data.mode = "findUnknownComponents"'''
     if data.startError == "Processing...":
         #pianoMan(False, data.musicPdfPath, data.fileNameTextBox.text)
         pianoOutComps = pianoManGetAllComponents(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text)
@@ -398,6 +404,10 @@ def timerFired(data):
             data.allPageComponents, data.divisions, data.timeSig = pianoOutComps
             data.unknownCompLocations = getUnknownComponentLocations(data.allPageComponents)
             pianoManOrganizeAndMakeXML(shouldSend=False, pdfPath=data.musicPdfPath, fileName=data.fileNameTextBox.text, allPageComponents=data.allPageComponents, divisions=data.divisions, timeSig = data.timeSig)
+        else:
+            # still need to know time sig for gui
+            # need to parse outputXML for it
+            data.timeSig = getXMLTimeSig()
         if data.sendToPi:
             sendFileToPi("outputXML.xml")
         pdfPath = data.musicPdfPath
@@ -424,6 +434,29 @@ def redrawAll(canvas, data):
     elif data.mode == "abletonInstructionBegin":
         currentInstruction = data.abletonInstructionBegin[data.currentInstructionNumber]
         canvas.create_image(data.width//2, data.height//2, image=currentInstruction)
+        if data.currentInstructionNumber == 3:
+            # on the bpm page
+            canvas.create_rectangle(data.width//2 - 200, data.height//2+100, data.width//2 + 200, data.height//2 + 200, fill="black", width=3, outline="white")
+            canvas.create_text(data.width//2, data.height//2 + 120, text = "BPM to use:", fill="white", font = "Times 30 bold")
+            if data.speedLabel == "1":
+                speed = "83.00"
+            elif data.speedLabel == "2":
+                speed = "71.00"
+            elif data.speedLabel == "3":
+                speed = "62.00"
+            elif data.speedLabel == "4":
+                speed = "56.00"
+            elif data.speedLabel == "5":
+                speed = "49.00"
+            else:
+                raise Exception("not possible speed label: %s"%str(data.speedLabel))
+            canvas.create_text(data.width//2, data.height//2 + 160, text = speed, fill="white", font="Times 25 bold")
+        elif data.currentInstructionNumber == 4:
+            # on the time sig page
+            canvas.create_rectangle(data.width//2 - 200, data.height//2+100, data.width//2 + 200, data.height//2 + 200, fill="black", width=3, outline="white")
+            canvas.create_text(data.width//2, data.height//2 + 120, text = "Time Signature to use:", fill="white", font = "Times 30 bold")
+            canvas.create_text(data.width//2, data.height//2 + 160, text = data.timeSig[0]+"/"+data.timeSig[1], fill="white", font="Times 25 bold")
+
         data.nextInstructionButton.draw(canvas=canvas)
         data.prevInstructionButton.draw(canvas=canvas)
         data.skipInstructionButton.draw(canvas=canvas)
@@ -443,6 +476,7 @@ def redrawAll(canvas, data):
     elif data.mode == "abletonInstructionEnd":
         currentInstruction = data.abletonInstructionEnd[data.currentInstructionNumber]
         canvas.create_image(data.width//2, data.height//2, image=currentInstruction)
+
         data.nextInstructionButton.draw(canvas=canvas)
         data.prevInstructionButton.draw(canvas=canvas)
         data.skipInstructionButton.draw(canvas=canvas)

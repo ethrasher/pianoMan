@@ -31,7 +31,7 @@ def generateMusicXML(fileName, outputFilePath, measureDuration, attributeDict, m
                 '''if "beam" in note:
                     if note["type"] == "eighth":
                         noteElement = etree.SubElement(measureElement, "note", attrib={"number":"1"})
-                    elif note["type"] == "sixteenth":
+                    elif note["type"] == "16th":
                         noteElement = etree.SubElement(measureElement, "note", attrib={"number": "2"})
                     else:
                         raise Exception("Could not turn beamed note into xml dictionary")
@@ -83,7 +83,6 @@ def formXMLDictionaryFromObjects(allMeasures, divisions):
     for measure in allMeasures:
         dictSingleMeasure = []
         seenBaseNote = False
-        print(type(measure))
         for noteElem in measure:
             #check for adding backup, check if it is the base staff
             if seenBaseNote == False and noteElem.staff%2 == 0:
@@ -111,7 +110,11 @@ def formAttributeDictionary(divisions, key, timeBeats, timeBeatType):
 def formXML(allMeasures, divisions, key, timeBeats, timeBeatType, fileName, outputFilePath):
     attribute = formAttributeDictionary(divisions=divisions, key=key, timeBeats=timeBeats, timeBeatType=timeBeatType)
     dictMeasures = formXMLDictionaryFromObjects(allMeasures=allMeasures, divisions=divisions)
-    measureDuration = str(int(attribute["time"]["beats"])*int(attribute["divisions"]))
+    topTimeSig = int(attribute["time"]["beats"])
+    bottomTimeSig = int(attribute["time"]["beat-type"])
+    measureDuration = str(topTimeSig*int(attribute["divisions"]))
+    if topTimeSig == 2 and bottomTimeSig == 2:
+        measureDuration = str(4 * int(attribute["divisions"]))
     generateMusicXML(fileName, outputFilePath, measureDuration, attribute, dictMeasures)
 
 

@@ -1,4 +1,4 @@
-fileName:hb3
-speed:1
+fileName:Do Re Mi
+speed:5
 hand:bass
-bpm:83
+bpm:49

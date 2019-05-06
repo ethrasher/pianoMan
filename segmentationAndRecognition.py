@@ -5,6 +5,7 @@
 import cv2
 import numpy as np
 import copy
+import time
 from connectedCompObj import ConnectedComponent, NoteComponent, RestComponent, MeasureBarComponent, AccentComponent, OtherComponent
 
 def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
@@ -13,6 +14,7 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
     #               staffLines: list of all the staff line indexes
     #               lineDist: the median distance between staff lines
     # RETURN: a list of all connected components with features detected
+    fullStartTime = time.time()
     connectedComponents = findConnectedComponents(binaryImg=binaryImg)
     saveComponentList = []
     showComponentList = []
@@ -21,12 +23,18 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
         #comp.saveComponent(False)
         compNum = comp.compNum
         if compNum in saveComponentList:
+            pass
             comp.saveComponent()
         if compNum in showComponentList:
+            pass
             comp.drawComponent()
             comp.drawComponentOnCanvas()
             cv2.waitKey(0)
+        startTime = time.time()
         templateObj = comp.templateMatch(staffLines=staffLines, lineDist = lineDist)
+        endTime = time.time()
+        print("Template match comp %d time: "%compNum, endTime-startTime)
+
         if type(templateObj) == tuple or type(templateObj) == list:
             for obj in templateObj:
                 templateObjList.append(obj)
@@ -36,11 +44,8 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
     timeSig = None
     smallestNoteType = None
     measuresToAddToTemplateList = []
-    print("len tempObjLst: ", len(templateObjList))
     for templateObj in templateObjList:
-        print(type(templateObj))
         if isinstance(templateObj, NoteComponent):
-            print("Inside note component thing")
             smallestNoteType = getSmallerNoteType(smallestNoteType, templateObj.durationName)
         #ignore rest and accent case. They are already done
         if isinstance(templateObj, MeasureBarComponent):
@@ -52,6 +57,8 @@ def segmentationAndRecognition(binaryImg, staffLines, lineDist, divisions):
                 timeSig = templateObj.getTimeSignature()
     templateObjList = templateObjList + measuresToAddToTemplateList
     divisions = getDivisions(smallestNoteType=smallestNoteType, divisions=divisions)
+    fullEndTime = time.time()
+    print("segmentationRecognition Time: ", fullEndTime-fullStartTime)
     return templateObjList, timeSig, divisions
 
 def findConnectedComponents(binaryImg):
@@ -97,10 +104,10 @@ def getSmallerNoteType(origNote, compareNote):
         origDuration = 3
     elif origNote == "eighth":
         origDuration = 2
-    elif origNote == "sixteenth":
+    elif origNote == "16th":
         origDuration = 1
     else:
-        raise Exception("OrigNote type not whole, half, quareter, eighth, sixteenth")
+        raise Exception("OrigNote type not whole, half, quareter, eighth, 16th")
 
     if compareNote == "whole":
         compareDuration = 5
@@ -110,10 +117,10 @@ def getSmallerNoteType(origNote, compareNote):
         compareDuration = 3
     elif compareNote == "eighth":
         compareDuration = 2
-    elif compareNote == "sixteenth":
+    elif compareNote == "16th":
         compareDuration = 1
     else:
-        raise Exception("CompareNote type not whole, half, quarter, eighth, sixteenth")
+        raise Exception("CompareNote type not whole, half, quarter, eighth, 16th")
 
     if compareDuration <= origDuration:
         return compareNote
@@ -124,7 +131,6 @@ def getDivisions(smallestNoteType, divisions):
     # DESCRIPTION: gets the division number based on the smallest note type in the song
     # PARAMETERS: smallestNoteType: string (whole, half, ...) representing the smallest note found before in the page
     # RETURN: integer representing the duration value to go into the xml
-    print("Smallest note type", smallestNoteType)
     if divisions == None:
         if smallestNoteType == "whole":
             return .25
@@ -134,10 +140,10 @@ def getDivisions(smallestNoteType, divisions):
             return 1
         elif smallestNoteType == "eighth":
             return 2
-        elif smallestNoteType == "sixteenth":
+        elif smallestNoteType == "16th":
             return 4
         else:
-            raise Exception("smallestNoteType not whole, half, quarter, eighth, sixteenth")
+            raise Exception("smallestNoteType is %s not whole, half, quarter, eighth, 16th"%(str(smallestNoteType)))
     else:
         if smallestNoteType == "whole":
             return max(divisions, .25)
@@ -147,10 +153,10 @@ def getDivisions(smallestNoteType, divisions):
             return max(divisions, 1)
         elif smallestNoteType == "eighth":
             return max(divisions, 2)
-        elif smallestNoteType == "sixteenth":
+        elif smallestNoteType == "16th":
             return max(divisions, 4)
         else:
-            raise Exception("smallestNoteType not whole, half, quarter, eighth, sixteenth")
+            raise Exception("smallestNoteType is %s not whole, half, quarter, eighth, 16th"%(str(smallestNoteType)))
 
 
 

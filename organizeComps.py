@@ -133,7 +133,7 @@ def getFlatsSharps(firstMeasure, accentToNoteDistThreshold):
                 # need to correct for the extra one added/subtracted to keySig
                 if lastNote.subTypeName == "sharp":
                     keySig -= 1
-                elif lastNote.subTypename == "flat":
+                elif lastNote.subTypeName == "flat":
                     keySig += 1
                 return getKeySigDict(keySig=keySig), keySig
         # All pitches were far enough away

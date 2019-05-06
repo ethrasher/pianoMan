@@ -3,6 +3,7 @@
 import os
 import sys
 import math
+import time
 #import paramiko #Citations [1,2,3,4]
 from pdf2image import convert_from_path #Citations [6]
 from preprocessing import preprocess
@@ -28,6 +29,7 @@ def pianoMan(shouldSend, pdfPath, fileName):
 
 
 def pianoManGetAllComponents(shouldSend, pdfPath, fileName):
+    startTime = time.time()
     # DESCRIPTION: runs the omr on a pdf file, attempts to save xml and send to pi in some cases
     # PARAMETERS: shouldSend: boolean, if true will send the outputXML to the raspberry pi at the end, otherwise will not
     # RETURN: None
@@ -80,6 +82,8 @@ def pianoManGetAllComponents(shouldSend, pdfPath, fileName):
             allComponents, _, divisions = musicSymbolRecognition(binaryImg=binaryImg, divisions=divisions,
                                                                  staffLineRows=staffLineRows, lineDist=lineDist)
             allPageComponents.append((binaryImg, allComponents, lineDist))
+    endTime = time.time()
+    print("pianoManGetAllComponents() time: ", endTime-startTime)
     return allPageComponents, divisions, timeSig
 
 def pianoManOrganizeAndMakeXML(shouldSend, pdfPath, fileName, allPageComponents, divisions, timeSig):

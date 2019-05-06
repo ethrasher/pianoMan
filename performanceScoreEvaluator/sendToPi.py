@@ -11,7 +11,6 @@ def sendFileToPi(fileName):
         #scriptPath = os.path.dirname(os.path.realpath(__file__))
         outGoingDest = fileName
         inComingDest = "/home/pi/Desktop/PianoManProject/MusicXML_MuseScore/end.txt"
-        print(outGoingDest)
         ftp_client.put(outGoingDest, inComingDest)
         ftp_client.close()
     except:

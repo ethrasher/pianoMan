@@ -4,6 +4,7 @@ import cv2
 import math
 import os
 import numpy as np
+import time
 
 class ConnectedComponent(object):
     def __init__(self, x0, y0, x1, y1, label, componentImg, binaryImg, compNum):
@@ -150,7 +151,7 @@ class ConnectedComponent(object):
             return NoteComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
                                  componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="eighth", stem=stem, numPitches=1,
                                  staffLines=staffLines, lineDist=lineDist, compNum=self.compNum)
-        elif templatePath.find("aaa_note_sixteenth") >= 0:
+        elif templatePath.find("aaa_note_16th") >= 0:
             stemDirString = templatePath.split("/")[-2]
             if stemDirString == "stemUp":
                 stem = "up"
@@ -159,7 +160,7 @@ class ConnectedComponent(object):
             else:
                 raise Exception("Could not get stem for half note, compNum:" + str(self.compNum))
             return NoteComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="sixteenth", stem=stem, numPitches=1,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="16th", stem=stem, numPitches=1,
                                  staffLines=staffLines, lineDist=lineDist, compNum=self.compNum)
         elif templatePath.find("aaa_note_chord") >= 0:
             # it is a multi-note chord
@@ -230,16 +231,34 @@ class ConnectedComponent(object):
                 allNotes.append(newNote)
             return allNotes
 
-        elif templatePath.find("aaa_rest_whole") >= 0:
+        elif templatePath.find("aaa_rest_whole") >= 0 or templatePath.find("aaa_rest_half") >= 0:
             # it is a whole rest
-            return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="whole", staffLines=staffLines,
-                                 compNum=self.compNum)
-        elif templatePath.find("aaa_rest_half") >= 0:
-            # it is a half rest
-            return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="half", staffLines=staffLines,
-                                 compNum=self.compNum)
+            print("MATCHED TO WHOLE REST")
+            durationName = None
+            for staffLine in staffLines:
+                for i in range(len(staffLine)):
+                    if abs(self.y0-staffLine[i]) <= 5:
+                        durationName = "whole"
+                        break
+                    elif abs(self.y1-staffLine[i]) <= 5:
+                        durationname = "half"
+                        break
+                if durationName != None:
+                    break
+
+            if durationName == None:
+                type = "alphaNum"
+                subType = None
+                print("Ignore 'rest' it because probably an alphanum")
+                return OtherComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
+                                      componentImg=self.componentImg, binaryImg=self.fullBinaryImg, type=type,
+                                      subType=subType, compNum=self.compNum)
+
+            else:
+                print("rest duration: ", durationName)
+                return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
+                                     componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration=durationName, staffLines=staffLines,
+                                     compNum=self.compNum)
         elif templatePath.find("aaa_rest_quarter") >= 0:
             # it is a quarter rest
             return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
@@ -250,10 +269,10 @@ class ConnectedComponent(object):
             return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
                                  componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="eighth", staffLines=staffLines,
                                  compNum=self.compNum)
-        elif templatePath.find("aaa_rest_sixteenth") >= 0:
-            # it is a sixteenth rest
+        elif templatePath.find("aaa_rest_16th") >= 0:
+            # it is a 16th rest
             return RestComponent(x0=self.x0, y0=self.y0, x1=self.x1, y1=self.y1, label=self.label,
-                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="sixteenth", staffLines=staffLines,
+                                 componentImg=self.componentImg, binaryImg=self.fullBinaryImg, duration="16th", staffLines=staffLines,
                                  compNum=self.compNum)
 
 
@@ -405,7 +424,6 @@ class ConnectedComponent(object):
             duration = ConnectedComponent.getDurationOfConnectedNote(beamHalfImage, 1, 3)
         else:
             raise Exception("beam is not begin end or continue")
-        print("duration: ", duration)
         newNote = NoteComponent(x0=x0, y0=y0, x1=x1, y1=y1, label=self.label,
                         componentImg=componentImg, binaryImg=self.fullBinaryImg, duration=duration, stem=stem, numPitches=numPitches,
                         staffLines=staffLines, lineDist=lineDist, compNum=compNum, beam=beam)
@@ -420,7 +438,6 @@ class ConnectedComponent(object):
         rightEdgeNumBars = 0
         lastSeenColor = 255
         if noteNum > 0:
-            print("not first note")
             # not the first note in connected notes
             # need to find left edge bars
             for i in range(leftEdge.shape[0]):
@@ -432,7 +449,6 @@ class ConnectedComponent(object):
         if noteNum < totalNum-1:
             # not the last note in the connected notes
             # need to find the right edge bars
-            print("not last note")
             for i in range(rightEdge.shape[0]):
                 curColor = rightEdge[i]
                 if lastSeenColor == 255 and curColor == 0:
@@ -445,9 +461,11 @@ class ConnectedComponent(object):
             # only one bar found so eighth note
             return "eighth"
         elif bars == 2:
-            # two bars found so sixteenth note
-            return "sixteenth"
+            # two bars found so 16th note
+            return "16th"
         else:
+            cv2.imshow('problem half', image)
+            cv2.waitKey(0)
             raise Exception("Could not calculate duration for connected note, bars=%d"%bars)
 
 
@@ -564,10 +582,10 @@ class NoteComponent(MeasureElem):
         #self.compNum = compNum
         # typeName could be: note, rest, measure bar, accent, clef, time signature, stave swirl, or alphaNum
         self.typeName = "note"
-        # durationName could be: whole, half, quarter, eighth, sixteenth
-        if not (duration in ["whole", "half", "quarter", "eighth", "sixteenth"]):
-            raise Exception("Duration not whole, half, quarter, eighth, sixteenth, duration=%s, compNum=%f"%(duration, self.compNum))
-        assert(duration in ["whole", "half", "quarter", "eighth", "sixteenth"])
+        # durationName could be: whole, half, quarter, eighth, 16th
+        if not (duration in ["whole", "half", "quarter", "eighth", "16th"]):
+            raise Exception("Duration not whole, half, quarter, eighth, 16th, duration=%s, compNum=%f"%(duration, self.compNum))
+        assert(duration in ["whole", "half", "quarter", "eighth", "16th"])
         self.durationName = duration
         self.numPitches = numPitches
         self.stem = stem
@@ -599,7 +617,7 @@ class NoteComponent(MeasureElem):
         par2 = 10
         prevDir = None
         rowOffset = 0
-        if self.durationName == "eighth" or self.durationName == "sixteenth":
+        if self.durationName == "eighth" or self.durationName == "16th":
             # need to get rid of stem which may trigger a circle to be found
             imageHalfPoint = int(self.componentImg.shape[0]//2)
             if self.stem == "up":
@@ -827,10 +845,10 @@ class NoteComponent(MeasureElem):
                 noteDict["duration"] = str(4 * divisions)
             elif self.durationName == "eighth":
                 noteDict["duration"] = str(int(divisions // 2))
-            elif self.durationName == "sixteenth":
+            elif self.durationName == "16th":
                 noteDict["duration"] = str(int(divisions // 4))
             else:
-                raise Exception("Duration not whole, half, quarter, eighth, or sixteenth")
+                raise Exception("Duration not whole, half, quarter, eighth, or 16th")
             noteDict["type"] = str(self.durationName)
             if self.durationName != "whole":
                 noteDict["stem"] = str(self.stem)
@@ -856,7 +874,7 @@ class RestComponent(MeasureElem):
         #self.compNum = compNum
         # typeName could be: note, rest, measure bar, accent, clef, time signature, stave swirl, or alphaNum
         self.typeName = "rest"
-        # durationName could be: whole, half, quarter, eighth, sixteenth
+        # durationName could be: whole, half, quarter, eighth, 16th
         self.durationName = duration
         self.getStaff(staffLines=staffLines, compNum=self.compNum)
 
@@ -875,10 +893,10 @@ class RestComponent(MeasureElem):
             restDict["duration"] = str(4 * divisions)
         elif self.durationName == "eighth":
             restDict["duration"] = str(int(divisions // 2))
-        elif self.durationName == "sixteenth":
+        elif self.durationName == "16th":
             restDict["duration"] = str(int(divisions // 4))
         else:
-            raise Exception("CompareNote type not whole, half, quarter, eighth, sixteenth")
+            raise Exception("CompareNote type not whole, half, quarter, eighth, 16th")
         restDict["type"] = str(self.durationName)
         restDict["staff"] = str(self.staff % 2)
         return [restDict]
