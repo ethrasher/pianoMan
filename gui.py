@@ -158,6 +158,10 @@ def writeFile(path, contents): #Citations
     with open(path, "wt") as f:
         f.write(contents)
 
+def readFile(path): #Citations
+    with open(path, "rt") as f:
+        return f.read()
+
 def getMaxPageNumber(pdfPath):
     pdfFileName = pdfPath.split(os.sep)[-1]
     jpgFileName = pdfFileName.split(".")[0]
@@ -261,6 +265,13 @@ def getXMLTimeSig():
     timeSigBottom = time.find('beat-type').text
     return (timeSigTop, timeSigBottom)
 
+def getPerformanceValues(data):
+    scriptPath = os.path.dirname(os.path.realpath(__file__))
+    path = scriptPath + "/outBoundFiles/end.txt"
+    allValues = readFile(path)
+    data.performanceValues = []
+    for line in allValues.split("\n"):
+        data.performanceValues.append(line)
 
 def init(data, sendToPi):
     scriptPath = os.path.dirname(os.path.realpath(__file__))
@@ -299,7 +310,7 @@ def init(data, sendToPi):
     # explaining performance stuff
     data.donePerformanceButton = Button(x0=data.width//2 - 25, y0=data.height - 60, x1=data.width//2 + 50, y1=data.height - 10,
                                  color="dark goldenrod", text="Done")
-    data.explainPerformanceDimensions = (20, data.height//3 + 10, data.width-20, data.height-70)
+    data.explainPerformanceDimensions = (200, data.height//3 + 10, data.width-200, data.height-70)
     #from pianoMan
     data.allPageComponents = None
     data.divisions = None
@@ -414,6 +425,7 @@ def timerFired(data):
         data.mode = "abletonInstructionBegin"
     elif data.mode == "checkPerformanceScore":
         main(data.sendToPi)
+        getPerformanceValues(data)
         data.mode = "explainPerformanceScore"
 
 def redrawAll(canvas, data):
@@ -505,6 +517,14 @@ def redrawAll(canvas, data):
             canvas.create_text(data.width // 2 - 10,
                            data.explainPerformanceDimensions[1] + 10 + titleHeight + itemHeight * i, anchor="nw",
                            text=itemDescription, font="Times 18", fill="white")
+
+        # draw the actual score values
+        canvas.create_rectangle(0, data.explainPerformanceDimensions[1], data.explainPerformanceDimensions[0], data.explainPerformanceDimensions[3], fill="dark goldenrod")
+        height = (data.explainPerformanceDimensions[3] - data.explainPerformanceDimensions[1])//(1+len(data.performanceValues))
+        canvas.create_text(data.explainPerformanceDimensions[0]//2, data.explainPerformanceDimensions[1] + height//2, text = "Scores", font = "Times 18 bold", fill="black")
+        for i in range(len(data.performanceValues)):
+            canvas.create_text(data.explainPerformanceDimensions[0]//2, data.explainPerformanceDimensions[1]+height*(i+1), text=data.performanceValues[i], font="Times 18", fill="black")
+
 
     elif data.mode == "findUnknownComponents":
         currentCompImage = data.unknownImages[data.currentUnknownCompNumber][0]

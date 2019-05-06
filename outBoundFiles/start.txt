@@ -1,4 +1,4 @@
-fileName:Swans on the lake
+fileName:SwansOnTheLake
 speed:1
 hand:bass
 bpm:83

@@ -2,52 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c779934-fd0e-461a-811b-d6b53ccbf21e" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Ableton instructions/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-FurElise-Fur_Elise_Easy_Piano-Fur Elise.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-JingleBells-Jingell_Bells_Easy_Piano-Jingle Bells.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-doReMi-Do_Re_Mi-Do Re Mi.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-happyBirthday-Happy_Birthday_To_You_Piano-Happy Birthday 2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-happyBirthday-easy-Happy_Birthday_To_You_C_Major-Happy Birthday 1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-hedwigsTheme-Hedwigs_Theme_EASY-Hedwigs Theme.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-swansOnTheLakeEasy-Swans_on_the_lake_easy-Swans on the lake.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-twinkleTwinkle-Twinkle_Twinkle_Little_Star_Easy-Twinkle Twinkle.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/Users-thrasher_elizabeth-Documents-CMU-Homework-Senior_Spring-Capstone-omr-pianoMan-music_images-Yes Songs-youveGotAFriendInMe-Youve_Got_A_Friend_In_Me-Youve Got A Friend In Me.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/FurElise/Fur_Elise_Easy_Piano-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/FurElise/Fur_Elise_Easy_Piano.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/IKONLoveScenario/IKON_Love_Scenario-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/IKONLoveScenario/IKON_Love_Scenario-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/IKONLoveScenario/IKON_Love_Scenario.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/JingleBells/Jingell_Bells_Easy_Piano-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/JingleBells/Jingell_Bells_Easy_Piano.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/doReMi/Do_Re_Mi-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/doReMi/Do_Re_Mi.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/happyBirthday-easy/Happy_Birthday_To_You_C_Major-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/happyBirthday-easy/Happy_Birthday_To_You_C_Major.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/happyBirthday/Happy_Birthday_To_You_Piano-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/happyBirthday/Happy_Birthday_To_You_Piano.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/hedwigsTheme/Hedwigs_Theme_EASY-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/hedwigsTheme/Hedwigs_Theme_EASY.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/swansOnTheLakeEasy/Swans_on_the_lake_easy-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/swansOnTheLakeEasy/Swans_on_the_lake_easy-1.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/swansOnTheLakeEasy/Swans_on_the_lake_easy.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/twinkleTwinkle/Twinkle_Twinkle_Little_Star_Easy-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/twinkleTwinkle/Twinkle_Twinkle_Little_Star_Easy.pdf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/youveGotAFriendInMe/Youve_Got_A_Friend_In_Me-0.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/music_images/Yes Songs/youveGotAFriendInMe/Youve_Got_A_Friend_In_Me.pdf" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction0.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction1.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction2.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction3.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction4.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction5.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction6.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction7.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction8.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AbletonInstructions/instruction9.png" afterPath="$PROJECT_DIR$/AbletonInstructions/instruction9.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gui.py" afterPath="$PROJECT_DIR$/gui.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" afterPath="$PROJECT_DIR$/outBoundFiles/outputXML.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/end.txt" afterPath="$PROJECT_DIR$/outBoundFiles/end.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/outBoundFiles/start.txt" afterPath="$PROJECT_DIR$/outBoundFiles/start.txt" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gui.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="14">
-              <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
+            <state relative-caret-position="445">
+              <caret line="522" column="127" lean-forward="false" selection-start-line="522" selection-start-column="127" selection-end-line="522" selection-end-column="127" />
               <folding>
                 <element signature="e#16#46#0" expanded="true" />
               </folding>
@@ -74,11 +31,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="end.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/outBoundFiles/end.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="119">
+              <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="26" />
               <folding>
                 <element signature="e#84#93#0" expanded="true" />
               </folding>
@@ -98,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="segmentationAndRecognition.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="56" column="23" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="23" />
+            <state relative-caret-position="121">
+              <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding>
                 <element signature="e#222#232#0" expanded="true" />
               </folding>
@@ -121,11 +88,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>findConnec</find>
-      <find>sixteenth</find>
-      <find>main</find>
-      <find>connect</find>
-      <find>'''</find>
       <find>connected</find>
       <find>print</find>
       <find>time</find>
@@ -143,7 +105,6 @@
       <find>data.speedLabels</find>
       <find>pianoManOrg</find>
       <find>data.timeSig</find>
-      <find>timeSig</find>
       <find>Organize</find>
       <find>Ableton</find>
       <find>library</find>
@@ -151,6 +112,12 @@
       <find>generateMusic</find>
       <find>getTimeSig</find>
       <find>&quot;space</find>
+      <find>timeSig</find>
+      <find>p</find>
+      <find>main</find>
+      <find>getPerfor</find>
+      <find>dark</find>
+      <find>data.explainPerformanceDimensions</find>
     </findStrings>
     <replaceStrings>
       <replace>16th</replace>
@@ -251,6 +218,12 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
               <item name="performanceScoreEvaluator" type="cbb8eebc:String" user="performanceScoreEvaluator" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pianoMan" type="cbb8eebc:String" user="pianoMan" />
+              <item name="performanceScoreEvaluator" type="cbb8eebc:String" user="performanceScoreEvaluator" />
+              <item name="midi" type="cbb8eebc:String" user="midi" />
             </path>
           </expand>
           <select />
@@ -575,13 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/outBoundFiles/end.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sendToPi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -675,26 +641,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="e#84#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="121" column="17" lean-forward="true" selection-start-line="121" selection-start-column="17" selection-end-line="121" selection-end-column="17" />
-          <folding>
-            <element signature="e#16#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/outBoundFiles/outputXML.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -733,10 +679,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/segmentationAndRecognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="56" column="23" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="23" />
+        <state relative-caret-position="121">
+          <caret line="61" column="5" lean-forward="false" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding>
             <element signature="e#222#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <element signature="e#84#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outBoundFiles/end.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="522" column="127" lean-forward="false" selection-start-line="522" selection-start-column="127" selection-end-line="522" selection-end-column="127" />
+          <folding>
+            <element signature="e#16#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
